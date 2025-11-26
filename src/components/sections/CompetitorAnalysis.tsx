@@ -53,11 +53,11 @@ export const CompetitorAnalysis = () => {
 
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-muted-foreground">Pre-July Mentions:</span>
+                    <span className="text-sm text-muted-foreground">Jan '23 - July '24:</span>
                     <span className="font-semibold">{competitor.pre}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-muted-foreground">Post-July Mentions:</span>
+                    <span className="text-sm text-muted-foreground">July '24 - Nov '25:</span>
                     <span className="font-semibold">{competitor.post}</span>
                   </div>
                   <div className="flex justify-between items-center pt-2 border-t border-border">

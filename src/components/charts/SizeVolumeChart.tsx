@@ -38,10 +38,10 @@ export const SizeVolumeChart = () => {
             wrapperStyle={{ color: 'hsl(var(--foreground))' }}
             formatter={(value) => {
               const labels: Record<string, string> = {
-                'preOpps': 'Pre-July Opportunities',
-                'postOpps': 'Post-July Opportunities',
-                'preWins': 'Pre-July Wins',
-                'postWins': 'Post-July Wins'
+                'preOpps': "Jan '23 - July '24 Opportunities",
+                'postOpps': "July '24 - Nov '25 Opportunities",
+                'preWins': "Jan '23 - July '24 Wins",
+                'postWins': "July '24 - Nov '25 Wins"
               };
               return labels[value] || value;
             }}

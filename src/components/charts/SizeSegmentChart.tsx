@@ -53,7 +53,7 @@ export const SizeSegmentChart = () => {
           />
           <Legend 
             wrapperStyle={{ color: 'hsl(var(--foreground))' }}
-            formatter={(value) => value === 'preRate' ? 'Pre-July 2024' : 'Post-July 2024'}
+            formatter={(value) => value === 'preRate' ? "Jan '23 - July '24" : "July '24 - Nov '25"}
           />
           <Area 
             type="monotone" 
