@@ -24,33 +24,6 @@ export const BudgetOverview = () => {
             </p>
           </div>
 
-          {/* Top-level metrics */}
-          <div className="grid md:grid-cols-4 gap-6 mb-12">
-            <Card className="p-6 bg-gradient-to-br from-primary/20 to-primary/5 border-primary/30">
-              <DollarSign className="w-8 h-8 text-primary mb-3" />
-              <div className="text-3xl font-bold mb-1">€445K</div>
-              <div className="text-sm text-muted-foreground">Total Events Budget</div>
-            </Card>
-
-            <Card className="p-6 bg-gradient-to-br from-accent/20 to-accent/5 border-accent/30">
-              <TrendingUp className="w-8 h-8 text-accent mb-3" />
-              <div className="text-3xl font-bold mb-1">€2.97M</div>
-              <div className="text-sm text-muted-foreground">Pipeline Target</div>
-            </Card>
-
-            <Card className="p-6 bg-gradient-to-br from-success/20 to-success/5 border-success/30">
-              <Calendar className="w-8 h-8 text-success mb-3" />
-              <div className="text-3xl font-bold mb-1">18</div>
-              <div className="text-sm text-muted-foreground">Events Planned</div>
-            </Card>
-
-            <Card className="p-6 bg-gradient-to-br from-chart-4/20 to-chart-4/5 border-chart-4/30">
-              <Users className="w-8 h-8 text-chart-4 mb-3" />
-              <div className="text-3xl font-bold mb-1">8,320%</div>
-              <div className="text-sm text-muted-foreground">Research ROI</div>
-            </Card>
-          </div>
-
           {/* Budget visualization */}
           <BudgetAllocationChart />
 
