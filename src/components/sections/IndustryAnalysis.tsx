@@ -1,6 +1,8 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { IndustryChart } from "@/components/charts/IndustryChart";
+import { IndustryVolumeChart } from "@/components/charts/IndustryVolumeChart";
 
 export const IndustryAnalysis = () => {
   const industries = [
@@ -37,7 +39,18 @@ export const IndustryAnalysis = () => {
             </p>
           </div>
 
-          <IndustryChart />
+          <Tabs defaultValue="win-rate" className="w-full">
+            <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-6">
+              <TabsTrigger value="win-rate">Win Rate</TabsTrigger>
+              <TabsTrigger value="volume">Volume</TabsTrigger>
+            </TabsList>
+            <TabsContent value="win-rate">
+              <IndustryChart />
+            </TabsContent>
+            <TabsContent value="volume">
+              <IndustryVolumeChart />
+            </TabsContent>
+          </Tabs>
 
           <div className="grid md:grid-cols-2 gap-6 mt-8">
             {industries.map((industry, index) => (
