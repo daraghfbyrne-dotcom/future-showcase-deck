@@ -54,26 +54,6 @@ export const Hero = () => {
               View Budget
             </Button>
           </div>
-
-          {/* Key metrics preview */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 animate-fade-in" style={{ animationDelay: "0.4s" }}>
-            <div className="bg-card border border-border rounded-lg p-6">
-              <div className="text-3xl font-bold text-primary mb-1">€2.97M</div>
-              <div className="text-sm text-muted-foreground">Pipeline Target</div>
-            </div>
-            <div className="bg-card border border-border rounded-lg p-6">
-              <div className="text-3xl font-bold text-accent mb-1">€445K</div>
-              <div className="text-sm text-muted-foreground">Events Budget</div>
-            </div>
-            <div className="bg-card border border-border rounded-lg p-6">
-              <div className="text-3xl font-bold text-success mb-1">3</div>
-              <div className="text-sm text-muted-foreground">Core ERPs</div>
-            </div>
-            <div className="bg-card border border-border rounded-lg p-6">
-              <div className="text-3xl font-bold text-chart-4 mb-1">50-600M</div>
-              <div className="text-sm text-muted-foreground">Revenue Range</div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
