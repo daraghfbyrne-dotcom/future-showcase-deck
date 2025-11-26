@@ -62,7 +62,7 @@ export const IndustryAnalysis = () => {
 
                 <div className="grid grid-cols-2 gap-6">
                   <div>
-                    <div className="text-sm text-muted-foreground mb-3">Pre-July 2024</div>
+                    <div className="text-sm text-muted-foreground mb-3">Jan '23 - July '24</div>
                     <div className="space-y-2">
                       <div className="flex justify-between">
                         <span className="text-sm">Opportunities:</span>
@@ -80,7 +80,7 @@ export const IndustryAnalysis = () => {
                   </div>
 
                   <div>
-                    <div className="text-sm text-muted-foreground mb-3">Post-July 2024</div>
+                    <div className="text-sm text-muted-foreground mb-3">July '24 - Nov '25</div>
                     <div className="space-y-2">
                       <div className="flex justify-between">
                         <span className="text-sm">Opportunities:</span>

@@ -36,7 +36,7 @@ export const ERPAnalysis = () => {
               Win Patterns by <span className="text-primary">ERP System</span>
             </h2>
             <p className="text-xl text-muted-foreground">
-              Pre-July 2024 (Jan 2023 – Jun 2024) vs Post-July 2024 (Jul 2024 – Nov 2024)
+              Jan '23 - July '24 vs July '24 - Nov '25
             </p>
           </div>
 

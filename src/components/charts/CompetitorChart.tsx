@@ -37,7 +37,7 @@ export const CompetitorChart = () => {
           />
           <Legend 
             wrapperStyle={{ color: 'hsl(var(--foreground))' }}
-            formatter={(value) => value === 'pre' ? 'Pre-July 2024' : 'Post-July 2024'}
+            formatter={(value) => value === 'pre' ? "Jan '23 - July '24" : "July '24 - Nov '25"}
           />
           <Bar dataKey="pre" fill="hsl(var(--muted))" radius={[4, 4, 0, 0]} />
           <Bar dataKey="post" fill="hsl(var(--destructive))" radius={[4, 4, 0, 0]} />
