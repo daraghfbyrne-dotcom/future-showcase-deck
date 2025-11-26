@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { AlertCircle, TrendingUp } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CompetitorChart } from "@/components/charts/CompetitorChart";
 
 export const CompetitorAnalysis = () => {
@@ -31,9 +32,16 @@ export const CompetitorAnalysis = () => {
             </p>
           </div>
 
-          <CompetitorChart />
-
-          <div className="grid md:grid-cols-3 gap-6 mb-12 mt-8">
+          <Tabs defaultValue="mentions" className="w-full">
+            <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-6">
+              <TabsTrigger value="mentions">Mentions</TabsTrigger>
+              <TabsTrigger value="detail">Detail</TabsTrigger>
+            </TabsList>
+            <TabsContent value="mentions">
+              <CompetitorChart />
+            </TabsContent>
+            <TabsContent value="detail">
+              <div className="grid md:grid-cols-3 gap-6 mb-12">
             {competitors.map((competitor, index) => (
               <Card key={index} className="p-6 bg-card border-border hover:border-primary/30 transition-all">
                 <div className="flex items-center justify-between mb-4">
@@ -61,7 +69,9 @@ export const CompetitorAnalysis = () => {
                 </div>
               </Card>
             ))}
-          </div>
+              </div>
+            </TabsContent>
+          </Tabs>
 
           <Card className="p-8 bg-destructive/10 border-destructive/30">
             <div className="flex items-start gap-4">

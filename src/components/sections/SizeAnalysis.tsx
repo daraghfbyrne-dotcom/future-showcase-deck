@@ -1,6 +1,8 @@
 import { Card } from "@/components/ui/card";
 import { Target } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SizeSegmentChart } from "@/components/charts/SizeSegmentChart";
+import { SizeVolumeChart } from "@/components/charts/SizeVolumeChart";
 
 export const SizeAnalysis = () => {
   const sizeSegments = [
@@ -24,9 +26,20 @@ export const SizeAnalysis = () => {
             </p>
           </div>
 
-          <SizeSegmentChart />
-
-          <div className="space-y-4 mb-12 mt-8">
+          <Tabs defaultValue="win-rate" className="w-full">
+            <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-6">
+              <TabsTrigger value="win-rate">Win Rate</TabsTrigger>
+              <TabsTrigger value="volume">Volume</TabsTrigger>
+              <TabsTrigger value="detail">Detail</TabsTrigger>
+            </TabsList>
+            <TabsContent value="win-rate">
+              <SizeSegmentChart />
+            </TabsContent>
+            <TabsContent value="volume">
+              <SizeVolumeChart />
+            </TabsContent>
+            <TabsContent value="detail">
+              <div className="space-y-4 mb-12">
             {sizeSegments.map((segment, index) => (
               <Card 
                 key={index} 
@@ -74,7 +87,9 @@ export const SizeAnalysis = () => {
                 </div>
               </Card>
             ))}
-          </div>
+              </div>
+            </TabsContent>
+          </Tabs>
 
           <Card className="p-8 bg-primary/10 border-primary/30">
             <h3 className="font-semibold text-xl mb-4">Key Findings</h3>
