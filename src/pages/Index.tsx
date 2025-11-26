@@ -10,6 +10,7 @@ import { SizeAnalysis } from "@/components/sections/SizeAnalysis";
 import { CompetitorAnalysis } from "@/components/sections/CompetitorAnalysis";
 import { StrategicPillars } from "@/components/sections/StrategicPillars";
 import { ResearchProgram } from "@/components/sections/ResearchProgram";
+import { PipelineTargets } from "@/components/sections/PipelineTargets";
 import { ChannelStrategy } from "@/components/sections/ChannelStrategy";
 import { EventsCalendar } from "@/components/sections/EventsCalendar";
 import { BudgetOverview } from "@/components/sections/BudgetOverview";
@@ -30,6 +31,7 @@ const Index = () => {
         <CompetitorAnalysis />
         <StrategicPillars />
         <ResearchProgram />
+        <PipelineTargets />
         <ChannelStrategy />
         <EventsCalendar />
         <BudgetOverview />
