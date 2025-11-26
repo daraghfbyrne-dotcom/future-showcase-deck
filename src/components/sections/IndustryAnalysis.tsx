@@ -40,9 +40,10 @@ export const IndustryAnalysis = () => {
           </div>
 
           <Tabs defaultValue="win-rate" className="w-full">
-            <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-6">
+            <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-6">
               <TabsTrigger value="win-rate">Win Rate</TabsTrigger>
               <TabsTrigger value="volume">Volume</TabsTrigger>
+              <TabsTrigger value="detail">Detail</TabsTrigger>
             </TabsList>
             <TabsContent value="win-rate">
               <IndustryChart />
@@ -50,9 +51,8 @@ export const IndustryAnalysis = () => {
             <TabsContent value="volume">
               <IndustryVolumeChart />
             </TabsContent>
-          </Tabs>
-
-          <div className="grid md:grid-cols-2 gap-6 mt-8">
+            <TabsContent value="detail">
+              <div className="grid md:grid-cols-2 gap-6">
             {industries.map((industry, index) => (
               <Card key={index} className="p-6 bg-card border-border hover:border-primary/30 transition-all">
                 <div className="flex items-start justify-between mb-4">
@@ -99,7 +99,9 @@ export const IndustryAnalysis = () => {
                 </div>
               </Card>
             ))}
-          </div>
+              </div>
+            </TabsContent>
+          </Tabs>
 
           <Card className="mt-12 p-8 bg-primary/10 border-primary/30">
             <h3 className="font-semibold text-xl mb-4">Strategic Insights</h3>
