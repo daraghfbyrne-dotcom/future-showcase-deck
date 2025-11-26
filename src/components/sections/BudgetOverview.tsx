@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { DollarSign, TrendingUp, Calendar, Users } from "lucide-react";
+import { BudgetAllocationChart } from "@/components/charts/BudgetAllocationChart";
 
 export const BudgetOverview = () => {
   const budgetItems = [
@@ -50,8 +51,11 @@ export const BudgetOverview = () => {
             </Card>
           </div>
 
+          {/* Budget visualization */}
+          <BudgetAllocationChart />
+
           {/* Budget breakdown */}
-          <Card className="p-8 bg-card border-border mb-8">
+          <Card className="p-8 bg-card border-border mb-8 mt-8">
             <h3 className="font-semibold text-xl mb-6">Investment Breakdown</h3>
             <div className="space-y-4">
               {budgetItems.map((item, index) => (

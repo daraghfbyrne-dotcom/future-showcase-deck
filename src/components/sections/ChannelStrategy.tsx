@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Globe, Linkedin, MonitorPlay, Target, Users } from "lucide-react";
+import { ChannelPerformanceChart } from "@/components/charts/ChannelPerformanceChart";
 
 export const ChannelStrategy = () => {
   const channels = [
@@ -58,7 +59,9 @@ export const ChannelStrategy = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
+          <ChannelPerformanceChart />
+
+          <div className="grid md:grid-cols-2 gap-6 mb-12 mt-8">
             {channels.map((channel, index) => {
               const Icon = channel.icon;
               return (

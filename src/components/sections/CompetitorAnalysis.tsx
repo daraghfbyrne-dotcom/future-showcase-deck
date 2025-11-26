@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { AlertCircle, TrendingUp } from "lucide-react";
+import { CompetitorChart } from "@/components/charts/CompetitorChart";
 
 export const CompetitorAnalysis = () => {
   const competitors = [
@@ -30,7 +31,9 @@ export const CompetitorAnalysis = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <CompetitorChart />
+
+          <div className="grid md:grid-cols-3 gap-6 mb-12 mt-8">
             {competitors.map((competitor, index) => (
               <Card key={index} className="p-6 bg-card border-border hover:border-primary/30 transition-all">
                 <div className="flex items-center justify-between mb-4">

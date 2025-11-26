@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Calendar, MapPin, Users, DollarSign } from "lucide-react";
+import { PipelineChart } from "@/components/charts/PipelineChart";
 
 export const EventsCalendar = () => {
   const quarters = [
@@ -61,7 +62,9 @@ export const EventsCalendar = () => {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <PipelineChart />
+
+          <div className="grid md:grid-cols-2 gap-6 mt-8">
             {quarters.map((quarter, index) => (
               <Card key={index} className="p-6 bg-card border-border">
                 <h3 className="font-display font-bold text-2xl mb-4 text-primary">{quarter.quarter} 2026</h3>
