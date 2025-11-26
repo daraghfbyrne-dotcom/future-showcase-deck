@@ -3,10 +3,10 @@ import { Card } from "@/components/ui/card";
 
 export const BudgetAllocationChart = () => {
   const data = [
-    { name: 'Events & Conferences', value: 358228, percentage: 71.5 },
-    { name: 'Logistics & Travel', value: 87140, percentage: 17.4 },
-    { name: 'LinkedIn Advertising', value: 48000, percentage: 9.6 },
-    { name: 'Google Display', value: 14400, percentage: 2.9 },
+    { name: 'Lead Gen & Tech', value: 405516, percentage: 30.4 },
+    { name: 'Conferences & Events', value: 510368, percentage: 38.3 },
+    { name: 'Brand & Content', value: 404592, percentage: 30.3 },
+    { name: 'Misc & Other', value: 13800, percentage: 1.0 },
   ];
 
   const COLORS = [
@@ -17,10 +17,10 @@ export const BudgetAllocationChart = () => {
   ];
 
   const formatCurrency = (value: number) => {
-    if (value >= 1000) {
-      return `€${(value / 1000).toFixed(0)}K`;
+    if (value >= 1000000) {
+      return `€${(value / 1000000).toFixed(2)}M`;
     }
-    return `€${value}`;
+    return `€${(value / 1000).toFixed(0)}K`;
   };
 
   return (
@@ -58,8 +58,8 @@ export const BudgetAllocationChart = () => {
         </PieChart>
       </ResponsiveContainer>
       <div className="mt-4 text-center">
-        <div className="text-2xl font-bold text-primary">€507,768</div>
-        <div className="text-sm text-muted-foreground">Total Marketing Budget</div>
+        <div className="text-2xl font-bold text-primary">€1.33M</div>
+        <div className="text-sm text-muted-foreground">Total 2026 Marketing Budget</div>
       </div>
     </Card>
   );
