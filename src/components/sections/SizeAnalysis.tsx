@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Target } from "lucide-react";
+import { SizeSegmentChart } from "@/components/charts/SizeSegmentChart";
 
 export const SizeAnalysis = () => {
   const sizeSegments = [
@@ -23,7 +24,9 @@ export const SizeAnalysis = () => {
             </p>
           </div>
 
-          <div className="space-y-4 mb-12">
+          <SizeSegmentChart />
+
+          <div className="space-y-4 mb-12 mt-8">
             {sizeSegments.map((segment, index) => (
               <Card 
                 key={index} 

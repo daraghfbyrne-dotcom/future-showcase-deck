@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { TrendingUp, TrendingDown, Minus } from "lucide-react";
+import { ERPChart } from "@/components/charts/ERPChart";
 
 export const ERPAnalysis = () => {
   const erpData = [
@@ -37,7 +38,9 @@ export const ERPAnalysis = () => {
             </p>
           </div>
 
-          <div className="space-y-4 mb-12">
+          <ERPChart />
+
+          <div className="space-y-4 mb-12 mt-8">
             {erpData.map((erp, index) => (
               <Card key={index} className="p-6 bg-card border-border hover:border-primary/30 transition-all">
                 <div className="flex items-center justify-between mb-4">

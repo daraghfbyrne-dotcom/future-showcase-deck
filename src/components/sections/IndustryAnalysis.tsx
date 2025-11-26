@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { IndustryChart } from "@/components/charts/IndustryChart";
 
 export const IndustryAnalysis = () => {
   const industries = [
@@ -36,7 +37,9 @@ export const IndustryAnalysis = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <IndustryChart />
+
+          <div className="grid md:grid-cols-2 gap-6 mt-8">
             {industries.map((industry, index) => (
               <Card key={index} className="p-6 bg-card border-border hover:border-primary/30 transition-all">
                 <div className="flex items-start justify-between mb-4">
