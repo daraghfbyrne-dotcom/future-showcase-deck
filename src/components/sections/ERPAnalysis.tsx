@@ -1,6 +1,8 @@
 import { Card } from "@/components/ui/card";
 import { TrendingUp, TrendingDown, Minus } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ERPChart } from "@/components/charts/ERPChart";
+import { ERPVolumeChart } from "@/components/charts/ERPVolumeChart";
 
 export const ERPAnalysis = () => {
   const erpData = [
@@ -38,9 +40,20 @@ export const ERPAnalysis = () => {
             </p>
           </div>
 
-          <ERPChart />
-
-          <div className="space-y-4 mb-12 mt-8">
+          <Tabs defaultValue="win-rate" className="w-full">
+            <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-6">
+              <TabsTrigger value="win-rate">Win Rate</TabsTrigger>
+              <TabsTrigger value="volume">Volume</TabsTrigger>
+              <TabsTrigger value="detail">Detail</TabsTrigger>
+            </TabsList>
+            <TabsContent value="win-rate">
+              <ERPChart />
+            </TabsContent>
+            <TabsContent value="volume">
+              <ERPVolumeChart />
+            </TabsContent>
+            <TabsContent value="detail">
+              <div className="space-y-4 mb-12">
             {erpData.map((erp, index) => (
               <Card key={index} className="p-6 bg-card border-border hover:border-primary/30 transition-all">
                 <div className="flex items-center justify-between mb-4">
@@ -81,7 +94,9 @@ export const ERPAnalysis = () => {
                 </div>
               </Card>
             ))}
-          </div>
+              </div>
+            </TabsContent>
+          </Tabs>
 
           <Card className="p-8 bg-primary/10 border-primary/30">
             <h3 className="font-semibold text-xl mb-4">Key Takeaways</h3>
