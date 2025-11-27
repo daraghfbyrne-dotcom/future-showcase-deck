@@ -31,12 +31,12 @@ export const CompetitorAnalysis = () => {
             </p>
           </div>
 
-          <Tabs defaultValue="loss-rate" className="w-full">
+          <Tabs defaultValue="win-rate" className="w-full">
             <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-6">
-              <TabsTrigger value="loss-rate">Loss Rate</TabsTrigger>
+              <TabsTrigger value="win-rate">Win Rate</TabsTrigger>
               <TabsTrigger value="detail">Detail</TabsTrigger>
             </TabsList>
-            <TabsContent value="loss-rate">
+            <TabsContent value="win-rate">
               <CompetitorChart />
             </TabsContent>
             <TabsContent value="detail">
