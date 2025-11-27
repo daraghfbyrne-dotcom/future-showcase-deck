@@ -97,6 +97,12 @@ export const CompetitorAnalysis = () => {
               </div>
             </div>
           </Card>
+
+          <div className="mt-6 p-4 bg-muted/30 border border-border rounded-lg">
+            <p className="text-sm text-muted-foreground italic">
+              <strong>Data Note:</strong> The competitive data presented here is limited in scope. However, this analysis reflects what we know is happening in the market, particularly against Medius and Basware. A key action for 2026 is ensuring adherence to comprehensive data capture and maintaining all competitive intelligence in HubSpot.
+            </p>
+          </div>
         </div>
       </div>
     </section>
