@@ -232,12 +232,44 @@ export const StrategicPillars = () => {
 
           {/* 4. Expected Commercial Outcomes */}
           <Card className="p-8 mb-16 bg-gradient-to-r from-primary/10 to-accent/10 border-2 border-primary/30">
-            <h3 className="font-display font-bold text-3xl mb-6 text-center">
+            <h3 className="font-display font-bold text-3xl mb-8 text-center">
               4. Expected Commercial Outcomes
             </h3>
-            <p className="text-center text-muted-foreground">
-              Pipeline targets and commercial metrics will be displayed here
-            </p>
+            
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              <div className="text-center">
+                <div className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wider">ARR Target</div>
+                <div className="text-4xl font-bold text-primary">€3.8M</div>
+              </div>
+              <div className="text-center">
+                <div className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wider">Pipeline Required</div>
+                <div className="text-4xl font-bold text-accent">€27.14M</div>
+                <div className="text-xs text-muted-foreground mt-1">14% win rate</div>
+              </div>
+              <div className="text-center">
+                <div className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wider">Current Pipeline</div>
+                <div className="text-4xl font-bold text-foreground">€6.76M</div>
+              </div>
+            </div>
+
+            <div className="border-t border-primary/20 pt-6 mb-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="text-center">
+                  <div className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wider">Net Pipeline Required</div>
+                  <div className="text-3xl font-bold text-warning">€20.38M</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wider">Total Channel Target</div>
+                  <div className="text-3xl font-bold text-success">€24.48M</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-destructive/20 border border-destructive/30 rounded-lg p-4 text-center">
+              <div className="text-sm font-semibold text-destructive uppercase tracking-wider mb-1">Pipeline Delta</div>
+              <div className="text-2xl font-bold text-destructive">-€2.02M</div>
+              <div className="text-xs text-muted-foreground mt-2">Requires acceleration of partnership onboarding and SDR activity in Q1 2026</div>
+            </div>
           </Card>
 
           {/* 5. Strategic Trade-Offs */}
