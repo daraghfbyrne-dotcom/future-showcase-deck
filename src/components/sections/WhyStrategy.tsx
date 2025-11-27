@@ -34,7 +34,7 @@ export const WhyStrategy = () => {
               Why We Need a <span className="text-primary">New Strategy</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Data from Jan 2023 – Nov 2025 reveals critical shifts in our market positioning
+              Data* from Jan 2023 – Nov 2025 reveals critical shifts in our market positioning
             </p>
           </div>
 
@@ -63,6 +63,9 @@ export const WhyStrategy = () => {
           <div className="mt-12 p-6 rounded-lg bg-secondary/50 border border-border">
             <p className="text-center text-lg font-medium">
               These insights drive our <span className="text-primary font-semibold">strategic focus</span> for 2026
+            </p>
+            <p className="text-center text-xs text-muted-foreground mt-2">
+              *source HubSpot
             </p>
           </div>
         </div>
