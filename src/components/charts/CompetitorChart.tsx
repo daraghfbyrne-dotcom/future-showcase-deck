@@ -33,7 +33,7 @@ export const CompetitorChart = () => {
               borderRadius: '0.5rem',
               color: 'hsl(var(--foreground))'
             }}
-            formatter={(value) => `${value}%`}
+            formatter={(value) => [`${value}%`, '']}
             labelFormatter={(label) => label}
           />
           <Legend 
