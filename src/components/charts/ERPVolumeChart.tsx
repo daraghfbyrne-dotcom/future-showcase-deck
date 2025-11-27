@@ -34,7 +34,10 @@ export const ERPVolumeChart = () => {
               borderRadius: '0.5rem',
               color: 'hsl(var(--foreground))'
             }}
-            formatter={(value) => [value, '']}
+            formatter={(value, name) => {
+              const label = name.toString().includes('Opps') ? 'Opportunities' : 'Wins';
+              return [value, label];
+            }}
           />
           <Legend 
             wrapperStyle={{ color: 'hsl(var(--foreground))' }}
