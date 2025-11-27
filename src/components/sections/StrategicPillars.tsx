@@ -24,7 +24,7 @@ export const StrategicPillars = () => {
               </div>
               <h3 className="font-display font-bold text-4xl mb-4 text-white">Play Bigger</h3>
               <p className="text-white/90 mb-6 text-lg font-medium">
-                Position SoftCo as the definitive leader in complex AP automation for mid-market Oracle, Infor, and JD Edwards customers
+                Define the category. Own the problem. Become the default choice for complex, multi-ERP AP automation.
               </p>
               <ul className="space-y-3 text-base text-white/95">
                 <li className="flex items-start gap-3">
