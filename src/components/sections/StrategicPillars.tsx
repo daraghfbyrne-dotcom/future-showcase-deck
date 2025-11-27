@@ -15,6 +15,18 @@ export const StrategicPillars = () => {
             </p>
           </div>
 
+          {/* Target Audience Statement - WHO we are going after */}
+          <Card className="p-8 md:p-10 mb-16 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 border-4 border-primary/40 shadow-xl">
+            <div className="text-center">
+              <div className="inline-block px-4 py-2 bg-primary/20 rounded-full mb-4">
+                <span className="text-sm font-bold text-primary uppercase tracking-wider">Who We Target</span>
+              </div>
+              <p className="text-2xl md:text-3xl font-display font-bold text-foreground leading-relaxed">
+                Laser-focused on mid-market excellence. Targeting €50M–€600M companies running Oracle, Infor, and JD Edwards in high-complexity AP environments.
+              </p>
+            </div>
+          </Card>
+
           {/* Two Overarching Strategic Pillars */}
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             {/* Play Bigger */}
