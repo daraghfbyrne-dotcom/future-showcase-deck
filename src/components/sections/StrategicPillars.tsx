@@ -103,6 +103,9 @@ export const StrategicPillars = () => {
                   <p>Supports higher conversion, higher win rates, and stronger retention.</p>
                   <p>Ensures every touchpoint communicates leadership in complex AP automation.</p>
                   <p>Makes SoftCo the brand buyers feel is made for them—especially in mid-market enterprises with multi-ERP complexity.</p>
+                  <p><strong>Brand is what creates future demand.</strong> Around 80% of long-term revenue growth comes from brand-building, not short-term activation — without a strong brand, pipeline becomes increasingly expensive to generate.</p>
+                  <p><strong>A strong brand lowers cost of acquisition and increases win rates.</strong> Buyers pre-qualify vendors based on trust and perception before Sales ever engages; brand strength directly reduces CAC, shortens cycles, and boosts conversion.</p>
+                  <p><strong>Brand is the engine of category leadership.</strong> In a crowded AP market, brand is how we define the problem, shape the category, and become the default choice — making every euro spent across GTM work harder.</p>
                 </div>
               </div>
             </Card>
