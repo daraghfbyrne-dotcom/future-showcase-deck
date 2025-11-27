@@ -66,12 +66,12 @@ export const StrategicPillars = () => {
               </div>
             </Card>
 
-            {/* SoftCo Brand */}
+            {/* Brand */}
             <Card className="p-10 bg-gradient-to-br from-accent via-accent/90 to-accent/80 border-4 border-accent shadow-2xl hover:shadow-accent/50 transition-all animate-fade-in">
               <div className="w-20 h-20 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-6 shadow-lg">
                 <Sparkles className="w-11 h-11 text-white" />
               </div>
-              <h3 className="font-display font-bold text-4xl mb-4 text-white">SoftCo Brand</h3>
+              <h3 className="font-display font-bold text-4xl mb-4 text-white">Brand</h3>
               <p className="text-white/90 mb-6 text-lg font-medium">
                 Codify who we are, amplify what makes us different, and express it with clarity, confidence, and personality.
               </p>
@@ -81,31 +81,22 @@ export const StrategicPillars = () => {
                 <div className="space-y-3 text-base">
                   <p>
                     <strong>A brand built around "tailored to perfection."</strong><br />
-                    Everything - from messaging to demos to delivery - reinforces our promise & Play Bigger proposition.
+                    Everything reinforces our promise and Play Bigger proposition—from messaging to demos to delivery.
                   </p>
                   
                   <p>
-                    <strong>A tone that is confident, human, and insight-led.</strong><br />
-                    Reflecting the Ruler/Hero archetype mix: authoritative, skilled, but never arrogant. Friendly, direct, lightly witty when appropriate.
-                  </p>
-                  
-                  <p>
-                    <strong>A visual and verbal identity that stands out</strong><br />
-                    so we intentionally differentiate from competitors who all look and sound the same.
+                    <strong>Confident, authoritative, but approachable.</strong><br />
+                    We are the specialist—skilled and insight-led—but never arrogant. Direct, human, and differentiated.
                   </p>
                 </div>
                 
                 <h4 className="font-semibold text-lg text-white mt-6 mb-3">Why it matters in 2026:</h4>
                 
                 <div className="space-y-2 text-base">
-                  <p>Creates trust with CFOs, CIOs, and Finance Ops leaders tasked with risk removal and compliance.</p>
-                  <p>Drives recognition and preference in ERP ecosystems (Oracle, JDE, Infor).</p>
-                  <p>Supports higher conversion, higher win rates, and stronger retention.</p>
-                  <p>Ensures every touchpoint communicates leadership in complex AP automation.</p>
-                  <p>Makes SoftCo the brand buyers feel is made for them—especially in mid-market enterprises with multi-ERP complexity.</p>
-                  <p><strong>Brand is what creates future demand.</strong> Around 80% of long-term revenue growth comes from brand-building, not short-term activation — without a strong brand, pipeline becomes increasingly expensive to generate.</p>
-                  <p><strong>A strong brand lowers cost of acquisition and increases win rates.</strong> Buyers pre-qualify vendors based on trust and perception before Sales ever engages; brand strength directly reduces CAC, shortens cycles, and boosts conversion.</p>
-                  <p><strong>Brand is the engine of category leadership.</strong> In a crowded AP market, brand is how we define the problem, shape the category, and become the default choice — making every euro spent across GTM work harder.</p>
+                  <p><strong>Brand creates future demand.</strong> Around 80% of long-term revenue growth comes from brand-building—without it, pipeline becomes increasingly expensive to generate.</p>
+                  <p><strong>Brand lowers CAC and increases win rates.</strong> Buyers pre-qualify vendors based on trust before Sales engages; strong brand reduces acquisition cost, shortens cycles, and boosts conversion.</p>
+                  <p><strong>Brand drives category leadership.</strong> In a crowded AP market, brand defines the problem, shapes the category, and makes SoftCo the default choice.</p>
+                  <p><strong>Brand builds trust with decision-makers.</strong> CFOs and CIOs choose vendors who communicate certainty, control, and leadership in complex AP automation.</p>
                 </div>
               </div>
             </Card>
