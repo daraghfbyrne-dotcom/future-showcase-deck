@@ -270,6 +270,48 @@ export const StrategicPillars = () => {
               <div className="text-2xl font-bold text-destructive">-€2.02M</div>
               <div className="text-xs text-muted-foreground mt-2">Requires acceleration of partnership onboarding and SDR activity in Q1 2026</div>
             </div>
+
+            <div className="border-t border-primary/20 pt-8 mt-8">
+              <h4 className="font-display font-bold text-2xl mb-6 text-center">Pipeline Contribution by Channel</h4>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-background/50 rounded-lg p-4 border border-border">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-sm text-muted-foreground mb-1">SDR (12 Months)</div>
+                      <div className="text-xs text-muted-foreground">6 opps/month outbound • €95k avg deal</div>
+                    </div>
+                    <div className="text-2xl font-bold text-primary">€6.84M</div>
+                  </div>
+                </div>
+                <div className="bg-background/50 rounded-lg p-4 border border-border">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-sm text-muted-foreground mb-1">AE Generated (12 Months)</div>
+                      <div className="text-xs text-muted-foreground">3 opps/month • 5 reps • €110k avg</div>
+                    </div>
+                    <div className="text-2xl font-bold text-accent">€3.96M</div>
+                  </div>
+                </div>
+                <div className="bg-background/50 rounded-lg p-4 border border-border">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-sm text-muted-foreground mb-1">Marketing (12 Months)</div>
+                      <div className="text-xs text-muted-foreground">Research project + organic growth</div>
+                    </div>
+                    <div className="text-2xl font-bold text-success">€8.49M</div>
+                  </div>
+                </div>
+                <div className="bg-background/50 rounded-lg p-4 border border-border">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-sm text-muted-foreground mb-1">Partnerships (12 Months)</div>
+                      <div className="text-xs text-muted-foreground">3 new partners by end Q1 2026</div>
+                    </div>
+                    <div className="text-2xl font-bold text-chart-4">€5.20M</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </Card>
 
           {/* 5. Strategic Trade-Offs */}
