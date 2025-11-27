@@ -11,57 +11,87 @@ export const StrategicPillars = () => {
               2026 Strategic <span className="text-primary">Pillars</span>
             </h2>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Laser focus on mid-market companies (€50m–€600m revenue) running Oracle, Infor, or JD Edwards, 
-              in industries where complex AP automation matters most
+              Two overarching strategic imperatives drive everything we do in 2026
             </p>
           </div>
 
-          {/* Overarching Pillar */}
-          <Card className="p-8 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 border-2 border-primary hover:border-primary/60 transition-all mb-12">
-            <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
-              <div className="w-16 h-16 rounded-xl bg-primary/30 flex items-center justify-center shrink-0">
-                <Rocket className="w-9 h-9 text-primary" />
+          {/* Two Overarching Strategic Pillars */}
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
+            {/* Play Bigger */}
+            <Card className="p-10 bg-gradient-to-br from-primary via-primary/90 to-primary/80 border-4 border-primary shadow-2xl hover:shadow-primary/50 transition-all animate-fade-in">
+              <div className="w-20 h-20 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-6 shadow-lg">
+                <Rocket className="w-11 h-11 text-white" />
               </div>
-              <div className="flex-1">
-                <h3 className="font-display font-bold text-3xl mb-4">Play Bigger</h3>
-                <p className="text-muted-foreground mb-4 text-base">
-                  Position SoftCo as the definitive leader in complex AP automation for mid-market Oracle, Infor, and JD Edwards customers:
-                </p>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Own the narrative: "Complex AP for Complex ERPs"</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Establish category leadership through thought leadership content</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Build market presence at major ERP ecosystem events</span>
-                    </li>
-                  </ul>
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Create buyer awareness before competitors can react</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Differentiate on ERP-native integration depth</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Amplify success stories in target industries & ERP ecosystems</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </Card>
+              <h3 className="font-display font-bold text-4xl mb-4 text-white">Play Bigger</h3>
+              <p className="text-white/90 mb-6 text-lg font-medium">
+                Position SoftCo as the definitive leader in complex AP automation for mid-market Oracle, Infor, and JD Edwards customers
+              </p>
+              <ul className="space-y-3 text-base text-white/95">
+                <li className="flex items-start gap-3">
+                  <span className="text-white text-xl mt-0.5">•</span>
+                  <span>Own the narrative: "Complex AP for Complex ERPs"</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-white text-xl mt-0.5">•</span>
+                  <span>Establish category leadership through thought leadership</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-white text-xl mt-0.5">•</span>
+                  <span>Build market presence at major ERP ecosystem events</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-white text-xl mt-0.5">•</span>
+                  <span>Create buyer awareness before competitors can react</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-white text-xl mt-0.5">•</span>
+                  <span>Differentiate on ERP-native integration depth</span>
+                </li>
+              </ul>
+            </Card>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            {/* Invest in Brand */}
+            <Card className="p-10 bg-gradient-to-br from-accent via-accent/90 to-accent/80 border-4 border-accent shadow-2xl hover:shadow-accent/50 transition-all animate-fade-in">
+              <div className="w-20 h-20 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-6 shadow-lg">
+                <Sparkles className="w-11 h-11 text-white" />
+              </div>
+              <h3 className="font-display font-bold text-4xl mb-4 text-white">Invest in Brand</h3>
+              <p className="text-white/90 mb-6 text-lg font-medium">
+                Build long-term brand equity and market awareness to reduce acquisition costs and accelerate pipeline velocity
+              </p>
+              <ul className="space-y-3 text-base text-white/95">
+                <li className="flex items-start gap-3">
+                  <span className="text-white text-xl mt-0.5">•</span>
+                  <span>Consistent presence at tier-1 ERP ecosystem events</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-white text-xl mt-0.5">•</span>
+                  <span>Thought leadership content targeting CFOs and AP leaders</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-white text-xl mt-0.5">•</span>
+                  <span>Strategic partnerships with Oracle, Infor, and JDE</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-white text-xl mt-0.5">•</span>
+                  <span>Customer success stories amplified through PR and content</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-white text-xl mt-0.5">•</span>
+                  <span>Build awareness before buying cycle begins</span>
+                </li>
+              </ul>
+            </Card>
+          </div>
+
+          {/* Supporting Tactical Focus Areas */}
+          <div className="mb-12">
+            <div className="text-center mb-8">
+              <h3 className="font-display font-semibold text-2xl text-muted-foreground">
+                Delivered through these four tactical focus areas
+              </h3>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
             <Card className="p-8 bg-card border-2 border-primary/20 hover:border-primary/40 transition-all">
               <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-6">
                 <Target className="w-7 h-7 text-primary" />
@@ -166,51 +196,7 @@ export const StrategicPillars = () => {
               </ul>
             </Card>
           </div>
-
-          {/* Brand Investment Pillar */}
-          <Card className="p-8 bg-gradient-to-r from-accent/20 via-primary/10 to-accent/20 border-2 border-accent hover:border-accent/60 transition-all mb-12">
-            <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
-              <div className="w-16 h-16 rounded-xl bg-accent/30 flex items-center justify-center shrink-0">
-                <Sparkles className="w-9 h-9 text-accent" />
-              </div>
-              <div className="flex-1">
-                <h3 className="font-display font-bold text-3xl mb-4">Invest in Brand</h3>
-                <p className="text-muted-foreground mb-4 text-base">
-                  Build long-term brand equity and market awareness to reduce acquisition costs and accelerate pipeline velocity:
-                </p>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-start gap-2">
-                      <span className="text-accent mt-1">•</span>
-                      <span>Consistent presence at tier-1 ERP ecosystem events</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-accent mt-1">•</span>
-                      <span>Thought leadership content targeting CFOs and AP leaders</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-accent mt-1">•</span>
-                      <span>ERP-specific research reports and industry benchmarks</span>
-                    </li>
-                  </ul>
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-start gap-2">
-                      <span className="text-accent mt-1">•</span>
-                      <span>Strategic partnerships with Oracle, Infor, and JDE</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-accent mt-1">•</span>
-                      <span>Customer success stories amplified through PR and content</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-accent mt-1">•</span>
-                      <span>Build awareness before buying cycle begins</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </Card>
+          </div>
 
           <Card className="p-8 bg-gradient-to-r from-primary/10 to-accent/10 border-2 border-primary/30">
             <h3 className="font-display font-bold text-2xl mb-4 text-center">Why This Strategy Will Succeed</h3>
