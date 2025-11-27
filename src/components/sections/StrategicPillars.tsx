@@ -26,28 +26,44 @@ export const StrategicPillars = () => {
               <p className="text-white/90 mb-6 text-lg font-medium">
                 Define the category. Own the problem. Become the default choice for complex, multi-ERP AP automation.
               </p>
-              <ul className="space-y-3 text-base text-white/95">
-                <li className="flex items-start gap-3">
-                  <span className="text-white text-xl mt-0.5">•</span>
-                  <span>Own the narrative: "Complex AP for Complex ERPs"</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-white text-xl mt-0.5">•</span>
-                  <span>Establish category leadership through thought leadership</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-white text-xl mt-0.5">•</span>
-                  <span>Build market presence at major ERP ecosystem events</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-white text-xl mt-0.5">•</span>
-                  <span>Create buyer awareness before competitors can react</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-white text-xl mt-0.5">•</span>
-                  <span>Differentiate on ERP-native integration depth</span>
-                </li>
-              </ul>
+              <div className="space-y-4 text-white/95">
+                <h4 className="font-semibold text-lg text-white mb-3">What this means:</h4>
+                
+                <div className="space-y-3 text-base">
+                  <p>
+                    <strong>Build a new category around "AP Automation Tailored to Perfection."</strong><br />
+                    We stop competing on features and instead define a new space where SoftCo is the only credible leader.
+                  </p>
+                  
+                  <p>
+                    <strong>Anchor everything to the customer's "why."</strong><br />
+                    Finance teams with complexity need certainty, control, and outcomes they can audit—not generic automation.
+                  </p>
+                  
+                  <p>
+                    <strong>Do we shift the narrative from 1) software to guaranteed results you can rely on (SoftCo Approved)</strong>
+                  </p>
+                  
+                  <p>
+                    <strong>Tell a big, bold, simple story.</strong><br />
+                    We elevate SoftCo from "AP vendor" to the only specialist for multi-ERP, fast-growing organisations offering guaranteed results.
+                  </p>
+                  
+                  <p>
+                    <strong>Make competitors irrelevant.</strong><br />
+                    By defining the category around our strengths we force the market to play on our terms.
+                  </p>
+                </div>
+                
+                <h4 className="font-semibold text-lg text-white mt-6 mb-3">Why it matters in 2026:</h4>
+                
+                <div className="space-y-2 text-base">
+                  <p>This strategy creates long-term differentiation</p>
+                  <p>It drives market perception, premium pricing, and credibility with C-suite buyers.</p>
+                  <p>It increases pipeline quality by attracting accounts who resonate with our "why."</p>
+                  <p>It aligns every tactical decision—GTM, product, messaging—around becoming the category leader.</p>
+                </div>
+              </div>
             </Card>
 
             {/* Invest in Brand */}
