@@ -34,6 +34,7 @@ export const ERPVolumeChart = () => {
               borderRadius: '0.5rem',
               color: 'hsl(var(--foreground))'
             }}
+            formatter={(value) => [value, '']}
           />
           <Legend 
             wrapperStyle={{ color: 'hsl(var(--foreground))' }}
