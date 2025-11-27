@@ -26,10 +26,10 @@ const Index = () => {
         <Hero />
         <WhyStrategy />
         
-        <section className="py-16 bg-background">
+        <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-accent/5 border-y border-border">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="font-display font-bold text-5xl md:text-6xl">
+              <h2 className="font-display font-bold text-5xl md:text-6xl animate-fade-in">
                 What the Data <span className="text-primary">Tells Us</span>
               </h2>
             </div>
