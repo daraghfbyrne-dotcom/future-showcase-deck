@@ -25,6 +25,17 @@ const Index = () => {
       <main>
         <Hero />
         <WhyStrategy />
+        
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-6">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="font-display font-bold text-5xl md:text-6xl">
+                What the Data <span className="text-primary">Tells Us</span>
+              </h2>
+            </div>
+          </div>
+        </section>
+        
         <ERPAnalysis />
         <IndustryAnalysis />
         <SizeAnalysis />
