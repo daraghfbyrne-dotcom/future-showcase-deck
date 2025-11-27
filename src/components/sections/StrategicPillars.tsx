@@ -235,24 +235,9 @@ export const StrategicPillars = () => {
             <h3 className="font-display font-bold text-3xl mb-6 text-center">
               4. Expected Commercial Outcomes
             </h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="flex items-start gap-3">
-                <div className="text-2xl font-bold text-primary">+30%</div>
-                <p className="text-muted-foreground">pipeline from ERP ecosystems</p>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="text-2xl font-bold text-primary">+15%</div>
-                <p className="text-muted-foreground">increase in mid-market ACV</p>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="text-2xl font-bold text-primary">-20%</div>
-                <p className="text-muted-foreground">CAC from improved brand authority</p>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="text-2xl font-bold text-primary">+10pts</div>
-                <p className="text-muted-foreground">increase in win rate in complex AP deals</p>
-              </div>
-            </div>
+            <p className="text-center text-muted-foreground">
+              Pipeline targets and commercial metrics will be displayed here
+            </p>
           </Card>
 
           {/* 5. Strategic Trade-Offs */}
