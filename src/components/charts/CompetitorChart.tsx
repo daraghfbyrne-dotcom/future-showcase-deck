@@ -40,7 +40,7 @@ export const CompetitorChart = () => {
             wrapperStyle={{ color: 'hsl(var(--foreground))' }}
             formatter={(value) => value === 'pre' ? "Jan '23 - June '24" : "July '24 - Nov '25"}
           />
-          <Bar dataKey="pre" fill="hsl(var(--muted))" radius={[4, 4, 0, 0]} name="Jan '23 - June '24" />
+          <Bar dataKey="pre" fill="hsl(var(--primary))" radius={[4, 4, 0, 0]} name="Jan '23 - June '24" />
           <Bar dataKey="post" fill="hsl(var(--destructive))" radius={[4, 4, 0, 0]} name="July '24 - Nov '25" />
         </BarChart>
       </ResponsiveContainer>
