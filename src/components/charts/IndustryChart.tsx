@@ -43,7 +43,7 @@ export const IndustryChart = () => {
             wrapperStyle={{ color: 'hsl(var(--foreground))' }}
             formatter={(value) => value === 'preRate' ? "Jan '23 - July '24" : "July '24 - Nov '25"}
           />
-          <Bar dataKey="preRate" fill="hsl(var(--muted))" radius={[0, 4, 4, 0]} />
+          <Bar dataKey="preRate" fill="hsl(var(--primary))" radius={[0, 4, 4, 0]} />
           <Bar dataKey="postRate" fill="hsl(var(--accent))" radius={[0, 4, 4, 0]} />
         </BarChart>
       </ResponsiveContainer>

@@ -40,7 +40,7 @@ export const ERPChart = () => {
             wrapperStyle={{ color: 'hsl(var(--foreground))' }}
             formatter={(value) => value === 'prePeriod' ? "Jan '23 - July '24" : "July '24 - Nov '25"}
           />
-          <Bar dataKey="prePeriod" fill="hsl(var(--muted))" radius={[4, 4, 0, 0]} />
+          <Bar dataKey="prePeriod" fill="hsl(var(--chart-2))" radius={[4, 4, 0, 0]} />
           <Bar dataKey="postPeriod" fill="hsl(var(--primary))" radius={[4, 4, 0, 0]} />
         </BarChart>
       </ResponsiveContainer>
