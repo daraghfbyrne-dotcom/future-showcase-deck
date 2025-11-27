@@ -270,52 +270,10 @@ export const StrategicPillars = () => {
               <div className="text-2xl font-bold text-destructive">-€2.02M</div>
               <div className="text-xs text-muted-foreground mt-2">Requires acceleration of partnership onboarding and SDR activity in Q1 2026</div>
             </div>
-
-            <div className="border-t border-primary/20 pt-8 mt-8">
-              <h4 className="font-display font-bold text-2xl mb-6 text-center">Pipeline Contribution by Channel</h4>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="bg-background/50 rounded-lg p-4 border border-border">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <div className="text-sm text-muted-foreground mb-1">SDR (12 Months)</div>
-                      <div className="text-xs text-muted-foreground">6 opps/month outbound • €95k avg deal</div>
-                    </div>
-                    <div className="text-2xl font-bold text-primary">€6.84M</div>
-                  </div>
-                </div>
-                <div className="bg-background/50 rounded-lg p-4 border border-border">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <div className="text-sm text-muted-foreground mb-1">AE Generated (12 Months)</div>
-                      <div className="text-xs text-muted-foreground">3 opps/month • 5 reps • €110k avg</div>
-                    </div>
-                    <div className="text-2xl font-bold text-accent">€3.96M</div>
-                  </div>
-                </div>
-                <div className="bg-background/50 rounded-lg p-4 border border-border">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <div className="text-sm text-muted-foreground mb-1">Marketing (12 Months)</div>
-                      <div className="text-xs text-muted-foreground">Research project + organic growth</div>
-                    </div>
-                    <div className="text-2xl font-bold text-success">€8.49M</div>
-                  </div>
-                </div>
-                <div className="bg-background/50 rounded-lg p-4 border border-border">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <div className="text-sm text-muted-foreground mb-1">Partnerships (12 Months)</div>
-                      <div className="text-xs text-muted-foreground">3 new partners by end Q1 2026</div>
-                    </div>
-                    <div className="text-2xl font-bold text-chart-4">€5.20M</div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </Card>
 
           {/* 5. Strategic Trade-Offs */}
-          <Card className="p-8 bg-gradient-to-br from-destructive/10 to-destructive/5 border-2 border-destructive/30">
+          <Card className="p-8 mb-16 bg-gradient-to-br from-destructive/10 to-destructive/5 border-2 border-destructive/30">
             <h3 className="font-display font-bold text-3xl mb-6 text-center">
               5. Strategic Trade-Offs <span className="text-muted-foreground">(What We Stop)</span>
             </h3>
@@ -335,6 +293,64 @@ export const StrategicPillars = () => {
               <div className="flex items-start gap-3">
                 <Zap className="w-5 h-5 text-destructive mt-1 flex-shrink-0" />
                 <p className="text-muted-foreground">No enterprise mega-RFP cycles</p>
+              </div>
+            </div>
+          </Card>
+
+          {/* Pipeline Contribution by Channel */}
+          <Card className="p-8 mb-16 bg-card border-2 border-primary/30">
+            <h3 className="font-display font-bold text-3xl mb-8 text-center">
+              Pipeline Contribution by Channel
+            </h3>
+            
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
+              <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg p-6 border-l-4 border-primary">
+                <div className="flex items-center justify-between mb-2">
+                  <h4 className="font-semibold text-lg">SDR (12 Months)</h4>
+                  <span className="text-2xl font-bold text-primary">€6.84M</span>
+                </div>
+                <p className="text-sm text-muted-foreground">1 Additional SDR. 6 Opps per month pure outbound = €660k per mth pipeline. Q4 2025 Run Rate €500k pm. Av Deal size €95k</p>
+              </div>
+
+              <div className="bg-gradient-to-br from-accent/10 to-accent/5 rounded-lg p-6 border-l-4 border-accent">
+                <div className="flex items-center justify-between mb-2">
+                  <h4 className="font-semibold text-lg">AE Generated (12 Months)</h4>
+                  <span className="text-2xl font-bold text-accent">€3.96M</span>
+                </div>
+                <p className="text-sm text-muted-foreground">Based on 3 qualified opps per month from 5 sales reps @110k</p>
+              </div>
+
+              <div className="bg-gradient-to-br from-success/10 to-success/5 rounded-lg p-6 border-l-4 border-success">
+                <div className="flex items-center justify-between mb-2">
+                  <h4 className="font-semibold text-lg">Marketing (12 Months)</h4>
+                  <span className="text-2xl font-bold text-success">€8.49M</span>
+                </div>
+                <p className="text-sm text-muted-foreground">on 2025 Forecast. Incremental Research Project, improved organic - new site + brand refresh</p>
+              </div>
+
+              <div className="bg-gradient-to-br from-chart-4/10 to-chart-4/5 rounded-lg p-6 border-l-4 border-chart-4">
+                <div className="flex items-center justify-between mb-2">
+                  <h4 className="font-semibold text-lg">Partnerships (12 Months)</h4>
+                  <span className="text-2xl font-bold text-chart-4">€5.20M</span>
+                </div>
+                <p className="text-sm text-muted-foreground">2025 Pipeline €1.6m. TA €3.8M pipe based on 530k ARR to SoftCo. Risk Xelix partnership winding down. Target onboard 3 new ptrs by end Q1 2026</p>
+              </div>
+            </div>
+
+            <div className="bg-primary/10 border border-primary/30 rounded-lg p-6">
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="text-center">
+                  <div className="text-sm text-muted-foreground mb-1">Total Pipeline Target</div>
+                  <div className="text-2xl font-bold text-primary">€24.48M</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-sm text-muted-foreground mb-1">Average per Month</div>
+                  <div className="text-2xl font-bold">€2.04M</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-sm text-muted-foreground mb-1">Nov - Jul '25 (9 months)</div>
+                  <div className="text-2xl font-bold">€18.36M</div>
+                </div>
               </div>
             </div>
           </Card>
