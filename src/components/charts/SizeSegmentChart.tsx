@@ -23,8 +23,8 @@ export const SizeSegmentChart = () => {
         <AreaChart data={data}>
           <defs>
             <linearGradient id="colorPre" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="hsl(var(--muted))" stopOpacity={0.8}/>
-              <stop offset="95%" stopColor="hsl(var(--muted))" stopOpacity={0.1}/>
+              <stop offset="5%" stopColor="hsl(var(--chart-2))" stopOpacity={0.8}/>
+              <stop offset="95%" stopColor="hsl(var(--chart-2))" stopOpacity={0.1}/>
             </linearGradient>
             <linearGradient id="colorPost" x1="0" y1="0" x2="0" y2="1">
               <stop offset="5%" stopColor="hsl(var(--primary))" stopOpacity={0.8}/>
@@ -58,7 +58,7 @@ export const SizeSegmentChart = () => {
           <Area 
             type="monotone" 
             dataKey="preRate" 
-            stroke="hsl(var(--muted))" 
+            stroke="hsl(var(--chart-2))" 
             strokeWidth={2}
             fillOpacity={1} 
             fill="url(#colorPre)" 

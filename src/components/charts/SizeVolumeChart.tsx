@@ -46,7 +46,7 @@ export const SizeVolumeChart = () => {
               return labels[value] || value;
             }}
           />
-          <Bar dataKey="preOpps" fill="hsl(var(--muted))" radius={[4, 4, 0, 0]} />
+          <Bar dataKey="preOpps" fill="hsl(var(--chart-2))" radius={[4, 4, 0, 0]} />
           <Bar dataKey="postOpps" fill="hsl(var(--chart-3))" radius={[4, 4, 0, 0]} />
           <Bar dataKey="preWins" fill="hsl(var(--primary))" radius={[4, 4, 0, 0]} />
           <Bar dataKey="postWins" fill="hsl(var(--accent))" radius={[4, 4, 0, 0]} />

@@ -50,7 +50,7 @@ export const IndustryVolumeChart = () => {
               return labels[value] || value;
             }}
           />
-          <Bar dataKey="preOpps" fill="hsl(var(--muted))" radius={[0, 4, 4, 0]} />
+          <Bar dataKey="preOpps" fill="hsl(var(--primary))" radius={[0, 4, 4, 0]} />
           <Bar dataKey="postOpps" fill="hsl(var(--chart-3))" radius={[0, 4, 4, 0]} />
           <Bar dataKey="preWins" fill="hsl(var(--primary))" radius={[0, 4, 4, 0]} />
           <Bar dataKey="postWins" fill="hsl(var(--accent))" radius={[0, 4, 4, 0]} />
