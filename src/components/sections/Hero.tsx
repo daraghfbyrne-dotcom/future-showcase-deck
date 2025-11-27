@@ -45,14 +45,6 @@ export const Hero = () => {
               Explore Strategy
               <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline"
-              onClick={() => document.getElementById("budget")?.scrollIntoView({ behavior: "smooth" })}
-              className="border-2"
-            >
-              View Budget
-            </Button>
           </div>
         </div>
       </div>
