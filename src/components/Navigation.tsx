@@ -23,7 +23,7 @@ export const Navigation = ({ activeSection, setActiveSection }: NavigationProps)
     { id: "hero", label: "Overview" },
     { id: "why", label: "Context" },
     { id: "analysis", label: "Analysis" },
-    { id: "strategy", label: "Strategy" },
+    { id: "strategy", label: "Strategic Pillars" },
     // { id: "channels", label: "Channels" },
     // { id: "budget", label: "Budget" },
   ];
