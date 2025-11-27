@@ -64,10 +64,10 @@ export const WhyStrategy = () => {
             <p className="text-center text-lg font-medium">
               These insights drive our <span className="text-primary font-semibold">strategic focus</span> for 2026
             </p>
-            <p className="text-center text-xs text-muted-foreground mt-2">
-              *source HubSpot
-            </p>
           </div>
+          <p className="text-center text-xs text-muted-foreground mt-2">
+            *source HubSpot
+          </p>
         </div>
       </div>
     </section>
