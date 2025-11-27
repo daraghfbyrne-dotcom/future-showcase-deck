@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Target, Users, TrendingUp, Zap, Rocket } from "lucide-react";
+import { Target, Users, TrendingUp, Zap, Rocket, Sparkles } from "lucide-react";
 
 export const StrategicPillars = () => {
   return (
@@ -166,6 +166,51 @@ export const StrategicPillars = () => {
               </ul>
             </Card>
           </div>
+
+          {/* Brand Investment Pillar */}
+          <Card className="p-8 bg-gradient-to-r from-accent/20 via-primary/10 to-accent/20 border-2 border-accent hover:border-accent/60 transition-all mb-12">
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+              <div className="w-16 h-16 rounded-xl bg-accent/30 flex items-center justify-center shrink-0">
+                <Sparkles className="w-9 h-9 text-accent" />
+              </div>
+              <div className="flex-1">
+                <h3 className="font-display font-bold text-3xl mb-4">Invest in Brand</h3>
+                <p className="text-muted-foreground mb-4 text-base">
+                  Build long-term brand equity and market awareness to reduce acquisition costs and accelerate pipeline velocity:
+                </p>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <ul className="space-y-2 text-sm">
+                    <li className="flex items-start gap-2">
+                      <span className="text-accent mt-1">•</span>
+                      <span>Consistent presence at tier-1 ERP ecosystem events</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-accent mt-1">•</span>
+                      <span>Thought leadership content targeting CFOs and AP leaders</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-accent mt-1">•</span>
+                      <span>ERP-specific research reports and industry benchmarks</span>
+                    </li>
+                  </ul>
+                  <ul className="space-y-2 text-sm">
+                    <li className="flex items-start gap-2">
+                      <span className="text-accent mt-1">•</span>
+                      <span>Strategic partnerships with Oracle, Infor, and JDE</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-accent mt-1">•</span>
+                      <span>Customer success stories amplified through PR and content</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-accent mt-1">•</span>
+                      <span>Build awareness before buying cycle begins</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </Card>
 
           <Card className="p-8 bg-gradient-to-r from-primary/10 to-accent/10 border-2 border-primary/30">
             <h3 className="font-display font-bold text-2xl mb-4 text-center">Why This Strategy Will Succeed</h3>
