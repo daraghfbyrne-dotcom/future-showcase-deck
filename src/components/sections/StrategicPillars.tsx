@@ -21,7 +21,7 @@ export const StrategicPillars = () => {
               <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-6">
                 <Target className="w-7 h-7 text-primary" />
               </div>
-              <h3 className="font-display font-bold text-2xl mb-4">ERP-First Go-to-Market</h3>
+              <h3 className="font-display font-bold text-2xl mb-4">ERP-First GTM</h3>
               <p className="text-muted-foreground mb-4">Buyers think ERP-first, so we align everything to ERP ecosystems:</p>
               <ul className="space-y-2 text-sm">
                 <li className="flex items-start gap-2">
