@@ -99,6 +99,9 @@ export const ERPAnalysis = () => {
           </Tabs>
 
           <Card className="p-8 bg-primary/10 border-primary/30">
+            <p className="text-lg font-medium mb-6 text-foreground">
+              ERP Fit is a clear predictor of success with true winning ERP's / ecosystems emerging
+            </p>
             <h3 className="font-semibold text-xl mb-4">Key Takeaways</h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
