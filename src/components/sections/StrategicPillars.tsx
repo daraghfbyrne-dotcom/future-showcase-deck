@@ -66,37 +66,45 @@ export const StrategicPillars = () => {
               </div>
             </Card>
 
-            {/* Invest in Brand */}
+            {/* SoftCo Brand */}
             <Card className="p-10 bg-gradient-to-br from-accent via-accent/90 to-accent/80 border-4 border-accent shadow-2xl hover:shadow-accent/50 transition-all animate-fade-in">
               <div className="w-20 h-20 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-6 shadow-lg">
                 <Sparkles className="w-11 h-11 text-white" />
               </div>
-              <h3 className="font-display font-bold text-4xl mb-4 text-white">Invest in Brand</h3>
+              <h3 className="font-display font-bold text-4xl mb-4 text-white">SoftCo Brand</h3>
               <p className="text-white/90 mb-6 text-lg font-medium">
-                Build long-term brand equity and market awareness to reduce acquisition costs and accelerate pipeline velocity
+                Codify who we are, amplify what makes us different, and express it with clarity, confidence, and personality.
               </p>
-              <ul className="space-y-3 text-base text-white/95">
-                <li className="flex items-start gap-3">
-                  <span className="text-white text-xl mt-0.5">•</span>
-                  <span>Consistent presence at tier-1 ERP ecosystem events</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-white text-xl mt-0.5">•</span>
-                  <span>Thought leadership content targeting CFOs and AP leaders</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-white text-xl mt-0.5">•</span>
-                  <span>Strategic partnerships with Oracle, Infor, and JDE</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-white text-xl mt-0.5">•</span>
-                  <span>Customer success stories amplified through PR and content</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-white text-xl mt-0.5">•</span>
-                  <span>Build awareness before buying cycle begins</span>
-                </li>
-              </ul>
+              <div className="space-y-4 text-white/95">
+                <h4 className="font-semibold text-lg text-white mb-3">What this means:</h4>
+                
+                <div className="space-y-3 text-base">
+                  <p>
+                    <strong>A brand built around "tailored to perfection."</strong><br />
+                    Everything - from messaging to demos to delivery - reinforces our promise & Play Bigger proposition.
+                  </p>
+                  
+                  <p>
+                    <strong>A tone that is confident, human, and insight-led.</strong><br />
+                    Reflecting the Ruler/Hero archetype mix: authoritative, skilled, but never arrogant. Friendly, direct, lightly witty when appropriate.
+                  </p>
+                  
+                  <p>
+                    <strong>A visual and verbal identity that stands out</strong><br />
+                    so we intentionally differentiate from competitors who all look and sound the same.
+                  </p>
+                </div>
+                
+                <h4 className="font-semibold text-lg text-white mt-6 mb-3">Why it matters in 2026:</h4>
+                
+                <div className="space-y-2 text-base">
+                  <p>Creates trust with CFOs, CIOs, and Finance Ops leaders tasked with risk removal and compliance.</p>
+                  <p>Drives recognition and preference in ERP ecosystems (Oracle, JDE, Infor).</p>
+                  <p>Supports higher conversion, higher win rates, and stronger retention.</p>
+                  <p>Ensures every touchpoint communicates leadership in complex AP automation.</p>
+                  <p>Makes SoftCo the brand buyers feel is made for them—especially in mid-market enterprises with multi-ERP complexity.</p>
+                </div>
+              </div>
             </Card>
           </div>
 
