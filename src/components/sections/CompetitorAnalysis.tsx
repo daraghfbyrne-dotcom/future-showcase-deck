@@ -5,12 +5,11 @@ import { CompetitorChart } from "@/components/charts/CompetitorChart";
 
 export const CompetitorAnalysis = () => {
   const competitors = [
-    { name: "Medius", pre: 7, post: 8, trend: "up", threat: "high" },
-    { name: "Coupa", pre: 4, post: 8, trend: "up", threat: "high" },
-    { name: "Basware", pre: 2, post: 5, trend: "up", threat: "high" },
-    { name: "Tipalti", pre: 3, post: 6, trend: "up", threat: "medium" },
-    { name: "Esker", pre: 3, post: 5, trend: "up", threat: "medium" },
-    { name: "Concur", pre: 9, post: 3, trend: "down", threat: "low" },
+    { name: "Medius", pre: "75.0%", post: "85.7%", change: "+10.7", interpretation: "Getting worse vs your most-frequent competitor", threat: "high" },
+    { name: "Concur", pre: "72.7%", post: "100%", change: "+27.3", interpretation: "Now losing every Concur deal", threat: "high" },
+    { name: "Coupa", pre: "62.5%", post: "85.7%", change: "+23.2", interpretation: "Significant deterioration vs Coupa", threat: "high" },
+    { name: "Esker", pre: "33.3%", post: "100%", change: "+66.7", interpretation: "Massive decline; previously strong, now 0 wins", threat: "high" },
+    { name: "Basware", pre: "20.0%", post: "85.7%", change: "+65.7", interpretation: "Previously dominated Basware, now losing heavily", threat: "high" },
   ];
 
   const getThreatColor = (threat: string) => {
@@ -32,39 +31,38 @@ export const CompetitorAnalysis = () => {
             </p>
           </div>
 
-          <Tabs defaultValue="mentions" className="w-full">
+          <Tabs defaultValue="loss-rate" className="w-full">
             <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-6">
-              <TabsTrigger value="mentions">Mentions</TabsTrigger>
+              <TabsTrigger value="loss-rate">Loss Rate</TabsTrigger>
               <TabsTrigger value="detail">Detail</TabsTrigger>
             </TabsList>
-            <TabsContent value="mentions">
+            <TabsContent value="loss-rate">
               <CompetitorChart />
             </TabsContent>
             <TabsContent value="detail">
-              <div className="grid md:grid-cols-3 gap-6 mb-12">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {competitors.map((competitor, index) => (
               <Card key={index} className="p-6 bg-card border-border hover:border-primary/30 transition-all">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="font-semibold text-lg">{competitor.name}</h3>
-                  {competitor.trend === "up" && (
-                    <TrendingUp className="w-5 h-5 text-destructive" />
-                  )}
+                  <TrendingUp className="w-5 h-5 text-destructive" />
                 </div>
 
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-muted-foreground">Jan '23 - July '24:</span>
+                    <span className="text-sm text-muted-foreground">Jan '23 - June '24:</span>
                     <span className="font-semibold">{competitor.pre}</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-muted-foreground">July '24 - Nov '25:</span>
-                    <span className="font-semibold">{competitor.post}</span>
+                    <span className="font-semibold text-destructive">{competitor.post}</span>
                   </div>
-                  <div className="flex justify-between items-center pt-2 border-t border-border">
-                    <span className="text-sm text-muted-foreground">Threat Level:</span>
-                    <span className={`font-semibold uppercase text-xs ${getThreatColor(competitor.threat)}`}>
-                      {competitor.threat}
-                    </span>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-muted-foreground">Change:</span>
+                    <span className="font-semibold text-destructive">{competitor.change} pts</span>
+                  </div>
+                  <div className="pt-3 border-t border-border">
+                    <p className="text-sm text-muted-foreground italic">{competitor.interpretation}</p>
                   </div>
                 </div>
               </Card>
@@ -81,15 +79,19 @@ export const CompetitorAnalysis = () => {
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 rounded-full bg-destructive mt-2 flex-shrink-0" />
-                    <span className="text-muted-foreground"><strong>Medius and Coupa</strong> increased competitive presence significantly post-2024</span>
+                    <span className="text-muted-foreground"><strong>Catastrophic decline across all competitors:</strong> Loss rates have deteriorated significantly post-July 2024, with most competitors showing 60-85% loss rates</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 rounded-full bg-destructive mt-2 flex-shrink-0" />
-                    <span className="text-muted-foreground"><strong>Basware</strong> doubled mentions — correlates with SAP & enterprise losses</span>
+                    <span className="text-muted-foreground"><strong>Total collapse against Esker and Concur:</strong> Now losing 100% of deals against these competitors, representing a complete reversal from previous strong performance</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 rounded-full bg-success mt-2 flex-shrink-0" />
-                    <span className="text-muted-foreground"><strong>Concur</strong> decreased in relevance during the post period</span>
+                    <div className="w-2 h-2 rounded-full bg-destructive mt-2 flex-shrink-0" />
+                    <span className="text-muted-foreground"><strong>Basware dominance reversed:</strong> Previously won 80% of Basware deals, now losing 85.7% — a massive 65.7 point deterioration indicating fundamental competitive shift</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-destructive mt-2 flex-shrink-0" />
+                    <span className="text-muted-foreground"><strong>Even strong positions eroding:</strong> Medius (most frequent competitor) and Coupa both showing 20%+ deterioration, suggesting systematic competitive weakness</span>
                   </li>
                 </ul>
               </div>
