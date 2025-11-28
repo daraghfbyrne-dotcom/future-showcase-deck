@@ -83,11 +83,11 @@ export const CompetitorAnalysis = () => {
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 rounded-full bg-destructive mt-2 flex-shrink-0" />
-                    <span className="text-muted-foreground"><strong>Strongest competitive positions eroded most:</strong> Against Basware (previously 80% win rate, now 14%) and Esker (previously 67% win rate, now 0%), our historically dominant positions have reversed completely, suggesting competitors have identified and neutralized our previous advantages</span>
+                    <span className="text-muted-foreground"><strong>Basware dominance reversed:</strong> Previously won 80% of Basware deals, now losing 85.7% — a massive 65.7 point deterioration indicating fundamental competitive shift</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 rounded-full bg-destructive mt-2 flex-shrink-0" />
-                    <span className="text-muted-foreground"><strong>Differentiation gap widening:</strong> Even against frequent competitors like Medius (+10.7 points) and Coupa (+23.2 points), our competitive position is weakening, indicating our value proposition is not resonating effectively in head-to-head evaluations</span>
+                    <span className="text-muted-foreground"><strong>Differentiation gap widening:</strong> Even against frequent competitors like Medius (+10.7 points) and Coupa (+23.2 points), our competitive position is weakening. Product weakness and value proposition gaps are impacting our ability to win in head-to-head evaluations</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 rounded-full bg-destructive mt-2 flex-shrink-0" />
