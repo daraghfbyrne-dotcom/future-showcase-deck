@@ -75,23 +75,23 @@ export const CompetitorAnalysis = () => {
             <div className="flex items-start gap-4">
               <AlertCircle className="w-6 h-6 text-destructive flex-shrink-0 mt-1" />
               <div>
-                <h3 className="font-semibold text-xl mb-4">Competitive Threats</h3>
+                <h3 className="font-semibold text-xl mb-4">What the Data Tells Us</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 rounded-full bg-destructive mt-2 flex-shrink-0" />
-                    <span className="text-muted-foreground"><strong>Catastrophic decline across all competitors:</strong> Loss rates have deteriorated significantly post-July 2024, with most competitors showing 60-85% loss rates</span>
+                    <span className="text-muted-foreground"><strong>Systematic competitive pressure increasing:</strong> Win rates have declined across all major competitors post-July 2024, with loss rates now ranging from 85-100%, indicating a fundamental shift in competitive dynamics requiring strategic response</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 rounded-full bg-destructive mt-2 flex-shrink-0" />
-                    <span className="text-muted-foreground"><strong>Total collapse against Esker and Concur:</strong> Now losing 100% of deals against these competitors, representing a complete reversal from previous strong performance</span>
+                    <span className="text-muted-foreground"><strong>Strongest competitive positions eroded most:</strong> Against Basware (previously 80% win rate, now 14%) and Esker (previously 67% win rate, now 0%), our historically dominant positions have reversed completely, suggesting competitors have identified and neutralized our previous advantages</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 rounded-full bg-destructive mt-2 flex-shrink-0" />
-                    <span className="text-muted-foreground"><strong>Basware dominance reversed:</strong> Previously won 80% of Basware deals, now losing 85.7% — a massive 65.7 point deterioration indicating fundamental competitive shift</span>
+                    <span className="text-muted-foreground"><strong>Differentiation gap widening:</strong> Even against frequent competitors like Medius (+10.7 points) and Coupa (+23.2 points), our competitive position is weakening, indicating our value proposition is not resonating effectively in head-to-head evaluations</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 rounded-full bg-destructive mt-2 flex-shrink-0" />
-                    <span className="text-muted-foreground"><strong>Even strong positions eroding:</strong> Medius (most frequent competitor) and Coupa both showing 20%+ deterioration, suggesting systematic competitive weakness</span>
+                    <span className="text-muted-foreground"><strong>Strategic imperative for category redefinition:</strong> The consistent decline across all competitors suggests the current competitive battleground favors competitors. We must reframe the category around our strengths (multi-ERP complexity, mid-market specialization) rather than compete on their terms</span>
                   </li>
                 </ul>
               </div>
