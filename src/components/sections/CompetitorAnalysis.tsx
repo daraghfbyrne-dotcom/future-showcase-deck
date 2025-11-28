@@ -103,6 +103,39 @@ export const CompetitorAnalysis = () => {
               <strong>Data Note:</strong> The competitive data presented here is limited in scope. However, this analysis reflects what we know is happening in the market, particularly against Medius and Basware. A key action for 2026 is ensuring adherence to comprehensive data capture and maintaining all competitive intelligence in HubSpot.
             </p>
           </div>
+
+          <Card className="mt-8 p-8 bg-primary/5 border-primary/30">
+            <div className="flex items-start gap-4">
+              <TrendingUp className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="font-semibold text-xl mb-4">Enabling Our Competitive Response</h3>
+                <p className="text-muted-foreground mb-4">
+                  What we are going to do differently this year is to focus on our target market segment and ICP, reinforced with critical product roadmap items that will strengthen our competitive position:
+                </p>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="p-4 bg-background/50 border border-border rounded-lg">
+                    <h4 className="font-semibold mb-2">Analytics</h4>
+                    <p className="text-sm text-muted-foreground">Enhanced visibility and insights to demonstrate value and ROI</p>
+                  </div>
+                  <div className="p-4 bg-background/50 border border-border rounded-lg">
+                    <h4 className="font-semibold mb-2">Chatbot</h4>
+                    <p className="text-sm text-muted-foreground">AI-powered support improving user experience and efficiency</p>
+                  </div>
+                  <div className="p-4 bg-background/50 border border-border rounded-lg">
+                    <h4 className="font-semibold mb-2">iPaaS</h4>
+                    <p className="text-sm text-muted-foreground">Seamless integration capabilities for complex multi-ERP environments</p>
+                  </div>
+                  <div className="p-4 bg-background/50 border border-border rounded-lg">
+                    <h4 className="font-semibold mb-2">SLM</h4>
+                    <p className="text-sm text-muted-foreground">Supplier lifecycle management extending our platform value</p>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground mt-4 italic">
+                  These roadmap items directly address product weaknesses identified in competitive losses and will enable our strategy execution in the mid-market, multi-ERP segment.
+                </p>
+              </div>
+            </div>
+          </Card>
         </div>
       </div>
     </section>
