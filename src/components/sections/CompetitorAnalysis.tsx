@@ -104,36 +104,60 @@ export const CompetitorAnalysis = () => {
             </p>
           </div>
 
-          <Card className="mt-8 p-8 bg-primary/5 border-primary/30">
-            <div className="flex items-start gap-4">
-              <TrendingUp className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-              <div>
-                <h3 className="font-semibold text-xl mb-4">Enabling Our Competitive Response</h3>
-                <p className="text-muted-foreground mb-4">
-                  What we are going to do differently this year is to focus on our target market segment and ICP, reinforced with critical product roadmap items that will strengthen our competitive position:
-                </p>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="p-4 bg-background/50 border border-border rounded-lg">
-                    <h4 className="font-semibold mb-2">Analytics</h4>
-                    <p className="text-sm text-muted-foreground">Enhanced visibility and insights to demonstrate value and ROI</p>
+          <Card className="mt-12 p-10 bg-gradient-to-br from-primary/10 to-secondary/10 border-2 border-primary/40 shadow-lg">
+            <div className="text-center mb-8">
+              <h3 className="font-display font-bold text-3xl md:text-4xl mb-4">
+                Immediate Product Improvements
+              </h3>
+              <p className="text-xl text-muted-foreground font-semibold">
+                Enabling Our Competitive Response
+              </p>
+            </div>
+            <p className="text-lg text-muted-foreground mb-8 max-w-4xl mx-auto text-center">
+              What we are going to do differently this year is to focus on our target market segment and ICP, reinforced with critical product roadmap items that will strengthen our competitive position:
+            </p>
+            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              <div className="p-6 bg-background/80 border-2 border-primary/30 rounded-lg hover:border-primary/50 transition-all shadow-md">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                    <TrendingUp className="w-6 h-6 text-primary" />
                   </div>
-                  <div className="p-4 bg-background/50 border border-border rounded-lg">
-                    <h4 className="font-semibold mb-2">Chatbot</h4>
-                    <p className="text-sm text-muted-foreground">AI-powered support improving user experience and efficiency</p>
-                  </div>
-                  <div className="p-4 bg-background/50 border border-border rounded-lg">
-                    <h4 className="font-semibold mb-2">iPaaS</h4>
-                    <p className="text-sm text-muted-foreground">Seamless integration capabilities for complex multi-ERP environments</p>
-                  </div>
-                  <div className="p-4 bg-background/50 border border-border rounded-lg">
-                    <h4 className="font-semibold mb-2">SLM</h4>
-                    <p className="text-sm text-muted-foreground">Supplier lifecycle management extending our platform value</p>
-                  </div>
+                  <h4 className="font-semibold text-xl">Analytics</h4>
                 </div>
-                <p className="text-sm text-muted-foreground mt-4 italic">
-                  These roadmap items directly address product weaknesses identified in competitive losses and will enable our strategy execution in the mid-market, multi-ERP segment.
-                </p>
+                <p className="text-muted-foreground">Enhanced visibility and insights to demonstrate value and ROI</p>
               </div>
+              <div className="p-6 bg-background/80 border-2 border-primary/30 rounded-lg hover:border-primary/50 transition-all shadow-md">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                    <TrendingUp className="w-6 h-6 text-primary" />
+                  </div>
+                  <h4 className="font-semibold text-xl">Chatbot</h4>
+                </div>
+                <p className="text-muted-foreground">AI-powered support improving user experience and efficiency</p>
+              </div>
+              <div className="p-6 bg-background/80 border-2 border-primary/30 rounded-lg hover:border-primary/50 transition-all shadow-md">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                    <TrendingUp className="w-6 h-6 text-primary" />
+                  </div>
+                  <h4 className="font-semibold text-xl">iPaaS</h4>
+                </div>
+                <p className="text-muted-foreground">Seamless integration capabilities for complex multi-ERP environments</p>
+              </div>
+              <div className="p-6 bg-background/80 border-2 border-primary/30 rounded-lg hover:border-primary/50 transition-all shadow-md">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                    <TrendingUp className="w-6 h-6 text-primary" />
+                  </div>
+                  <h4 className="font-semibold text-xl">SLM</h4>
+                </div>
+                <p className="text-muted-foreground">Supplier lifecycle management extending our platform value</p>
+              </div>
+            </div>
+            <div className="mt-8 p-6 bg-primary/10 border border-primary/30 rounded-lg max-w-4xl mx-auto">
+              <p className="text-muted-foreground text-center italic font-medium">
+                These roadmap items directly address product weaknesses identified in competitive losses and will enable our strategy execution in the mid-market, multi-ERP segment.
+              </p>
             </div>
           </Card>
         </div>
