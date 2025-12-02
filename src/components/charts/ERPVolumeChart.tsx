@@ -35,26 +35,31 @@ export const ERPVolumeChart = () => {
               color: 'hsl(var(--foreground))'
             }}
             formatter={(value, name) => {
-              const label = name.toString().includes('Opps') ? 'Opportunities' : 'Wins';
-              return [value, label];
+              const labels: Record<string, string> = {
+                'preOpps': "Jan '23 - July '24 Opps",
+                'postOpps': "July '24 - Nov '25 Opps",
+                'preWins': "Jan '23 - July '24 Wins",
+                'postWins': "July '24 - Nov '25 Wins"
+              };
+              return [value, labels[name as string] || name];
             }}
           />
           <Legend 
             wrapperStyle={{ color: 'hsl(var(--foreground))' }}
             formatter={(value) => {
               const labels: Record<string, string> = {
-                'preOpps': "Jan '23 - July '24 Opportunities",
-                'postOpps': "July '24 - Nov '25 Opportunities",
+                'preOpps': "Jan '23 - July '24 Opps",
+                'postOpps': "July '24 - Nov '25 Opps",
                 'preWins': "Jan '23 - July '24 Wins",
                 'postWins': "July '24 - Nov '25 Wins"
               };
               return labels[value] || value;
             }}
           />
-          <Bar dataKey="preOpps" fill="hsl(var(--chart-1))" radius={[4, 4, 0, 0]} />
-          <Bar dataKey="postOpps" fill="hsl(var(--chart-2))" radius={[4, 4, 0, 0]} />
-          <Bar dataKey="preWins" fill="hsl(var(--chart-4))" radius={[4, 4, 0, 0]} />
-          <Bar dataKey="postWins" fill="hsl(var(--chart-5))" radius={[4, 4, 0, 0]} />
+          <Bar dataKey="preOpps" stackId="opportunities" fill="hsl(var(--chart-1))" />
+          <Bar dataKey="postOpps" stackId="opportunities" fill="hsl(var(--chart-2))" radius={[4, 4, 0, 0]} />
+          <Bar dataKey="preWins" stackId="wins" fill="hsl(var(--chart-4))" />
+          <Bar dataKey="postWins" stackId="wins" fill="hsl(var(--chart-5))" radius={[4, 4, 0, 0]} />
         </BarChart>
       </ResponsiveContainer>
     </Card>
