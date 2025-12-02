@@ -51,10 +51,10 @@ export const ERPVolumeChart = () => {
               return labels[value] || value;
             }}
           />
-          <Bar dataKey="preOpps" fill="hsl(var(--chart-2))" radius={[4, 4, 0, 0]} />
-          <Bar dataKey="postOpps" fill="hsl(var(--chart-3))" radius={[4, 4, 0, 0]} />
-          <Bar dataKey="preWins" fill="hsl(var(--primary))" radius={[4, 4, 0, 0]} />
-          <Bar dataKey="postWins" fill="hsl(var(--accent))" radius={[4, 4, 0, 0]} />
+          <Bar dataKey="preOpps" fill="hsl(var(--chart-1))" radius={[4, 4, 0, 0]} />
+          <Bar dataKey="postOpps" fill="hsl(var(--chart-2))" radius={[4, 4, 0, 0]} />
+          <Bar dataKey="preWins" fill="hsl(var(--chart-4))" radius={[4, 4, 0, 0]} />
+          <Bar dataKey="postWins" fill="hsl(var(--chart-5))" radius={[4, 4, 0, 0]} />
         </BarChart>
       </ResponsiveContainer>
     </Card>
