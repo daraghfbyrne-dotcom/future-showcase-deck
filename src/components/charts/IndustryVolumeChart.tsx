@@ -2,64 +2,97 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsive
 import { Card } from "@/components/ui/card";
 
 export const IndustryVolumeChart = () => {
-  const data = [
-    { name: 'Manufacturing', preOpps: 39, postOpps: 28, preWins: 8, postWins: 4 },
-    { name: 'Transport & Logistics', preOpps: 4, postOpps: 4, preWins: 3, postWins: 0 },
-    { name: 'Media & Telecom', preOpps: 4, postOpps: 2, preWins: 1, postWins: 2 },
-    { name: 'Health Services', preOpps: 7, postOpps: 7, preWins: 2, postWins: 2 },
-    { name: 'Natural Resources', preOpps: 7, postOpps: 11, preWins: 3, postWins: 2 },
-    { name: 'Financial Services', preOpps: 9, postOpps: 5, preWins: 0, postWins: 0 },
+  const oppsData = [
+    { name: 'Manufacturing', pre: 39, post: 28 },
+    { name: 'Transport & Logistics', pre: 4, post: 4 },
+    { name: 'Media & Telecom', pre: 4, post: 2 },
+    { name: 'Health Services', pre: 7, post: 7 },
+    { name: 'Natural Resources', pre: 7, post: 11 },
+    { name: 'Financial Services', pre: 9, post: 5 },
   ];
+
+  const winsData = [
+    { name: 'Manufacturing', pre: 8, post: 4 },
+    { name: 'Transport & Logistics', pre: 3, post: 0 },
+    { name: 'Media & Telecom', pre: 1, post: 2 },
+    { name: 'Health Services', pre: 2, post: 2 },
+    { name: 'Natural Resources', pre: 3, post: 2 },
+    { name: 'Financial Services', pre: 0, post: 0 },
+  ];
+
+  const tooltipStyle = {
+    backgroundColor: 'hsl(var(--card))',
+    border: '1px solid hsl(var(--border))',
+    borderRadius: '0.5rem',
+    color: 'hsl(var(--foreground))'
+  };
 
   return (
     <Card className="p-6 bg-card border-border">
       <h3 className="font-semibold text-lg mb-6">Volume by Industry</h3>
-      <ResponsiveContainer width="100%" height={400}>
-        <BarChart data={data} layout="vertical">
-          <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
-          <XAxis 
-            type="number"
-            stroke="hsl(var(--muted-foreground))"
-            tick={{ fill: 'hsl(var(--muted-foreground))' }}
-            label={{ value: 'Count', position: 'insideBottom', offset: -5, fill: 'hsl(var(--muted-foreground))' }}
-          />
-          <YAxis 
-            dataKey="name" 
-            type="category"
-            stroke="hsl(var(--muted-foreground))"
-            tick={{ fill: 'hsl(var(--muted-foreground))' }}
-            width={150}
-          />
-          <Tooltip 
-            contentStyle={{ 
-              backgroundColor: 'hsl(var(--card))', 
-              border: '1px solid hsl(var(--border))',
-              borderRadius: '0.5rem',
-              color: 'hsl(var(--foreground))'
-            }}
-            formatter={(value, name) => {
-              const label = name.toString().includes('Opps') ? 'Opportunities' : 'Wins';
-              return [value, label];
-            }}
-          />
-          <Legend 
-            wrapperStyle={{ color: 'hsl(var(--foreground))' }}
-            formatter={(value) => {
-              const labels: Record<string, string> = {
-                'preOpps': "Jan '23 - July '24 Opportunities",
-                'postOpps': "July '24 - Nov '25 Opportunities",
-                'preWins': "Jan '23 - July '24 Wins",
-                'postWins': "July '24 - Nov '25 Wins"
-              };
-              return labels[value] || value;
-            }}
-          />
-          <Bar dataKey="preOpps" fill="hsl(var(--primary))" radius={[0, 4, 4, 0]} />
-          <Bar dataKey="postOpps" fill="hsl(var(--chart-3))" radius={[0, 4, 4, 0]} />
-          <Bar dataKey="preWins" fill="hsl(var(--primary))" radius={[0, 4, 4, 0]} />
-          <Bar dataKey="postWins" fill="hsl(var(--accent))" radius={[0, 4, 4, 0]} />
-        </BarChart>
-      </ResponsiveContainer>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Opportunities Chart */}
+        <div>
+          <h4 className="text-sm font-medium text-muted-foreground mb-4 text-center">Opportunities</h4>
+          <ResponsiveContainer width="100%" height={320}>
+            <BarChart data={oppsData}>
+              <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+              <XAxis 
+                dataKey="name" 
+                stroke="hsl(var(--muted-foreground))"
+                tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 11 }}
+                angle={-45}
+                textAnchor="end"
+                height={80}
+              />
+              <YAxis 
+                stroke="hsl(var(--muted-foreground))"
+                tick={{ fill: 'hsl(var(--muted-foreground))' }}
+              />
+              <Tooltip 
+                contentStyle={tooltipStyle}
+                formatter={(value, name) => [value, name === 'pre' ? "Jan '23 - July '24" : "July '24 - Nov '25"]}
+              />
+              <Legend 
+                formatter={(value) => value === 'pre' ? "Jan '23 - July '24" : "July '24 - Nov '25"}
+              />
+              <Bar dataKey="pre" fill="hsl(var(--chart-1))" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="post" fill="hsl(var(--chart-2))" radius={[4, 4, 0, 0]} />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+
+        {/* Wins Chart */}
+        <div>
+          <h4 className="text-sm font-medium text-muted-foreground mb-4 text-center">Wins</h4>
+          <ResponsiveContainer width="100%" height={320}>
+            <BarChart data={winsData}>
+              <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+              <XAxis 
+                dataKey="name" 
+                stroke="hsl(var(--muted-foreground))"
+                tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 11 }}
+                angle={-45}
+                textAnchor="end"
+                height={80}
+              />
+              <YAxis 
+                stroke="hsl(var(--muted-foreground))"
+                tick={{ fill: 'hsl(var(--muted-foreground))' }}
+              />
+              <Tooltip 
+                contentStyle={tooltipStyle}
+                formatter={(value, name) => [value, name === 'pre' ? "Jan '23 - July '24" : "July '24 - Nov '25"]}
+              />
+              <Legend 
+                formatter={(value) => value === 'pre' ? "Jan '23 - July '24" : "July '24 - Nov '25"}
+              />
+              <Bar dataKey="pre" fill="hsl(var(--chart-4))" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="post" fill="hsl(var(--chart-5))" radius={[4, 4, 0, 0]} />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </div>
     </Card>
   );
 };
