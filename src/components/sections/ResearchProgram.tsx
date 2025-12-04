@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { BookOpen, BarChart3, Award, Lightbulb, Quote, Target, TrendingUp, Zap, Users, MapPin, Calendar, CheckCircle, HelpCircle, Sparkles } from "lucide-react";
+import { BookOpen, BarChart3, Award, Lightbulb, Quote, Target, TrendingUp, Zap, Users, MapPin, Calendar, CheckCircle, Sparkles, Euro, Database, Mail, Phone, ClipboardCheck, ArrowRight } from "lucide-react";
 
 export const ResearchProgram = () => {
   return (
@@ -175,108 +175,264 @@ export const ResearchProgram = () => {
               </p>
             </div>
 
-            {/* Research Content Integration Banner */}
-            <Card className="p-5 mb-8 bg-gradient-to-r from-accent/15 to-primary/15 border-2 border-accent/30">
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
-                  <Sparkles className="w-5 h-5 text-accent" />
+            {/* Total Pipeline Value */}
+            <Card className="p-6 mb-8 bg-gradient-to-r from-success/15 via-primary/10 to-accent/15 border-2 border-success/40">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-success/20 flex items-center justify-center">
+                    <Euro className="w-6 h-6 text-success" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">Total Pipeline Value from Events</p>
+                    <p className="text-3xl md:text-4xl font-bold text-success">€2,970,000</p>
+                  </div>
                 </div>
-                <p className="text-foreground">
-                  <span className="font-semibold text-accent">Powered by Flagship Research:</span> Every event presentation, dinner discussion, and conference appearance will be anchored in our original research—reinforcing SoftCo's position as the defining voice in complex AP automation.
+                <div className="flex items-center gap-4">
+                  <Sparkles className="w-5 h-5 text-accent" />
+                  <p className="text-sm text-foreground max-w-md">
+                    <span className="font-semibold text-accent">Powered by Flagship Research:</span> Every presentation and dinner discussion anchored in our original research
+                  </p>
+                </div>
+              </div>
+            </Card>
+
+            {/* Key Improvements Banner */}
+            <div className="grid md:grid-cols-3 gap-4 mb-8">
+              <div className="p-4 rounded-lg bg-primary/10 border border-primary/20 text-center">
+                <p className="font-semibold text-primary mb-1">New Process</p>
+                <p className="text-sm text-muted-foreground">Executive Dinners & prospect management</p>
+              </div>
+              <div className="p-4 rounded-lg bg-accent/10 border border-accent/20 text-center">
+                <p className="font-semibold text-accent mb-1">Tightened Follow-up</p>
+                <p className="text-sm text-muted-foreground">Process & expectations for 2026</p>
+              </div>
+              <div className="p-4 rounded-lg bg-success/10 border border-success/20 text-center">
+                <p className="font-semibold text-success mb-1">3 Dinners / Quarter</p>
+                <p className="text-sm text-muted-foreground">North America + Europe ×2</p>
+              </div>
+            </div>
+
+            {/* Executive Dinners Section */}
+            <Card className="p-6 mb-8 bg-card border-2 border-success/30">
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-success/20 to-success/10 flex items-center justify-center">
+                    <Users className="w-6 h-6 text-success" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-xl">SoftCo Private Dinners</h4>
+                    <p className="text-sm text-muted-foreground">12 Executive Dinners • €110,000 pipeline each • 1 SQL per event</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-success/20 border border-success/40">
+                  <CheckCircle className="w-4 h-4 text-success" />
+                  <span className="text-sm font-semibold text-success">COMMITTED</span>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                {['Q1', 'Q2', 'Q3', 'Q4'].map((quarter, idx) => (
+                  <div key={quarter} className="p-4 rounded-lg bg-success/5 border border-success/20">
+                    <p className="font-bold text-success mb-2">{quarter} 2026</p>
+                    <div className="space-y-1 text-sm">
+                      <p className="flex items-center gap-2"><MapPin className="w-3 h-3" /> Dublin</p>
+                      <p className="flex items-center gap-2"><MapPin className="w-3 h-3" /> London</p>
+                      <p className="flex items-center gap-2"><MapPin className="w-3 h-3" /> New York</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="p-4 rounded-lg bg-success/10 border border-success/20">
+                <p className="text-sm text-foreground">
+                  <span className="font-semibold text-success">Total from Dinners:</span> €1,320,000 pipeline • 12 SQLs
                 </p>
               </div>
             </Card>
 
-            <div className="grid lg:grid-cols-2 gap-6">
-              {/* Committed: Executive Dinners */}
-              <Card className="p-6 bg-card border-2 border-success/30 hover:border-success/50 transition-all">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-success/20 to-success/10 flex items-center justify-center">
-                      <Users className="w-6 h-6 text-success" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-xl">Executive Dinners</h4>
-                      <p className="text-sm text-muted-foreground">C-Suite Relationship Building</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-success/20 border border-success/40">
-                    <CheckCircle className="w-4 h-4 text-success" />
-                    <span className="text-sm font-semibold text-success">COMMITTED</span>
-                  </div>
+            {/* Conferences & Events */}
+            <Card className="p-6 mb-8 bg-card border-2 border-primary/30">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center">
+                  <Calendar className="w-6 h-6 text-primary" />
                 </div>
-                
-                <p className="text-muted-foreground mb-4">
-                  Intimate, high-value events positioning SoftCo as a trusted advisor to CFOs and finance leaders in our target markets.
+                <div>
+                  <h4 className="font-bold text-xl">Industry Conferences</h4>
+                  <p className="text-sm text-muted-foreground">Strategic events aligned to ICP and target markets</p>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                <div className="p-4 rounded-lg bg-primary/5 border border-primary/20">
+                  <p className="font-semibold text-primary mb-1">SSOW USA</p>
+                  <p className="text-sm text-muted-foreground">March • Orlando</p>
+                  <p className="text-sm font-medium mt-2">3 SLs • €330,000</p>
+                </div>
+                <div className="p-4 rounded-lg bg-primary/5 border border-primary/20">
+                  <p className="font-semibold text-primary mb-1">SSOW Europe</p>
+                  <p className="text-sm text-muted-foreground">May • Lisbon</p>
+                  <p className="text-sm font-medium mt-2">3 SLs • €330,000</p>
+                </div>
+                <div className="p-4 rounded-lg bg-primary/5 border border-primary/20">
+                  <p className="font-semibold text-primary mb-1">Gartner Finance Xpo™</p>
+                  <p className="text-sm text-muted-foreground">May • Maryland</p>
+                  <p className="text-sm font-medium mt-2">3 SLs • €330,000</p>
+                </div>
+                <div className="p-4 rounded-lg bg-primary/5 border border-primary/20">
+                  <p className="font-semibold text-primary mb-1">Gartner Finance Xpo™</p>
+                  <p className="text-sm text-muted-foreground">June • London</p>
+                  <p className="text-sm font-medium mt-2">3 SLs • €330,000</p>
+                </div>
+                <div className="p-4 rounded-lg bg-primary/5 border border-primary/20">
+                  <p className="font-semibold text-primary mb-1">SSOW Europe</p>
+                  <p className="text-sm text-muted-foreground">September • Amsterdam</p>
+                  <p className="text-sm font-medium mt-2">2 SLs • €220,000</p>
+                </div>
+                <div className="p-4 rounded-lg bg-primary/5 border border-primary/20">
+                  <p className="font-semibold text-primary mb-1">Deloitte SSC</p>
+                  <p className="text-sm text-muted-foreground">September • TBC</p>
+                  <p className="text-sm font-medium mt-2">3 SLs • €330,000</p>
+                </div>
+              </div>
+
+              <div className="p-4 rounded-lg bg-primary/10 border border-primary/20">
+                <p className="text-sm text-foreground">
+                  <span className="font-semibold text-primary">Total from Conferences:</span> €1,650,000 pipeline • 17 SLs
                 </p>
+              </div>
+            </Card>
 
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="text-4xl font-bold text-success">12</span>
-                  <span className="text-lg text-muted-foreground">dinners across 2026</span>
+            {/* ERP-Specific Events */}
+            <Card className="p-6 mb-8 bg-card border-2 border-accent/30">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center">
+                  <Database className="w-6 h-6 text-accent" />
                 </div>
-
-                <div className="border-t border-border pt-4">
-                  <div className="flex items-center gap-2 mb-3">
-                    <MapPin className="w-4 h-4 text-muted-foreground" />
-                    <span className="text-sm font-medium text-muted-foreground">Regional Coverage</span>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {['UK', 'Ireland', 'EU', 'USA', 'Canada'].map((region) => (
-                      <span key={region} className="px-3 py-1.5 rounded-full bg-success/10 text-success text-sm font-medium border border-success/20">
-                        {region}
-                      </span>
-                    ))}
-                  </div>
+                <div>
+                  <h4 className="font-bold text-xl">ERP-Specific Events</h4>
+                  <p className="text-sm text-muted-foreground">Aligned to Oracle, Infor & JD Edwards ecosystems</p>
                 </div>
-              </Card>
+              </div>
 
-              {/* Under Exploration: Industry Conferences */}
-              <Card className="p-6 bg-card border-2 border-warning/30 hover:border-warning/50 transition-all">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-warning/20 to-warning/10 flex items-center justify-center">
-                      <Calendar className="w-6 h-6 text-warning" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-xl">Industry Conferences</h4>
-                      <p className="text-sm text-muted-foreground">Strategic Event Opportunities</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-warning/20 border border-warning/40">
-                    <HelpCircle className="w-4 h-4 text-warning" />
-                    <span className="text-sm font-semibold text-warning">EXPLORING</span>
-                  </div>
-                </div>
-                
-                <p className="text-muted-foreground mb-4">
-                  Evaluating strategic fit with our ERP-first and industry-focused positioning to ensure maximum ROI and audience alignment.
-                </p>
-
-                <div className="space-y-3">
-                  <div className="p-3 rounded-lg bg-muted/50 border border-border">
-                    <div className="flex items-center justify-between">
-                      <span className="font-semibold">SSOW / SSON Events</span>
-                      <span className="text-xs px-2 py-1 rounded bg-warning/20 text-warning">Under Review</span>
-                    </div>
-                    <p className="text-sm text-muted-foreground mt-1">Shared Services & Outsourcing conferences</p>
-                  </div>
-                  
-                  <div className="p-3 rounded-lg bg-muted/50 border border-border">
-                    <div className="flex items-center justify-between">
-                      <span className="font-semibold">Gartner CFO Conferences</span>
-                      <span className="text-xs px-2 py-1 rounded bg-warning/20 text-warning">Under Review</span>
-                    </div>
-                    <p className="text-sm text-muted-foreground mt-1">Premier CFO & finance leadership events</p>
-                  </div>
-                </div>
-
-                <div className="mt-4 p-3 rounded-lg bg-primary/10 border border-primary/20">
-                  <p className="text-sm text-foreground">
-                    <span className="font-semibold text-primary">Selection Criteria:</span> Alignment with target industries (Manufacturing, Distribution, Food & Hospitality) and ERP ecosystems (Oracle, Infor, JD Edwards)
+              <div className="grid md:grid-cols-3 gap-4">
+                <div>
+                  <p className="font-semibold text-accent mb-3 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-accent" />
+                    Oracle
                   </p>
+                  <ul className="space-y-2 text-sm">
+                    <li className="p-2 rounded bg-accent/5 border border-accent/10">O5Live Conference & Expo 2026</li>
+                    <li className="p-2 rounded bg-accent/5 border border-accent/10">UKOUG Conference (UK & Ireland)</li>
+                    <li className="p-2 rounded bg-accent/5 border border-accent/10">Oracle AI World</li>
+                    <li className="p-2 rounded bg-accent/5 border border-accent/10">BLUEPRINT 4D 2026</li>
+                  </ul>
                 </div>
-              </Card>
-            </div>
+                <div>
+                  <p className="font-semibold text-accent mb-3 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-accent" />
+                    Infor
+                  </p>
+                  <ul className="space-y-2 text-sm">
+                    <li className="p-2 rounded bg-accent/5 border border-accent/10">Infor inPOWER 2026</li>
+                    <li className="p-2 rounded bg-accent/5 border border-accent/10">SUN Conference 2026</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold text-accent mb-3 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-accent" />
+                    JD Edwards
+                  </p>
+                  <ul className="space-y-2 text-sm">
+                    <li className="p-2 rounded bg-accent/5 border border-accent/10">JD Edwards INFOCUS 2026</li>
+                    <li className="p-2 rounded bg-accent/5 border border-accent/10">JD Edwards Nordic Conference</li>
+                    <li className="p-2 rounded bg-accent/5 border border-accent/10">TUG CONNECTS 2026</li>
+                  </ul>
+                </div>
+              </div>
+            </Card>
+
+            {/* Executive Dinner Campaign Flow */}
+            <Card className="p-6 bg-gradient-to-r from-primary/10 via-accent/5 to-primary/10 border-2 border-primary/30">
+              <div className="flex items-center gap-3 mb-6">
+                <TrendingUp className="w-8 h-8 text-primary" />
+                <h4 className="font-bold text-xl">Executive Dinner Campaign Flow</h4>
+              </div>
+
+              <div className="grid md:grid-cols-4 gap-4">
+                {/* Stage 1 */}
+                <div className="relative">
+                  <div className="p-4 rounded-lg bg-primary text-primary-foreground h-full">
+                    <p className="font-bold mb-2">Stage 1</p>
+                    <p className="text-sm font-medium mb-3">Database Cleanse & Prospect ID</p>
+                    <div className="space-y-2 text-xs opacity-90">
+                      <p><span className="font-semibold">Goal:</span> Clean, targeted contact list</p>
+                      <p><span className="font-semibold">Owner:</span> SDR Team</p>
+                    </div>
+                    <div className="mt-3 pt-3 border-t border-primary-foreground/20">
+                      <Database className="w-4 h-4 mb-1" />
+                      <p className="text-xs">Audit CRM, identify ICP prospects</p>
+                    </div>
+                  </div>
+                  <div className="hidden md:block absolute -right-2 top-1/2 -translate-y-1/2 z-10">
+                    <ArrowRight className="w-4 h-4 text-success" />
+                  </div>
+                </div>
+
+                {/* Stage 2 */}
+                <div className="relative">
+                  <div className="p-4 rounded-lg bg-primary text-primary-foreground h-full">
+                    <p className="font-bold mb-2">Stage 2</p>
+                    <p className="text-sm font-medium mb-3">Content & Email Creation</p>
+                    <div className="space-y-2 text-xs opacity-90">
+                      <p><span className="font-semibold">Goal:</span> Value-led communication</p>
+                      <p><span className="font-semibold">Owner:</span> SDR Team</p>
+                    </div>
+                    <div className="mt-3 pt-3 border-t border-primary-foreground/20">
+                      <Mail className="w-4 h-4 mb-1" />
+                      <p className="text-xs">Messaging, templates, RSVP forms</p>
+                    </div>
+                  </div>
+                  <div className="hidden md:block absolute -right-2 top-1/2 -translate-y-1/2 z-10">
+                    <ArrowRight className="w-4 h-4 text-success" />
+                  </div>
+                </div>
+
+                {/* Stage 3 */}
+                <div className="relative">
+                  <div className="p-4 rounded-lg bg-primary text-primary-foreground h-full">
+                    <p className="font-bold mb-2">Stage 3</p>
+                    <p className="text-sm font-medium mb-3">Email Sequence & Follow-Up</p>
+                    <div className="space-y-2 text-xs opacity-90">
+                      <p><span className="font-semibold">Goal:</span> Secure qualified responses</p>
+                      <p><span className="font-semibold">Owner:</span> SDR & Marketing</p>
+                    </div>
+                    <div className="mt-3 pt-3 border-t border-primary-foreground/20">
+                      <Phone className="w-4 h-4 mb-1" />
+                      <p className="text-xs">3-4 stage sequence, follow-up calls</p>
+                    </div>
+                  </div>
+                  <div className="hidden md:block absolute -right-2 top-1/2 -translate-y-1/2 z-10">
+                    <ArrowRight className="w-4 h-4 text-success" />
+                  </div>
+                </div>
+
+                {/* Stage 4 */}
+                <div>
+                  <div className="p-4 rounded-lg bg-primary text-primary-foreground h-full">
+                    <p className="font-bold mb-2">Stage 4</p>
+                    <p className="text-sm font-medium mb-3">Confirmation & Attendance</p>
+                    <div className="space-y-2 text-xs opacity-90">
+                      <p><span className="font-semibold">Goal:</span> Maximize attendance</p>
+                      <p><span className="font-semibold">Owner:</span> SDR Team</p>
+                    </div>
+                    <div className="mt-3 pt-3 border-t border-primary-foreground/20">
+                      <ClipboardCheck className="w-4 h-4 mb-1" />
+                      <p className="text-xs">Reminders, re-confirm, waiting list (~20% drop-off)</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Card>
           </div>
         </div>
       </div>
