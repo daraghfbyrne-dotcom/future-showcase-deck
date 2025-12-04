@@ -42,7 +42,7 @@ export const SizeAnalysis = () => {
               </li>
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0" />
-                <span className="text-muted-foreground">€5b+ viable for strategic ABM with 26.3% win rate</span>
+                <span className="text-muted-foreground">€5b+ viable for strategic ABM with 26.3% win rate — <em>however, volume of opportunities and wins is low; proceed with caution</em></span>
               </li>
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full bg-warning mt-2 flex-shrink-0" />
