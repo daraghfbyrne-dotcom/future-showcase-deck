@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, TrendingUp, Target, Users, Calendar, DollarSign, Zap } from "lucide-react";
+import { ChevronRight, TrendingUp, Target, Users, Calendar, DollarSign, Zap, FileText } from "lucide-react";
 import { Hero } from "@/components/sections/Hero";
 import { Navigation } from "@/components/Navigation";
 import { WhyStrategy } from "@/components/sections/WhyStrategy";
 import { ERPAnalysis } from "@/components/sections/ERPAnalysis";
 import { IndustryAnalysis } from "@/components/sections/IndustryAnalysis";
 import { SizeAnalysis } from "@/components/sections/SizeAnalysis";
+import { InvoiceVolumeAnalysis } from "@/components/sections/InvoiceVolumeAnalysis";
 import { CompetitorAnalysis } from "@/components/sections/CompetitorAnalysis";
 import { StrategicPillars } from "@/components/sections/StrategicPillars";
 import { ResearchProgram } from "@/components/sections/ResearchProgram";
@@ -73,6 +74,19 @@ const Index = () => {
                 </a>
                 
                 <a 
+                  href="#invoice-volume" 
+                  className="group block p-6 bg-card border border-border rounded-lg hover:border-primary/50 hover:shadow-lg transition-all hover-scale"
+                >
+                  <div className="text-center">
+                    <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <FileText className="w-6 h-6 text-primary" />
+                    </div>
+                    <h3 className="font-semibold text-lg">Invoice Volume</h3>
+                    <p className="text-sm text-muted-foreground mt-1">Win patterns by volume</p>
+                  </div>
+                </a>
+                
+                <a 
                   href="#competitors" 
                   className="group block p-6 bg-card border border-border rounded-lg hover:border-primary/50 hover:shadow-lg transition-all hover-scale"
                 >
@@ -92,6 +106,7 @@ const Index = () => {
         <ERPAnalysis />
         <IndustryAnalysis />
         <SizeAnalysis />
+        <InvoiceVolumeAnalysis />
         <CompetitorAnalysis />
         <StrategicPillars />
         <ResearchProgram />
