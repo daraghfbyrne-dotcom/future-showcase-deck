@@ -81,7 +81,7 @@ export const PipelineTargets = () => {
 
           {/* Pipeline breakdown */}
           <Card className="p-6 bg-card border-border mb-8">
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-3 gap-6">
               <div>
                 <div className="text-sm text-muted-foreground mb-1">Current Pipeline (end Nov)</div>
                 <div className="text-2xl font-bold">{formatCurrency(8910000)}</div>
@@ -89,6 +89,10 @@ export const PipelineTargets = () => {
               <div>
                 <div className="text-sm text-muted-foreground mb-1">Net Pipeline Required</div>
                 <div className="text-2xl font-bold text-warning">{formatCurrency(18200000)}</div>
+              </div>
+              <div>
+                <div className="text-sm text-muted-foreground mb-1">Average Monthly Pipeline Required</div>
+                <div className="text-2xl font-bold text-primary">€2.3M <span className="text-sm font-normal text-muted-foreground">(2x yoy)</span></div>
               </div>
             </div>
           </Card>
