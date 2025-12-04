@@ -72,7 +72,7 @@ export const StrategicPillars = () => {
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-1">•</span>
-                    <span><strong>Revenue:</strong> €500m–1b core</span>
+                    <span><strong>Revenue:</strong> €250m–1b core</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-1">•</span>
@@ -84,7 +84,7 @@ export const StrategicPillars = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-1">•</span>
-                    <span><strong>Invoice volume:</strong> 3k–30k & 60k–120k</span>
+                    <span><strong>Invoice volume:</strong> 20k–120k</span>
                   </li>
                 </ul>
               </Card>
@@ -128,10 +128,6 @@ export const StrategicPillars = () => {
                   <li className="flex items-start gap-2">
                     <span className="text-success mt-1">•</span>
                     <span>Exit &gt;120k invoice bands unless strategic</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-success mt-1">•</span>
-                    <span>Route deals into velocity (≤30k invoices) or strategic ABM (60k–120k, 5b+)</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-success mt-1">•</span>
