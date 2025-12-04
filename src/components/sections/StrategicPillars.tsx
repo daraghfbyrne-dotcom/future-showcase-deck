@@ -16,7 +16,7 @@ export const StrategicPillars = () => {
           <Card className="p-8 md:p-10 mb-16 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 border-4 border-primary/40 shadow-xl">
             <div className="text-center">
               <p className="text-xl md:text-2xl font-display font-bold text-foreground leading-relaxed">
-                Focus on upper–mid-market and enterprise organisations (€250m–€1bn+ revenue) running Oracle, Infor, or JD Edwards, in industries where scalable AP automation delivers measurable operational impact, using tightly defined ICP targeting, vertical-specific value propositions, and ERP-aligned go-to-market motions.
+                Focus on upper–mid-market and enterprise organisations (€250m–€1bn+ revenue) running Oracle, Infor, or JD Edwards, in industries with complex AP operations through tightly defined ICP targeting, vertical-specific value propositions, and ERP-aligned go-to-market motions.
               </p>
             </div>
           </Card>
