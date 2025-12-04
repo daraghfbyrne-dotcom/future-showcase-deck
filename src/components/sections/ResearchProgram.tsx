@@ -286,35 +286,56 @@ export const ResearchProgram = () => {
               </div>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-                <div className="p-4 rounded-lg bg-primary/5 border border-primary/20">
-                  <p className="font-semibold text-primary mb-1">SSOW USA</p>
+                <div className="p-4 rounded-lg bg-[#0096D6]/5 border border-[#0096D6]/30">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-lg font-bold text-[#0096D6]">ss<span className="text-[#E91388]">o</span>n</span>
+                    <span className="text-xs px-1.5 py-0.5 rounded bg-[#0096D6]/20 text-[#0096D6] font-medium">SSOW</span>
+                  </div>
+                  <p className="font-semibold text-foreground mb-1">USA</p>
                   <p className="text-sm text-muted-foreground">March • Orlando</p>
-                  <p className="text-sm font-medium mt-2">3 SLs • €330,000</p>
+                  <p className="text-sm font-medium mt-2 text-[#0096D6]">3 SLs • €330,000</p>
                 </div>
-                <div className="p-4 rounded-lg bg-primary/5 border border-primary/20">
-                  <p className="font-semibold text-primary mb-1">SSOW Europe</p>
+                <div className="p-4 rounded-lg bg-[#0096D6]/5 border border-[#0096D6]/30">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-lg font-bold text-[#0096D6]">ss<span className="text-[#E91388]">o</span>n</span>
+                    <span className="text-xs px-1.5 py-0.5 rounded bg-[#0096D6]/20 text-[#0096D6] font-medium">SSOW</span>
+                  </div>
+                  <p className="font-semibold text-foreground mb-1">Europe</p>
                   <p className="text-sm text-muted-foreground">May • Lisbon</p>
-                  <p className="text-sm font-medium mt-2">3 SLs • €330,000</p>
+                  <p className="text-sm font-medium mt-2 text-[#0096D6]">3 SLs • €330,000</p>
                 </div>
-                <div className="p-4 rounded-lg bg-primary/5 border border-primary/20">
-                  <p className="font-semibold text-primary mb-1">Gartner Finance Xpo™</p>
+                <div className="p-4 rounded-lg bg-[#002F5F]/5 border border-[#002F5F]/30">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-lg font-bold text-[#002F5F]">Gartner</span>
+                  </div>
+                  <p className="font-semibold text-foreground mb-1">Finance Xpo™</p>
                   <p className="text-sm text-muted-foreground">May • Maryland</p>
-                  <p className="text-sm font-medium mt-2">3 SLs • €330,000</p>
+                  <p className="text-sm font-medium mt-2 text-[#002F5F]">3 SLs • €330,000</p>
                 </div>
-                <div className="p-4 rounded-lg bg-primary/5 border border-primary/20">
-                  <p className="font-semibold text-primary mb-1">Gartner Finance Xpo™</p>
+                <div className="p-4 rounded-lg bg-[#002F5F]/5 border border-[#002F5F]/30">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-lg font-bold text-[#002F5F]">Gartner</span>
+                  </div>
+                  <p className="font-semibold text-foreground mb-1">Finance Xpo™</p>
                   <p className="text-sm text-muted-foreground">June • London</p>
-                  <p className="text-sm font-medium mt-2">3 SLs • €330,000</p>
+                  <p className="text-sm font-medium mt-2 text-[#002F5F]">3 SLs • €330,000</p>
                 </div>
-                <div className="p-4 rounded-lg bg-primary/5 border border-primary/20">
-                  <p className="font-semibold text-primary mb-1">SSOW Europe</p>
+                <div className="p-4 rounded-lg bg-[#0096D6]/5 border border-[#0096D6]/30">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-lg font-bold text-[#0096D6]">ss<span className="text-[#E91388]">o</span>n</span>
+                    <span className="text-xs px-1.5 py-0.5 rounded bg-[#0096D6]/20 text-[#0096D6] font-medium">SSOW</span>
+                  </div>
+                  <p className="font-semibold text-foreground mb-1">Europe</p>
                   <p className="text-sm text-muted-foreground">September • Amsterdam</p>
-                  <p className="text-sm font-medium mt-2">2 SLs • €220,000</p>
+                  <p className="text-sm font-medium mt-2 text-[#0096D6]">2 SLs • €220,000</p>
                 </div>
-                <div className="p-4 rounded-lg bg-primary/5 border border-primary/20">
-                  <p className="font-semibold text-primary mb-1">Deloitte SSC</p>
+                <div className="p-4 rounded-lg bg-[#86BC25]/5 border border-[#86BC25]/30">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-lg font-bold text-[#86BC25]">Deloitte</span>
+                  </div>
+                  <p className="font-semibold text-foreground mb-1">SSC Conference</p>
                   <p className="text-sm text-muted-foreground">September • TBC</p>
-                  <p className="text-sm font-medium mt-2">3 SLs • €330,000</p>
+                  <p className="text-sm font-medium mt-2 text-[#86BC25]">3 SLs • €330,000</p>
                 </div>
               </div>
 
