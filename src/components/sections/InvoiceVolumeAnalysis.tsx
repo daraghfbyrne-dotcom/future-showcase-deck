@@ -5,7 +5,7 @@ import { InvoiceVolumeChart } from "@/components/charts/InvoiceVolumeChart";
 
 export const InvoiceVolumeAnalysis = () => {
   const volumeSegments = [
-    { range: "3k–20k", prePeriod: 17.2, postPeriod: 36.8, change: 19.6, target: true, zone: "core", note: "Stable volume, very strong and improving performance" },
+    { range: "0-20k", prePeriod: 17.2, postPeriod: 36.8, change: 19.6, target: true, zone: "core", note: "Stable volume, very strong and improving performance" },
     { range: "20k–30k", prePeriod: 25.0, postPeriod: 17.6, change: -7.4, target: true, zone: "core", note: "Core segment with solid performance" },
     { range: "30k–45k", prePeriod: 10.0, postPeriod: 6.7, change: -3.3, target: false, zone: "secondary", note: "Performance declining" },
     { range: "45k–60k", prePeriod: 15.4, postPeriod: 5.9, change: -9.5, target: false, zone: "secondary", note: "Significant decline" },
@@ -32,11 +32,11 @@ export const InvoiceVolumeAnalysis = () => {
               <div>
                 <div className="flex items-center gap-2 mb-3">
                   <div className="w-3 h-3 rounded-full bg-success" />
-                  <span className="font-semibold text-success">Core: 3k – 30k invoices P/A</span>
+                  <span className="font-semibold text-success">Core: c.30k invoices P/A</span>
                 </div>
                 <ul className="space-y-2 text-sm text-muted-foreground ml-5">
                   <li>• Stable volume, very strong and improving performance at the low end</li>
-                  <li>• +19.6 pts improvement in 3k-20k segment</li>
+                  <li>• +19.6 pts improvement in 0-20k segment</li>
                 </ul>
               </div>
               <div>
