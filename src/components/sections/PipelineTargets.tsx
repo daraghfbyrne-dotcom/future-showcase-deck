@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Target, TrendingUp, Calendar } from "lucide-react";
+import { Target, TrendingUp, Calendar, DollarSign } from "lucide-react";
 
 export const PipelineTargets = () => {
   return (
@@ -15,7 +15,17 @@ export const PipelineTargets = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="p-6 bg-card border-border hover:border-primary/30 transition-colors">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-full bg-chart-3/10 flex items-center justify-center">
+                  <DollarSign className="w-5 h-5 text-chart-3" />
+                </div>
+                <h3 className="font-semibold text-lg">ARR Target</h3>
+              </div>
+              <p className="text-3xl font-bold text-chart-3">€3.8M</p>
+            </Card>
+
             <Card className="p-6 bg-card border-border hover:border-primary/30 transition-colors">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
