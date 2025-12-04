@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Target, Users, TrendingUp, Zap, Rocket, Sparkles, BarChart3 } from "lucide-react";
+import { ChannelContributionChart } from "@/components/charts/ChannelContributionChart";
 
 export const StrategicPillars = () => {
   return (
@@ -249,47 +250,46 @@ export const StrategicPillars = () => {
           {/* Pipeline Contribution by Channel */}
           <Card className="p-8 mb-16 bg-card border-2 border-primary/30">
             <h3 className="font-display font-bold text-3xl mb-8 text-center">
-              Pipeline Contribution by Channel
+              Pipeline Contribution by Channel <span className="text-muted-foreground">(full year)</span>
             </h3>
+
+            {/* Bar Chart */}
+            <div className="mb-8">
+              <ChannelContributionChart />
+            </div>
             
-            <div className="grid md:grid-cols-2 gap-6 mb-8">
+            <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg p-6 border-l-4 border-primary">
                 <div className="flex items-center justify-between mb-2">
-                  <h4 className="font-semibold text-lg">SDR (12 Months)</h4>
-                  <span className="text-2xl font-bold text-primary">€6.84M</span>
+                  <h4 className="font-semibold text-lg">SDR</h4>
+                  <span className="text-2xl font-bold text-primary">€7.74M</span>
                 </div>
-                <p className="text-sm text-muted-foreground">1 Additional SDR. 6 Opps per month pure outbound = €660k per mth pipeline. Q4 2025 Run Rate €500k pm. Av Deal size €95k</p>
+                <p className="text-sm text-muted-foreground">1 Additional SDR. 6 Opps per month pure outbound = €650k per mth pipeline. Q4 2025 Run Rate €500k pm. Av Deal size €95k.</p>
               </div>
 
               <div className="bg-gradient-to-br from-accent/10 to-accent/5 rounded-lg p-6 border-l-4 border-accent">
                 <div className="flex items-center justify-between mb-2">
                   <h4 className="font-semibold text-lg">AE Generated</h4>
-                  <span className="text-2xl font-bold text-accent">€3.96M</span>
+                  <span className="text-2xl font-bold text-accent">€4.48M</span>
                 </div>
-                <p className="text-sm text-muted-foreground">3 qualified opps per month from 5 sales reps = €330k per month pipeline</p>
+                <p className="text-sm text-muted-foreground">3 qualified opps per month from 5 sales reps = €370k per month pipeline.</p>
               </div>
 
               <div className="bg-gradient-to-br from-success/10 to-success/5 rounded-lg p-6 border-l-4 border-success">
                 <div className="flex items-center justify-between mb-2">
                   <h4 className="font-semibold text-lg">Marketing</h4>
-                  <span className="text-2xl font-bold text-success">€8.49M</span>
+                  <span className="text-2xl font-bold text-success">€9.61M</span>
                 </div>
-                <p className="text-sm text-muted-foreground">Based on 2025 forecast with incremental research, new site, brand refresh</p>
+                <p className="text-sm text-muted-foreground">Mirror channels that have delivered. Invest heaviest where we have had wins. Research Project (limited impact pre July). Brand refresh impact & new optimized site.</p>
               </div>
 
               <div className="bg-gradient-to-br from-chart-4/10 to-chart-4/5 rounded-lg p-6 border-l-4 border-chart-4">
                 <div className="flex items-center justify-between mb-2">
                   <h4 className="font-semibold text-lg">Partnerships</h4>
-                  <span className="text-2xl font-bold text-chart-4">€5.20M</span>
+                  <span className="text-2xl font-bold text-chart-4">€5.34M</span>
                 </div>
-                <p className="text-sm text-muted-foreground">2025 pipeline €1.6m. Targeting 3 new partners by end Q1 2026</p>
+                <p className="text-sm text-muted-foreground">2025 Pipeline €1.6m. TA €3.8M pipe based on 530k ARR to SoftCo. Risk Xelix partnership winding down. Target onboard 3 new ptrs by end Q1 2026.</p>
               </div>
-            </div>
-
-            <div className="p-6 bg-primary/10 border border-primary/30 rounded-lg text-center">
-              <div className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wider">Total Pipeline Target</div>
-              <div className="text-4xl font-bold text-primary">€24.48M</div>
-              <div className="text-sm text-muted-foreground mt-2">€2,040,340/month average</div>
             </div>
           </Card>
 
