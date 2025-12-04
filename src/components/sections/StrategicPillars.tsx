@@ -201,14 +201,18 @@ export const StrategicPillars = () => {
               4. Targeted Outcomes - <span className="text-primary">Pipeline</span>
             </h3>
             
-            <div className="grid md:grid-cols-4 gap-6 mb-10">
+            <div className="grid md:grid-cols-5 gap-6 mb-10">
               <div className="text-center p-4 bg-card rounded-lg border border-chart-3/30">
                 <div className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wider">ARR Target</div>
                 <div className="text-3xl font-bold text-chart-3">€3.8M</div>
               </div>
               <div className="text-center p-4 bg-card rounded-lg border border-primary/30">
                 <div className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wider">Current Pipeline (end Nov)</div>
-                <div className="text-3xl font-bold text-primary">€8.91m</div>
+                <div className="text-3xl font-bold text-primary">€8.91M</div>
+              </div>
+              <div className="text-center p-4 bg-card rounded-lg border border-success/30">
+                <div className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wider">Total Pipeline Required</div>
+                <div className="text-3xl font-bold text-success">€27.1M</div>
               </div>
               <div className="text-center p-4 bg-card rounded-lg border border-accent/30">
                 <div className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wider">Net Pipeline Required</div>
