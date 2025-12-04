@@ -2,7 +2,7 @@ import { Card } from "@/components/ui/card";
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Cell, Tooltip, Legend } from 'recharts';
 
 const data = [
-  { range: "3k–20k", prePeriod: 17.2, postPeriod: 36.8, change: 19.6, target: true },
+  { range: "0-20k", prePeriod: 17.2, postPeriod: 36.8, change: 19.6, target: true },
   { range: "20k–30k", prePeriod: 25.0, postPeriod: 17.6, change: -7.4, target: true },
   { range: "30k–45k", prePeriod: 10.0, postPeriod: 6.7, change: -3.3, target: false },
   { range: "45k–60k", prePeriod: 15.4, postPeriod: 5.9, change: -9.5, target: false },
