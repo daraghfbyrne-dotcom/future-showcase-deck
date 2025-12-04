@@ -29,6 +29,36 @@ export const SizeAnalysis = () => {
             </p>
           </div>
 
+          <Card className="mb-8 p-8 bg-primary/10 border-primary/30">
+            <h3 className="font-semibold text-xl mb-4">Key Findings</h3>
+            <ul className="space-y-3">
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full bg-success mt-2 flex-shrink-0" />
+                <span className="text-muted-foreground">€500m–1b is the core sweet spot with 29.5% win rate and highest volume of wins</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                <span className="text-muted-foreground">€250m–499m strong secondary target segment at 27% win rate</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0" />
+                <span className="text-muted-foreground">€5b+ viable for strategic ABM with 26.3% win rate</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full bg-warning mt-2 flex-shrink-0" />
+                <span className="text-muted-foreground">€1b–5b and €250m–499m collapsed post-2024 — inconsistent fit now</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full bg-destructive mt-2 flex-shrink-0" />
+                <span className="text-muted-foreground">Sub-€50m revenue continues to be very low win yield — avoid</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full bg-chart-1 mt-2 flex-shrink-0" />
+                <span className="text-muted-foreground"><strong>ICP shifted up-market, anchored at €500m–1b</strong></span>
+              </li>
+            </ul>
+          </Card>
+
           <Tabs defaultValue="win-rate" className="w-full">
             <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-6">
               <TabsTrigger value="win-rate">Win Rate</TabsTrigger>
@@ -82,36 +112,6 @@ export const SizeAnalysis = () => {
               </div>
             </TabsContent>
           </Tabs>
-
-          <Card className="p-8 bg-primary/10 border-primary/30">
-            <h3 className="font-semibold text-xl mb-4">Key Findings</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full bg-success mt-2 flex-shrink-0" />
-                <span className="text-muted-foreground">€500m–1b is the core sweet spot with 29.5% win rate and highest volume of wins</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
-                <span className="text-muted-foreground">€250m–499m strong secondary target segment at 27% win rate</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0" />
-                <span className="text-muted-foreground">€5b+ viable for strategic ABM with 26.3% win rate</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full bg-warning mt-2 flex-shrink-0" />
-                <span className="text-muted-foreground">€1b–5b and €250m–499m collapsed post-2024 — inconsistent fit now</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full bg-destructive mt-2 flex-shrink-0" />
-                <span className="text-muted-foreground">Sub-€50m revenue continues to be very low win yield — avoid</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full bg-chart-1 mt-2 flex-shrink-0" />
-                <span className="text-muted-foreground"><strong>ICP shifted up-market, anchored at €500m–1b</strong></span>
-              </li>
-            </ul>
-          </Card>
         </div>
       </div>
     </section>
