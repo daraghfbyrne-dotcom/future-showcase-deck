@@ -54,7 +54,7 @@ export const SizeAnalysis = () => {
               </li>
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full bg-chart-1 mt-2 flex-shrink-0" />
-                <span className="text-muted-foreground"><strong>ICP shifted up-market, anchored at €500m–1b</strong></span>
+                <span className="text-muted-foreground"><strong>ICP Focus €250m – 1bn</strong></span>
               </li>
             </ul>
           </Card>
