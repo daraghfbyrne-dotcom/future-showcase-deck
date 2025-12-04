@@ -10,7 +10,7 @@ import { SizeAnalysis } from "@/components/sections/SizeAnalysis";
 import { CompetitorAnalysis } from "@/components/sections/CompetitorAnalysis";
 import { StrategicPillars } from "@/components/sections/StrategicPillars";
 import { ResearchProgram } from "@/components/sections/ResearchProgram";
-import { PipelineTargets } from "@/components/sections/PipelineTargets";
+
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("hero");
@@ -95,7 +95,6 @@ const Index = () => {
         <CompetitorAnalysis />
         <StrategicPillars />
         <ResearchProgram />
-        <PipelineTargets />
       </main>
 
       <footer className="border-t border-border py-8">
