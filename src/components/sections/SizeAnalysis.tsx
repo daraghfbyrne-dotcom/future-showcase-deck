@@ -6,11 +6,14 @@ import { SizeVolumeChart } from "@/components/charts/SizeVolumeChart";
 
 export const SizeAnalysis = () => {
   const sizeSegments = [
-    { range: "€50–150M", pre: { opps: 28, wins: 7, rate: 25 }, post: { opps: 24, wins: 5, rate: 21 }, target: true },
-    { range: "€100–300M", pre: { opps: 38, wins: 6, rate: 16 }, post: { opps: 32, wins: 5, rate: 16 }, target: true },
-    { range: "€300–600M", pre: { opps: 34, wins: 6, rate: 18 }, post: { opps: 28, wins: 5, rate: 18 }, target: true },
-    { range: "€600M–1B", pre: { opps: 21, wins: 4, rate: 19 }, post: { opps: 18, wins: 2, rate: 11 }, target: false },
-    { range: "€1B+", pre: { opps: 10, wins: 2, rate: 20 }, post: { opps: 7, wins: 1, rate: 14 }, target: false },
+    { range: "€500m–1b", deals: 44, wins: 13, rate: 29.5, target: true, note: "Highest volume of wins" },
+    { range: "€250m–499m", deals: 37, wins: 10, rate: 27.0, target: true, note: "Strong secondary" },
+    { range: "€5b+", deals: 19, wins: 5, rate: 26.3, target: true, note: "Strategic ABM" },
+    { range: "€1b–5b", deals: 37, wins: 6, rate: 16.2, target: false, note: "Collapse post-2024" },
+    { range: "€50m–99m", deals: 19, wins: 2, rate: 10.5, target: false, note: "Inconsistent fit" },
+    { range: "€5m–49m", deals: 30, wins: 3, rate: 10.0, target: false, note: "Very low win yield" },
+    { range: "€100m–249m", deals: 42, wins: 4, rate: 9.5, target: false, note: "Low conversion" },
+    { range: "€0–5m", deals: 12, wins: 0, rate: 0.0, target: false, note: "Non-viable" },
   ];
 
   return (
@@ -22,7 +25,7 @@ export const SizeAnalysis = () => {
               Sweet Spot by <span className="text-primary">Company Size</span>
             </h2>
             <p className="text-xl text-muted-foreground">
-              Revenue-based segmentation analysis
+              Jan 2023 → Nov 2025 — Revenue-based segmentation analysis
             </p>
           </div>
 
@@ -57,32 +60,21 @@ export const SizeAnalysis = () => {
                       </div>
                     )}
                   </div>
+                  <span className="text-sm text-muted-foreground italic">{segment.note}</span>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
+                <div className="grid grid-cols-3 gap-4">
                   <div>
-                    <div className="text-sm text-muted-foreground mb-1">Pre Opps</div>
-                    <div className="text-lg font-semibold">{segment.pre.opps}</div>
+                    <div className="text-sm text-muted-foreground mb-1">Deals</div>
+                    <div className="text-lg font-semibold">{segment.deals}</div>
                   </div>
                   <div>
-                    <div className="text-sm text-muted-foreground mb-1">Pre Wins</div>
-                    <div className="text-lg font-semibold text-success">{segment.pre.wins}</div>
+                    <div className="text-sm text-muted-foreground mb-1">Wins</div>
+                    <div className="text-lg font-semibold text-success">{segment.wins}</div>
                   </div>
                   <div>
-                    <div className="text-sm text-muted-foreground mb-1">Pre Rate</div>
-                    <div className="text-lg font-semibold">{segment.pre.rate}%</div>
-                  </div>
-                  <div>
-                    <div className="text-sm text-muted-foreground mb-1">Post Opps</div>
-                    <div className="text-lg font-semibold">{segment.post.opps}</div>
-                  </div>
-                  <div>
-                    <div className="text-sm text-muted-foreground mb-1">Post Wins</div>
-                    <div className="text-lg font-semibold text-success">{segment.post.wins}</div>
-                  </div>
-                  <div>
-                    <div className="text-sm text-muted-foreground mb-1">Post Rate</div>
-                    <div className="text-lg font-semibold">{segment.post.rate}%</div>
+                    <div className="text-sm text-muted-foreground mb-1">Win Rate</div>
+                    <div className="text-lg font-semibold">{segment.rate}%</div>
                   </div>
                 </div>
               </Card>
@@ -96,19 +88,27 @@ export const SizeAnalysis = () => {
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full bg-success mt-2 flex-shrink-0" />
-                <span className="text-muted-foreground">€50–150M and €300–600M remain highest-conversion segments</span>
+                <span className="text-muted-foreground">€500m–1b is the core sweet spot with 29.5% win rate and highest volume of wins</span>
               </li>
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
-                <span className="text-muted-foreground">€100–300M remains the highest-volume band with consistent performance</span>
+                <span className="text-muted-foreground">€250m–499m strong secondary target segment at 27% win rate</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0" />
+                <span className="text-muted-foreground">€5b+ viable for strategic ABM with 26.3% win rate</span>
               </li>
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full bg-warning mt-2 flex-shrink-0" />
-                <span className="text-muted-foreground">Enterprise (&gt;€600M) weakened significantly post-2024 → avoid this segment</span>
+                <span className="text-muted-foreground">€1b–5b and €250m–499m collapsed post-2024 — inconsistent fit now</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full bg-destructive mt-2 flex-shrink-0" />
+                <span className="text-muted-foreground">Sub-€50m revenue continues to be very low win yield — avoid</span>
               </li>
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full bg-chart-1 mt-2 flex-shrink-0" />
-                <span className="text-muted-foreground"><strong>ICP sweet spot: €50M–€600M revenue mid-market</strong></span>
+                <span className="text-muted-foreground"><strong>ICP shifted up-market, anchored at €500m–1b</strong></span>
               </li>
             </ul>
           </Card>
