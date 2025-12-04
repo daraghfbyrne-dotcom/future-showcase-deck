@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { AlertCircle, TrendingUp, TrendingDown, Minus } from "lucide-react";
+import { AlertCircle, TrendingUp, TrendingDown, Minus, BarChart3, MessageSquareText, Link2, Users, Rocket, Zap } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CompetitorChart } from "@/components/charts/CompetitorChart";
 
@@ -22,6 +22,33 @@ export const CompetitorAnalysis = () => {
     if (trend === "down") return <TrendingDown className="w-4 h-4 text-success" />;
     return <Minus className="w-4 h-4 text-muted-foreground" />;
   };
+
+  const productImprovements = [
+    {
+      name: "Analytics",
+      icon: BarChart3,
+      description: "Enhanced visibility and insights to demonstrate value and ROI",
+      impact: "Value Demonstration"
+    },
+    {
+      name: "Chatbot",
+      icon: MessageSquareText,
+      description: "AI-powered support improving user experience and efficiency",
+      impact: "User Experience"
+    },
+    {
+      name: "iPaaS",
+      icon: Link2,
+      description: "Seamless integration capabilities for complex multi-ERP environments",
+      impact: "Integration Power"
+    },
+    {
+      name: "SLM",
+      icon: Users,
+      description: "Supplier lifecycle management extending our platform value",
+      impact: "Platform Extension"
+    }
+  ];
 
   return (
     <section id="competitors" className="py-24">
@@ -108,62 +135,65 @@ export const CompetitorAnalysis = () => {
             </p>
           </div>
 
-          <Card className="mt-12 p-10 bg-gradient-to-br from-primary/10 to-secondary/10 border-2 border-primary/40 shadow-lg">
-            <div className="text-center mb-8">
-              <h3 className="font-display font-bold text-3xl md:text-4xl mb-4">
-                Immediate Product Improvements
-              </h3>
-              <p className="text-xl text-muted-foreground font-semibold">
-                Enabling Our Competitive Response
-              </p>
-            </div>
-            <p className="text-lg text-muted-foreground mb-8 max-w-4xl mx-auto text-center">
-              What we are going to do differently this year is to focus on our target market segment and ICP, reinforced with critical product roadmap items that will strengthen our competitive position:
-            </p>
-            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-              <div className="p-6 bg-background/80 border-2 border-primary/30 rounded-lg hover:border-primary/50 transition-all shadow-md">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
-                    <TrendingUp className="w-6 h-6 text-primary" />
-                  </div>
-                  <h4 className="font-semibold text-xl">Analytics</h4>
+          {/* Enhanced Product Improvements Section */}
+          <div className="mt-16 relative">
+            {/* Decorative background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/10 to-primary/5 rounded-3xl -z-10" />
+            
+            <Card className="p-12 bg-gradient-to-br from-primary/15 via-background to-secondary/15 border-2 border-primary/50 shadow-2xl shadow-primary/20 rounded-2xl overflow-hidden relative">
+              {/* Accent line */}
+              <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary via-secondary to-primary" />
+              
+              <div className="text-center mb-10">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/40 mb-6">
+                  <Rocket className="w-5 h-5 text-primary" />
+                  <span className="text-sm font-semibold text-primary uppercase tracking-wider">Critical for 2026 Success</span>
                 </div>
-                <p className="text-muted-foreground">Enhanced visibility and insights to demonstrate value and ROI</p>
+                <h3 className="font-display font-bold text-4xl md:text-5xl mb-4">
+                  Product <span className="text-primary">Improvements</span>
+                </h3>
+                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                  Four strategic roadmap items that directly address competitive weaknesses and enable our market position
+                </p>
               </div>
-              <div className="p-6 bg-background/80 border-2 border-primary/30 rounded-lg hover:border-primary/50 transition-all shadow-md">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
-                    <TrendingUp className="w-6 h-6 text-primary" />
+
+              <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-10">
+                {productImprovements.map((product, index) => (
+                  <div 
+                    key={index}
+                    className="group p-8 bg-background/90 border-2 border-primary/30 rounded-xl hover:border-primary hover:shadow-lg hover:shadow-primary/20 transition-all duration-300"
+                  >
+                    <div className="flex items-start gap-5">
+                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 border border-primary/20">
+                        <product.icon className="w-8 h-8 text-primary" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-3 mb-2">
+                          <h4 className="font-bold text-2xl">{product.name}</h4>
+                        </div>
+                        <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-secondary/30 text-secondary-foreground mb-3">
+                          {product.impact}
+                        </span>
+                        <p className="text-muted-foreground leading-relaxed">{product.description}</p>
+                      </div>
+                    </div>
                   </div>
-                  <h4 className="font-semibold text-xl">Chatbot</h4>
-                </div>
-                <p className="text-muted-foreground">AI-powered support improving user experience and efficiency</p>
+                ))}
               </div>
-              <div className="p-6 bg-background/80 border-2 border-primary/30 rounded-lg hover:border-primary/50 transition-all shadow-md">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
-                    <TrendingUp className="w-6 h-6 text-primary" />
+
+              <div className="p-8 bg-primary/15 border-2 border-primary/40 rounded-xl max-w-4xl mx-auto">
+                <div className="flex items-start gap-4">
+                  <Zap className="w-8 h-8 text-primary flex-shrink-0" />
+                  <div>
+                    <h4 className="font-bold text-lg mb-2 text-foreground">Strategic Impact</h4>
+                    <p className="text-muted-foreground font-medium">
+                      These roadmap items directly address product weaknesses identified in competitive losses against Medius and Coupa, and will enable our strategy execution in the mid-market, multi-ERP segment.
+                    </p>
                   </div>
-                  <h4 className="font-semibold text-xl">iPaaS</h4>
                 </div>
-                <p className="text-muted-foreground">Seamless integration capabilities for complex multi-ERP environments</p>
               </div>
-              <div className="p-6 bg-background/80 border-2 border-primary/30 rounded-lg hover:border-primary/50 transition-all shadow-md">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
-                    <TrendingUp className="w-6 h-6 text-primary" />
-                  </div>
-                  <h4 className="font-semibold text-xl">SLM</h4>
-                </div>
-                <p className="text-muted-foreground">Supplier lifecycle management extending our platform value</p>
-              </div>
-            </div>
-            <div className="mt-8 p-6 bg-primary/10 border border-primary/30 rounded-lg max-w-4xl mx-auto">
-              <p className="text-muted-foreground text-center italic font-medium">
-                These roadmap items directly address product weaknesses identified in competitive losses and will enable our strategy execution in the mid-market, multi-ERP segment.
-              </p>
-            </div>
-          </Card>
+            </Card>
+          </div>
         </div>
       </div>
     </section>
