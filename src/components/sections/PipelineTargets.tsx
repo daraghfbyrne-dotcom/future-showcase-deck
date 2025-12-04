@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { TrendingUp, Target, AlertCircle } from "lucide-react";
+import { TrendingUp, Target } from "lucide-react";
 import { PipelineBreakdownChart } from "@/components/charts/PipelineBreakdownChart";
 
 export const PipelineTargets = () => {
@@ -43,7 +43,7 @@ export const PipelineTargets = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-display font-bold text-4xl md:text-5xl mb-4">
-              Pipeline & <span className="text-primary">ARR Targets</span>
+              Targeted Outcomes - <span className="text-primary">Pipeline</span>
             </h2>
             <p className="text-xl text-muted-foreground">
               2026 Revenue targets and channel pipeline requirements
@@ -81,18 +81,14 @@ export const PipelineTargets = () => {
 
           {/* Pipeline breakdown */}
           <Card className="p-6 bg-card border-border mb-8">
-            <div className="grid md:grid-cols-3 gap-6 mb-6 pb-6 border-b border-border">
+            <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <div className="text-sm text-muted-foreground mb-1">Current Pipeline</div>
-                <div className="text-2xl font-bold">{formatCurrency(6760000)}</div>
+                <div className="text-sm text-muted-foreground mb-1">Current Pipeline (end Nov)</div>
+                <div className="text-2xl font-bold">{formatCurrency(8910000)}</div>
               </div>
               <div>
                 <div className="text-sm text-muted-foreground mb-1">Net Pipeline Required</div>
-                <div className="text-2xl font-bold text-warning">{formatCurrency(20382857)}</div>
-              </div>
-              <div>
-                <div className="text-sm text-muted-foreground mb-1">Gap to Close</div>
-                <div className="text-2xl font-bold text-primary">{formatCurrency(20382857)}</div>
+                <div className="text-2xl font-bold text-warning">{formatCurrency(18200000)}</div>
               </div>
             </div>
           </Card>
@@ -115,40 +111,6 @@ export const PipelineTargets = () => {
               ))}
             </div>
 
-            <div className="mt-6 pt-6 border-t border-border">
-              <div className="grid md:grid-cols-3 gap-6">
-                <div>
-                  <div className="text-sm text-muted-foreground mb-1">Total Pipeline Target</div>
-                  <div className="text-2xl font-bold text-primary">{formatCurrency(24484080)}</div>
-                </div>
-                <div>
-                  <div className="text-sm text-muted-foreground mb-1">Average per Month</div>
-                  <div className="text-2xl font-bold">{formatCurrency(2040340)}</div>
-                </div>
-                <div>
-                  <div className="text-sm text-muted-foreground mb-1">Nov - Jul '25 (9 months)</div>
-                  <div className="text-2xl font-bold">{formatCurrency(18363060)}</div>
-                </div>
-              </div>
-            </div>
-          </Card>
-
-          {/* Delta warning */}
-          <Card className="p-6 bg-destructive/10 border-destructive/30">
-            <div className="flex items-start gap-4">
-              <AlertCircle className="w-6 h-6 text-destructive flex-shrink-0 mt-1" />
-              <div className="flex-1">
-                <h3 className="font-semibold text-lg mb-2">Pipeline Gap Analysis</h3>
-                <div className="flex items-baseline gap-3 mb-2">
-                  <span className="text-sm text-muted-foreground">Current Delta:</span>
-                  <span className="text-2xl font-bold text-destructive">-{formatCurrency(2019797)}</span>
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  Current pipeline projections show a shortfall of €2.02M. Requires acceleration of partnership onboarding 
-                  and increased SDR activity in Q1 2026 to close the gap.
-                </p>
-              </div>
-            </div>
           </Card>
         </div>
       </div>
