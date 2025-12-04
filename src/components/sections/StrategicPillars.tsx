@@ -298,7 +298,7 @@ export const StrategicPillars = () => {
               </li>
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full bg-success mt-2 flex-shrink-0" />
-                <span className="text-muted-foreground">Aligns to our strongest invoice-volume sweet spots (3k–30k and 60k–120k)</span>
+                <span className="text-muted-foreground">Aligns to our strongest invoice-volume sweet spots (c.30k to 120k)</span>
               </li>
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full bg-success mt-2 flex-shrink-0" />
