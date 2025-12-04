@@ -36,6 +36,33 @@ export const CompetitorAnalysis = () => {
             </p>
           </div>
 
+          <Card className="mb-8 p-8 bg-destructive/10 border-destructive/30">
+            <div className="flex items-start gap-4">
+              <AlertCircle className="w-6 h-6 text-destructive flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="font-semibold text-xl mb-4">Key Takeaways</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-destructive mt-2 flex-shrink-0" />
+                    <span className="text-muted-foreground"><strong>Medius and Coupa increased their competitive presence post-2024</strong> — Coupa doubled from 4 to 8 mentions</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-destructive mt-2 flex-shrink-0" />
+                    <span className="text-muted-foreground"><strong>Basware more than doubled its mentions</strong> — This correlates with SAP & enterprise losses</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-success mt-2 flex-shrink-0" />
+                    <span className="text-muted-foreground"><strong>Concur decreased in relevance</strong> in the Post period (9 → 3 mentions), shifting competitive pressure around T&E/AP blends</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-warning mt-2 flex-shrink-0" />
+                    <span className="text-muted-foreground"><strong>Tipalti and Esker emerging as threats</strong> — Both roughly doubled their presence</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </Card>
+
           <Tabs defaultValue="mentions" className="w-full">
             <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-6">
               <TabsTrigger value="mentions">Mentions</TabsTrigger>
@@ -74,33 +101,6 @@ export const CompetitorAnalysis = () => {
               </div>
             </TabsContent>
           </Tabs>
-
-          <Card className="p-8 bg-destructive/10 border-destructive/30">
-            <div className="flex items-start gap-4">
-              <AlertCircle className="w-6 h-6 text-destructive flex-shrink-0 mt-1" />
-              <div>
-                <h3 className="font-semibold text-xl mb-4">Key Takeaways</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 rounded-full bg-destructive mt-2 flex-shrink-0" />
-                    <span className="text-muted-foreground"><strong>Medius and Coupa increased their competitive presence post-2024</strong> — Coupa doubled from 4 to 8 mentions</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 rounded-full bg-destructive mt-2 flex-shrink-0" />
-                    <span className="text-muted-foreground"><strong>Basware more than doubled its mentions</strong> — This correlates with SAP & enterprise losses</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 rounded-full bg-success mt-2 flex-shrink-0" />
-                    <span className="text-muted-foreground"><strong>Concur decreased in relevance</strong> in the Post period (9 → 3 mentions), shifting competitive pressure around T&E/AP blends</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 rounded-full bg-warning mt-2 flex-shrink-0" />
-                    <span className="text-muted-foreground"><strong>Tipalti and Esker emerging as threats</strong> — Both roughly doubled their presence</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </Card>
 
           <div className="mt-6 p-4 bg-muted/30 border border-border rounded-lg">
             <p className="text-sm text-muted-foreground italic">

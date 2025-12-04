@@ -40,6 +40,31 @@ export const ERPAnalysis = () => {
             </p>
           </div>
 
+          <Card className="mb-8 p-8 bg-primary/10 border-primary/30">
+            <p className="text-lg font-medium mb-6 text-foreground">
+              ERP Fit is a clear predictor of success with true winning ERP's / ecosystems emerging
+            </p>
+            <h3 className="font-semibold text-xl mb-4">Key Takeaways</h3>
+            <ul className="space-y-3">
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                <span className="text-muted-foreground">Oracle, Infor, JD Edwards remain strongest ERPs with consistent win rates</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full bg-warning mt-2 flex-shrink-0" />
+                <span className="text-muted-foreground">SAP worsened significantly post-2024 – more volume but fewer wins</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full bg-destructive mt-2 flex-shrink-0" />
+                <span className="text-muted-foreground">Microsoft ERPs remain weak fit, dominated by Medius → low wins</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full bg-muted-foreground mt-2 flex-shrink-0" />
+                <span className="text-muted-foreground">"Other ERPs" are high-volume but extremely low win potential</span>
+              </li>
+            </ul>
+          </Card>
+
           <Tabs defaultValue="win-rate" className="w-full">
             <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-6">
               <TabsTrigger value="win-rate">Win Rate</TabsTrigger>
@@ -97,31 +122,6 @@ export const ERPAnalysis = () => {
               </div>
             </TabsContent>
           </Tabs>
-
-          <Card className="p-8 bg-primary/10 border-primary/30">
-            <p className="text-lg font-medium mb-6 text-foreground">
-              ERP Fit is a clear predictor of success with true winning ERP's / ecosystems emerging
-            </p>
-            <h3 className="font-semibold text-xl mb-4">Key Takeaways</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
-                <span className="text-muted-foreground">Oracle, Infor, JD Edwards remain strongest ERPs with consistent win rates</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full bg-warning mt-2 flex-shrink-0" />
-                <span className="text-muted-foreground">SAP worsened significantly post-2024 – more volume but fewer wins</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full bg-destructive mt-2 flex-shrink-0" />
-                <span className="text-muted-foreground">Microsoft ERPs remain weak fit, dominated by Medius → low wins</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full bg-muted-foreground mt-2 flex-shrink-0" />
-                <span className="text-muted-foreground">"Other ERPs" are high-volume but extremely low win potential</span>
-              </li>
-            </ul>
-          </Card>
         </div>
       </div>
     </section>

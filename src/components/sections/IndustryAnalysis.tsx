@@ -95,6 +95,28 @@ export const IndustryAnalysis = () => {
             </p>
           </div>
 
+          <Card className="mb-8 p-8 bg-primary/10 border-primary/30">
+            <h3 className="font-semibold text-xl mb-4">Strategic Insights</h3>
+            <ul className="space-y-3">
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                <span className="text-muted-foreground">Manufacturing remains highest-volume industry despite win-rate decline — needs action, not abandonment</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full bg-success mt-2 flex-shrink-0" />
+                <span className="text-muted-foreground">Media/Telco and Health Services show stable or improving win rates — strong ICP segments</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full bg-chart-2 mt-2 flex-shrink-0" />
+                <span className="text-muted-foreground">Food & Hospitality stable win rate → predictable, scalable segment</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full bg-destructive mt-2 flex-shrink-0" />
+                <span className="text-muted-foreground">Retail, Natural Resources, and Financial Services are non-viable — avoid investment</span>
+              </li>
+            </ul>
+          </Card>
+
           <Tabs defaultValue="win-rate" className="w-full">
             <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-6">
               <TabsTrigger value="win-rate">Win Rate</TabsTrigger>
@@ -132,28 +154,6 @@ export const IndustryAnalysis = () => {
               </div>
             </TabsContent>
           </Tabs>
-
-          <Card className="mt-12 p-8 bg-primary/10 border-primary/30">
-            <h3 className="font-semibold text-xl mb-4">Strategic Insights</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
-                <span className="text-muted-foreground">Manufacturing remains highest-volume industry despite win-rate decline — needs action, not abandonment</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full bg-success mt-2 flex-shrink-0" />
-                <span className="text-muted-foreground">Media/Telco and Health Services show stable or improving win rates — strong ICP segments</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full bg-chart-2 mt-2 flex-shrink-0" />
-                <span className="text-muted-foreground">Food & Hospitality stable win rate → predictable, scalable segment</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full bg-destructive mt-2 flex-shrink-0" />
-                <span className="text-muted-foreground">Retail, Natural Resources, and Financial Services are non-viable — avoid investment</span>
-              </li>
-            </ul>
-          </Card>
         </div>
       </div>
     </section>
