@@ -1,32 +1,23 @@
-import { AlertTriangle, TrendingDown, Users2, Award, BarChart3 } from "lucide-react";
+import { AlertTriangle, TrendingDown, Award, BarChart3 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 export const WhyStrategy = () => {
   const challenges = [
     {
       icon: TrendingDown,
-      title: "Win Rate Decline",
-      description: "Win rates declined overall — Period 1 (Jan '23–Jun '24): 20.6% → Period 2 (Jul '24–Nov '25): 14.8%"
+      title: "Win Rate Decline"
     },
     {
       icon: Award,
-      title: "Sweetspots Shifted",
-      description: "Pre-2024 strength in 250m–499m and 1b–5b collapsed. New sweetspot: 500m–1b and 5b+. Invoice volume shifted toward 3k–20k and 60k–120k."
-    },
-    {
-      icon: Users2,
-      title: "Industry Pattern Destabilized",
-      description: "Manufacturing still high volume but win rates falling. Retail & Services collapsed to 0%. New bright spots: Media/Telco, Health."
+      title: "Sweetspots Shifted"
     },
     {
       icon: AlertTriangle,
-      title: "Competitive Pressure Intensified",
-      description: "Medius, Coupa, Basware increased presence—especially in SAP and enterprise deals. Concur declined in relevance."
+      title: "Competitive Pressure Intensified"
     },
     {
       icon: BarChart3,
-      title: "Large-Volume Pipeline Leakage",
-      description: ">120k invoice volumes produce pipeline but 0 wins in Period 2. High pipeline leakage in large-volume opportunities."
+      title: "Large-Volume Pipeline Leakage"
     }
   ];
 
@@ -43,7 +34,7 @@ export const WhyStrategy = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {challenges.map((challenge, index) => {
               const Icon = challenge.icon;
               return (
@@ -51,14 +42,11 @@ export const WhyStrategy = () => {
                   key={index} 
                   className="p-6 bg-card border-border hover:border-primary/50 transition-all duration-300 group"
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                  <div className="flex flex-col items-center text-center gap-3">
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                       <Icon className="w-6 h-6 text-primary" />
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-lg mb-2">{challenge.title}</h3>
-                      <p className="text-muted-foreground text-sm">{challenge.description}</p>
-                    </div>
+                    <h3 className="font-semibold text-lg">{challenge.title}</h3>
                   </div>
                 </Card>
               );
