@@ -184,7 +184,7 @@ export const ResearchProgram = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Total Pipeline Value from Events</p>
-                    <p className="text-3xl md:text-4xl font-bold text-success">€2,970,000</p>
+                    <p className="text-3xl md:text-4xl font-bold text-success">€2,860,000</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -221,7 +221,7 @@ export const ResearchProgram = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-xl">SoftCo Private Dinners</h4>
-                    <p className="text-sm text-muted-foreground">12 Executive Dinners • €110,000 pipeline each • 1 SQL per event</p>
+                    <p className="text-sm text-muted-foreground">11 Executive Dinners • €110,000 pipeline each • 1 SQL per event</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-success/20 border border-success/40">
@@ -231,21 +231,42 @@ export const ResearchProgram = () => {
               </div>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                {['Q1', 'Q2', 'Q3', 'Q4'].map((quarter, idx) => (
-                  <div key={quarter} className="p-4 rounded-lg bg-success/5 border border-success/20">
-                    <p className="font-bold text-success mb-2">{quarter} 2026</p>
-                    <div className="space-y-1 text-sm">
-                      <p className="flex items-center gap-2"><MapPin className="w-3 h-3" /> Dublin</p>
-                      <p className="flex items-center gap-2"><MapPin className="w-3 h-3" /> London</p>
-                      <p className="flex items-center gap-2"><MapPin className="w-3 h-3" /> New York</p>
-                    </div>
+                <div className="p-4 rounded-lg bg-success/5 border border-success/20">
+                  <p className="font-bold text-success mb-2">Q1 2026</p>
+                  <div className="space-y-1 text-sm">
+                    <p className="flex items-center gap-2"><MapPin className="w-3 h-3" /> UK</p>
+                    <p className="flex items-center gap-2"><MapPin className="w-3 h-3" /> USA</p>
                   </div>
-                ))}
+                </div>
+                <div className="p-4 rounded-lg bg-success/5 border border-success/20">
+                  <p className="font-bold text-success mb-2">Q2 2026</p>
+                  <div className="space-y-1 text-sm">
+                    <p className="flex items-center gap-2"><MapPin className="w-3 h-3" /> Ireland</p>
+                    <p className="flex items-center gap-2"><MapPin className="w-3 h-3" /> Manchester</p>
+                    <p className="flex items-center gap-2"><MapPin className="w-3 h-3" /> Chicago</p>
+                  </div>
+                </div>
+                <div className="p-4 rounded-lg bg-success/5 border border-success/20">
+                  <p className="font-bold text-success mb-2">Q3 2026</p>
+                  <div className="space-y-1 text-sm">
+                    <p className="flex items-center gap-2"><MapPin className="w-3 h-3" /> Poland</p>
+                    <p className="flex items-center gap-2"><MapPin className="w-3 h-3" /> Glasgow</p>
+                    <p className="flex items-center gap-2"><MapPin className="w-3 h-3" /> Boston</p>
+                  </div>
+                </div>
+                <div className="p-4 rounded-lg bg-success/5 border border-success/20">
+                  <p className="font-bold text-success mb-2">Q4 2026</p>
+                  <div className="space-y-1 text-sm">
+                    <p className="flex items-center gap-2"><MapPin className="w-3 h-3" /> Ireland</p>
+                    <p className="flex items-center gap-2"><MapPin className="w-3 h-3" /> UK</p>
+                    <p className="flex items-center gap-2"><MapPin className="w-3 h-3" /> Canada</p>
+                  </div>
+                </div>
               </div>
 
               <div className="p-4 rounded-lg bg-success/10 border border-success/20">
                 <p className="text-sm text-foreground">
-                  <span className="font-semibold text-success">Total from Dinners:</span> €1,320,000 pipeline • 12 SQLs
+                  <span className="font-semibold text-success">Total from Dinners:</span> €1,210,000 pipeline • 11 SQLs
                 </p>
               </div>
             </Card>
