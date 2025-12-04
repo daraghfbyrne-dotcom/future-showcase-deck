@@ -1,5 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { BookOpen, BarChart3, Award, Lightbulb, Quote, Target, TrendingUp, Zap, Users, MapPin, Calendar, CheckCircle, Sparkles, Euro, Database, Mail, Phone, ClipboardCheck, ArrowRight } from "lucide-react";
+import oracleLogo from "@/assets/oracle-logo.png";
+import jdeLogo from "@/assets/jde-logo.png";
 
 export const ResearchProgram = () => {
   return (
@@ -325,48 +327,51 @@ export const ResearchProgram = () => {
 
             {/* ERP-Specific Events */}
             <Card className="p-6 mb-8 bg-card border-2 border-accent/30">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center">
-                  <Database className="w-6 h-6 text-accent" />
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center">
+                    <Database className="w-6 h-6 text-accent" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-xl">ERP-Specific Events</h4>
+                    <p className="text-sm text-muted-foreground">Aligned to Oracle, Infor & JD Edwards ecosystems</p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-bold text-xl">ERP-Specific Events</h4>
-                  <p className="text-sm text-muted-foreground">Aligned to Oracle, Infor & JD Edwards ecosystems</p>
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/20 border border-amber-500/40">
+                  <Lightbulb className="w-4 h-4 text-amber-500" />
+                  <span className="text-sm font-semibold text-amber-600">EXPLORING</span>
                 </div>
               </div>
 
               <div className="grid md:grid-cols-3 gap-4">
-                <div>
-                  <p className="font-semibold text-accent mb-3 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-accent" />
-                    Oracle
-                  </p>
+                <div className="p-4 rounded-lg bg-[#C74634]/5 border border-[#C74634]/20">
+                  <div className="flex items-center gap-3 mb-4">
+                    <img src={oracleLogo} alt="Oracle" className="h-6 object-contain" />
+                  </div>
                   <ul className="space-y-2 text-sm">
-                    <li className="p-2 rounded bg-accent/5 border border-accent/10">O5Live Conference & Expo 2026</li>
-                    <li className="p-2 rounded bg-accent/5 border border-accent/10">UKOUG Conference (UK & Ireland)</li>
-                    <li className="p-2 rounded bg-accent/5 border border-accent/10">Oracle AI World</li>
-                    <li className="p-2 rounded bg-accent/5 border border-accent/10">BLUEPRINT 4D 2026</li>
+                    <li className="p-2 rounded bg-[#C74634]/5 border border-[#C74634]/10">O5Live Conference & Expo 2026</li>
+                    <li className="p-2 rounded bg-[#C74634]/5 border border-[#C74634]/10">UKOUG Conference (UK & Ireland)</li>
+                    <li className="p-2 rounded bg-[#C74634]/5 border border-[#C74634]/10">Oracle AI World</li>
+                    <li className="p-2 rounded bg-[#C74634]/5 border border-[#C74634]/10">BLUEPRINT 4D 2026</li>
                   </ul>
                 </div>
-                <div>
-                  <p className="font-semibold text-accent mb-3 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-accent" />
-                    Infor
-                  </p>
+                <div className="p-4 rounded-lg bg-[#007DB8]/5 border border-[#007DB8]/20">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-xl font-bold text-[#007DB8]">infor</span>
+                  </div>
                   <ul className="space-y-2 text-sm">
-                    <li className="p-2 rounded bg-accent/5 border border-accent/10">Infor inPOWER 2026</li>
-                    <li className="p-2 rounded bg-accent/5 border border-accent/10">SUN Conference 2026</li>
+                    <li className="p-2 rounded bg-[#007DB8]/5 border border-[#007DB8]/10">Infor inPOWER 2026</li>
+                    <li className="p-2 rounded bg-[#007DB8]/5 border border-[#007DB8]/10">SUN Conference 2026</li>
                   </ul>
                 </div>
-                <div>
-                  <p className="font-semibold text-accent mb-3 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-accent" />
-                    JD Edwards
-                  </p>
+                <div className="p-4 rounded-lg bg-[#C74634]/5 border border-[#C74634]/20">
+                  <div className="flex items-center gap-3 mb-4">
+                    <img src={jdeLogo} alt="JD Edwards" className="h-6 object-contain" />
+                  </div>
                   <ul className="space-y-2 text-sm">
-                    <li className="p-2 rounded bg-accent/5 border border-accent/10">JD Edwards INFOCUS 2026</li>
-                    <li className="p-2 rounded bg-accent/5 border border-accent/10">JD Edwards Nordic Conference</li>
-                    <li className="p-2 rounded bg-accent/5 border border-accent/10">TUG CONNECTS 2026</li>
+                    <li className="p-2 rounded bg-[#C74634]/5 border border-[#C74634]/10">JD Edwards INFOCUS 2026</li>
+                    <li className="p-2 rounded bg-[#C74634]/5 border border-[#C74634]/10">JD Edwards Nordic Conference</li>
+                    <li className="p-2 rounded bg-[#C74634]/5 border border-[#C74634]/10">TUG CONNECTS 2026</li>
                   </ul>
                 </div>
               </div>
