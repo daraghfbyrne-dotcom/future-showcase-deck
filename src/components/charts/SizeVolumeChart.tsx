@@ -1,61 +1,99 @@
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell } from 'recharts';
 import { Card } from "@/components/ui/card";
 
 export const SizeVolumeChart = () => {
-  const data = [
-    { range: '€50-150M', preOpps: 28, postOpps: 24, preWins: 7, postWins: 5 },
-    { range: '€100-300M', preOpps: 38, postOpps: 32, preWins: 6, postWins: 5 },
-    { range: '€300-600M', preOpps: 34, postOpps: 28, preWins: 6, postWins: 5 },
-    { range: '€600M-1B', preOpps: 21, postOpps: 18, preWins: 4, postWins: 2 },
-    { range: '€1B+', preOpps: 10, postOpps: 7, preWins: 2, postWins: 1 },
+  const dealsData = [
+    { range: '€500m–1b', deals: 44, target: true },
+    { range: '€250m–499m', deals: 37, target: true },
+    { range: '€1b–5b', deals: 37, target: false },
+    { range: '€100m–249m', deals: 42, target: false },
+    { range: '€5m–49m', deals: 30, target: false },
+    { range: '€5b+', deals: 19, target: true },
+    { range: '€50m–99m', deals: 19, target: false },
+    { range: '€0–5m', deals: 12, target: false },
   ];
+
+  const winsData = [
+    { range: '€500m–1b', wins: 13, target: true },
+    { range: '€250m–499m', wins: 10, target: true },
+    { range: '€1b–5b', wins: 6, target: false },
+    { range: '€5b+', wins: 5, target: true },
+    { range: '€100m–249m', wins: 4, target: false },
+    { range: '€5m–49m', wins: 3, target: false },
+    { range: '€50m–99m', wins: 2, target: false },
+    { range: '€0–5m', wins: 0, target: false },
+  ];
+
+  const tooltipStyle = {
+    backgroundColor: 'hsl(var(--card))',
+    border: '1px solid hsl(var(--border))',
+    borderRadius: '0.5rem',
+    color: 'hsl(var(--foreground))'
+  };
 
   return (
     <Card className="p-6 bg-card border-border">
-      <h3 className="font-semibold text-lg mb-6">Volume by Company Size</h3>
-      <ResponsiveContainer width="100%" height={400}>
-        <BarChart data={data}>
-          <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
-          <XAxis 
-            dataKey="range" 
-            stroke="hsl(var(--muted-foreground))"
-            tick={{ fill: 'hsl(var(--muted-foreground))' }}
-          />
-          <YAxis 
-            stroke="hsl(var(--muted-foreground))"
-            tick={{ fill: 'hsl(var(--muted-foreground))' }}
-            label={{ value: 'Count', angle: -90, position: 'insideLeft', fill: 'hsl(var(--muted-foreground))' }}
-          />
-          <Tooltip 
-            contentStyle={{ 
-              backgroundColor: 'hsl(var(--card))', 
-              border: '1px solid hsl(var(--border))',
-              borderRadius: '0.5rem',
-              color: 'hsl(var(--foreground))'
-            }}
-            formatter={(value, name) => {
-              const label = name.toString().includes('Opps') ? 'Opportunities' : 'Wins';
-              return [value, label];
-            }}
-          />
-          <Legend 
-            wrapperStyle={{ color: 'hsl(var(--foreground))' }}
-            formatter={(value) => {
-              const labels: Record<string, string> = {
-                'preOpps': "Jan '23 - July '24 Opportunities",
-                'postOpps': "July '24 - Nov '25 Opportunities",
-                'preWins': "Jan '23 - July '24 Wins",
-                'postWins': "July '24 - Nov '25 Wins"
-              };
-              return labels[value] || value;
-            }}
-          />
-          <Bar dataKey="preOpps" fill="hsl(var(--chart-2))" radius={[4, 4, 0, 0]} />
-          <Bar dataKey="postOpps" fill="hsl(var(--chart-3))" radius={[4, 4, 0, 0]} />
-          <Bar dataKey="preWins" fill="hsl(var(--primary))" radius={[4, 4, 0, 0]} />
-          <Bar dataKey="postWins" fill="hsl(var(--accent))" radius={[4, 4, 0, 0]} />
-        </BarChart>
-      </ResponsiveContainer>
+      <h3 className="font-semibold text-lg mb-6">Volume by Company Size (Jan '23 - Nov '25)</h3>
+      <div className="grid md:grid-cols-2 gap-8">
+        <div>
+          <h4 className="text-sm font-medium text-muted-foreground mb-4 text-center">Deals</h4>
+          <ResponsiveContainer width="100%" height={350}>
+            <BarChart data={dealsData}>
+              <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+              <XAxis 
+                dataKey="range" 
+                stroke="hsl(var(--muted-foreground))"
+                tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 10 }}
+                angle={-45}
+                textAnchor="end"
+                height={80}
+              />
+              <YAxis 
+                stroke="hsl(var(--muted-foreground))"
+                tick={{ fill: 'hsl(var(--muted-foreground))' }}
+              />
+              <Tooltip contentStyle={tooltipStyle} />
+              <Bar dataKey="deals" radius={[4, 4, 0, 0]}>
+                {dealsData.map((entry, index) => (
+                  <Cell 
+                    key={`cell-${index}`} 
+                    fill={entry.target ? 'hsl(var(--chart-1))' : 'hsl(var(--chart-2))'} 
+                  />
+                ))}
+              </Bar>
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+        <div>
+          <h4 className="text-sm font-medium text-muted-foreground mb-4 text-center">Wins</h4>
+          <ResponsiveContainer width="100%" height={350}>
+            <BarChart data={winsData}>
+              <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+              <XAxis 
+                dataKey="range" 
+                stroke="hsl(var(--muted-foreground))"
+                tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 10 }}
+                angle={-45}
+                textAnchor="end"
+                height={80}
+              />
+              <YAxis 
+                stroke="hsl(var(--muted-foreground))"
+                tick={{ fill: 'hsl(var(--muted-foreground))' }}
+              />
+              <Tooltip contentStyle={tooltipStyle} />
+              <Bar dataKey="wins" radius={[4, 4, 0, 0]}>
+                {winsData.map((entry, index) => (
+                  <Cell 
+                    key={`cell-${index}`} 
+                    fill={entry.target ? 'hsl(var(--chart-4))' : 'hsl(var(--chart-5))'} 
+                  />
+                ))}
+              </Bar>
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </div>
     </Card>
   );
 };

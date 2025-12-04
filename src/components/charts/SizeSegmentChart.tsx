@@ -1,41 +1,41 @@
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell } from 'recharts';
 import { Card } from "@/components/ui/card";
 
 export const SizeSegmentChart = () => {
   const data = [
-    { range: '€50-150M', preRate: 25, postRate: 21, target: true },
-    { range: '€100-300M', preRate: 16, postRate: 16, target: true },
-    { range: '€300-600M', preRate: 18, postRate: 18, target: true },
-    { range: '€600M-1B', preRate: 19, postRate: 11, target: false },
-    { range: '€1B+', preRate: 20, postRate: 14, target: false },
+    { range: '€500m–1b', winRate: 29.5, target: true },
+    { range: '€250m–499m', winRate: 27.0, target: true },
+    { range: '€5b+', winRate: 26.3, target: true },
+    { range: '€1b–5b', winRate: 16.2, target: false },
+    { range: '€50m–99m', winRate: 10.5, target: false },
+    { range: '€5m–49m', winRate: 10.0, target: false },
+    { range: '€100m–249m', winRate: 9.5, target: false },
+    { range: '€0–5m', winRate: 0.0, target: false },
   ];
 
   return (
     <Card className="p-6 bg-card border-border">
-      <h3 className="font-semibold text-lg mb-6">Win Rate by Company Size</h3>
+      <h3 className="font-semibold text-lg mb-6">Win Rate by Company Size (Jan '23 - Nov '25)</h3>
       <div className="mb-4 flex items-center gap-4 text-sm">
         <div className="flex items-center gap-2">
           <div className="w-3 h-3 rounded-full bg-primary" />
-          <span className="text-muted-foreground">Target Segments (€50M-€600M)</span>
+          <span className="text-muted-foreground">Target Segments</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="w-3 h-3 rounded-full bg-muted-foreground" />
+          <span className="text-muted-foreground">Non-Target Segments</span>
         </div>
       </div>
-      <ResponsiveContainer width="100%" height={350}>
-        <AreaChart data={data}>
-          <defs>
-            <linearGradient id="colorPre" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="hsl(var(--chart-2))" stopOpacity={0.8}/>
-              <stop offset="95%" stopColor="hsl(var(--chart-2))" stopOpacity={0.1}/>
-            </linearGradient>
-            <linearGradient id="colorPost" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="hsl(var(--primary))" stopOpacity={0.8}/>
-              <stop offset="95%" stopColor="hsl(var(--primary))" stopOpacity={0.1}/>
-            </linearGradient>
-          </defs>
+      <ResponsiveContainer width="100%" height={400}>
+        <BarChart data={data}>
           <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
           <XAxis 
             dataKey="range" 
             stroke="hsl(var(--muted-foreground))"
-            tick={{ fill: 'hsl(var(--muted-foreground))' }}
+            tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 11 }}
+            angle={-45}
+            textAnchor="end"
+            height={100}
           />
           <YAxis 
             stroke="hsl(var(--muted-foreground))"
@@ -49,29 +49,17 @@ export const SizeSegmentChart = () => {
               borderRadius: '0.5rem',
               color: 'hsl(var(--foreground))'
             }}
-            formatter={(value) => [`${value}%`, '']}
+            formatter={(value) => [`${value}%`, 'Win Rate']}
           />
-          <Legend 
-            wrapperStyle={{ color: 'hsl(var(--foreground))' }}
-            formatter={(value) => value === 'preRate' ? "Jan '23 - July '24" : "July '24 - Nov '25"}
-          />
-          <Area 
-            type="monotone" 
-            dataKey="preRate" 
-            stroke="hsl(var(--chart-2))" 
-            strokeWidth={2}
-            fillOpacity={1} 
-            fill="url(#colorPre)" 
-          />
-          <Area 
-            type="monotone" 
-            dataKey="postRate" 
-            stroke="hsl(var(--primary))" 
-            strokeWidth={2}
-            fillOpacity={1} 
-            fill="url(#colorPost)" 
-          />
-        </AreaChart>
+          <Bar dataKey="winRate" radius={[4, 4, 0, 0]}>
+            {data.map((entry, index) => (
+              <Cell 
+                key={`cell-${index}`} 
+                fill={entry.target ? 'hsl(var(--primary))' : 'hsl(var(--muted-foreground))'} 
+              />
+            ))}
+          </Bar>
+        </BarChart>
       </ResponsiveContainer>
     </Card>
   );

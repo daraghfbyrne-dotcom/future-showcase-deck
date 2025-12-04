@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Target, Users, TrendingUp, Zap, Rocket, Sparkles } from "lucide-react";
+import { Target, Users, TrendingUp, Zap, Rocket, Sparkles, BarChart3 } from "lucide-react";
 
 export const StrategicPillars = () => {
   return (
@@ -8,18 +8,15 @@ export const StrategicPillars = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-display font-bold text-4xl md:text-6xl mb-6">
-              2026 Strategy: Winning in <span className="text-primary">High-Complexity AP Automation</span>
+              2026 Strategy
             </h2>
           </div>
 
-          {/* Target Audience Statement - WHO we are going after */}
+          {/* Strategy Statement */}
           <Card className="p-8 md:p-10 mb-16 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 border-4 border-primary/40 shadow-xl">
             <div className="text-center">
-              <div className="inline-block px-4 py-2 bg-primary/20 rounded-full mb-4">
-                <span className="text-sm font-bold text-primary uppercase tracking-wider">Who We Target</span>
-              </div>
-              <p className="text-2xl md:text-3xl font-display font-bold text-foreground leading-relaxed">
-                Laser-focused on mid-market excellence. Targeting €50M–€600M companies running Oracle, Infor, and JD Edwards in high-complexity AP environments.
+              <p className="text-xl md:text-2xl font-display font-bold text-foreground leading-relaxed">
+                Focus on upper–mid-market and enterprise organisations (€250m–€1bn+ revenue) running Oracle, Infor, or JD Edwards, in industries where scalable AP automation delivers measurable operational impact, using tightly defined ICP targeting, vertical-specific value propositions, and ERP-aligned go-to-market motions.
               </p>
             </div>
           </Card>
@@ -45,15 +42,15 @@ export const StrategicPillars = () => {
                 <div className="w-20 h-20 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-6 shadow-lg">
                   <Target className="w-11 h-11 text-white" />
                 </div>
-                <h4 className="font-display font-bold text-3xl mb-4 text-white">Bet 2 — Win the Mid-Market</h4>
-                <p className="text-white/95 text-lg font-medium mb-4">Where Complexity Peaks</p>
+                <h4 className="font-display font-bold text-3xl mb-4 text-white">Bet 2 — Win the Upper Mid-Market</h4>
+                <p className="text-white/95 text-lg font-medium mb-4">€250m–€1bn+ Revenue</p>
                 <div className="text-white/90 text-base leading-relaxed space-y-3">
-                  <p>Target companies €50M–€600M running Oracle, Infor, and JD Edwards — the segment where:</p>
+                  <p>Target upper–mid-market and enterprise organisations running Oracle, Infor, or JD Edwards — where:</p>
                   <ul className="space-y-2 ml-4">
-                    <li>• Complexity ≥ budget</li>
-                    <li>• Buying cycles are fast</li>
-                    <li>• Competitors are weak</li>
-                    <li>• SoftCo already wins most often</li>
+                    <li>• Scalable AP automation delivers measurable operational impact</li>
+                    <li>• Our ICP targeting is tightly defined</li>
+                    <li>• Vertical-specific value propositions resonate</li>
+                    <li>• ERP-aligned GTM motions create competitive advantage</li>
                   </ul>
                 </div>
               </Card>
@@ -65,167 +62,138 @@ export const StrategicPillars = () => {
             <h3 className="font-display font-bold text-3xl mb-8 text-center">
               2. Strategic Pillars <span className="text-muted-foreground">(How We Win)</span>
             </h3>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-3 gap-6">
               <Card className="p-8 bg-card border-2 border-primary/40 hover:border-primary/60 transition-all">
                 <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-6">
-                  <Sparkles className="w-7 h-7 text-primary" />
+                  <Target className="w-7 h-7 text-primary" />
                 </div>
-                <h4 className="font-display font-bold text-2xl mb-4">Pillar 1 — Category Leadership (Play Bigger)</h4>
+                <h4 className="font-display font-bold text-xl mb-4">ICP Precision & Market Focus</h4>
+                <p className="text-sm text-muted-foreground mb-4">Rebuild GTM around where we win now:</p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-1">•</span>
-                    <span>Establish the new category: Complex AP Control</span>
+                    <span><strong>Revenue:</strong> €500m–1b core</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-1">•</span>
-                    <span>Anchor messaging on certainty, control, auditability</span>
+                    <span><strong>ERP:</strong> Oracle / Infor / JDE</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-1">•</span>
-                    <span>Position SoftCo as the specialist, not a generalist AP vendor</span>
+                    <span><strong>Industries:</strong> Manufacturing, Food, Health, Media/Telco, Construction</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-1">•</span>
-                    <span>Make the competition irrelevant by reframing the problem</span>
+                    <span><strong>Invoice volume:</strong> 3k–30k & 60k–120k</span>
                   </li>
                 </ul>
               </Card>
 
               <Card className="p-8 bg-card border-2 border-accent/40 hover:border-accent/60 transition-all">
                 <div className="w-14 h-14 rounded-xl bg-accent/20 flex items-center justify-center mb-6">
-                  <Target className="w-7 h-7 text-accent" />
+                  <Users className="w-7 h-7 text-accent" />
                 </div>
-                <h4 className="font-display font-bold text-2xl mb-4">Pillar 2 — ERP Ecosystem Domination</h4>
+                <h4 className="font-display font-bold text-xl mb-4">Verticalisation & Value Proposition</h4>
+                <p className="text-sm text-muted-foreground mb-4">Each vertical gets unique:</p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="text-accent mt-1">•</span>
-                    <span>Oracle, Infor, JDE-first GTM</span>
+                    <span>Messaging tailored to industry pain points</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-accent mt-1">•</span>
-                    <span>ERP-specific content, demos, case studies</span>
+                    <span>ROI calculators with industry benchmarks</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-accent mt-1">•</span>
-                    <span>ERP ecosystem partners as force multipliers</span>
+                    <span>Industry-specific references and case studies</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-accent mt-1">•</span>
+                    <span>Vertical-specific sales plays</span>
                   </li>
                 </ul>
               </Card>
 
               <Card className="p-8 bg-card border-2 border-success/40 hover:border-success/60 transition-all">
                 <div className="w-14 h-14 rounded-xl bg-success/20 flex items-center justify-center mb-6">
-                  <Users className="w-7 h-7 text-success" />
+                  <BarChart3 className="w-7 h-7 text-success" />
                 </div>
-                <h4 className="font-display font-bold text-2xl mb-4">Pillar 3 — Mid-Market & Industry Focus</h4>
+                <h4 className="font-display font-bold text-xl mb-4">Pipeline Quality & Sales Productivity</h4>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="text-success mt-1">•</span>
-                    <span>Focus on manufacturing, telco/media, and health services</span>
+                    <span>Strict qualification for ICP, ERP, invoice volume, industry</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-success mt-1">•</span>
-                    <span>Avoid low-complexity verticals and high-cost enterprise RFPs</span>
+                    <span>Exit &gt;120k invoice bands unless strategic</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-success mt-1">•</span>
-                    <span>Precision ICP targeting and outbound</span>
+                    <span>Route deals into velocity (≤30k invoices) or strategic ABM (60k–120k, 5b+)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-success mt-1">•</span>
+                    <span>Improve forecast accuracy and reduce cycle times</span>
                   </li>
                 </ul>
-              </Card>
-
-              <Card className="p-8 bg-card border-2 border-chart-4/40 hover:border-chart-4/60 transition-all">
-                <div className="w-14 h-14 rounded-xl bg-chart-4/20 flex items-center justify-center mb-6">
-                  <TrendingUp className="w-7 h-7 text-chart-4" />
-                </div>
-                <h4 className="font-display font-bold text-2xl mb-4">Pillar 4 — Brand as a Commercial Weapon</h4>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <span className="text-chart-4 mt-1">•</span>
-                    <span>Shift from software to promised outcomes</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-chart-4 mt-1">•</span>
-                    <span>Build credibility with CFO/CIO buyers</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-chart-4 mt-1">•</span>
-                    <span>Leverage brand to lower CAC and increase SQL quality</span>
-                  </li>
-                </ul>
+                <p className="text-sm text-muted-foreground mt-4 italic">
+                  Every program (marketing, sales, partners) aligns to this footprint.
+                </p>
               </Card>
             </div>
           </div>
 
-          {/* 3. Execution Programs */}
+          {/* 3. Channel Strategy */}
           <div className="mb-16">
             <h3 className="font-display font-bold text-3xl mb-8 text-center">
-              3. Execution Programs <span className="text-muted-foreground">(What We Do)</span>
+              3. Channel Strategy
             </h3>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 gap-8">
               <Card className="p-8 bg-gradient-to-br from-primary/10 to-primary/5 border-2 border-primary/30">
-                <h4 className="font-display font-bold text-xl mb-4 text-primary">Program A — Narrative & Category Creation</h4>
-                <ul className="space-y-2 text-sm text-muted-foreground">
+                <h4 className="font-display font-bold text-xl mb-4 text-primary">Primary Channels</h4>
+                <ul className="space-y-3 text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-1">•</span>
-                    <span>"Complex AP Control" story</span>
+                    <span>Outbound (Oracle & Infor)</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-1">•</span>
-                    <span>Thought leadership that defines the problem</span>
+                    <span>ERP Events / Executive Dinners (Oracle, JDE, Infor user groups)</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-1">•</span>
-                    <span>Analyst & influencer program</span>
+                    <span>SEO / GEO (All)</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-1">•</span>
-                    <span>CFO/CIO events</span>
+                    <span>PPC (high-intent, ERP-specific keywords)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>Partner Ecosystems (Infor, JDE, Oracle)</span>
                   </li>
                 </ul>
               </Card>
 
               <Card className="p-8 bg-gradient-to-br from-accent/10 to-accent/5 border-2 border-accent/30">
-                <h4 className="font-display font-bold text-xl mb-4 text-accent">Program B — ERP Ecosystem GTM</h4>
-                <ul className="space-y-2 text-sm text-muted-foreground">
+                <h4 className="font-display font-bold text-xl mb-4 text-accent">Secondary Channels</h4>
+                <ul className="space-y-3 text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="text-accent mt-1">•</span>
-                    <span>Infor/Oracle/JDE co-marketing</span>
+                    <span>Review sites (Capterra, Software Advice)</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-accent mt-1">•</span>
-                    <span>ERP-specific campaigns</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-accent mt-1">•</span>
-                    <span>Partner training</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-accent mt-1">•</span>
-                    <span>Competitive displacement plays</span>
+                    <span>Targeted webinars (ERP + industry combinations)</span>
                   </li>
                 </ul>
-              </Card>
-
-              <Card className="p-8 bg-gradient-to-br from-success/10 to-success/5 border-2 border-success/30">
-                <h4 className="font-display font-bold text-xl mb-4 text-success">Program C — Precision Demand & Conversion</h4>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <span className="text-success mt-1">•</span>
-                    <span>Highly targeted outbound</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-success mt-1">•</span>
-                    <span>ABM on top 500 ERP-aligned accounts</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-success mt-1">•</span>
-                    <span>ERP-keyword SEO/PPC</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-success mt-1">•</span>
-                    <span>Executive dinners, events, vertical webinars</span>
-                  </li>
-                </ul>
+                <div className="mt-6 p-4 bg-accent/10 rounded-lg border border-accent/20">
+                  <p className="text-sm text-muted-foreground italic">
+                    Build long-term market preference by strengthening our brand — reducing future CAC, improving win rates, and accelerating sales cycles.
+                  </p>
+                </div>
               </Card>
             </div>
           </div>
@@ -314,45 +282,71 @@ export const StrategicPillars = () => {
 
               <div className="bg-gradient-to-br from-accent/10 to-accent/5 rounded-lg p-6 border-l-4 border-accent">
                 <div className="flex items-center justify-between mb-2">
-                  <h4 className="font-semibold text-lg">AE Generated (12 Months)</h4>
+                  <h4 className="font-semibold text-lg">AE Generated</h4>
                   <span className="text-2xl font-bold text-accent">€3.96M</span>
                 </div>
-                <p className="text-sm text-muted-foreground">Based on 3 qualified opps per month from 5 sales reps @110k</p>
+                <p className="text-sm text-muted-foreground">3 qualified opps per month from 5 sales reps = €330k per month pipeline</p>
               </div>
 
               <div className="bg-gradient-to-br from-success/10 to-success/5 rounded-lg p-6 border-l-4 border-success">
                 <div className="flex items-center justify-between mb-2">
-                  <h4 className="font-semibold text-lg">Marketing (12 Months)</h4>
+                  <h4 className="font-semibold text-lg">Marketing</h4>
                   <span className="text-2xl font-bold text-success">€8.49M</span>
                 </div>
-                <p className="text-sm text-muted-foreground">on 2025 Forecast. Incremental Research Project, improved organic - new site + brand refresh</p>
+                <p className="text-sm text-muted-foreground">Based on 2025 forecast with incremental research, new site, brand refresh</p>
               </div>
 
               <div className="bg-gradient-to-br from-chart-4/10 to-chart-4/5 rounded-lg p-6 border-l-4 border-chart-4">
                 <div className="flex items-center justify-between mb-2">
-                  <h4 className="font-semibold text-lg">Partnerships (12 Months)</h4>
+                  <h4 className="font-semibold text-lg">Partnerships</h4>
                   <span className="text-2xl font-bold text-chart-4">€5.20M</span>
                 </div>
-                <p className="text-sm text-muted-foreground">2025 Pipeline €1.6m. TA €3.8M pipe based on 530k ARR to SoftCo. Risk Xelix partnership winding down. Target onboard 3 new ptrs by end Q1 2026</p>
+                <p className="text-sm text-muted-foreground">2025 pipeline €1.6m. Targeting 3 new partners by end Q1 2026</p>
               </div>
             </div>
 
-            <div className="bg-primary/10 border border-primary/30 rounded-lg p-6">
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="text-sm text-muted-foreground mb-1">Total Pipeline Target</div>
-                  <div className="text-2xl font-bold text-primary">€24.48M</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-sm text-muted-foreground mb-1">Average per Month</div>
-                  <div className="text-2xl font-bold">€2.04M</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-sm text-muted-foreground mb-1">Nov - Jul '25 (9 months)</div>
-                  <div className="text-2xl font-bold">€18.36M</div>
-                </div>
-              </div>
+            <div className="p-6 bg-primary/10 border border-primary/30 rounded-lg text-center">
+              <div className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wider">Total Pipeline Target</div>
+              <div className="text-4xl font-bold text-primary">€24.48M</div>
+              <div className="text-sm text-muted-foreground mt-2">€2,040,340/month average</div>
             </div>
+          </Card>
+
+          {/* Why This Strategy Will Succeed */}
+          <Card className="p-8 bg-gradient-to-br from-success/10 to-success/5 border-2 border-success/30">
+            <h3 className="font-display font-bold text-3xl mb-6 text-center">
+              We Will Succeed Because This Strategy…
+            </h3>
+            <ul className="space-y-4 max-w-4xl mx-auto">
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full bg-success mt-2 flex-shrink-0" />
+                <span className="text-muted-foreground">Built on real performance data, focusing only on segments where we consistently win</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full bg-success mt-2 flex-shrink-0" />
+                <span className="text-muted-foreground">Avoids competitor strongholds (Medius in Microsoft; Basware/Coupa in SAP enterprise)</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full bg-success mt-2 flex-shrink-0" />
+                <span className="text-muted-foreground">Concentrates on ERPs where we win reliably — Oracle, Infor, and JD Edwards</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full bg-success mt-2 flex-shrink-0" />
+                <span className="text-muted-foreground">Targets industries with stable or growing win rates, improving conversion and scalability</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full bg-success mt-2 flex-shrink-0" />
+                <span className="text-muted-foreground">Aligns to our strongest invoice-volume sweet spots (3k–30k and 60k–120k)</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full bg-success mt-2 flex-shrink-0" />
+                <span className="text-muted-foreground">Eliminates low-yield segments, improving sales focus and productivity</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full bg-success mt-2 flex-shrink-0" />
+                <span className="text-muted-foreground">Directs GTM investment into the channels that consistently generate qualified pipeline and wins</span>
+              </li>
+            </ul>
           </Card>
         </div>
       </div>

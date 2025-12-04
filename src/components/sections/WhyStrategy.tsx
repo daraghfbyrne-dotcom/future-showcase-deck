@@ -1,4 +1,4 @@
-import { AlertTriangle, TrendingDown, Users2, Award } from "lucide-react";
+import { AlertTriangle, TrendingDown, Users2, Award, BarChart3 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 export const WhyStrategy = () => {
@@ -6,22 +6,27 @@ export const WhyStrategy = () => {
     {
       icon: TrendingDown,
       title: "Win Rate Decline",
-      description: "Our win engine has shifted with declining win rates and a move toward mid-market deals"
+      description: "Win rates declined overall — Period 1 (Jan '23–Jun '24): 20.6% → Period 2 (Jul '24–Nov '25): 14.8%"
     },
     {
       icon: Award,
-      title: "ERP Fit Critical",
-      description: "ERP Fit is now the clearest predictor of success with true winning ecosystems emerging"
+      title: "Sweetspots Shifted",
+      description: "Pre-2024 strength in 250m–499m and 1b–5b collapsed. New sweetspot: 500m–1b and 5b+. Invoice volume shifted toward 3k–20k and 60k–120k."
     },
     {
       icon: Users2,
-      title: "Industry Concentration",
-      description: "Performance concentrating in specific industries with high loss rates in others"
+      title: "Industry Pattern Destabilized",
+      description: "Manufacturing still high volume but win rates falling. Retail & Services collapsed to 0%. New bright spots: Media/Telco, Health."
     },
     {
       icon: AlertTriangle,
-      title: "Intensified Competition",
-      description: "Competitive dynamics have intensified against 3 key competitors: Medius, Coupa, Basware"
+      title: "Competitive Pressure Intensified",
+      description: "Medius, Coupa, Basware increased presence—especially in SAP and enterprise deals. Concur declined in relevance."
+    },
+    {
+      icon: BarChart3,
+      title: "Large-Volume Pipeline Leakage",
+      description: ">120k invoice volumes produce pipeline but 0 wins in Period 2. High pipeline leakage in large-volume opportunities."
     }
   ];
 
@@ -34,11 +39,11 @@ export const WhyStrategy = () => {
               Why We Need a <span className="text-primary">New Strategy</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Data* from Jan 2023 – Nov 2025 reveals critical shifts in our market positioning
+              Data* shows a material shift in where we win, where we lose, and who we should pursue
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {challenges.map((challenge, index) => {
               const Icon = challenge.icon;
               return (
@@ -52,7 +57,7 @@ export const WhyStrategy = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-lg mb-2">{challenge.title}</h3>
-                      <p className="text-muted-foreground">{challenge.description}</p>
+                      <p className="text-muted-foreground text-sm">{challenge.description}</p>
                     </div>
                   </div>
                 </Card>
@@ -62,7 +67,7 @@ export const WhyStrategy = () => {
 
           <div className="mt-12 p-6 rounded-lg bg-secondary/50 border border-border">
             <p className="text-center text-lg font-medium">
-              These insights drive our <span className="text-primary font-semibold">strategic focus</span> for 2026
+              <strong>Conclusion:</strong> The business has evolved into a different fit profile than the one the GTM is still optimised for.
             </p>
           </div>
           <p className="text-center text-xs text-muted-foreground mt-2">
