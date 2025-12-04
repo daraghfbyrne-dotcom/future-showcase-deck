@@ -201,7 +201,7 @@ export const StrategicPillars = () => {
               4. Targeted Outcomes - <span className="text-primary">Pipeline</span>
             </h3>
             
-            <div className="grid md:grid-cols-4 gap-6">
+            <div className="grid md:grid-cols-4 gap-6 mb-10">
               <div className="text-center p-4 bg-card rounded-lg border border-chart-3/30">
                 <div className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wider">ARR Target</div>
                 <div className="text-3xl font-bold text-chart-3">€3.8M</div>
@@ -220,38 +220,11 @@ export const StrategicPillars = () => {
                 <div className="text-xs text-muted-foreground mt-1">(2x yoy)</div>
               </div>
             </div>
-          </Card>
 
-          {/* 5. Strategic Trade-Offs */}
-          <Card className="p-8 mb-16 bg-gradient-to-br from-destructive/10 to-destructive/5 border-2 border-destructive/30">
-            <h3 className="font-display font-bold text-3xl mb-6 text-center">
-              5. Strategic Trade-Offs <span className="text-muted-foreground">(What We Stop)</span>
-            </h3>
-            <div className="grid md:grid-cols-2 gap-4">
-              <div className="flex items-start gap-3">
-                <Zap className="w-5 h-5 text-destructive mt-1 flex-shrink-0" />
-                <p className="text-muted-foreground">No SAP/MS ecosystem pursuits</p>
-              </div>
-              <div className="flex items-start gap-3">
-                <Zap className="w-5 h-5 text-destructive mt-1 flex-shrink-0" />
-                <p className="text-muted-foreground">No low-complexity AP deals</p>
-              </div>
-              <div className="flex items-start gap-3">
-                <Zap className="w-5 h-5 text-destructive mt-1 flex-shrink-0" />
-                <p className="text-muted-foreground">No undifferentiated "AP automation" messaging</p>
-              </div>
-              <div className="flex items-start gap-3">
-                <Zap className="w-5 h-5 text-destructive mt-1 flex-shrink-0" />
-                <p className="text-muted-foreground">No enterprise mega-RFP cycles</p>
-              </div>
-            </div>
-          </Card>
-
-          {/* Pipeline Contribution by Channel */}
-          <Card className="p-8 mb-16 bg-card border-2 border-primary/30">
-            <h3 className="font-display font-bold text-3xl mb-8 text-center">
+            {/* Pipeline Contribution by Channel */}
+            <h4 className="font-display font-bold text-2xl mb-6 text-center">
               Pipeline Contribution by Channel <span className="text-muted-foreground">(full year)</span>
-            </h3>
+            </h4>
 
             {/* Bar Chart */}
             <div className="mb-8">
@@ -259,7 +232,7 @@ export const StrategicPillars = () => {
             </div>
             
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg p-6 border-l-4 border-primary">
+              <div className="bg-card rounded-lg p-6 border-l-4 border-primary">
                 <div className="flex items-center justify-between mb-2">
                   <h4 className="font-semibold text-lg">SDR</h4>
                   <span className="text-2xl font-bold text-primary">€7.74M</span>
@@ -267,7 +240,7 @@ export const StrategicPillars = () => {
                 <p className="text-sm text-muted-foreground">1 Additional SDR. 6 Opps per month pure outbound = €650k per mth pipeline. Q4 2025 Run Rate €500k pm. Av Deal size €95k.</p>
               </div>
 
-              <div className="bg-gradient-to-br from-accent/10 to-accent/5 rounded-lg p-6 border-l-4 border-accent">
+              <div className="bg-card rounded-lg p-6 border-l-4 border-accent">
                 <div className="flex items-center justify-between mb-2">
                   <h4 className="font-semibold text-lg">AE Generated</h4>
                   <span className="text-2xl font-bold text-accent">€4.48M</span>
@@ -275,7 +248,7 @@ export const StrategicPillars = () => {
                 <p className="text-sm text-muted-foreground">3 qualified opps per month from 5 sales reps = €370k per month pipeline.</p>
               </div>
 
-              <div className="bg-gradient-to-br from-success/10 to-success/5 rounded-lg p-6 border-l-4 border-success">
+              <div className="bg-card rounded-lg p-6 border-l-4 border-success">
                 <div className="flex items-center justify-between mb-2">
                   <h4 className="font-semibold text-lg">Marketing</h4>
                   <span className="text-2xl font-bold text-success">€9.61M</span>
@@ -283,7 +256,7 @@ export const StrategicPillars = () => {
                 <p className="text-sm text-muted-foreground">Mirror channels that have delivered. Invest heaviest where we have had wins. Research Project (limited impact pre July). Brand refresh impact & new optimized site.</p>
               </div>
 
-              <div className="bg-gradient-to-br from-chart-4/10 to-chart-4/5 rounded-lg p-6 border-l-4 border-chart-4">
+              <div className="bg-card rounded-lg p-6 border-l-4 border-chart-4">
                 <div className="flex items-center justify-between mb-2">
                   <h4 className="font-semibold text-lg">Partnerships</h4>
                   <span className="text-2xl font-bold text-chart-4">€5.34M</span>
@@ -292,6 +265,8 @@ export const StrategicPillars = () => {
               </div>
             </div>
           </Card>
+
+          {/* 5. Strategic Trade-Offs */}
 
           {/* Why This Strategy Will Succeed */}
           <Card className="p-8 bg-gradient-to-br from-success/10 to-success/5 border-2 border-success/30">
