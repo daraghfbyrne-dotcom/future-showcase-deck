@@ -202,26 +202,28 @@ export const StrategicPillars = () => {
             </h3>
             
             <div className="grid md:grid-cols-5 gap-6 mb-10">
-              <div className="text-center p-4 bg-card rounded-lg border border-chart-3/30">
-                <div className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wider">ARR Target</div>
-                <div className="text-3xl font-bold text-chart-3">€3.8M</div>
+              <div className="flex flex-col justify-between text-center p-4 bg-card rounded-lg border border-chart-3/30 min-h-[120px]">
+                <div className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">ARR Target</div>
+                <div className="text-3xl font-bold text-chart-3 mt-auto">€3.8M</div>
               </div>
-              <div className="text-center p-4 bg-card rounded-lg border border-primary/30">
-                <div className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wider">Current Pipeline (end Nov)</div>
-                <div className="text-3xl font-bold text-primary">€8.91M</div>
+              <div className="flex flex-col justify-between text-center p-4 bg-card rounded-lg border border-primary/30 min-h-[120px]">
+                <div className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Current Pipeline (end Nov)</div>
+                <div className="text-3xl font-bold text-primary mt-auto">€8.91M</div>
               </div>
-              <div className="text-center p-4 bg-card rounded-lg border border-success/30">
-                <div className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wider">Total Pipeline Required</div>
-                <div className="text-3xl font-bold text-success">€27.1M</div>
+              <div className="flex flex-col justify-between text-center p-4 bg-card rounded-lg border border-success/30 min-h-[120px]">
+                <div className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Total Pipeline Required</div>
+                <div className="text-3xl font-bold text-success mt-auto">€27.1M</div>
               </div>
-              <div className="text-center p-4 bg-card rounded-lg border border-accent/30">
-                <div className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wider">Net Pipeline Required</div>
-                <div className="text-3xl font-bold text-accent">€18.2M</div>
+              <div className="flex flex-col justify-between text-center p-4 bg-card rounded-lg border border-accent/30 min-h-[120px]">
+                <div className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Net Pipeline Required</div>
+                <div className="text-3xl font-bold text-accent mt-auto">€18.2M</div>
               </div>
-              <div className="text-center p-4 bg-card rounded-lg border border-chart-4/30">
-                <div className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wider">Avg Monthly Pipeline Required</div>
-                <div className="text-3xl font-bold text-chart-4">€2.3M</div>
-                <div className="text-xs text-muted-foreground mt-1">(2x yoy)</div>
+              <div className="flex flex-col justify-between text-center p-4 bg-card rounded-lg border border-chart-4/30 min-h-[120px]">
+                <div className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Avg Monthly Pipeline Required</div>
+                <div className="mt-auto">
+                  <div className="text-3xl font-bold text-chart-4">€2.3M</div>
+                  <div className="text-xs text-muted-foreground">(2x yoy)</div>
+                </div>
               </div>
             </div>
 
