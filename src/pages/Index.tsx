@@ -33,69 +33,69 @@ const Index = () => {
                 </h2>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
                 <a 
                   href="#analysis" 
-                  className="group block p-6 bg-card border border-border rounded-lg hover:border-primary/50 hover:shadow-lg transition-all hover-scale"
+                  className="group block p-4 bg-card border border-border rounded-lg hover:border-primary/50 hover:shadow-lg transition-all hover-scale"
                 >
                   <div className="text-center">
-                    <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <Zap className="w-6 h-6 text-primary" />
+                    <div className="w-10 h-10 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <Zap className="w-5 h-5 text-primary" />
                     </div>
-                    <h3 className="font-semibold text-lg">ERP</h3>
-                    <p className="text-sm text-muted-foreground mt-1">Win patterns by system</p>
+                    <h3 className="font-semibold text-sm">ERP</h3>
+                    <p className="text-xs text-muted-foreground mt-1">Win patterns by system</p>
                   </div>
                 </a>
                 
                 <a 
                   href="#industry" 
-                  className="group block p-6 bg-card border border-border rounded-lg hover:border-primary/50 hover:shadow-lg transition-all hover-scale"
+                  className="group block p-4 bg-card border border-border rounded-lg hover:border-primary/50 hover:shadow-lg transition-all hover-scale"
                 >
                   <div className="text-center">
-                    <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <TrendingUp className="w-6 h-6 text-primary" />
+                    <div className="w-10 h-10 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <TrendingUp className="w-5 h-5 text-primary" />
                     </div>
-                    <h3 className="font-semibold text-lg">Industry</h3>
-                    <p className="text-sm text-muted-foreground mt-1">Performance by vertical</p>
+                    <h3 className="font-semibold text-sm">Industry</h3>
+                    <p className="text-xs text-muted-foreground mt-1">Performance by vertical</p>
                   </div>
                 </a>
                 
                 <a 
                   href="#size" 
-                  className="group block p-6 bg-card border border-border rounded-lg hover:border-primary/50 hover:shadow-lg transition-all hover-scale"
+                  className="group block p-4 bg-card border border-border rounded-lg hover:border-primary/50 hover:shadow-lg transition-all hover-scale"
                 >
                   <div className="text-center">
-                    <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <Target className="w-6 h-6 text-primary" />
+                    <div className="w-10 h-10 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <Target className="w-5 h-5 text-primary" />
                     </div>
-                    <h3 className="font-semibold text-lg">Company Size</h3>
-                    <p className="text-sm text-muted-foreground mt-1">Sweet spot analysis</p>
+                    <h3 className="font-semibold text-sm">Company Size</h3>
+                    <p className="text-xs text-muted-foreground mt-1">Sweet spot analysis</p>
                   </div>
                 </a>
                 
                 <a 
                   href="#invoice-volume" 
-                  className="group block p-6 bg-card border border-border rounded-lg hover:border-primary/50 hover:shadow-lg transition-all hover-scale"
+                  className="group block p-4 bg-card border border-border rounded-lg hover:border-primary/50 hover:shadow-lg transition-all hover-scale"
                 >
                   <div className="text-center">
-                    <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <FileText className="w-6 h-6 text-primary" />
+                    <div className="w-10 h-10 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <FileText className="w-5 h-5 text-primary" />
                     </div>
-                    <h3 className="font-semibold text-lg">Invoice Volume</h3>
-                    <p className="text-sm text-muted-foreground mt-1">Win patterns by volume</p>
+                    <h3 className="font-semibold text-sm">Invoice Volume</h3>
+                    <p className="text-xs text-muted-foreground mt-1">Win patterns by volume</p>
                   </div>
                 </a>
                 
                 <a 
                   href="#competitors" 
-                  className="group block p-6 bg-card border border-border rounded-lg hover:border-primary/50 hover:shadow-lg transition-all hover-scale"
+                  className="group block p-4 bg-card border border-border rounded-lg hover:border-primary/50 hover:shadow-lg transition-all hover-scale"
                 >
                   <div className="text-center">
-                    <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <Users className="w-6 h-6 text-primary" />
+                    <div className="w-10 h-10 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <Users className="w-5 h-5 text-primary" />
                     </div>
-                    <h3 className="font-semibold text-lg">Competitors</h3>
-                    <p className="text-sm text-muted-foreground mt-1">Competitive landscape</p>
+                    <h3 className="font-semibold text-sm">Competitors</h3>
+                    <p className="text-xs text-muted-foreground mt-1">Competitive landscape</p>
                   </div>
                 </a>
               </div>
