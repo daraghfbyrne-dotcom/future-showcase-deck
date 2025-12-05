@@ -4,6 +4,7 @@ import { ChevronRight, TrendingUp, Target, Users, Calendar, DollarSign, Zap, Fil
 import { Hero } from "@/components/sections/Hero";
 import { Navigation } from "@/components/Navigation";
 import { WhyStrategy } from "@/components/sections/WhyStrategy";
+import { ProspectMarketConditions } from "@/components/sections/ProspectMarketConditions";
 import { ERPAnalysis } from "@/components/sections/ERPAnalysis";
 import { IndustryAnalysis } from "@/components/sections/IndustryAnalysis";
 import { IndustryMarketChallenges } from "@/components/sections/IndustryMarketChallenges";
@@ -24,6 +25,7 @@ const Index = () => {
       <main>
         <Hero />
         <WhyStrategy />
+        <ProspectMarketConditions />
         
         <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-accent/5 border-y border-border">
           <div className="container mx-auto px-6">
