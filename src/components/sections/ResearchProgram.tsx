@@ -236,7 +236,7 @@ export const ResearchProgram = () => {
                 <div className="p-4 rounded-lg bg-success/5 border border-success/20">
                   <p className="font-bold text-success mb-2">Q1 2026</p>
                   <div className="space-y-1 text-sm">
-                    <p className="flex items-center gap-2"><MapPin className="w-3 h-3" /> UK</p>
+                    <p className="flex items-center gap-2"><MapPin className="w-3 h-3" /> London</p>
                     <p className="flex items-center gap-2"><MapPin className="w-3 h-3" /> USA</p>
                   </div>
                 </div>
