@@ -19,7 +19,7 @@ export const IndustryAnalysis = () => {
   const decliningIndustries = [
     { name: "Natural Resources", pre: { opps: 7, wins: 3, rate: 43 }, post: { opps: 0, wins: 0, rate: 0 }, status: "nonviable" },
     { name: "Retail", pre: { opps: 13, wins: 2, rate: 15 }, post: { opps: 0, wins: 0, rate: 0 }, status: "nonviable" },
-    { name: "Financial Services", pre: { opps: 9, wins: 0, rate: 0 }, post: { opps: 5, wins: 0, rate: 0 }, status: "unwinnable" },
+    { name: "Financial Services", pre: { opps: 9, wins: 0, rate: 0 }, post: { opps: 5, wins: 1, rate: 20 }, status: "unwinnable" },
   ];
 
   const getStatusBadge = (status: string) => {
