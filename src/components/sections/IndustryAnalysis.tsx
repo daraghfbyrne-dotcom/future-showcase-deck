@@ -112,7 +112,7 @@ export const IndustryAnalysis = () => {
               </li>
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full bg-destructive mt-2 flex-shrink-0" />
-                <span className="text-muted-foreground">Retail, Natural Resources, and Financial Services are non-viable — avoid investment</span>
+                <span className="text-muted-foreground">Any opportunities within Retail, Natural Resources, and Financial Services need to be reviewed and qualified rigorously</span>
               </li>
             </ul>
           </Card>
