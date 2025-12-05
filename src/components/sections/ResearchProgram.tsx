@@ -22,7 +22,7 @@ export const ResearchProgram = () => {
               <Zap className="w-6 h-6 text-accent" />
             </div>
             <h2 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl mb-6">
-              2026 Research <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Program</span>
+              2026/27 Research <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Program</span>
             </h2>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               Positioning SoftCo as the <span className="text-foreground font-semibold">defining authority</span> in complex P2P/AP transformation and AI-powered automation
