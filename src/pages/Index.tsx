@@ -6,6 +6,7 @@ import { Navigation } from "@/components/Navigation";
 import { WhyStrategy } from "@/components/sections/WhyStrategy";
 import { ERPAnalysis } from "@/components/sections/ERPAnalysis";
 import { IndustryAnalysis } from "@/components/sections/IndustryAnalysis";
+import { IndustryMarketChallenges } from "@/components/sections/IndustryMarketChallenges";
 import { SizeAnalysis } from "@/components/sections/SizeAnalysis";
 import { InvoiceVolumeAnalysis } from "@/components/sections/InvoiceVolumeAnalysis";
 import { CompetitorAnalysis } from "@/components/sections/CompetitorAnalysis";
@@ -105,6 +106,7 @@ const Index = () => {
         
         <ERPAnalysis />
         <IndustryAnalysis />
+        <IndustryMarketChallenges />
         <SizeAnalysis />
         <InvoiceVolumeAnalysis />
         <CompetitorAnalysis />
