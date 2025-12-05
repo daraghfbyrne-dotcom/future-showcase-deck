@@ -32,10 +32,10 @@ export const StrategicPillars = () => {
                 <div className="w-20 h-20 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-6 shadow-lg">
                   <Rocket className="w-11 h-11 text-white" />
                 </div>
-                <h4 className="font-display font-bold text-3xl mb-4 text-white">Bet 1 — Own the Category</h4>
-                <p className="text-white/95 text-lg font-medium mb-4">Multi-ERP, High-Complexity AP Automation</p>
+                <h4 className="font-display font-bold text-3xl mb-4 text-white">Bet 1 — Play to Customer Needs & Worries</h4>
+                <p className="text-white/95 text-lg font-medium mb-4">Verified Transactions & Corporate Compliance</p>
                 <p className="text-white/90 text-base leading-relaxed">
-                  We will define and lead the category built around the problem only SoftCo can solve: Controlling AP across multiple ERPs, multiple entities, and complex approvals.
+                  SoftCo provides secure, verified P2P transactions with over 20 validation points — delivering corporate compliance validations and checks that give finance teams confidence in every transaction.
                 </p>
               </Card>
 
