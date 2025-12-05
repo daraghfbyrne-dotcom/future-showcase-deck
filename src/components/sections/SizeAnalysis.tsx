@@ -13,7 +13,7 @@ export const SizeAnalysis = () => {
     { range: "€50m–99m", deals: 19, wins: 2, rate: 10.5, target: false, note: "Inconsistent fit" },
     { range: "€5m–49m", deals: 30, wins: 3, rate: 10.0, target: false, note: "Very low win yield" },
     { range: "€100m–249m", deals: 42, wins: 4, rate: 9.5, target: false, note: "Low conversion" },
-    { range: "€0–5m", deals: 12, wins: 0, rate: 0.0, target: false, note: "Non-viable" },
+    { range: "€0–5m", deals: 12, wins: 0, rate: 0.0, target: false, note: "Neutral" },
   ];
 
   return (
