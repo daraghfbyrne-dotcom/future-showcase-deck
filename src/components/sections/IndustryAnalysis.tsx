@@ -97,7 +97,7 @@ export const IndustryAnalysis = () => {
               Performance by <span className="text-primary">Industry</span>
             </h2>
             <p className="text-xl text-muted-foreground">
-              Identifying high-potential sectors and areas to avoid
+              Identifying high-potential sectors
             </p>
           </div>
 
