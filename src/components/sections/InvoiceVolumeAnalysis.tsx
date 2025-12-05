@@ -10,7 +10,7 @@ export const InvoiceVolumeAnalysis = () => {
     { range: "30k–45k", prePeriod: 10.0, postPeriod: 6.7, change: -3.3, target: false, zone: "secondary", note: "Performance declining" },
     { range: "45k–60k", prePeriod: 15.4, postPeriod: 5.9, change: -9.5, target: false, zone: "secondary", note: "Significant decline" },
     { range: "60k–120k", prePeriod: 28.6, postPeriod: 17.4, change: -11.2, target: true, zone: "secondary", note: "Meaningful band but slipping — needs attention" },
-    { range: "120k–1.8m", prePeriod: 33.3, postPeriod: 0.0, change: -33.3, target: false, zone: "worry", note: "Still generating pipeline but closing none" },
+    { range: "120k–1.8m", prePeriod: 33.3, postPeriod: 0.0, change: -33.3, target: false, zone: "worry", note: "Still generating pipeline but high risk and slow sales cycle" },
   ];
 
   return (
@@ -122,12 +122,12 @@ export const InvoiceVolumeAnalysis = () => {
                       </div>
                       <div>
                         <div className="text-sm text-muted-foreground mb-1">Status</div>
-                        <div className={`text-lg font-semibold ${
+                        <div className={`text-sm font-semibold ${
                           segment.zone === "core" ? 'text-success' : 
                           segment.zone === "secondary" ? 'text-primary' : 'text-destructive'
                         }`}>
                           {segment.zone === "core" ? 'Core' : 
-                           segment.zone === "secondary" ? 'Secondary' : 'Avoid'}
+                           segment.zone === "secondary" ? 'Secondary' : 'Monitor closely'}
                         </div>
                       </div>
                     </div>
