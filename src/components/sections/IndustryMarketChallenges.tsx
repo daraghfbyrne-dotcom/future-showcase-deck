@@ -1,7 +1,9 @@
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
-import { Factory, Radio, Heart, UtensilsCrossed, Mountain, Landmark, TrendingUp, AlertTriangle } from "lucide-react";
+import { Factory, Radio, Heart, UtensilsCrossed, Mountain, Landmark, TrendingUp, AlertTriangle, Layers } from "lucide-react";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 const industries = [
   {
@@ -108,6 +110,83 @@ const industries = [
   }
 ];
 
+const maturityLevels = [
+  { level: "L1", name: "Foundation", description: "Manual, Reactive" },
+  { level: "L2", name: "Control", description: "Standardized, Compliance-Focused" },
+  { level: "L3", name: "Integrate", description: "Data-Driven, Forward-Looking" },
+  { level: "L4", name: "Optimize", description: "Automation-First, Strategic" },
+  { level: "L5", name: "Transform", description: "AI-Driven, Autonomous, ESG-Integrated" }
+];
+
+const maturityData = [
+  {
+    sector: "Manufacturing",
+    icon: Factory,
+    levels: {
+      L1: "Manual costing; slow close; limited visibility into inventory & production cost drivers",
+      L2: "Standard costing in place; monthly variance review; partial ERP use",
+      L3: "Real-time dashboards for cost & production; S&OP tied to finance",
+      L4: "Predictive cost modelling; automated variance analysis; digital twins in planning",
+      L5: "AI-driven S&OP; autonomous forecasting; full carbon-cost integration"
+    }
+  },
+  {
+    sector: "Media / Telco",
+    icon: Radio,
+    levels: {
+      L1: "Billing errors; manual revenue recognition; siloed data",
+      L2: "Automated billing; revenue assurance emerging; compliance focus",
+      L3: "CLV & churn analytics; integrated revenue models; BI dashboards",
+      L4: "Dynamic pricing; near-real-time revenue assurance; automated financial workflows",
+      L5: "AI-based monetization; real-time fraud detection; autonomous forecasting"
+    }
+  },
+  {
+    sector: "Health Services",
+    icon: Heart,
+    levels: {
+      L1: "Manual claims; high denial rates; limited patient-cost insights",
+      L2: "RCM tools implemented; standardized controls; reduced errors",
+      L3: "Predictive patient-volume forecasting; integrated clinical & financial data",
+      L4: "Cost-to-serve analytics; linking outcomes to financials; automation in claims",
+      L5: "AI-driven outcome-based financial modelling; autonomous reimbursement forecasting"
+    }
+  },
+  {
+    sector: "Retail, Food & Hospitality",
+    icon: UtensilsCrossed,
+    levels: {
+      L1: "Manual stock counts; store-level financials delayed; margins unclear",
+      L2: "POS → ERP integration; weekly or daily margin reporting",
+      L3: "SKU-level profitability; demand forecasting for labor & inventory",
+      L4: "Dynamic pricing & promo optimization; shrinkage/waste analytics",
+      L5: "Real-time omnichannel profitability; automated replenishment tied to financial plans"
+    }
+  },
+  {
+    sector: "Natural Resources",
+    icon: Mountain,
+    levels: {
+      L1: "Manual capex reporting; limited project financial visibility",
+      L2: "Structured capex workflows; cost control discipline; basic compliance",
+      L3: "Integrated mine/field data; predictive maintenance inputs in planning",
+      L4: "Advanced commodity-risk modelling; automated capex forecasting",
+      L5: "AI-based commodity scenarios; ESG/community impact fully embedded in financial planning"
+    }
+  },
+  {
+    sector: "Financial Services",
+    icon: Landmark,
+    levels: {
+      L1: "Spreadsheet-driven regulatory reports; fragmented risk data",
+      L2: "Automated regulatory templates; standardized compliance",
+      L3: "Integrated risk + finance data; embedded stress testing",
+      L4: "Real-time liquidity & risk dashboards; regulatory automation; advanced FP&A",
+      L5: "Autonomous regulatory reporting; AI-driven capital optimization; continuous forecasting"
+    }
+  }
+];
+
 const crossIndustryInsights = {
   trends: [
     "Automation of finance tasks",
@@ -125,6 +204,17 @@ const crossIndustryInsights = {
   ]
 };
 
+const getLevelColor = (level: string) => {
+  switch (level) {
+    case "L1": return "bg-red-500/10 text-red-600 border-red-500/20";
+    case "L2": return "bg-orange-500/10 text-orange-600 border-orange-500/20";
+    case "L3": return "bg-yellow-500/10 text-yellow-600 border-yellow-500/20";
+    case "L4": return "bg-emerald-500/10 text-emerald-600 border-emerald-500/20";
+    case "L5": return "bg-primary/10 text-primary border-primary/20";
+    default: return "bg-muted text-muted-foreground";
+  }
+};
+
 export const IndustryMarketChallenges = () => {
   return (
     <section className="py-16 px-4 md:px-8 bg-gradient-to-b from-background to-muted/30">
@@ -135,101 +225,174 @@ export const IndustryMarketChallenges = () => {
             Industry Market Challenges
           </h2>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-            Finance department trends and challenges across our target industries
+            Finance department trends, challenges, and maturity across our target industries
           </p>
         </div>
 
-        {/* Cross-Industry Summary */}
-        <Card className="p-6 mb-8 bg-gradient-to-r from-primary/5 to-secondary/5 border-primary/20">
-          <h3 className="font-display text-xl font-bold text-foreground mb-6 text-center">Cross-Industry Summary</h3>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <TrendingUp className="h-5 w-5 text-primary" />
-                <h4 className="font-semibold text-foreground">Biggest Trends</h4>
-              </div>
-              <ul className="space-y-2">
-                {crossIndustryInsights.trends.map((trend, index) => (
-                  <li key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <span className="text-primary mt-1">•</span>
-                    {trend}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <AlertTriangle className="h-5 w-5 text-secondary" />
-                <h4 className="font-semibold text-foreground">Most Common Challenges</h4>
-              </div>
-              <ul className="space-y-2">
-                {crossIndustryInsights.challenges.map((challenge, index) => (
-                  <li key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <span className="text-secondary mt-1">•</span>
-                    {challenge}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </Card>
-
-        {/* Industry Tabs */}
-        <Tabs defaultValue="manufacturing" className="w-full">
-          <TabsList className="flex flex-wrap h-auto gap-2 bg-muted/50 p-2 mb-6">
-            {industries.map((industry) => (
-              <TabsTrigger 
-                key={industry.id} 
-                value={industry.id}
-                className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
-              >
-                <industry.icon className="h-4 w-4" />
-                <span className="hidden sm:inline">{industry.name}</span>
-              </TabsTrigger>
-            ))}
+        {/* Main View Tabs */}
+        <Tabs defaultValue="challenges" className="w-full">
+          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-8">
+            <TabsTrigger value="challenges" className="flex items-center gap-2">
+              <AlertTriangle className="h-4 w-4" />
+              Trends & Challenges
+            </TabsTrigger>
+            <TabsTrigger value="maturity" className="flex items-center gap-2">
+              <Layers className="h-4 w-4" />
+              Maturity Model
+            </TabsTrigger>
           </TabsList>
 
-          {industries.map((industry) => (
-            <TabsContent key={industry.id} value={industry.id}>
+          {/* Trends & Challenges Tab */}
+          <TabsContent value="challenges">
+            {/* Cross-Industry Summary */}
+            <Card className="p-6 mb-8 bg-gradient-to-r from-primary/5 to-secondary/5 border-primary/20">
+              <h3 className="font-display text-xl font-bold text-foreground mb-6 text-center">Cross-Industry Summary</h3>
               <div className="grid md:grid-cols-2 gap-6">
-                {/* Trends Column */}
-                <Card className="p-6 border-primary/20">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="p-2 rounded-lg bg-primary/10">
-                      <TrendingUp className="h-5 w-5 text-primary" />
-                    </div>
-                    <h3 className="font-display text-lg font-bold text-foreground">Finance Trends</h3>
+                <div>
+                  <div className="flex items-center gap-2 mb-4">
+                    <TrendingUp className="h-5 w-5 text-primary" />
+                    <h4 className="font-semibold text-foreground">Biggest Trends</h4>
                   </div>
-                  <div className="space-y-4">
-                    {industry.trends.map((trend, index) => (
-                      <div key={index} className="border-l-2 border-primary/30 pl-4">
-                        <h4 className="font-semibold text-foreground text-sm mb-1">{trend.title}</h4>
-                        <p className="text-muted-foreground text-sm">{trend.description}</p>
-                      </div>
+                  <ul className="space-y-2">
+                    {crossIndustryInsights.trends.map((trend, index) => (
+                      <li key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <span className="text-primary mt-1">•</span>
+                        {trend}
+                      </li>
                     ))}
+                  </ul>
+                </div>
+                <div>
+                  <div className="flex items-center gap-2 mb-4">
+                    <AlertTriangle className="h-5 w-5 text-secondary" />
+                    <h4 className="font-semibold text-foreground">Most Common Challenges</h4>
                   </div>
-                </Card>
-
-                {/* Challenges Column */}
-                <Card className="p-6 border-secondary/20">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="p-2 rounded-lg bg-secondary/10">
-                      <AlertTriangle className="h-5 w-5 text-secondary" />
-                    </div>
-                    <h3 className="font-display text-lg font-bold text-foreground">Finance Challenges</h3>
-                  </div>
-                  <div className="space-y-4">
-                    {industry.challenges.map((challenge, index) => (
-                      <div key={index} className="border-l-2 border-secondary/30 pl-4">
-                        <h4 className="font-semibold text-foreground text-sm mb-1">{challenge.title}</h4>
-                        <p className="text-muted-foreground text-sm">{challenge.description}</p>
-                      </div>
+                  <ul className="space-y-2">
+                    {crossIndustryInsights.challenges.map((challenge, index) => (
+                      <li key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <span className="text-secondary mt-1">•</span>
+                        {challenge}
+                      </li>
                     ))}
-                  </div>
-                </Card>
+                  </ul>
+                </div>
               </div>
-            </TabsContent>
-          ))}
+            </Card>
+
+            {/* Industry Tabs */}
+            <Tabs defaultValue="manufacturing" className="w-full">
+              <TabsList className="flex flex-wrap h-auto gap-2 bg-muted/50 p-2 mb-6">
+                {industries.map((industry) => (
+                  <TabsTrigger 
+                    key={industry.id} 
+                    value={industry.id}
+                    className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                  >
+                    <industry.icon className="h-4 w-4" />
+                    <span className="hidden sm:inline">{industry.name}</span>
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+
+              {industries.map((industry) => (
+                <TabsContent key={industry.id} value={industry.id}>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    {/* Trends Column */}
+                    <Card className="p-6 border-primary/20">
+                      <div className="flex items-center gap-3 mb-6">
+                        <div className="p-2 rounded-lg bg-primary/10">
+                          <TrendingUp className="h-5 w-5 text-primary" />
+                        </div>
+                        <h3 className="font-display text-lg font-bold text-foreground">Finance Trends</h3>
+                      </div>
+                      <div className="space-y-4">
+                        {industry.trends.map((trend, index) => (
+                          <div key={index} className="border-l-2 border-primary/30 pl-4">
+                            <h4 className="font-semibold text-foreground text-sm mb-1">{trend.title}</h4>
+                            <p className="text-muted-foreground text-sm">{trend.description}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </Card>
+
+                    {/* Challenges Column */}
+                    <Card className="p-6 border-secondary/20">
+                      <div className="flex items-center gap-3 mb-6">
+                        <div className="p-2 rounded-lg bg-secondary/10">
+                          <AlertTriangle className="h-5 w-5 text-secondary" />
+                        </div>
+                        <h3 className="font-display text-lg font-bold text-foreground">Finance Challenges</h3>
+                      </div>
+                      <div className="space-y-4">
+                        {industry.challenges.map((challenge, index) => (
+                          <div key={index} className="border-l-2 border-secondary/30 pl-4">
+                            <h4 className="font-semibold text-foreground text-sm mb-1">{challenge.title}</h4>
+                            <p className="text-muted-foreground text-sm">{challenge.description}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </Card>
+                  </div>
+                </TabsContent>
+              ))}
+            </Tabs>
+          </TabsContent>
+
+          {/* Maturity Model Tab */}
+          <TabsContent value="maturity">
+            <Card className="p-6 mb-6 bg-gradient-to-r from-primary/5 to-secondary/5 border-primary/20">
+              <h3 className="font-display text-xl font-bold text-foreground mb-4 text-center">Finance Department Maturity Model</h3>
+              <div className="flex flex-wrap justify-center gap-3">
+                {maturityLevels.map((level) => (
+                  <div key={level.level} className={`px-4 py-2 rounded-lg border ${getLevelColor(level.level)}`}>
+                    <span className="font-bold">{level.level}</span>
+                    <span className="mx-2">—</span>
+                    <span className="font-semibold">{level.name}</span>
+                    <span className="text-xs ml-2 opacity-75">({level.description})</span>
+                  </div>
+                ))}
+              </div>
+            </Card>
+
+            <Card className="border-border">
+              <ScrollArea className="w-full">
+                <div className="min-w-[1200px]">
+                  <Table>
+                    <TableHeader>
+                      <TableRow className="bg-muted/50">
+                        <TableHead className="w-[180px] font-bold text-foreground">Sector</TableHead>
+                        {maturityLevels.map((level) => (
+                          <TableHead key={level.level} className="min-w-[200px]">
+                            <div className={`inline-flex items-center px-2 py-1 rounded text-xs font-bold ${getLevelColor(level.level)}`}>
+                              {level.level} — {level.name}
+                            </div>
+                          </TableHead>
+                        ))}
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {maturityData.map((row, index) => (
+                        <TableRow key={index} className="hover:bg-muted/30">
+                          <TableCell className="font-semibold">
+                            <div className="flex items-center gap-2">
+                              <row.icon className="h-4 w-4 text-primary" />
+                              {row.sector}
+                            </div>
+                          </TableCell>
+                          <TableCell className="text-sm text-muted-foreground">{row.levels.L1}</TableCell>
+                          <TableCell className="text-sm text-muted-foreground">{row.levels.L2}</TableCell>
+                          <TableCell className="text-sm text-muted-foreground">{row.levels.L3}</TableCell>
+                          <TableCell className="text-sm text-muted-foreground">{row.levels.L4}</TableCell>
+                          <TableCell className="text-sm text-muted-foreground">{row.levels.L5}</TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </div>
+                <ScrollBar orientation="horizontal" />
+              </ScrollArea>
+            </Card>
+          </TabsContent>
         </Tabs>
       </div>
     </section>
