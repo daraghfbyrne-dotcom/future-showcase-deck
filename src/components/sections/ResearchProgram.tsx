@@ -372,11 +372,6 @@ export const ResearchProgram = () => {
                 </div>
               </div>
 
-              <div className="p-4 rounded-lg bg-primary/10 border border-primary/20">
-                <p className="text-sm text-foreground">
-                  <span className="font-semibold text-primary">Total from Conferences:</span> €1,650,000 pipeline • 17 SLs
-                </p>
-              </div>
             </Card>
 
             {/* ERP-Specific Events */}
