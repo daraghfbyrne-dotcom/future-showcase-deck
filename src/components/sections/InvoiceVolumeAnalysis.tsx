@@ -51,12 +51,12 @@ export const InvoiceVolumeAnalysis = () => {
               </div>
               <div>
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="w-3 h-3 rounded-full bg-destructive" />
-                  <span className="font-semibold text-destructive">Worry Zone: &gt;120k invoices P/A</span>
+                  <div className="w-3 h-3 rounded-full bg-chart-2" />
+                  <span className="font-semibold text-chart-2">Monitor Closely: &gt;120k invoices P/A</span>
                 </div>
                 <ul className="space-y-2 text-sm text-muted-foreground ml-5">
-                  <li>• Still generating pipeline (17 deals in P2) but are <strong>closing none</strong></li>
-                  <li>• That's expensive, demoralising pipeline</li>
+                  <li>• Still generating pipeline but high risk and slow sales cycle</li>
+                  <li>• Monitor closely and continuously qualify</li>
                 </ul>
               </div>
             </div>
@@ -89,9 +89,9 @@ export const InvoiceVolumeAnalysis = () => {
                           </div>
                         )}
                         {segment.zone === "worry" && (
-                          <div className="flex items-center gap-1 px-3 py-1 rounded-full bg-destructive/20 border border-destructive/30">
-                            <AlertTriangle className="w-3 h-3 text-destructive" />
-                            <span className="text-xs font-medium text-destructive">Worry Zone</span>
+                          <div className="flex items-center gap-1 px-3 py-1 rounded-full bg-chart-2/20 border border-chart-2/30">
+                            <AlertTriangle className="w-3 h-3 text-chart-2" />
+                            <span className="text-xs font-medium text-chart-2">Monitor Closely</span>
                           </div>
                         )}
                       </div>
