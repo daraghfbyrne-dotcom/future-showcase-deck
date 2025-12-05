@@ -25,10 +25,10 @@ export const Hero = () => {
           </div>
 
           <h1 className="font-display font-bold text-5xl md:text-7xl lg:text-8xl mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-            SoftCo 2026
+            SoftCo
             <br />
             <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-              Growth Strategy
+              2026 Growth Strategy
             </span>
           </h1>
 
