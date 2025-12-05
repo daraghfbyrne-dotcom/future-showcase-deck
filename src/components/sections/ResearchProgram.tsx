@@ -169,12 +169,6 @@ export const ResearchProgram = () => {
                 <Calendar className="w-5 h-5 text-accent" />
                 <span className="font-semibold text-accent">2026 EVENTS STRATEGY</span>
               </div>
-              <h3 className="font-display font-bold text-3xl md:text-4xl mb-4">
-                Bringing the Research <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary">to Life</span>
-              </h3>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                All conferences and events will leverage content from our flagship research initiative—ensuring consistent category leadership messaging across every touchpoint
-              </p>
             </div>
 
             {/* Total Pipeline Value */}
