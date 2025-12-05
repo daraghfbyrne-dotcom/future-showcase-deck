@@ -24,8 +24,7 @@ export const Navigation = ({ activeSection, setActiveSection }: NavigationProps)
     { id: "why", label: "Context" },
     { id: "analysis", label: "Analysis" },
     { id: "strategy", label: "Strategic Pillars" },
-    // { id: "channels", label: "Channels" },
-    // { id: "budget", label: "Budget" },
+    { id: "events-strategy", label: "Events Strategy" },
   ];
 
   const scrollToSection = (id: string) => {

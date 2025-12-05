@@ -18,7 +18,7 @@ export const ResearchProgram = () => {
           {/* ============================================ */}
           {/* 2026 EVENTS STRATEGY - PRIMARY SECTION */}
           {/* ============================================ */}
-          <div className="mb-20">
+          <div id="events-strategy" className="mb-20">
             {/* Events Strategy Header */}
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-success/30 via-accent/20 to-success/30 border-2 border-success/50 mb-8 shadow-xl">
