@@ -28,7 +28,7 @@ export const IndustryAnalysis = () => {
       "collapsed": { label: "Collapsed", className: "bg-destructive/20 text-destructive border-destructive/30" },
       "strong-icp": { label: "Strong ICP", className: "bg-success/20 text-success border-success/30" },
       "stable": { label: "Stable", className: "bg-chart-2/20 text-chart-2 border-chart-2/30" },
-      "nonviable": { label: "Non-viable", className: "bg-destructive/20 text-destructive border-destructive/30" },
+      "nonviable": { label: "Neutral", className: "bg-chart-2/20 text-chart-2 border-chart-2/30" },
       "unwinnable": { label: "Avoid", className: "bg-muted text-muted-foreground border-muted" },
     };
     const variant = variants[status] || variants["stable"];
