@@ -32,7 +32,7 @@ const Index = () => {
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="font-display font-bold text-5xl md:text-6xl animate-fade-in">
-                  What the Data <span className="text-primary">Tells Us</span>
+                  Data Points <span className="text-primary">Analysed</span>
                 </h2>
               </div>
               
