@@ -8,7 +8,7 @@ export const IndustryChart = () => {
     { name: 'Media & Telecom', prePeriod: 25, postPeriod: 100 },
     { name: 'Health Services', prePeriod: 29, postPeriod: 29 },
     { name: 'Natural Resources', prePeriod: 43, postPeriod: 18 },
-    { name: 'Financial Services', prePeriod: 0, postPeriod: 0 },
+    { name: 'Financial Services', prePeriod: 0, postPeriod: 20 },
   ];
 
   return (
