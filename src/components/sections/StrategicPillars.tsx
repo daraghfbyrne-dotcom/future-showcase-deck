@@ -206,13 +206,13 @@ export const StrategicPillars = () => {
                 <div className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">ARR Target</div>
                 <div className="text-3xl font-bold text-chart-3 mt-auto">€3.8M</div>
               </div>
-              <div className="flex flex-col justify-between text-center p-4 bg-card rounded-lg border border-primary/30 min-h-[120px]">
-                <div className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Current Pipeline (end Nov)</div>
-                <div className="text-3xl font-bold text-primary mt-auto">€8.91M</div>
-              </div>
               <div className="flex flex-col justify-between text-center p-4 bg-card rounded-lg border border-success/30 min-h-[120px]">
                 <div className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Total Pipeline Required</div>
                 <div className="text-3xl font-bold text-success mt-auto">€27.1M</div>
+              </div>
+              <div className="flex flex-col justify-between text-center p-4 bg-card rounded-lg border border-primary/30 min-h-[120px]">
+                <div className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Current Pipeline (end Nov)</div>
+                <div className="text-3xl font-bold text-primary mt-auto">€8.91M</div>
               </div>
               <div className="flex flex-col justify-between text-center p-4 bg-card rounded-lg border border-accent/30 min-h-[120px]">
                 <div className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Net Pipeline Required</div>
