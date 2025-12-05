@@ -35,7 +35,7 @@ export const StrategicPillars = () => {
                 <h4 className="font-display font-bold text-3xl mb-4 text-white">Bet 1 — Play to Customer Needs & Worries</h4>
                 <p className="text-white/95 text-lg font-medium mb-4">Verified Transactions & Corporate Compliance</p>
                 <p className="text-white/90 text-base leading-relaxed">
-                  SoftCo provides secure, verified P2P transactions with over 20 validation points — delivering corporate compliance validations and checks that give finance teams confidence in every transaction with integrated SLM & Analytics.
+                  SoftCo provides secure, verified P2P transactions with over 20 validation points — delivering corporate compliance validations and checks that give finance teams confidence in every transaction with integrated SLM & Analytics supported by AI.
                 </p>
               </Card>
 
