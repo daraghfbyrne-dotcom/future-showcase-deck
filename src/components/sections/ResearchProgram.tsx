@@ -173,21 +173,13 @@ export const ResearchProgram = () => {
 
             {/* Total Pipeline Value */}
             <Card className="p-6 mb-8 bg-gradient-to-r from-success/15 via-primary/10 to-accent/15 border-2 border-success/40">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-success/20 flex items-center justify-center">
-                    <Euro className="w-6 h-6 text-success" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">Total Pipeline Value from Events</p>
-                    <p className="text-3xl md:text-4xl font-bold text-success">€2,860,000</p>
-                  </div>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-success/20 flex items-center justify-center">
+                  <Euro className="w-6 h-6 text-success" />
                 </div>
-                <div className="flex items-center gap-4">
-                  <Sparkles className="w-5 h-5 text-accent" />
-                  <p className="text-sm text-foreground max-w-md">
-                    <span className="font-semibold text-accent">Powered by Flagship Research:</span> Every presentation and dinner discussion anchored in our original research
-                  </p>
+                <div>
+                  <p className="text-sm text-muted-foreground">Total Pipeline Value from Events</p>
+                  <p className="text-3xl md:text-4xl font-bold text-success">€3.48m <span className="text-lg font-semibold text-success/80">(+38% yoy)</span></p>
                 </div>
               </div>
             </Card>
