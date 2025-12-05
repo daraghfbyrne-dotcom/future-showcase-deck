@@ -146,7 +146,7 @@ export const IndustryAnalysis = () => {
                 </div>
                 
                 <div>
-                  <h3 className="font-semibold text-lg mb-4 text-destructive">Declining or Non-viable</h3>
+                  <h3 className="font-semibold text-lg mb-4 text-destructive">Neutral & Review Required</h3>
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {decliningIndustries.map(renderIndustryCard)}
                   </div>
