@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { BookOpen, BarChart3, Award, Lightbulb, Quote, Target, TrendingUp, Zap, Users, MapPin, Calendar, CheckCircle, Sparkles, Euro, Database, Mail, Phone, ClipboardCheck, ArrowRight } from "lucide-react";
+import { BookOpen, BarChart3, Award, Lightbulb, Quote, Target, TrendingUp, Zap, Users, MapPin, Calendar, CheckCircle, Sparkles, Euro, Database, Mail, Phone, ClipboardCheck, ArrowRight, FileText, ChevronRight } from "lucide-react";
 import oracleLogo from "@/assets/oracle-logo.png";
 import jdeLogo from "@/assets/jde-logo.png";
 
@@ -202,19 +202,12 @@ export const ResearchProgram = () => {
 
             {/* Executive Dinners Section */}
             <Card className="p-6 mb-8 bg-card border-2 border-success/30">
-              <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-success/20 to-success/10 flex items-center justify-center">
-                    <Users className="w-6 h-6 text-success" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-xl">SoftCo Private Dinners</h4>
-                    <p className="text-sm text-muted-foreground">11 Executive Dinners • €110,000 pipeline each • 1 SQL per event</p>
-                  </div>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-success/20 to-success/10 flex items-center justify-center">
+                  <Users className="w-6 h-6 text-success" />
                 </div>
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-success/20 border border-success/40">
-                  <CheckCircle className="w-4 h-4 text-success" />
-                  <span className="text-sm font-semibold text-success">COMMITTED</span>
+                <div>
+                  <h4 className="font-bold text-xl">SoftCo Private Dinners</h4>
                 </div>
               </div>
 
@@ -224,12 +217,13 @@ export const ResearchProgram = () => {
                   <div className="space-y-1 text-sm">
                     <p className="flex items-center gap-2"><MapPin className="w-3 h-3" /> London</p>
                     <p className="flex items-center gap-2"><MapPin className="w-3 h-3" /> USA</p>
+                    <p className="flex items-center gap-2"><MapPin className="w-3 h-3" /> Ireland</p>
                   </div>
                 </div>
                 <div className="p-4 rounded-lg bg-success/5 border border-success/20">
                   <p className="font-bold text-success mb-2">Q2 2026</p>
                   <div className="space-y-1 text-sm">
-                    <p className="flex items-center gap-2"><MapPin className="w-3 h-3" /> Ireland</p>
+                    <p className="flex items-center gap-2"><MapPin className="w-3 h-3" /> EU</p>
                     <p className="flex items-center gap-2"><MapPin className="w-3 h-3" /> Manchester</p>
                     <p className="flex items-center gap-2"><MapPin className="w-3 h-3" /> Chicago</p>
                   </div>
@@ -252,10 +246,63 @@ export const ResearchProgram = () => {
                 </div>
               </div>
 
-              <div className="p-4 rounded-lg bg-success/10 border border-success/20">
-                <p className="text-sm text-foreground">
-                  <span className="font-semibold text-success">Total from Dinners:</span> €1,210,000 pipeline • 11 SQLs
-                </p>
+              {/* Executive Dinner Campaign Flow */}
+              <div className="p-4 rounded-lg bg-primary/5 border border-primary/20">
+                <div className="flex items-center gap-2 mb-4">
+                  <TrendingUp className="w-5 h-5 text-primary" />
+                  <h5 className="font-bold text-foreground">Executive Dinner Campaign Flow</h5>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
+                  <div className="relative p-4 rounded-lg bg-primary text-primary-foreground">
+                    <p className="font-bold mb-2">Stage 1</p>
+                    <p className="text-sm font-semibold mb-2">Database Cleanse & Prospect ID</p>
+                    <p className="text-xs opacity-90 mb-1"><span className="font-medium">Goal:</span> Clean, targeted contact list</p>
+                    <p className="text-xs opacity-90 mb-3"><span className="font-medium">Owner:</span> SDR Team</p>
+                    <div className="flex items-center gap-2 text-xs opacity-80">
+                      <FileText className="w-3 h-3" />
+                      <span>Audit CRM, identify ICP prospects</span>
+                    </div>
+                    <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10">
+                      <ChevronRight className="w-5 h-5 text-success" />
+                    </div>
+                  </div>
+                  <div className="relative p-4 rounded-lg bg-primary text-primary-foreground">
+                    <p className="font-bold mb-2">Stage 2</p>
+                    <p className="text-sm font-semibold mb-2">Content & Email Creation</p>
+                    <p className="text-xs opacity-90 mb-1"><span className="font-medium">Goal:</span> Value-led communication</p>
+                    <p className="text-xs opacity-90 mb-3"><span className="font-medium">Owner:</span> SDR Team</p>
+                    <div className="flex items-center gap-2 text-xs opacity-80">
+                      <Mail className="w-3 h-3" />
+                      <span>Messaging, templates, RSVP forms</span>
+                    </div>
+                    <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10">
+                      <ChevronRight className="w-5 h-5 text-success" />
+                    </div>
+                  </div>
+                  <div className="relative p-4 rounded-lg bg-primary text-primary-foreground">
+                    <p className="font-bold mb-2">Stage 3</p>
+                    <p className="text-sm font-semibold mb-2">Email Sequence & Follow-Up</p>
+                    <p className="text-xs opacity-90 mb-1"><span className="font-medium">Goal:</span> Secure qualified responses</p>
+                    <p className="text-xs opacity-90 mb-3"><span className="font-medium">Owner:</span> SDR & Marketing</p>
+                    <div className="flex items-center gap-2 text-xs opacity-80">
+                      <Phone className="w-3 h-3" />
+                      <span>3-4 stage sequence, follow-up calls</span>
+                    </div>
+                    <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10">
+                      <ChevronRight className="w-5 h-5 text-success" />
+                    </div>
+                  </div>
+                  <div className="p-4 rounded-lg bg-primary text-primary-foreground">
+                    <p className="font-bold mb-2">Stage 4</p>
+                    <p className="text-sm font-semibold mb-2">Confirmation & Attendance</p>
+                    <p className="text-xs opacity-90 mb-1"><span className="font-medium">Goal:</span> Maximize attendance</p>
+                    <p className="text-xs opacity-90 mb-3"><span className="font-medium">Owner:</span> SDR Team</p>
+                    <div className="flex items-center gap-2 text-xs opacity-80">
+                      <Calendar className="w-3 h-3" />
+                      <span>Reminders, re-confirm, waiting list (~20% drop-off)</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </Card>
 
