@@ -17,9 +17,9 @@ export const IndustryAnalysis = () => {
   ];
 
   const decliningIndustries = [
-    { name: "Natural Resources", pre: { opps: 7, wins: 3, rate: 43 }, post: { opps: 0, wins: 0, rate: 0 }, status: "nonviable" },
-    { name: "Retail", pre: { opps: 13, wins: 2, rate: 15 }, post: { opps: 0, wins: 0, rate: 0 }, status: "nonviable" },
-    { name: "Financial Services", pre: { opps: 9, wins: 0, rate: 0 }, post: { opps: 5, wins: 1, rate: 20 }, status: "unwinnable" },
+    { name: "Natural Resources", pre: { opps: 7, wins: 3, rate: 43 }, post: { opps: 0, wins: 0, rate: 0 }, status: "nonviable", note: null },
+    { name: "Retail", pre: { opps: 13, wins: 2, rate: 15 }, post: { opps: 0, wins: 0, rate: 0 }, status: "nonviable", note: null },
+    { name: "Financial Services", pre: { opps: 9, wins: 0, rate: 0 }, post: { opps: 5, wins: 1, rate: 20 }, status: "unwinnable", note: "Still generating pipeline (17 deals in P2) but sales cycle is long — SSE expected to close Dec '25 after 14-month cycle. Expensive and slow pipeline." },
   ];
 
   const getStatusBadge = (status: string) => {
@@ -35,7 +35,7 @@ export const IndustryAnalysis = () => {
     return <Badge variant="outline" className={variant.className}>{variant.label}</Badge>;
   };
 
-  const renderIndustryCard = (industry: typeof highPotentialIndustries[0]) => (
+  const renderIndustryCard = (industry: typeof highPotentialIndustries[0] & { note?: string | null }) => (
     <Card key={industry.name} className="p-6 bg-card border-border hover:border-primary/30 transition-all">
       <div className="flex items-start justify-between mb-4">
         <h3 className="font-semibold text-lg">{industry.name}</h3>
@@ -79,6 +79,12 @@ export const IndustryAnalysis = () => {
           </div>
         </div>
       </div>
+      
+      {industry.note && (
+        <div className="mt-4 p-3 bg-accent/10 border border-accent/20 rounded-lg">
+          <p className="text-sm text-muted-foreground italic">{industry.note}</p>
+        </div>
+      )}
     </Card>
   );
 
