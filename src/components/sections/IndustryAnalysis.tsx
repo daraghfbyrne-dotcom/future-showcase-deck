@@ -29,7 +29,7 @@ export const IndustryAnalysis = () => {
       "strong-icp": { label: "Strong ICP", className: "bg-success/20 text-success border-success/30" },
       "stable": { label: "Stable", className: "bg-chart-2/20 text-chart-2 border-chart-2/30" },
       "nonviable": { label: "Neutral", className: "bg-chart-2/20 text-chart-2 border-chart-2/30" },
-      "unwinnable": { label: "Avoid", className: "bg-muted text-muted-foreground border-muted" },
+      "unwinnable": { label: "Selective", className: "bg-muted text-muted-foreground border-muted" },
     };
     const variant = variants[status] || variants["stable"];
     return <Badge variant="outline" className={variant.className}>{variant.label}</Badge>;
