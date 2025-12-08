@@ -271,9 +271,9 @@ export const StrategicPillars = () => {
               </div>
             </div>
 
-            {/* Linearity Table */}
+            {/* Linearity Profile Table */}
             <h4 className="font-display font-bold text-2xl mb-6 text-center mt-10">
-              Linearity
+              Linearity Profile
             </h4>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
