@@ -271,67 +271,67 @@ export const StrategicPillars = () => {
               </div>
             </div>
 
-            {/* Linearity Table */}
+            {/* Linearity Profile Table */}
             <h4 className="font-display font-bold text-2xl mb-6 text-center mt-10">
-              Linearity
+              Linearity Profile
             </h4>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-border">
-                    <th className="py-3 px-4 text-left font-semibold text-muted-foreground">FY26</th>
+                    <th className="py-3 px-4 text-center font-semibold text-muted-foreground">FY26</th>
                     <th className="py-3 px-4 text-center font-semibold text-muted-foreground">New Business</th>
-                    <th className="py-3 px-4 text-right font-semibold text-muted-foreground">New Business Total €</th>
+                    <th className="py-3 px-4 text-center font-semibold text-muted-foreground">New Business Total €</th>
                     <th className="py-3 px-4 pl-8 text-center font-semibold text-muted-foreground">Account Mgmt %</th>
-                    <th className="py-3 px-4 text-right font-semibold text-muted-foreground">Account Management Total €</th>
-                    <th className="py-3 px-4 text-right font-semibold text-muted-foreground">Total €</th>
+                    <th className="py-3 px-4 text-center font-semibold text-muted-foreground">Account Management Total €</th>
+                    <th className="py-3 px-4 text-center font-semibold text-muted-foreground">Total €</th>
                     <th className="py-3 px-4 text-center font-semibold text-muted-foreground">Total %</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr className="border-b border-border/50 hover:bg-muted/30">
-                    <td className="py-3 px-4 font-medium">Q1</td>
+                    <td className="py-3 px-4 text-center font-medium">Q1</td>
                     <td className="py-3 px-4 text-center">16%</td>
-                    <td className="py-3 px-4 text-right">€608,000</td>
+                    <td className="py-3 px-4 text-center">€608,000</td>
                     <td className="py-3 px-4 pl-8 text-center">20%</td>
-                    <td className="py-3 px-4 text-right">€200,000</td>
-                    <td className="py-3 px-4 text-right font-medium">€808,000</td>
+                    <td className="py-3 px-4 text-center">€200,000</td>
+                    <td className="py-3 px-4 text-center font-medium">€808,000</td>
                     <td className="py-3 px-4 text-center">17%</td>
                   </tr>
                   <tr className="border-b border-border/50 hover:bg-muted/30">
-                    <td className="py-3 px-4 font-medium">Q2</td>
+                    <td className="py-3 px-4 text-center font-medium">Q2</td>
                     <td className="py-3 px-4 text-center">21%</td>
-                    <td className="py-3 px-4 text-right">€798,000</td>
+                    <td className="py-3 px-4 text-center">€798,000</td>
                     <td className="py-3 px-4 pl-8 text-center">28%</td>
-                    <td className="py-3 px-4 text-right">€280,000</td>
-                    <td className="py-3 px-4 text-right font-medium">€1,078,000</td>
+                    <td className="py-3 px-4 text-center">€280,000</td>
+                    <td className="py-3 px-4 text-center font-medium">€1,078,000</td>
                     <td className="py-3 px-4 text-center">22%</td>
                   </tr>
                   <tr className="border-b border-border/50 hover:bg-muted/30">
-                    <td className="py-3 px-4 font-medium">Q3</td>
+                    <td className="py-3 px-4 text-center font-medium">Q3</td>
                     <td className="py-3 px-4 text-center">23%</td>
-                    <td className="py-3 px-4 text-right">€874,000</td>
+                    <td className="py-3 px-4 text-center">€874,000</td>
                     <td className="py-3 px-4 pl-8 text-center">22%</td>
-                    <td className="py-3 px-4 text-right">€220,000</td>
-                    <td className="py-3 px-4 text-right font-medium">€1,094,000</td>
+                    <td className="py-3 px-4 text-center">€220,000</td>
+                    <td className="py-3 px-4 text-center font-medium">€1,094,000</td>
                     <td className="py-3 px-4 text-center">23%</td>
                   </tr>
                   <tr className="border-b border-border/50 hover:bg-muted/30">
-                    <td className="py-3 px-4 font-medium">Q4</td>
+                    <td className="py-3 px-4 text-center font-medium">Q4</td>
                     <td className="py-3 px-4 text-center">40%</td>
-                    <td className="py-3 px-4 text-right">€1,520,000</td>
+                    <td className="py-3 px-4 text-center">€1,520,000</td>
                     <td className="py-3 px-4 pl-8 text-center">30%</td>
-                    <td className="py-3 px-4 text-right">€300,000</td>
-                    <td className="py-3 px-4 text-right font-medium">€1,820,000</td>
+                    <td className="py-3 px-4 text-center">€300,000</td>
+                    <td className="py-3 px-4 text-center font-medium">€1,820,000</td>
                     <td className="py-3 px-4 text-center">38%</td>
                   </tr>
                   <tr className="bg-primary/10 font-semibold">
-                    <td className="py-3 px-4">Total</td>
+                    <td className="py-3 px-4 text-center">Total</td>
                     <td className="py-3 px-4 text-center">100%</td>
-                    <td className="py-3 px-4 text-right">€3,800,000</td>
+                    <td className="py-3 px-4 text-center">€3,800,000</td>
                     <td className="py-3 px-4 pl-8 text-center">100%</td>
-                    <td className="py-3 px-4 text-right">€1,000,000</td>
-                    <td className="py-3 px-4 text-right">€4,800,000</td>
+                    <td className="py-3 px-4 text-center">€1,000,000</td>
+                    <td className="py-3 px-4 text-center">€4,800,000</td>
                     <td className="py-3 px-4 text-center">100%</td>
                   </tr>
                 </tbody>
