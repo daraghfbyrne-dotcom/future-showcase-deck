@@ -16,6 +16,111 @@ export const ResearchProgram = () => {
         <div className="max-w-6xl mx-auto">
           
           {/* ============================================ */}
+          {/* FY26 CUSTOMER FOCUS KICK OFF */}
+          {/* ============================================ */}
+          <div id="fy26-kickoff" className="mb-20">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-primary/30 via-accent/20 to-primary/30 border-2 border-primary/50 mb-8 shadow-xl">
+                <Users className="w-7 h-7 text-primary animate-pulse" />
+                <span className="text-2xl font-bold text-primary tracking-wide">FY26 KICK OFF</span>
+                <Sparkles className="w-7 h-7 text-accent" />
+              </div>
+              <h2 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl mb-6">
+                Customer Focus <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Kick Off FY26</span>
+              </h2>
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+                A two-day off-site designed to align the entire go to market engine — Inbound, Outbound, Events, Partners, Community, Customer Success and Product
+              </p>
+            </div>
+
+            <Card className="p-8 bg-card/80 backdrop-blur-sm border-2 border-primary/30 shadow-xl">
+              <div className="grid md:grid-cols-2 gap-8">
+                {/* Day One */}
+                <div>
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                      <Calendar className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-xl">Day One</h3>
+                      <p className="text-sm text-muted-foreground">Wednesday 28th January</p>
+                    </div>
+                  </div>
+                  <ul className="space-y-3 text-sm">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <span><strong>09:00</strong> Review of FY25 – Success, Learnings, Top Performers</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <span><strong>09:45</strong> ICP for FY26 – Quotas, Targets, Marketing Update, Playbook</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <span><strong>11:00</strong> Product Update & Roadmap – Neil</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <span><strong>11:30</strong> Customer Success Ways of Working – Robyn</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <span><strong>13:15</strong> MEDDICC & The Challenger Approach</span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Day Two */}
+                <div>
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
+                      <Calendar className="w-6 h-6 text-accent" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-xl">Day Two</h3>
+                      <p className="text-sm text-muted-foreground">Thursday 29th January</p>
+                    </div>
+                  </div>
+                  <ul className="space-y-3 text-sm">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
+                      <span><strong>09:00</strong> Motivational Speaker – Rachel Blackmore</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
+                      <span><strong>10:00</strong> Customer Story & Journey – CFO Perspective</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
+                      <span><strong>11:00</strong> Delivery Workshop – Matt</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
+                      <span><strong>12:00</strong> HubSpot & Gong Best Practices – Rob & Peter</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
+                      <span><strong>14:00</strong> Team Activity / Meal & Drinks</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Focus Areas */}
+              <div className="mt-8 pt-6 border-t border-border">
+                <p className="text-center text-muted-foreground mb-4">Key Focus Areas</p>
+                <div className="flex flex-wrap justify-center gap-3">
+                  {['Target Markets', 'Product Priorities', 'Revenue Goals', 'Sales Plays', 'Unified Messaging', 'Success Metrics'].map((area) => (
+                    <span key={area} className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
+                      {area}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </Card>
+          </div>
+
+          {/* ============================================ */}
           {/* 2026 EVENTS STRATEGY - PRIMARY SECTION */}
           {/* ============================================ */}
           <div id="events-strategy" className="mb-20">
