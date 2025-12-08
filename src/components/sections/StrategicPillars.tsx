@@ -271,9 +271,9 @@ export const StrategicPillars = () => {
               </div>
             </div>
 
-            {/* Linearity Profile Table */}
+            {/* Linearity Table */}
             <h4 className="font-display font-bold text-2xl mb-6 text-center mt-10">
-              Linearity Profile
+              Linearity
             </h4>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
@@ -333,46 +333,6 @@ export const StrategicPillars = () => {
                     <td className="py-3 px-4 text-right">€1,000,000</td>
                     <td className="py-3 px-4 text-right">€4,800,000</td>
                     <td className="py-3 px-4 text-center">100%</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            {/* ARR Allocation Table */}
-            <div className="overflow-x-auto mt-8">
-              <table className="w-full max-w-md mx-auto text-sm">
-                <thead>
-                  <tr className="border-b border-border">
-                    <th className="py-3 px-4 text-left font-semibold text-muted-foreground">Quarter</th>
-                    <th className="py-3 px-4 text-center font-semibold text-muted-foreground">% Allocation</th>
-                    <th className="py-3 px-4 text-right font-semibold text-muted-foreground">ARR Amount</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b border-border/50 hover:bg-muted/30">
-                    <td className="py-3 px-4 font-medium">Q1</td>
-                    <td className="py-3 px-4 text-center">17%</td>
-                    <td className="py-3 px-4 text-right font-medium">€85,000</td>
-                  </tr>
-                  <tr className="border-b border-border/50 hover:bg-muted/30">
-                    <td className="py-3 px-4 font-medium">Q2</td>
-                    <td className="py-3 px-4 text-center">22%</td>
-                    <td className="py-3 px-4 text-right font-medium">€110,000</td>
-                  </tr>
-                  <tr className="border-b border-border/50 hover:bg-muted/30">
-                    <td className="py-3 px-4 font-medium">Q3</td>
-                    <td className="py-3 px-4 text-center">23%</td>
-                    <td className="py-3 px-4 text-right font-medium">€115,000</td>
-                  </tr>
-                  <tr className="border-b border-border/50 hover:bg-muted/30">
-                    <td className="py-3 px-4 font-medium">Q4</td>
-                    <td className="py-3 px-4 text-center">38%</td>
-                    <td className="py-3 px-4 text-right font-medium">€190,000</td>
-                  </tr>
-                  <tr className="bg-primary/10 font-semibold">
-                    <td className="py-3 px-4">Total</td>
-                    <td className="py-3 px-4 text-center">100%</td>
-                    <td className="py-3 px-4 text-right">€500,000</td>
                   </tr>
                 </tbody>
               </table>
