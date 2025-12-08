@@ -46,7 +46,7 @@ export const SizeAnalysis = () => {
               </li>
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full bg-warning mt-2 flex-shrink-0" />
-                <span className="text-muted-foreground">€1b–5b and €250m–499m collapsed post-2024 — inconsistent fit now</span>
+                <span className="text-muted-foreground">€1b–5b collapsed post-2024 — inconsistent fit now</span>
               </li>
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full bg-destructive mt-2 flex-shrink-0" />
