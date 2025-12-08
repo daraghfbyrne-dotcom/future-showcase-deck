@@ -53,11 +53,6 @@ export const WhyStrategy = () => {
             })}
           </div>
 
-          <div className="mt-12 p-6 rounded-lg bg-secondary/50 border border-border">
-            <p className="text-center text-lg font-medium">
-              <strong>Conclusion:</strong> The business has evolved into a different fit profile than the one the GTM is still optimised for.
-            </p>
-          </div>
           <p className="text-center text-xs text-muted-foreground mt-2">
             *source HubSpot
           </p>
