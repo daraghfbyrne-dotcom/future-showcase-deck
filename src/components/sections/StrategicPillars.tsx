@@ -284,8 +284,8 @@ export const StrategicPillars = () => {
                     <th className="py-3 px-4 text-center font-semibold text-muted-foreground">New Business Total €</th>
                     <th className="py-3 px-4 pl-8 text-center font-semibold text-muted-foreground">Account Mgmt %</th>
                     <th className="py-3 px-4 text-center font-semibold text-muted-foreground">Account Management Total €</th>
-                    <th className="py-3 px-4 text-center font-semibold text-muted-foreground">Total €</th>
-                    <th className="py-3 px-4 text-center font-semibold text-muted-foreground">Total %</th>
+                    <th className="py-3 px-4 text-center font-bold text-foreground">Total €</th>
+                    <th className="py-3 px-4 text-center font-bold text-foreground">Total %</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -295,8 +295,8 @@ export const StrategicPillars = () => {
                     <td className="py-3 px-4 text-center">€608,000</td>
                     <td className="py-3 px-4 pl-8 text-center">20%</td>
                     <td className="py-3 px-4 text-center">€200,000</td>
-                    <td className="py-3 px-4 text-center font-medium">€808,000</td>
-                    <td className="py-3 px-4 text-center">17%</td>
+                    <td className="py-3 px-4 text-center font-bold">€808,000</td>
+                    <td className="py-3 px-4 text-center font-bold">17%</td>
                   </tr>
                   <tr className="border-b border-border/50 hover:bg-muted/30">
                     <td className="py-3 px-4 text-center font-medium">Q2</td>
@@ -304,8 +304,8 @@ export const StrategicPillars = () => {
                     <td className="py-3 px-4 text-center">€798,000</td>
                     <td className="py-3 px-4 pl-8 text-center">28%</td>
                     <td className="py-3 px-4 text-center">€280,000</td>
-                    <td className="py-3 px-4 text-center font-medium">€1,078,000</td>
-                    <td className="py-3 px-4 text-center">22%</td>
+                    <td className="py-3 px-4 text-center font-bold">€1,078,000</td>
+                    <td className="py-3 px-4 text-center font-bold">22%</td>
                   </tr>
                   <tr className="border-b border-border/50 hover:bg-muted/30">
                     <td className="py-3 px-4 text-center font-medium">Q3</td>
@@ -313,8 +313,8 @@ export const StrategicPillars = () => {
                     <td className="py-3 px-4 text-center">€874,000</td>
                     <td className="py-3 px-4 pl-8 text-center">22%</td>
                     <td className="py-3 px-4 text-center">€220,000</td>
-                    <td className="py-3 px-4 text-center font-medium">€1,094,000</td>
-                    <td className="py-3 px-4 text-center">23%</td>
+                    <td className="py-3 px-4 text-center font-bold">€1,094,000</td>
+                    <td className="py-3 px-4 text-center font-bold">23%</td>
                   </tr>
                   <tr className="border-b border-border/50 hover:bg-muted/30">
                     <td className="py-3 px-4 text-center font-medium">Q4</td>
@@ -322,8 +322,8 @@ export const StrategicPillars = () => {
                     <td className="py-3 px-4 text-center">€1,520,000</td>
                     <td className="py-3 px-4 pl-8 text-center">30%</td>
                     <td className="py-3 px-4 text-center">€300,000</td>
-                    <td className="py-3 px-4 text-center font-medium">€1,820,000</td>
-                    <td className="py-3 px-4 text-center">38%</td>
+                    <td className="py-3 px-4 text-center font-bold">€1,820,000</td>
+                    <td className="py-3 px-4 text-center font-bold">38%</td>
                   </tr>
                   <tr className="bg-primary/10 font-semibold">
                     <td className="py-3 px-4 text-center">Total</td>
@@ -331,8 +331,8 @@ export const StrategicPillars = () => {
                     <td className="py-3 px-4 text-center">€3,800,000</td>
                     <td className="py-3 px-4 pl-8 text-center">100%</td>
                     <td className="py-3 px-4 text-center">€1,000,000</td>
-                    <td className="py-3 px-4 text-center">€4,800,000</td>
-                    <td className="py-3 px-4 text-center">100%</td>
+                    <td className="py-3 px-4 text-center font-bold">€4,800,000</td>
+                    <td className="py-3 px-4 text-center font-bold">100%</td>
                   </tr>
                 </tbody>
               </table>
