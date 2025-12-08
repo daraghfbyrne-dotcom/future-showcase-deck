@@ -282,7 +282,7 @@ export const StrategicPillars = () => {
                     <th className="py-3 px-4 text-left font-semibold text-muted-foreground">FY26</th>
                     <th className="py-3 px-4 text-center font-semibold text-muted-foreground">New Business</th>
                     <th className="py-3 px-4 text-right font-semibold text-muted-foreground">New Business Total €</th>
-                    <th className="py-3 px-4 text-center font-semibold text-muted-foreground">Account Mgmt %</th>
+                    <th className="py-3 px-4 pl-8 text-center font-semibold text-muted-foreground">Account Mgmt %</th>
                     <th className="py-3 px-4 text-right font-semibold text-muted-foreground">Account Management Total €</th>
                     <th className="py-3 px-4 text-right font-semibold text-muted-foreground">Total €</th>
                     <th className="py-3 px-4 text-center font-semibold text-muted-foreground">Total %</th>
@@ -293,7 +293,7 @@ export const StrategicPillars = () => {
                     <td className="py-3 px-4 font-medium">Q1</td>
                     <td className="py-3 px-4 text-center">16%</td>
                     <td className="py-3 px-4 text-right">€608,000</td>
-                    <td className="py-3 px-4 text-center">20%</td>
+                    <td className="py-3 px-4 pl-8 text-center">20%</td>
                     <td className="py-3 px-4 text-right">€200,000</td>
                     <td className="py-3 px-4 text-right font-medium">€808,000</td>
                     <td className="py-3 px-4 text-center">17%</td>
@@ -302,7 +302,7 @@ export const StrategicPillars = () => {
                     <td className="py-3 px-4 font-medium">Q2</td>
                     <td className="py-3 px-4 text-center">21%</td>
                     <td className="py-3 px-4 text-right">€798,000</td>
-                    <td className="py-3 px-4 text-center">28%</td>
+                    <td className="py-3 px-4 pl-8 text-center">28%</td>
                     <td className="py-3 px-4 text-right">€280,000</td>
                     <td className="py-3 px-4 text-right font-medium">€1,078,000</td>
                     <td className="py-3 px-4 text-center">22%</td>
@@ -311,7 +311,7 @@ export const StrategicPillars = () => {
                     <td className="py-3 px-4 font-medium">Q3</td>
                     <td className="py-3 px-4 text-center">23%</td>
                     <td className="py-3 px-4 text-right">€874,000</td>
-                    <td className="py-3 px-4 text-center">22%</td>
+                    <td className="py-3 px-4 pl-8 text-center">22%</td>
                     <td className="py-3 px-4 text-right">€220,000</td>
                     <td className="py-3 px-4 text-right font-medium">€1,094,000</td>
                     <td className="py-3 px-4 text-center">23%</td>
@@ -320,7 +320,7 @@ export const StrategicPillars = () => {
                     <td className="py-3 px-4 font-medium">Q4</td>
                     <td className="py-3 px-4 text-center">40%</td>
                     <td className="py-3 px-4 text-right">€1,520,000</td>
-                    <td className="py-3 px-4 text-center">30%</td>
+                    <td className="py-3 px-4 pl-8 text-center">30%</td>
                     <td className="py-3 px-4 text-right">€300,000</td>
                     <td className="py-3 px-4 text-right font-medium">€1,820,000</td>
                     <td className="py-3 px-4 text-center">38%</td>
@@ -329,7 +329,7 @@ export const StrategicPillars = () => {
                     <td className="py-3 px-4">Total</td>
                     <td className="py-3 px-4 text-center">100%</td>
                     <td className="py-3 px-4 text-right">€3,800,000</td>
-                    <td className="py-3 px-4 text-center">100%</td>
+                    <td className="py-3 px-4 pl-8 text-center">100%</td>
                     <td className="py-3 px-4 text-right">€1,000,000</td>
                     <td className="py-3 px-4 text-right">€4,800,000</td>
                     <td className="py-3 px-4 text-center">100%</td>
