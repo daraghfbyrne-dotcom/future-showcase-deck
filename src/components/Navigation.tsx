@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, TrendingUp } from "lucide-react";
 
 interface NavigationProps {
   activeSection: string;
@@ -50,7 +51,7 @@ export const Navigation = ({ activeSection, setActiveSection }: NavigationProps)
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navItems.map((item) => (
               <Button
                 key={item.id}
@@ -62,6 +63,13 @@ export const Navigation = ({ activeSection, setActiveSection }: NavigationProps)
                 {item.label}
               </Button>
             ))}
+            <div className="h-6 w-px bg-border" />
+            <Link to="/pipeline-conversion">
+              <Button variant="outline" size="sm" className="gap-2">
+                <TrendingUp className="h-4 w-4" />
+                Pipeline Conversion
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -89,6 +97,12 @@ export const Navigation = ({ activeSection, setActiveSection }: NavigationProps)
                   {item.label}
                 </Button>
               ))}
+              <Link to="/pipeline-conversion" onClick={() => setMobileMenuOpen(false)}>
+                <Button variant="outline" className="w-full justify-start gap-2">
+                  <TrendingUp className="h-4 w-4" />
+                  Pipeline Conversion
+                </Button>
+              </Link>
             </div>
           </div>
         )}
