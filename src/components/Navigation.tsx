@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, TrendingUp, Users } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 interface NavigationProps {
   activeSection: string;
@@ -28,6 +28,11 @@ export const Navigation = ({ activeSection, setActiveSection }: NavigationProps)
     { id: "events-strategy", label: "Events Strategy" },
   ];
 
+  const pageLinks = [
+    { path: "/pipeline-conversion", label: "Pipeline Conversion" },
+    { path: "/analyst-strategy", label: "Analyst Strategy" },
+  ];
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -51,7 +56,7 @@ export const Navigation = ({ activeSection, setActiveSection }: NavigationProps)
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
               <Button
                 key={item.id}
@@ -63,19 +68,13 @@ export const Navigation = ({ activeSection, setActiveSection }: NavigationProps)
                 {item.label}
               </Button>
             ))}
-            <div className="h-6 w-px bg-border" />
-            <Link to="/pipeline-conversion">
-              <Button variant="outline" size="sm" className="gap-2">
-                <TrendingUp className="h-4 w-4" />
-                Pipeline Conversion
-              </Button>
-            </Link>
-            <Link to="/analyst-strategy">
-              <Button variant="outline" size="sm" className="gap-2">
-                <Users className="h-4 w-4" />
-                Analyst Strategy
-              </Button>
-            </Link>
+            {pageLinks.map((link) => (
+              <Link key={link.path} to={link.path}>
+                <Button variant="ghost" size="sm" className="text-sm font-medium">
+                  {link.label}
+                </Button>
+              </Link>
+            ))}
           </div>
 
           {/* Mobile Menu Button */}
@@ -103,18 +102,13 @@ export const Navigation = ({ activeSection, setActiveSection }: NavigationProps)
                   {item.label}
                 </Button>
               ))}
-              <Link to="/pipeline-conversion" onClick={() => setMobileMenuOpen(false)}>
-                <Button variant="outline" className="w-full justify-start gap-2">
-                  <TrendingUp className="h-4 w-4" />
-                  Pipeline Conversion
-                </Button>
-              </Link>
-              <Link to="/analyst-strategy" onClick={() => setMobileMenuOpen(false)}>
-                <Button variant="outline" className="w-full justify-start gap-2">
-                  <Users className="h-4 w-4" />
-                  Analyst Strategy
-                </Button>
-              </Link>
+              {pageLinks.map((link) => (
+                <Link key={link.path} to={link.path} onClick={() => setMobileMenuOpen(false)}>
+                  <Button variant="ghost" className="w-full justify-start">
+                    {link.label}
+                  </Button>
+                </Link>
+              ))}
             </div>
           </div>
         )}
