@@ -321,7 +321,7 @@ const PipelineConversion = () => {
             <CardContent className="pt-6">
               <div className="text-center">
                 <p className="text-sm text-muted-foreground mb-1">Current Win Rate (3-Year Avg)</p>
-                <p className="text-4xl font-bold text-amber-600">9.8%</p>
+                <p className="text-4xl font-bold text-amber-600">10%</p>
               </div>
             </CardContent>
           </Card>
@@ -329,7 +329,7 @@ const PipelineConversion = () => {
             <CardContent className="pt-6">
               <div className="text-center">
                 <p className="text-sm text-muted-foreground mb-1">Target Win Rate</p>
-                <p className="text-4xl font-bold text-emerald-600">13.4%</p>
+                <p className="text-4xl font-bold text-emerald-600">14%</p>
               </div>
             </CardContent>
           </Card>
@@ -373,9 +373,9 @@ const PipelineConversion = () => {
                   ))}
                   <TableRow className="bg-muted/50 font-semibold">
                     <TableCell colSpan={4} className="text-right">Win Rate</TableCell>
-                    <TableCell className="text-center bg-primary/15 font-bold">9.8%</TableCell>
+                    <TableCell className="text-center bg-primary/15 font-bold">10%</TableCell>
                     <TableCell></TableCell>
-                    <TableCell className="text-center bg-emerald-500/15 font-bold">13.4%</TableCell>
+                    <TableCell className="text-center bg-emerald-500/15 font-bold">14%</TableCell>
                     <TableCell></TableCell>
                   </TableRow>
                 </TableBody>
