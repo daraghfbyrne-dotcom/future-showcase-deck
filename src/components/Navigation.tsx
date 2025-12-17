@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, TrendingUp } from "lucide-react";
+import { Menu, X, TrendingUp, Users } from "lucide-react";
 
 interface NavigationProps {
   activeSection: string;
@@ -70,6 +70,12 @@ export const Navigation = ({ activeSection, setActiveSection }: NavigationProps)
                 Pipeline Conversion
               </Button>
             </Link>
+            <Link to="/analyst-strategy">
+              <Button variant="outline" size="sm" className="gap-2">
+                <Users className="h-4 w-4" />
+                Analyst Strategy
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -101,6 +107,12 @@ export const Navigation = ({ activeSection, setActiveSection }: NavigationProps)
                 <Button variant="outline" className="w-full justify-start gap-2">
                   <TrendingUp className="h-4 w-4" />
                   Pipeline Conversion
+                </Button>
+              </Link>
+              <Link to="/analyst-strategy" onClick={() => setMobileMenuOpen(false)}>
+                <Button variant="outline" className="w-full justify-start gap-2">
+                  <Users className="h-4 w-4" />
+                  Analyst Strategy
                 </Button>
               </Link>
             </div>
