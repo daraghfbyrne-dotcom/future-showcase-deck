@@ -31,6 +31,7 @@ export const Navigation = ({ activeSection, setActiveSection }: NavigationProps)
   const pageLinks = [
     { path: "/pipeline-conversion", label: "Pipeline Conversion" },
     { path: "/analyst-strategy", label: "Analyst Strategy" },
+    { path: "/partners-strategy", label: "Partners Strategy" },
   ];
 
   const scrollToSection = (id: string) => {
