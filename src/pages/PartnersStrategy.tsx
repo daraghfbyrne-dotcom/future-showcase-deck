@@ -1,28 +1,14 @@
-import { Link } from "react-router-dom";
-import { ArrowLeft, Users, Clock } from "lucide-react";
+import { Users, Clock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Navigation } from "@/components/Navigation";
 
 const PartnersStrategy = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Header */}
-      <header className="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-sm border-b border-slate-700">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <Link to="/" className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors">
-              <ArrowLeft className="h-5 w-5" />
-              <span>Back to Strategy</span>
-            </Link>
-            <h1 className="text-xl font-bold text-white">Partners Strategy</h1>
-            <Badge variant="outline" className="border-emerald-500 text-emerald-400">
-              2025-2026
-            </Badge>
-          </div>
-        </div>
-      </header>
+      <Navigation />
 
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 pt-20 pb-8">
         <div className="flex items-center justify-center min-h-[60vh]">
           <Card className="bg-slate-800/50 border-slate-700 max-w-lg w-full">
             <CardContent className="pt-8 pb-8">

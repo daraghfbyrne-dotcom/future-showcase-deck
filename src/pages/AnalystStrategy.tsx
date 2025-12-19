@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { format } from "date-fns";
-import { ArrowLeft, Target, Award, Calendar as CalendarIcon, CheckCircle2, Users, TrendingUp, FileText, Building2, Star, Clock, ChevronDown, ChevronUp } from "lucide-react";
+import { Target, Award, Calendar as CalendarIcon, CheckCircle2, Users, TrendingUp, FileText, Building2, Star, Clock, ChevronDown, ChevronUp } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -11,6 +10,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { Navigation } from "@/components/Navigation";
 
 import gartnerLogo from "@/assets/gartner-logo.png";
 import forresterLogo from "@/assets/forrester-logo.png";
@@ -222,23 +222,9 @@ const AnalystStrategy = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <Link to="/" className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors">
-              <ArrowLeft className="h-5 w-5" />
-              <span>Back to Strategy</span>
-            </Link>
-            <h1 className="text-xl font-bold text-gray-900">Analyst Relations Strategy</h1>
-            <Badge variant="outline" className="border-emerald-500 text-emerald-600">
-              2025-2026
-            </Badge>
-          </div>
-        </div>
-      </header>
+      <Navigation />
 
-      <main className="container mx-auto px-4 py-8 space-y-8">
+      <main className="container mx-auto px-4 pt-20 pb-8 space-y-8">
         {/* Hero Section - Why Analysts */}
         <section className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 p-8 md:p-12">
           <div className="absolute inset-0 bg-black/20" />
