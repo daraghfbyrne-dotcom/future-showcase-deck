@@ -14,7 +14,6 @@ import { Navigation } from "@/components/Navigation";
 type RAGStatus = 'red' | 'amber' | 'green' | 'not-started';
 
 const Objectives2026 = () => {
-  const [activeSection, setActiveSection] = useState("objectives");
   const [goalStatuses, setGoalStatuses] = useState<Record<string, RAGStatus>>({});
   const [goalDates, setGoalDates] = useState<Record<string, Date | undefined>>({});
   const [initiativeStatuses, setInitiativeStatuses] = useState<Record<string, RAGStatus>>({});
@@ -153,7 +152,7 @@ const Objectives2026 = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation activeSection={activeSection} setActiveSection={setActiveSection} />
+      <Navigation />
       
       <main className="container mx-auto px-4 py-8">
         {/* Header */}

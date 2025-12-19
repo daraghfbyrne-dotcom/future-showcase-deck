@@ -1,6 +1,4 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { ChevronRight, TrendingUp, Target, Users, Calendar, DollarSign, Zap, FileText } from "lucide-react";
+import { TrendingUp, Target, Users, Zap, FileText } from "lucide-react";
 import { Hero } from "@/components/sections/Hero";
 import { Navigation } from "@/components/Navigation";
 import { WhyStrategy } from "@/components/sections/WhyStrategy";
@@ -16,11 +14,9 @@ import { ResearchProgram } from "@/components/sections/ResearchProgram";
 
 
 const Index = () => {
-  const [activeSection, setActiveSection] = useState("hero");
-
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Navigation activeSection={activeSection} setActiveSection={setActiveSection} />
+      <Navigation />
       
       <main>
         <Hero />
