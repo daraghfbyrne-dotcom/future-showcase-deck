@@ -15,10 +15,10 @@ const currentRecognitions = [
   { firm: "IDC", recognition: "Major Player in 2024 MarketScape for worldwide Accounts Payable automation", icon: "🌍" },
   { firm: "Everest", recognition: "Major Contender in the 2025 PEAK Matrix for P2P", icon: "⛰️" },
   { firm: "Forrester", recognition: "Referenced in 'Top AI use cases for Accounts Payable (AP) automation'", icon: "🤖" },
+  { firm: "Forrester", recognition: "Featured in AP Landscape Report (October 2025)", icon: "📋" },
 ];
 
 const futureTargets = [
-  { target: "Forrester AP Landscape Report", timing: "October 2025", status: "In Progress" },
   { target: "Forrester Wave for AP", timing: "Q4 2025", status: "Targeted" },
   { target: "Hackett Digital World Class® Matrix Accounts Payable", timing: "Q4 2025", status: "Submitted" },
   { target: "Improve positioning on existing quadrants", timing: "Ongoing", status: "Active" },
