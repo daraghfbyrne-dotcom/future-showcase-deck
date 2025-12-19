@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Target, Award, Calendar, CheckCircle2, Users, TrendingUp, FileText, Building2, Star, Clock, ChevronDown, ChevronUp } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -176,17 +175,17 @@ const AnalystStrategy = () => {
   const tacticsProgress = (completedTactics.length / engagementTactics.length) * 100;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-sm border-b border-slate-700">
+      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <Link to="/" className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors">
+            <Link to="/" className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors">
               <ArrowLeft className="h-5 w-5" />
               <span>Back to Strategy</span>
             </Link>
-            <h1 className="text-xl font-bold text-white">Analyst Relations Strategy</h1>
-            <Badge variant="outline" className="border-emerald-500 text-emerald-400">
+            <h1 className="text-xl font-bold text-gray-900">Analyst Relations Strategy</h1>
+            <Badge variant="outline" className="border-emerald-500 text-emerald-600">
               2025-2026
             </Badge>
           </div>
@@ -222,16 +221,16 @@ const AnalystStrategy = () => {
         <section className="space-y-6">
           <div className="flex items-center gap-3">
             <Award className="h-7 w-7 text-amber-500" />
-            <h2 className="text-2xl font-bold text-white">Strategic Objectives</h2>
+            <h2 className="text-2xl font-bold text-gray-900">Strategic Objectives</h2>
           </div>
 
-          <Card className="bg-slate-800/50 border-slate-700">
+          <Card className="bg-gray-50 border-gray-200">
             <CardHeader>
-              <CardTitle className="text-white flex items-center gap-2">
-                <Building2 className="h-5 w-5 text-blue-400" />
+              <CardTitle className="text-gray-900 flex items-center gap-2">
+                <Building2 className="h-5 w-5 text-blue-500" />
                 Elevate Market Positioning & Achieve Broadest Analyst Coverage
               </CardTitle>
-              <CardDescription className="text-slate-400">
+              <CardDescription className="text-gray-600">
                 Target analysts covering P2P and AP automation to ensure SoftCo is top of mind when landscape reports are compiled.
               </CardDescription>
             </CardHeader>
@@ -251,20 +250,20 @@ const AnalystStrategy = () => {
         <section className="space-y-6">
           <div className="flex items-center gap-3">
             <CheckCircle2 className="h-7 w-7 text-emerald-500" />
-            <h2 className="text-2xl font-bold text-white">Current Recognition</h2>
+            <h2 className="text-2xl font-bold text-gray-900">Current Recognition</h2>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {currentRecognitions.map((item, index) => (
-              <Card key={index} className="bg-slate-800/50 border-slate-700 hover:border-slate-600 transition-colors">
+              <Card key={index} className="bg-white border-gray-200 hover:border-gray-300 hover:shadow-md transition-all">
                 <CardContent className="pt-6">
                   <div className="flex items-start gap-3">
                     <span className="text-2xl">{item.icon}</span>
                     <div>
-                      <Badge variant="outline" className="mb-2 border-slate-600 text-slate-300">
+                      <Badge variant="outline" className="mb-2 border-gray-300 text-gray-600">
                         {item.firm}
                       </Badge>
-                      <p className="text-sm text-slate-300">{item.recognition}</p>
+                      <p className="text-sm text-gray-700">{item.recognition}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -277,27 +276,27 @@ const AnalystStrategy = () => {
         <section className="space-y-6">
           <div className="flex items-center gap-3">
             <TrendingUp className="h-7 w-7 text-blue-500" />
-            <h2 className="text-2xl font-bold text-white">Future Target Opportunities</h2>
+            <h2 className="text-2xl font-bold text-gray-900">Future Target Opportunities</h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-4">
             {futureTargets.map((item, index) => (
-              <Card key={index} className="bg-slate-800/50 border-slate-700">
+              <Card key={index} className="bg-white border-gray-200">
                 <CardContent className="pt-6">
                   <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold text-white">{item.target}</h3>
+                    <h3 className="font-semibold text-gray-900">{item.target}</h3>
                     <Badge 
                       className={
-                        item.status === "In Progress" ? "bg-yellow-600" :
-                        item.status === "Submitted" ? "bg-blue-600" :
-                        item.status === "Active" ? "bg-emerald-600" :
-                        "bg-slate-600"
+                        item.status === "In Progress" ? "bg-yellow-500 text-white" :
+                        item.status === "Submitted" ? "bg-blue-500 text-white" :
+                        item.status === "Active" ? "bg-emerald-500 text-white" :
+                        "bg-gray-500 text-white"
                       }
                     >
                       {item.status}
                     </Badge>
                   </div>
-                  <div className="flex items-center gap-2 text-slate-400">
+                  <div className="flex items-center gap-2 text-gray-500">
                     <Clock className="h-4 w-4" />
                     <span className="text-sm">{item.timing}</span>
                   </div>
@@ -311,36 +310,36 @@ const AnalystStrategy = () => {
         <section className="space-y-6">
           <div className="flex items-center gap-3">
             <FileText className="h-7 w-7 text-purple-500" />
-            <h2 className="text-2xl font-bold text-white">Key Analyst Firms & Frameworks</h2>
+            <h2 className="text-2xl font-bold text-gray-900">Key Analyst Firms & Frameworks</h2>
           </div>
 
           <div className="space-y-4">
             {analystFrameworks.map((framework) => (
               <Collapsible key={framework.firm} open={expandedFrameworks.includes(framework.firm)}>
-                <Card className="bg-slate-800/50 border-slate-700 overflow-hidden">
+                <Card className="bg-white border-gray-200 overflow-hidden">
                   <CollapsibleTrigger asChild>
                     <button
                       onClick={() => toggleFramework(framework.firm)}
                       className="w-full text-left"
                     >
-                      <CardHeader className="cursor-pointer hover:bg-slate-700/30 transition-colors">
+                      <CardHeader className="cursor-pointer hover:bg-gray-50 transition-colors">
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-4">
                             <div className={`w-2 h-12 rounded-full ${framework.color}`} />
                             <div>
-                              <CardTitle className="text-white flex items-center gap-3">
+                              <CardTitle className="text-gray-900 flex items-center gap-3">
                                 {framework.firm}
-                                <Badge variant="outline" className="border-slate-600 text-slate-300 font-normal">
+                                <Badge variant="outline" className="border-gray-300 text-gray-600 font-normal">
                                   {framework.framework}
                                 </Badge>
                               </CardTitle>
                               <div className="flex items-center gap-2 mt-1">
                                 <Badge 
                                   className={
-                                    framework.status === "Major Player" || framework.status === "Major Contender" ? "bg-emerald-600" :
-                                    framework.status === "Niche Player" ? "bg-amber-600" :
-                                    framework.status === "Submitted" ? "bg-blue-600" :
-                                    "bg-slate-600"
+                                    framework.status === "Major Player" || framework.status === "Major Contender" ? "bg-emerald-500 text-white" :
+                                    framework.status === "Niche Player" ? "bg-amber-500 text-white" :
+                                    framework.status === "Submitted" ? "bg-blue-500 text-white" :
+                                    "bg-gray-500 text-white"
                                   }
                                 >
                                   {framework.status}
@@ -349,24 +348,24 @@ const AnalystStrategy = () => {
                             </div>
                           </div>
                           {expandedFrameworks.includes(framework.firm) ? (
-                            <ChevronUp className="h-5 w-5 text-slate-400" />
+                            <ChevronUp className="h-5 w-5 text-gray-500" />
                           ) : (
-                            <ChevronDown className="h-5 w-5 text-slate-400" />
+                            <ChevronDown className="h-5 w-5 text-gray-500" />
                           )}
                         </div>
                       </CardHeader>
                     </button>
                   </CollapsibleTrigger>
                   <CollapsibleContent>
-                    <CardContent className="border-t border-slate-700 pt-4">
+                    <CardContent className="border-t border-gray-200 pt-4">
                       <div className="grid md:grid-cols-2 gap-6">
                         <div>
-                          <h4 className="text-sm font-semibold text-slate-400 mb-2">Rationale</h4>
-                          <p className="text-slate-300">{framework.rationale}</p>
+                          <h4 className="text-sm font-semibold text-gray-500 mb-2">Rationale</h4>
+                          <p className="text-gray-700">{framework.rationale}</p>
                         </div>
                         <div>
-                          <h4 className="text-sm font-semibold text-slate-400 mb-2">Actions</h4>
-                          <p className="text-slate-300">{framework.actions}</p>
+                          <h4 className="text-sm font-semibold text-gray-500 mb-2">Actions</h4>
+                          <p className="text-gray-700">{framework.actions}</p>
                         </div>
                       </div>
                     </CardContent>
@@ -382,10 +381,10 @@ const AnalystStrategy = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <Users className="h-7 w-7 text-cyan-500" />
-              <h2 className="text-2xl font-bold text-white">Engagement Tactics</h2>
+              <h2 className="text-2xl font-bold text-gray-900">Engagement Tactics</h2>
             </div>
             <div className="flex items-center gap-4">
-              <span className="text-sm text-slate-400">
+              <span className="text-sm text-gray-500">
                 {completedTactics.length} of {engagementTactics.length} completed
               </span>
               <div className="w-32">
@@ -398,8 +397,8 @@ const AnalystStrategy = () => {
             {engagementTactics.map((tactic) => (
               <Card 
                 key={tactic.id} 
-                className={`bg-slate-800/50 border-slate-700 transition-all ${
-                  completedTactics.includes(tactic.id) ? "border-emerald-500/50 bg-emerald-900/20" : ""
+                className={`bg-white border-gray-200 transition-all ${
+                  completedTactics.includes(tactic.id) ? "border-emerald-400 bg-emerald-50" : ""
                 }`}
               >
                 <CardContent className="pt-6">
@@ -408,23 +407,23 @@ const AnalystStrategy = () => {
                       id={tactic.id}
                       checked={completedTactics.includes(tactic.id)}
                       onCheckedChange={() => toggleTactic(tactic.id)}
-                      className="mt-1 border-slate-500 data-[state=checked]:bg-emerald-600 data-[state=checked]:border-emerald-600"
+                      className="mt-1 border-gray-400 data-[state=checked]:bg-emerald-500 data-[state=checked]:border-emerald-500"
                     />
                     <div className="flex-1">
                       <label 
                         htmlFor={tactic.id}
                         className={`font-semibold cursor-pointer ${
-                          completedTactics.includes(tactic.id) ? "text-emerald-400 line-through" : "text-white"
+                          completedTactics.includes(tactic.id) ? "text-emerald-600 line-through" : "text-gray-900"
                         }`}
                       >
                         {tactic.title}
                       </label>
-                      <p className="text-sm text-slate-400 mt-1">{tactic.description}</p>
+                      <p className="text-sm text-gray-600 mt-1">{tactic.description}</p>
                       {tactic.dependencies.length > 0 && (
                         <div className="flex flex-wrap gap-2 mt-3">
-                          <span className="text-xs text-slate-500">Dependencies:</span>
+                          <span className="text-xs text-gray-500">Dependencies:</span>
                           {tactic.dependencies.map((dep) => (
-                            <Badge key={dep} variant="outline" className="text-xs border-slate-600 text-slate-400">
+                            <Badge key={dep} variant="outline" className="text-xs border-gray-300 text-gray-500">
                               {dep}
                             </Badge>
                           ))}
@@ -442,19 +441,19 @@ const AnalystStrategy = () => {
         <section className="space-y-6">
           <div className="flex items-center gap-3">
             <Target className="h-7 w-7 text-rose-500" />
-            <h2 className="text-2xl font-bold text-white">Success Metrics</h2>
+            <h2 className="text-2xl font-bold text-gray-900">Success Metrics</h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
             {successMetrics.map((metric, index) => (
-              <Card key={index} className="bg-slate-800/50 border-slate-700">
+              <Card key={index} className="bg-white border-gray-200">
                 <CardHeader>
-                  <CardTitle className="text-lg text-white">{metric.category}</CardTitle>
+                  <CardTitle className="text-lg text-gray-900">{metric.category}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
                     {metric.metrics.map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm text-slate-300">
+                      <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
                         <CheckCircle2 className="h-4 w-4 text-emerald-500 mt-0.5 flex-shrink-0" />
                         {item}
                       </li>
@@ -470,36 +469,36 @@ const AnalystStrategy = () => {
         <section className="space-y-6">
           <div className="flex items-center gap-3">
             <Calendar className="h-7 w-7 text-amber-500" />
-            <h2 className="text-2xl font-bold text-white">Calendar & Timelines</h2>
+            <h2 className="text-2xl font-bold text-gray-900">Calendar & Timelines</h2>
           </div>
-          <p className="text-sm text-slate-400">
+          <p className="text-sm text-gray-500">
             Dates are subject to change and are dependent on the analyst organizations. Dates correct as at 16/10/25.
           </p>
 
-          <Card className="bg-slate-800/50 border-slate-700 overflow-hidden">
+          <Card className="bg-white border-gray-200 overflow-hidden">
             <div className="overflow-x-auto">
               <Table>
                 <TableHeader>
-                  <TableRow className="border-slate-700 hover:bg-slate-700/30">
-                    <TableHead className="text-slate-300 font-semibold">Report Name</TableHead>
-                    <TableHead className="text-slate-300 font-semibold">Analyst</TableHead>
-                    <TableHead className="text-slate-300 font-semibold">RFI Issued</TableHead>
-                    <TableHead className="text-slate-300 font-semibold">Demo</TableHead>
-                    <TableHead className="text-slate-300 font-semibold">Publication</TableHead>
+                  <TableRow className="border-gray-200 hover:bg-gray-50">
+                    <TableHead className="text-gray-700 font-semibold">Report Name</TableHead>
+                    <TableHead className="text-gray-700 font-semibold">Analyst</TableHead>
+                    <TableHead className="text-gray-700 font-semibold">RFI Issued</TableHead>
+                    <TableHead className="text-gray-700 font-semibold">Demo</TableHead>
+                    <TableHead className="text-gray-700 font-semibold">Publication</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {calendarData.map((item, index) => (
-                    <TableRow key={index} className="border-slate-700 hover:bg-slate-700/30">
-                      <TableCell className="font-medium text-white">{item.report}</TableCell>
+                    <TableRow key={index} className="border-gray-200 hover:bg-gray-50">
+                      <TableCell className="font-medium text-gray-900">{item.report}</TableCell>
                       <TableCell>
-                        <Badge variant="outline" className="border-slate-600 text-slate-300">
+                        <Badge variant="outline" className="border-gray-300 text-gray-600">
                           {item.analyst}
                         </Badge>
                       </TableCell>
-                      <TableCell className="text-slate-300">{item.rfiIssued || "—"}</TableCell>
-                      <TableCell className="text-slate-300">{item.demo || "—"}</TableCell>
-                      <TableCell className="text-slate-300">{item.publication || "—"}</TableCell>
+                      <TableCell className="text-gray-700">{item.rfiIssued || "—"}</TableCell>
+                      <TableCell className="text-gray-700">{item.demo || "—"}</TableCell>
+                      <TableCell className="text-gray-700">{item.publication || "—"}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -510,8 +509,8 @@ const AnalystStrategy = () => {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-slate-700 mt-12 py-6">
-        <div className="container mx-auto px-4 text-center text-slate-500 text-sm">
+      <footer className="border-t border-gray-200 mt-12 py-6">
+        <div className="container mx-auto px-4 text-center text-gray-500 text-sm">
           SoftCo Analyst Relations Strategy 2025-2026
         </div>
       </footer>
