@@ -1,11 +1,16 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Target, Award, Calendar, CheckCircle2, Users, TrendingUp, FileText, Building2, Star, Clock, ChevronDown, ChevronUp } from "lucide-react";
+import { format } from "date-fns";
+import { ArrowLeft, Target, Award, Calendar as CalendarIcon, CheckCircle2, Users, TrendingUp, FileText, Building2, Star, Clock, ChevronDown, ChevronUp } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Calendar } from "@/components/ui/calendar";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 import gartnerLogo from "@/assets/gartner-logo.png";
 import forresterLogo from "@/assets/forrester-logo.png";
@@ -150,23 +155,23 @@ const successMetrics = [
   {
     category: "Coverage & Positioning",
     metrics: [
-      "Inclusion in Forrester Wave or New Wave",
-      "Movement in Gartner MQ quadrant",
-      "Improved IDC MarketScape score",
-      "Improved Everest Matrix positioning (capabilities and strategy)",
+      { id: "cp-1", text: "Inclusion in Forrester Wave or New Wave" },
+      { id: "cp-2", text: "Movement in Gartner MQ quadrant" },
+      { id: "cp-3", text: "Improved IDC MarketScape score" },
+      { id: "cp-4", text: "Improved Everest Matrix positioning (capabilities and strategy)" },
     ],
   },
   {
     category: "Engagement Activities",
     metrics: [
-      "At least 2 analyst briefings per firm per year",
+      { id: "ea-1", text: "At least 2 analyst briefings per firm per year" },
     ],
   },
   {
     category: "Analyst Citations",
     metrics: [
-      "Increase in positive citations/quotes",
-      "Number of SoftCo mentions in research notes, blogs and webinars",
+      { id: "ac-1", text: "Increase in positive citations/quotes" },
+      { id: "ac-2", text: "Number of SoftCo mentions in research notes, blogs and webinars" },
     ],
   },
 ];
@@ -182,10 +187,20 @@ const ragStatusConfig: Record<RAGStatus, { label: string; color: string; bgColor
 
 const AnalystStrategy = () => {
   const [tacticStatuses, setTacticStatuses] = useState<Record<string, RAGStatus>>({});
+  const [metricStatuses, setMetricStatuses] = useState<Record<string, RAGStatus>>({});
+  const [metricDates, setMetricDates] = useState<Record<string, Date | undefined>>({});
   const [expandedFrameworks, setExpandedFrameworks] = useState<string[]>([]);
 
   const updateTacticStatus = (id: string, status: RAGStatus) => {
     setTacticStatuses(prev => ({ ...prev, [id]: status }));
+  };
+
+  const updateMetricStatus = (id: string, status: RAGStatus) => {
+    setMetricStatuses(prev => ({ ...prev, [id]: status }));
+  };
+
+  const updateMetricDate = (id: string, date: Date | undefined) => {
+    setMetricDates(prev => ({ ...prev, [id]: date }));
   };
 
   const toggleFramework = (firm: string) => {
@@ -511,20 +526,89 @@ const AnalystStrategy = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {successMetrics.map((metric, index) => (
+            {successMetrics.map((category, index) => (
               <Card key={index} className="bg-white border-gray-200">
                 <CardHeader>
-                  <CardTitle className="text-lg text-gray-900">{metric.category}</CardTitle>
+                  <CardTitle className="text-lg text-gray-900">{category.category}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2">
-                    {metric.metrics.map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
-                        <CheckCircle2 className="h-4 w-4 text-emerald-500 mt-0.5 flex-shrink-0" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="space-y-4">
+                    {category.metrics.map((metric) => {
+                      const status = metricStatuses[metric.id] || "not-started";
+                      const config = ragStatusConfig[status];
+                      const date = metricDates[metric.id];
+                      
+                      return (
+                        <div key={metric.id} className={`p-3 rounded-lg border ${config.bgColor} ${config.borderColor}`}>
+                          <p className="text-sm text-gray-700 mb-3">{metric.text}</p>
+                          <div className="flex flex-col gap-2">
+                            <Select
+                              value={status}
+                              onValueChange={(value: RAGStatus) => updateMetricStatus(metric.id, value)}
+                            >
+                              <SelectTrigger className={`w-full h-8 text-xs ${config.bgColor} ${config.borderColor} ${config.color}`}>
+                                <SelectValue />
+                              </SelectTrigger>
+                              <SelectContent>
+                                <SelectItem value="not-started">
+                                  <div className="flex items-center gap-2">
+                                    <div className="w-2 h-2 rounded-full bg-gray-400" />
+                                    Not Started
+                                  </div>
+                                </SelectItem>
+                                <SelectItem value="in-progress">
+                                  <div className="flex items-center gap-2">
+                                    <div className="w-2 h-2 rounded-full bg-amber-500" />
+                                    In Progress
+                                  </div>
+                                </SelectItem>
+                                <SelectItem value="completed">
+                                  <div className="flex items-center gap-2">
+                                    <div className="w-2 h-2 rounded-full bg-emerald-500" />
+                                    Completed
+                                  </div>
+                                </SelectItem>
+                                <SelectItem value="blocked">
+                                  <div className="flex items-center gap-2">
+                                    <div className="w-2 h-2 rounded-full bg-red-500" />
+                                    Blocked
+                                  </div>
+                                </SelectItem>
+                              </SelectContent>
+                            </Select>
+                            <Popover>
+                              <PopoverTrigger asChild>
+                                <Button
+                                  variant="outline"
+                                  className={cn(
+                                    "w-full h-8 text-xs justify-start text-left font-normal",
+                                    !date && "text-muted-foreground"
+                                  )}
+                                >
+                                  <CalendarIcon className="mr-2 h-3 w-3" />
+                                  {date ? format(date, "PPP") : "Set date"}
+                                </Button>
+                              </PopoverTrigger>
+                              <PopoverContent className="w-auto p-0" align="start">
+                                <Calendar
+                                  mode="single"
+                                  selected={date}
+                                  onSelect={(d) => updateMetricDate(metric.id, d)}
+                                  initialFocus
+                                  className={cn("p-3 pointer-events-auto")}
+                                />
+                              </PopoverContent>
+                            </Popover>
+                            {date && (
+                              <p className="text-xs text-gray-500">
+                                Updated: {format(date, "MMM d, yyyy")}
+                              </p>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -534,7 +618,7 @@ const AnalystStrategy = () => {
         {/* Calendar & Timelines */}
         <section className="space-y-6">
           <div className="flex items-center gap-3">
-            <Calendar className="h-7 w-7 text-amber-500" />
+            <CalendarIcon className="h-7 w-7 text-amber-500" />
             <h2 className="text-2xl font-bold text-gray-900">Calendar & Timelines</h2>
           </div>
           <p className="text-sm text-gray-500">
