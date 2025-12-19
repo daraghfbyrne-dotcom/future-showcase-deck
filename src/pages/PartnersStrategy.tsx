@@ -30,7 +30,7 @@ const sections = [
 
 const PartnersStrategy = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div className="min-h-screen bg-white">
       <Navigation />
       <SectionNav sections={sections} />
 
@@ -49,7 +49,7 @@ const PartnersStrategy = () => {
         <Conclusion />
       </main>
 
-      <footer className="border-t border-slate-700 mt-12 py-6">
+      <footer className="border-t border-slate-200 mt-12 py-6">
         <div className="container mx-auto px-4 text-center text-slate-500 text-sm">
           SoftCo Partners Strategy 2025-2026
         </div>

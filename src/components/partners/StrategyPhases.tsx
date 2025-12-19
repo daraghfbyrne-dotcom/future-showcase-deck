@@ -42,7 +42,7 @@ const StrategyPhases = () => {
     <section id="strategy-phases" className="space-y-6">
       <div className="flex items-center gap-3">
         <div className="h-8 w-1 bg-gradient-to-b from-amber-500 to-orange-500 rounded-full" />
-        <h2 className="text-2xl font-bold text-white">Strategy Overview</h2>
+        <h2 className="text-2xl font-bold text-slate-900">Strategy Overview</h2>
       </div>
 
       <div className="grid md:grid-cols-2 gap-4">
@@ -51,37 +51,37 @@ const StrategyPhases = () => {
           return (
             <Card 
               key={phase.number} 
-              className={`bg-slate-800/50 border-slate-700 ${
-                phase.status === 'active' ? 'ring-2 ring-amber-500/50' : ''
+              className={`bg-white border-slate-200 shadow-sm ${
+                phase.status === 'active' ? 'ring-2 ring-amber-500' : ''
               }`}
             >
               <CardContent className="pt-6">
                 <div className="flex items-start gap-4">
                   <div className={`p-3 rounded-xl ${
                     phase.status === 'active' 
-                      ? 'bg-amber-500/20 text-amber-400' 
+                      ? 'bg-amber-100 text-amber-600' 
                       : phase.status === 'upcoming'
-                      ? 'bg-blue-500/20 text-blue-400'
-                      : 'bg-slate-700 text-slate-400'
+                      ? 'bg-blue-100 text-blue-600'
+                      : 'bg-slate-100 text-slate-500'
                   }`}>
                     <Icon className="h-6 w-6" />
                   </div>
                   <div className="flex-1 space-y-2">
                     <div className="flex flex-wrap items-center gap-2">
-                      <span className="text-2xl font-bold text-slate-500">{phase.number}</span>
+                      <span className="text-2xl font-bold text-slate-400">{phase.number}</span>
                       <Badge 
                         variant="outline" 
                         className={`${
                           phase.status === 'active' 
-                            ? 'border-amber-500/50 text-amber-400' 
-                            : 'border-slate-600 text-slate-400'
+                            ? 'border-amber-500 text-amber-600' 
+                            : 'border-slate-300 text-slate-600'
                         }`}
                       >
                         {phase.timing}
                       </Badge>
                     </div>
-                    <h3 className="text-lg font-semibold text-white">{phase.title}</h3>
-                    <p className="text-sm text-slate-400">{phase.description}</p>
+                    <h3 className="text-lg font-semibold text-slate-900">{phase.title}</h3>
+                    <p className="text-sm text-slate-600">{phase.description}</p>
                   </div>
                 </div>
               </CardContent>

@@ -16,16 +16,16 @@ const ARRContribution = () => {
     <section id="arr-contribution" className="space-y-6">
       <div className="flex items-center gap-3">
         <div className="h-8 w-1 bg-gradient-to-b from-green-500 to-emerald-500 rounded-full" />
-        <h2 className="text-2xl font-bold text-white">ARR Contribution Timeline</h2>
+        <h2 className="text-2xl font-bold text-slate-900">ARR Contribution Timeline</h2>
       </div>
 
-      <Card className="bg-slate-800/50 border-slate-700 overflow-hidden">
-        <CardHeader className="border-b border-slate-700">
-          <CardTitle className="flex items-center gap-2 text-white">
-            <TrendingUp className="h-5 w-5 text-green-400" />
+      <Card className="bg-white border-slate-200 shadow-sm overflow-hidden">
+        <CardHeader className="border-b border-slate-200 bg-slate-50">
+          <CardTitle className="flex items-center gap-2 text-slate-900">
+            <TrendingUp className="h-5 w-5 text-green-600" />
             Partner Contribution to Pipeline & ARR
           </CardTitle>
-          <p className="text-sm text-slate-400">
+          <p className="text-sm text-slate-600">
             Building to 30% ARR contribution by 2029 as Closed Won ratio improves to 30%
           </p>
         </CardHeader>
@@ -33,27 +33,27 @@ const ARRContribution = () => {
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>
-                <TableRow className="border-slate-700">
-                  <TableHead className="text-slate-300">Year</TableHead>
-                  <TableHead className="text-slate-300">% ARR from Partners</TableHead>
-                  <TableHead className="text-slate-300">Total ARR</TableHead>
-                  <TableHead className="text-slate-300">Partner ARR</TableHead>
-                  <TableHead className="text-slate-300">Conversion Rate</TableHead>
-                  <TableHead className="text-slate-300">Pipeline Required</TableHead>
+                <TableRow className="border-slate-200">
+                  <TableHead className="text-slate-700">Year</TableHead>
+                  <TableHead className="text-slate-700">% ARR from Partners</TableHead>
+                  <TableHead className="text-slate-700">Total ARR</TableHead>
+                  <TableHead className="text-slate-700">Partner ARR</TableHead>
+                  <TableHead className="text-slate-700">Conversion Rate</TableHead>
+                  <TableHead className="text-slate-700">Pipeline Required</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {arrData.map((row) => (
-                  <TableRow key={row.year} className={`border-slate-700 ${row.actual ? 'bg-slate-700/30' : ''}`}>
-                    <TableCell className="font-medium text-white">
+                  <TableRow key={row.year} className={`border-slate-200 ${row.actual ? 'bg-green-50' : ''}`}>
+                    <TableCell className="font-medium text-slate-900">
                       {row.year}
-                      {row.actual && <span className="ml-2 text-xs text-green-400">(Actual)</span>}
+                      {row.actual && <span className="ml-2 text-xs text-green-600">(Actual)</span>}
                     </TableCell>
-                    <TableCell className="text-emerald-400 font-semibold">{row.contribution}</TableCell>
-                    <TableCell className="text-slate-300">{row.arrTotal}</TableCell>
-                    <TableCell className="text-blue-400">{row.arrPartners}</TableCell>
-                    <TableCell className="text-slate-300">{row.conversion}</TableCell>
-                    <TableCell className="text-slate-300">{row.pipeline}</TableCell>
+                    <TableCell className="text-emerald-600 font-semibold">{row.contribution}</TableCell>
+                    <TableCell className="text-slate-700">{row.arrTotal}</TableCell>
+                    <TableCell className="text-blue-600">{row.arrPartners}</TableCell>
+                    <TableCell className="text-slate-700">{row.conversion}</TableCell>
+                    <TableCell className="text-slate-700">{row.pipeline}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>

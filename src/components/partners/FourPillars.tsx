@@ -1,5 +1,4 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { GraduationCap, Calendar, BarChart3, LayoutGrid } from "lucide-react";
 
 const FourPillars = () => {
@@ -58,9 +57,9 @@ const FourPillars = () => {
     <section id="four-pillars" className="space-y-6">
       <div className="flex items-center gap-3">
         <div className="h-8 w-1 bg-gradient-to-b from-cyan-500 to-blue-500 rounded-full" />
-        <h2 className="text-2xl font-bold text-white">Four Pillars of Partner Success</h2>
+        <h2 className="text-2xl font-bold text-slate-900">Four Pillars of Partner Success</h2>
       </div>
-      <p className="text-slate-400">
+      <p className="text-slate-600">
         To unlock value from our existing ecosystem and make partners true multipliers of SoftCo's reach by mid-2026.
       </p>
 
@@ -68,24 +67,24 @@ const FourPillars = () => {
         {pillars.map((pillar) => {
           const Icon = pillar.icon;
           return (
-            <Card key={pillar.number} className="bg-slate-800/50 border-slate-700">
+            <Card key={pillar.number} className="bg-white border-slate-200 shadow-sm">
               <CardHeader className="pb-2">
                 <div className="flex items-center gap-3">
-                  <div className="p-2 bg-cyan-500/20 rounded-lg">
-                    <Icon className="h-5 w-5 text-cyan-400" />
+                  <div className="p-2 bg-cyan-100 rounded-lg">
+                    <Icon className="h-5 w-5 text-cyan-600" />
                   </div>
-                  <CardTitle className="text-white text-lg flex items-center gap-2">
-                    <span className="text-cyan-400">{pillar.number}.</span>
+                  <CardTitle className="text-slate-900 text-lg flex items-center gap-2">
+                    <span className="text-cyan-600">{pillar.number}.</span>
                     {pillar.title}
                   </CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="space-y-3">
-                <p className="text-sm text-slate-400">{pillar.description}</p>
+                <p className="text-sm text-slate-600">{pillar.description}</p>
                 <ul className="space-y-1">
                   {pillar.items.map((item, idx) => (
-                    <li key={idx} className="text-sm text-slate-300 flex items-center gap-2">
-                      <div className="h-1.5 w-1.5 bg-cyan-400 rounded-full" />
+                    <li key={idx} className="text-sm text-slate-700 flex items-center gap-2">
+                      <div className="h-1.5 w-1.5 bg-cyan-500 rounded-full" />
                       {item}
                     </li>
                   ))}

@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, XCircle, AlertCircle, Clock, ArrowRight } from "lucide-react";
 
@@ -78,32 +78,32 @@ const PartnerStatusUpdates = () => {
   const getStatusIcon = (status: string) => {
     switch (status) {
       case "active":
-        return <CheckCircle className="h-4 w-4 text-green-400" />;
+        return <CheckCircle className="h-4 w-4 text-green-600" />;
       case "ending":
       case "paused":
-        return <AlertCircle className="h-4 w-4 text-amber-400" />;
+        return <AlertCircle className="h-4 w-4 text-amber-600" />;
       case "killed":
-        return <XCircle className="h-4 w-4 text-red-400" />;
+        return <XCircle className="h-4 w-4 text-red-600" />;
       case "negotiating":
-        return <Clock className="h-4 w-4 text-blue-400" />;
+        return <Clock className="h-4 w-4 text-blue-600" />;
       default:
-        return <Clock className="h-4 w-4 text-slate-400" />;
+        return <Clock className="h-4 w-4 text-slate-500" />;
     }
   };
 
   const getStatusColor = (status: string) => {
     switch (status) {
       case "active":
-        return "border-green-500/50 text-green-400";
+        return "border-green-500 text-green-700 bg-green-50";
       case "ending":
       case "paused":
-        return "border-amber-500/50 text-amber-400";
+        return "border-amber-500 text-amber-700 bg-amber-50";
       case "killed":
-        return "border-red-500/50 text-red-400";
+        return "border-red-500 text-red-700 bg-red-50";
       case "negotiating":
-        return "border-blue-500/50 text-blue-400";
+        return "border-blue-500 text-blue-700 bg-blue-50";
       default:
-        return "border-slate-500/50 text-slate-400";
+        return "border-slate-300 text-slate-600";
     }
   };
 
@@ -111,30 +111,30 @@ const PartnerStatusUpdates = () => {
     <section id="partner-status" className="space-y-6">
       <div className="flex items-center gap-3">
         <div className="h-8 w-1 bg-gradient-to-b from-emerald-500 to-teal-500 rounded-full" />
-        <h2 className="text-2xl font-bold text-white">Partner Status Updates</h2>
-        <Badge variant="outline" className="border-slate-600 text-slate-400">December 16th</Badge>
+        <h2 className="text-2xl font-bold text-slate-900">Partner Status Updates</h2>
+        <Badge variant="outline" className="border-slate-400 text-slate-600">December 16th</Badge>
       </div>
 
       <div className="space-y-4">
-        <h3 className="text-lg font-semibold text-slate-300">Current Partners</h3>
+        <h3 className="text-lg font-semibold text-slate-700">Current Partners</h3>
         <div className="grid md:grid-cols-2 gap-4">
           {currentPartners.map((partner) => (
-            <Card key={partner.name} className="bg-slate-800/50 border-slate-700">
+            <Card key={partner.name} className="bg-white border-slate-200 shadow-sm">
               <CardContent className="pt-6">
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <h4 className="font-semibold text-white text-lg">{partner.name}</h4>
+                    <h4 className="font-semibold text-slate-900 text-lg">{partner.name}</h4>
                     <Badge variant="outline" className={getStatusColor(partner.status)}>
                       {getStatusIcon(partner.status)}
                       <span className="ml-1">{partner.statusLabel}</span>
                     </Badge>
                   </div>
-                  <p className="text-sm text-slate-300">{partner.summary}</p>
+                  <p className="text-sm text-slate-700">{partner.summary}</p>
                   {partner.details && (
-                    <p className="text-sm text-slate-400">{partner.details}</p>
+                    <p className="text-sm text-slate-500">{partner.details}</p>
                   )}
                   {partner.action && (
-                    <div className="flex items-start gap-2 text-sm text-blue-400">
+                    <div className="flex items-start gap-2 text-sm text-blue-600">
                       <ArrowRight className="h-4 w-4 mt-0.5 flex-shrink-0" />
                       {partner.action}
                     </div>
@@ -147,21 +147,21 @@ const PartnerStatusUpdates = () => {
       </div>
 
       <div className="space-y-4">
-        <h3 className="text-lg font-semibold text-slate-300">Partner Outreach - Strong Prospects</h3>
-        <p className="text-sm text-slate-400">Currently reviewing outreach to ensure alignment with 2026 strategy.</p>
+        <h3 className="text-lg font-semibold text-slate-700">Partner Outreach - Strong Prospects</h3>
+        <p className="text-sm text-slate-500">Currently reviewing outreach to ensure alignment with 2026 strategy.</p>
         <div className="grid md:grid-cols-3 gap-4">
           {prospects.map((prospect) => (
-            <Card key={prospect.name} className="bg-slate-800/50 border-slate-700">
+            <Card key={prospect.name} className="bg-white border-slate-200 shadow-sm">
               <CardContent className="pt-6">
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <h4 className="font-semibold text-white">{prospect.name}</h4>
-                    <Badge className="bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30">
+                    <h4 className="font-semibold text-slate-900">{prospect.name}</h4>
+                    <Badge className="bg-emerald-100 text-emerald-700 hover:bg-emerald-200">
                       {prospect.fit} Fit
                     </Badge>
                   </div>
-                  <p className="text-sm text-slate-300">{prospect.details}</p>
-                  <p className="text-sm text-blue-400 flex items-center gap-2">
+                  <p className="text-sm text-slate-700">{prospect.details}</p>
+                  <p className="text-sm text-blue-600 flex items-center gap-2">
                     <Clock className="h-4 w-4" />
                     {prospect.timeline}
                   </p>
