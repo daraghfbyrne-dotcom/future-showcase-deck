@@ -7,14 +7,30 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
+import gartnerLogo from "@/assets/gartner-logo.png";
+import forresterLogo from "@/assets/forrester-logo.png";
+import idcLogo from "@/assets/idc-logo.png";
+import hackettLogo from "@/assets/hackett-logo.png";
+import everestLogo from "@/assets/everest-logo.png";
+
+const firmLogos: Record<string, string> = {
+  "Gartner": gartnerLogo,
+  "Forrester": forresterLogo,
+  "IDC": idcLogo,
+  "Hackett": hackettLogo,
+  "Hackett / SpendMatters": hackettLogo,
+  "Everest": everestLogo,
+  "Everest Group": everestLogo,
+};
+
 const currentRecognitions = [
-  { firm: "Gartner", recognition: "Niche Player in the 2025 Magic Quadrant for Accounts Payable Applications", icon: "🏆" },
-  { firm: "Gartner", recognition: "Part of Critical Capabilities Report 2025", icon: "📊" },
-  { firm: "Gartner", recognition: "Sample Vendor for AP Invoice Automation (APIA) category in 2024 Hype Cycle", icon: "📈" },
-  { firm: "IDC", recognition: "Major Player in 2024 MarketScape for worldwide Accounts Payable automation", icon: "🌍" },
-  { firm: "Everest", recognition: "Major Contender in the 2025 PEAK Matrix for P2P", icon: "⛰️" },
-  { firm: "Forrester", recognition: "Referenced in 'Top AI use cases for Accounts Payable (AP) automation'", icon: "🤖" },
-  { firm: "Forrester", recognition: "Featured in AP Landscape Report (October 2025)", icon: "📋" },
+  { firm: "Gartner", recognition: "Niche Player in the 2025 Magic Quadrant for Accounts Payable Applications" },
+  { firm: "Gartner", recognition: "Part of Critical Capabilities Report 2025" },
+  { firm: "Gartner", recognition: "Sample Vendor for AP Invoice Automation (APIA) category in 2024 Hype Cycle" },
+  { firm: "IDC", recognition: "Major Player in 2024 MarketScape for worldwide Accounts Payable automation" },
+  { firm: "Everest", recognition: "Major Contender in the 2025 PEAK Matrix for P2P" },
+  { firm: "Forrester", recognition: "Referenced in 'Top AI use cases for Accounts Payable (AP) automation'" },
+  { firm: "Forrester", recognition: "Featured in AP Landscape Report (October 2025)" },
 ];
 
 const futureTargets = [
@@ -273,11 +289,10 @@ const AnalystStrategy = () => {
               <Card key={index} className="bg-white border-gray-200 hover:border-gray-300 hover:shadow-md transition-all">
                 <CardContent className="pt-6">
                   <div className="flex items-start gap-3">
-                    <span className="text-2xl">{item.icon}</span>
+                    {firmLogos[item.firm] && (
+                      <img src={firmLogos[item.firm]} alt={item.firm} className="h-6 w-auto object-contain flex-shrink-0" />
+                    )}
                     <div>
-                      <Badge variant="outline" className="mb-2 border-gray-300 text-gray-600">
-                        {item.firm}
-                      </Badge>
                       <p className="text-sm text-gray-700">{item.recognition}</p>
                     </div>
                   </div>
@@ -340,7 +355,9 @@ const AnalystStrategy = () => {
                       <CardHeader className="cursor-pointer hover:bg-gray-50 transition-colors">
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-4">
-                            <div className={`w-2 h-12 rounded-full ${framework.color}`} />
+                            {firmLogos[framework.firm] && (
+                              <img src={firmLogos[framework.firm]} alt={framework.firm} className="h-8 w-auto object-contain" />
+                            )}
                             <div>
                               <CardTitle className="text-gray-900 flex items-center gap-3">
                                 {framework.firm}
