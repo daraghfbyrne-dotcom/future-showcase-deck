@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import PipelineConversion from "./pages/PipelineConversion";
 import AnalystStrategy from "./pages/AnalystStrategy";
 import PartnersStrategy from "./pages/PartnersStrategy";
+import CapacityPlan from "./pages/CapacityPlan";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/pipeline-conversion" element={<PipelineConversion />} />
           <Route path="/analyst-strategy" element={<AnalystStrategy />} />
           <Route path="/partners-strategy" element={<PartnersStrategy />} />
+          <Route path="/capacity-plan" element={<CapacityPlan />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -32,6 +32,7 @@ export const Navigation = ({ activeSection, setActiveSection }: NavigationProps)
     { path: "/pipeline-conversion", label: "Pipeline Conversion" },
     { path: "/analyst-strategy", label: "Analyst Strategy" },
     { path: "/partners-strategy", label: "Partners Strategy" },
+    { path: "/capacity-plan", label: "Capacity Plan" },
   ];
 
   const scrollToSection = (id: string) => {
