@@ -20,11 +20,13 @@ const sections = [
   { id: "market-conditions", label: "Market Conditions" },
   { id: "analysis", label: "ERP Analysis" },
   { id: "industry", label: "Industry" },
+  { id: "industry-challenges", label: "Industry Challenges" },
   { id: "size", label: "Company Size" },
   { id: "invoice-volume", label: "Invoice Volume" },
   { id: "competitors", label: "Competitors" },
   { id: "strategy", label: "Strategic Pillars" },
   { id: "pipeline-conversion", label: "Pipeline Conversion" },
+  { id: "events-strategy", label: "Events Strategy" },
   { id: "research", label: "Research" },
 ];
 
