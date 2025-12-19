@@ -4,9 +4,8 @@ import { ArrowLeft, Target, Award, Calendar, CheckCircle2, Users, TrendingUp, Fi
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Checkbox } from "@/components/ui/checkbox";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { Progress } from "@/components/ui/progress";
 
 const currentRecognitions = [
   { firm: "Gartner", recognition: "Niche Player in the 2025 Magic Quadrant for Accounts Payable Applications", icon: "🏆" },
@@ -156,14 +155,21 @@ const successMetrics = [
   },
 ];
 
+type RAGStatus = "not-started" | "in-progress" | "completed" | "blocked";
+
+const ragStatusConfig: Record<RAGStatus, { label: string; color: string; bgColor: string; borderColor: string }> = {
+  "not-started": { label: "Not Started", color: "text-gray-600", bgColor: "bg-gray-100", borderColor: "border-gray-300" },
+  "in-progress": { label: "In Progress", color: "text-amber-700", bgColor: "bg-amber-50", borderColor: "border-amber-400" },
+  "completed": { label: "Completed", color: "text-emerald-700", bgColor: "bg-emerald-50", borderColor: "border-emerald-400" },
+  "blocked": { label: "Blocked", color: "text-red-700", bgColor: "bg-red-50", borderColor: "border-red-400" },
+};
+
 const AnalystStrategy = () => {
-  const [completedTactics, setCompletedTactics] = useState<string[]>([]);
+  const [tacticStatuses, setTacticStatuses] = useState<Record<string, RAGStatus>>({});
   const [expandedFrameworks, setExpandedFrameworks] = useState<string[]>([]);
 
-  const toggleTactic = (id: string) => {
-    setCompletedTactics(prev =>
-      prev.includes(id) ? prev.filter(t => t !== id) : [...prev, id]
-    );
+  const updateTacticStatus = (id: string, status: RAGStatus) => {
+    setTacticStatuses(prev => ({ ...prev, [id]: status }));
   };
 
   const toggleFramework = (firm: string) => {
@@ -172,7 +178,16 @@ const AnalystStrategy = () => {
     );
   };
 
-  const tacticsProgress = (completedTactics.length / engagementTactics.length) * 100;
+  const getStatusCounts = () => {
+    const counts = { "not-started": 0, "in-progress": 0, "completed": 0, "blocked": 0 };
+    engagementTactics.forEach(tactic => {
+      const status = tacticStatuses[tactic.id] || "not-started";
+      counts[status]++;
+    });
+    return counts;
+  };
+
+  const statusCounts = getStatusCounts();
 
   return (
     <div className="min-h-screen bg-white">
@@ -376,64 +391,98 @@ const AnalystStrategy = () => {
           </div>
         </section>
 
-        {/* Engagement Tactics - Interactive */}
+        {/* Engagement Tactics - RAG Status */}
         <section className="space-y-6">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between flex-wrap gap-4">
             <div className="flex items-center gap-3">
               <Users className="h-7 w-7 text-cyan-500" />
               <h2 className="text-2xl font-bold text-gray-900">Engagement Tactics</h2>
             </div>
-            <div className="flex items-center gap-4">
-              <span className="text-sm text-gray-500">
-                {completedTactics.length} of {engagementTactics.length} completed
-              </span>
-              <div className="w-32">
-                <Progress value={tacticsProgress} className="h-2" />
+            <div className="flex items-center gap-3 flex-wrap">
+              <div className="flex items-center gap-1.5">
+                <div className="w-3 h-3 rounded-full bg-emerald-500" />
+                <span className="text-sm text-gray-600">{statusCounts.completed} Completed</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <div className="w-3 h-3 rounded-full bg-amber-500" />
+                <span className="text-sm text-gray-600">{statusCounts["in-progress"]} In Progress</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <div className="w-3 h-3 rounded-full bg-red-500" />
+                <span className="text-sm text-gray-600">{statusCounts.blocked} Blocked</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <div className="w-3 h-3 rounded-full bg-gray-400" />
+                <span className="text-sm text-gray-600">{statusCounts["not-started"]} Not Started</span>
               </div>
             </div>
           </div>
 
           <div className="grid gap-4">
-            {engagementTactics.map((tactic) => (
-              <Card 
-                key={tactic.id} 
-                className={`bg-white border-gray-200 transition-all ${
-                  completedTactics.includes(tactic.id) ? "border-emerald-400 bg-emerald-50" : ""
-                }`}
-              >
-                <CardContent className="pt-6">
-                  <div className="flex items-start gap-4">
-                    <Checkbox
-                      id={tactic.id}
-                      checked={completedTactics.includes(tactic.id)}
-                      onCheckedChange={() => toggleTactic(tactic.id)}
-                      className="mt-1 border-gray-400 data-[state=checked]:bg-emerald-500 data-[state=checked]:border-emerald-500"
-                    />
-                    <div className="flex-1">
-                      <label 
-                        htmlFor={tactic.id}
-                        className={`font-semibold cursor-pointer ${
-                          completedTactics.includes(tactic.id) ? "text-emerald-600 line-through" : "text-gray-900"
-                        }`}
+            {engagementTactics.map((tactic) => {
+              const status = tacticStatuses[tactic.id] || "not-started";
+              const config = ragStatusConfig[status];
+              
+              return (
+                <Card 
+                  key={tactic.id} 
+                  className={`bg-white border-gray-200 transition-all ${config.borderColor} ${config.bgColor}`}
+                >
+                  <CardContent className="pt-6">
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex-1">
+                        <h3 className="font-semibold text-gray-900">{tactic.title}</h3>
+                        <p className="text-sm text-gray-600 mt-1">{tactic.description}</p>
+                        {tactic.dependencies.length > 0 && (
+                          <div className="flex flex-wrap gap-2 mt-3">
+                            <span className="text-xs text-gray-500">Dependencies:</span>
+                            {tactic.dependencies.map((dep) => (
+                              <Badge key={dep} variant="outline" className="text-xs border-gray-300 text-gray-500">
+                                {dep}
+                              </Badge>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                      <Select
+                        value={status}
+                        onValueChange={(value: RAGStatus) => updateTacticStatus(tactic.id, value)}
                       >
-                        {tactic.title}
-                      </label>
-                      <p className="text-sm text-gray-600 mt-1">{tactic.description}</p>
-                      {tactic.dependencies.length > 0 && (
-                        <div className="flex flex-wrap gap-2 mt-3">
-                          <span className="text-xs text-gray-500">Dependencies:</span>
-                          {tactic.dependencies.map((dep) => (
-                            <Badge key={dep} variant="outline" className="text-xs border-gray-300 text-gray-500">
-                              {dep}
-                            </Badge>
-                          ))}
-                        </div>
-                      )}
+                        <SelectTrigger className={`w-[140px] ${config.bgColor} ${config.borderColor} ${config.color}`}>
+                          <SelectValue />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="not-started">
+                            <div className="flex items-center gap-2">
+                              <div className="w-2.5 h-2.5 rounded-full bg-gray-400" />
+                              Not Started
+                            </div>
+                          </SelectItem>
+                          <SelectItem value="in-progress">
+                            <div className="flex items-center gap-2">
+                              <div className="w-2.5 h-2.5 rounded-full bg-amber-500" />
+                              In Progress
+                            </div>
+                          </SelectItem>
+                          <SelectItem value="completed">
+                            <div className="flex items-center gap-2">
+                              <div className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
+                              Completed
+                            </div>
+                          </SelectItem>
+                          <SelectItem value="blocked">
+                            <div className="flex items-center gap-2">
+                              <div className="w-2.5 h-2.5 rounded-full bg-red-500" />
+                              Blocked
+                            </div>
+                          </SelectItem>
+                        </SelectContent>
+                      </Select>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </section>
 
