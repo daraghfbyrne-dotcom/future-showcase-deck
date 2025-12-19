@@ -1,16 +1,12 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
-interface NavigationProps {
-  activeSection: string;
-  setActiveSection: (section: string) => void;
-}
-
-export const Navigation = ({ activeSection, setActiveSection }: NavigationProps) => {
+export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,30 +16,13 @@ export const Navigation = ({ activeSection, setActiveSection }: NavigationProps)
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = [
-    { id: "hero", label: "Overview" },
-    { id: "why", label: "Context" },
-    { id: "analysis", label: "Analysis" },
-    { id: "strategy", label: "Strategic Pillars" },
-    { id: "events-strategy", label: "Events Strategy" },
-  ];
-
-  const pageLinks = [
-    { path: "/pipeline-conversion", label: "Pipeline Conversion" },
+  const mainPages = [
+    { path: "/", label: "2026 Strategy" },
     { path: "/analyst-strategy", label: "Analyst Strategy" },
     { path: "/partners-strategy", label: "Partners Strategy" },
-    { path: "/capacity-plan", label: "Capacity Plan" },
     { path: "/objectives-2026", label: "2026 Objectives" },
+    { path: "/capacity-plan", label: "Capacity Plan" },
   ];
-
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setActiveSection(id);
-      setMobileMenuOpen(false);
-    }
-  };
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -51,30 +30,25 @@ export const Navigation = ({ activeSection, setActiveSection }: NavigationProps)
     }`}>
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3">
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-sm">SC</span>
             </div>
             <span className="font-display font-semibold text-lg">SoftCo 2026</span>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1">
-            {navItems.map((item) => (
-              <Button
-                key={item.id}
-                variant="ghost"
-                size="sm"
-                onClick={() => scrollToSection(item.id)}
-                className="text-sm font-medium"
-              >
-                {item.label}
-              </Button>
-            ))}
-            {pageLinks.map((link) => (
-              <Link key={link.path} to={link.path}>
-                <Button variant="ghost" size="sm" className="text-sm font-medium">
-                  {link.label}
+            {mainPages.map((page) => (
+              <Link key={page.path} to={page.path}>
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  className={`text-sm font-medium ${
+                    location.pathname === page.path ? 'bg-accent text-accent-foreground' : ''
+                  }`}
+                >
+                  {page.label}
                 </Button>
               </Link>
             ))}
@@ -95,20 +69,15 @@ export const Navigation = ({ activeSection, setActiveSection }: NavigationProps)
         {mobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-border">
             <div className="flex flex-col gap-2">
-              {navItems.map((item) => (
-                <Button
-                  key={item.id}
-                  variant="ghost"
-                  onClick={() => scrollToSection(item.id)}
-                  className="justify-start"
-                >
-                  {item.label}
-                </Button>
-              ))}
-              {pageLinks.map((link) => (
-                <Link key={link.path} to={link.path} onClick={() => setMobileMenuOpen(false)}>
-                  <Button variant="ghost" className="w-full justify-start">
-                    {link.label}
+              {mainPages.map((page) => (
+                <Link key={page.path} to={page.path} onClick={() => setMobileMenuOpen(false)}>
+                  <Button 
+                    variant="ghost" 
+                    className={`w-full justify-start ${
+                      location.pathname === page.path ? 'bg-accent text-accent-foreground' : ''
+                    }`}
+                  >
+                    {page.label}
                   </Button>
                 </Link>
               ))}
