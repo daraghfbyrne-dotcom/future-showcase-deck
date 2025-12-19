@@ -33,6 +33,7 @@ export const Navigation = ({ activeSection, setActiveSection }: NavigationProps)
     { path: "/analyst-strategy", label: "Analyst Strategy" },
     { path: "/partners-strategy", label: "Partners Strategy" },
     { path: "/capacity-plan", label: "Capacity Plan" },
+    { path: "/objectives-2026", label: "2026 Objectives" },
   ];
 
   const scrollToSection = (id: string) => {
