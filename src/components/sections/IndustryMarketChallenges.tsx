@@ -217,7 +217,7 @@ const getLevelColor = (level: string) => {
 
 export const IndustryMarketChallenges = () => {
   return (
-    <section className="py-16 px-4 md:px-8 bg-gradient-to-b from-background to-muted/30">
+    <section id="industry-challenges" className="py-16 px-4 md:px-8 bg-gradient-to-b from-background to-muted/30">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <Badge variant="outline" className="mb-4 text-primary border-primary">Market Intelligence</Badge>
