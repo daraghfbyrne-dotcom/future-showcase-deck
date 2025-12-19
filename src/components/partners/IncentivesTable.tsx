@@ -1,5 +1,4 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Award } from "lucide-react";
 
 const IncentivesTable = () => {
@@ -46,13 +45,13 @@ const IncentivesTable = () => {
     <section id="incentives" className="space-y-6">
       <div className="flex items-center gap-3">
         <div className="h-8 w-1 bg-gradient-to-b from-yellow-500 to-amber-500 rounded-full" />
-        <h2 className="text-2xl font-bold text-white">Partner Incentives</h2>
+        <h2 className="text-2xl font-bold text-slate-900">Partner Incentives</h2>
       </div>
 
-      <Card className="bg-slate-800/50 border-slate-700">
+      <Card className="bg-white border-slate-200 shadow-sm">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-white">
-            <Award className="h-5 w-5 text-yellow-400" />
+          <CardTitle className="flex items-center gap-2 text-slate-900">
+            <Award className="h-5 w-5 text-yellow-600" />
             Incentives for High-Performing Partners
           </CardTitle>
         </CardHeader>
@@ -60,13 +59,13 @@ const IncentivesTable = () => {
           <div className="grid md:grid-cols-3 gap-4">
             {incentives.map((incentive) => (
               <div key={incentive.category} className="space-y-3">
-                <h4 className="font-semibold text-amber-400">{incentive.category}</h4>
+                <h4 className="font-semibold text-amber-600">{incentive.category}</h4>
                 <div className="space-y-2">
                   <p className="text-xs text-slate-500 uppercase tracking-wide">Criteria</p>
                   <ul className="space-y-1">
                     {incentive.criteria.map((item, idx) => (
-                      <li key={idx} className="text-sm text-slate-300 flex items-start gap-2">
-                        <div className="h-1.5 w-1.5 bg-slate-500 rounded-full mt-1.5 flex-shrink-0" />
+                      <li key={idx} className="text-sm text-slate-700 flex items-start gap-2">
+                        <div className="h-1.5 w-1.5 bg-slate-400 rounded-full mt-1.5 flex-shrink-0" />
                         {item}
                       </li>
                     ))}
@@ -76,8 +75,8 @@ const IncentivesTable = () => {
                   <p className="text-xs text-slate-500 uppercase tracking-wide">Rewards</p>
                   <ul className="space-y-1">
                     {incentive.rewards.map((item, idx) => (
-                      <li key={idx} className="text-sm text-green-400 flex items-start gap-2">
-                        <div className="h-1.5 w-1.5 bg-green-400 rounded-full mt-1.5 flex-shrink-0" />
+                      <li key={idx} className="text-sm text-green-700 flex items-start gap-2">
+                        <div className="h-1.5 w-1.5 bg-green-500 rounded-full mt-1.5 flex-shrink-0" />
                         {item}
                       </li>
                     ))}

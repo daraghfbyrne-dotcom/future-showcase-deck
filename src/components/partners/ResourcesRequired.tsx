@@ -29,14 +29,14 @@ const ResourcesRequired = () => {
     <section id="resources" className="space-y-6">
       <div className="flex items-center gap-3">
         <div className="h-8 w-1 bg-gradient-to-b from-indigo-500 to-violet-500 rounded-full" />
-        <h2 className="text-2xl font-bold text-white">Incremental Resources Required</h2>
-        <Badge variant="outline" className="border-indigo-500/50 text-indigo-400">H1 2026</Badge>
+        <h2 className="text-2xl font-bold text-slate-900">Incremental Resources Required</h2>
+        <Badge variant="outline" className="border-indigo-500 text-indigo-600">H1 2026</Badge>
       </div>
 
-      <Card className="bg-slate-800/50 border-slate-700 overflow-hidden">
-        <CardHeader className="border-b border-slate-700">
-          <CardTitle className="flex items-center gap-2 text-white">
-            <Users2 className="h-5 w-5 text-indigo-400" />
+      <Card className="bg-white border-slate-200 shadow-sm overflow-hidden">
+        <CardHeader className="border-b border-slate-200 bg-slate-50">
+          <CardTitle className="flex items-center gap-2 text-slate-900">
+            <Users2 className="h-5 w-5 text-indigo-600" />
             Team Expansion Plan
           </CardTitle>
         </CardHeader>
@@ -44,28 +44,28 @@ const ResourcesRequired = () => {
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>
-                <TableRow className="border-slate-700">
-                  <TableHead className="text-slate-300">Role</TableHead>
-                  <TableHead className="text-slate-300 text-center">FTE</TableHead>
-                  <TableHead className="text-slate-300">Timing</TableHead>
-                  <TableHead className="text-slate-300">Rationale</TableHead>
+                <TableRow className="border-slate-200">
+                  <TableHead className="text-slate-700">Role</TableHead>
+                  <TableHead className="text-slate-700 text-center">FTE</TableHead>
+                  <TableHead className="text-slate-700">Timing</TableHead>
+                  <TableHead className="text-slate-700">Rationale</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {resources.map((resource) => (
-                  <TableRow key={resource.role} className="border-slate-700">
-                    <TableCell className="font-medium text-white">{resource.role}</TableCell>
+                  <TableRow key={resource.role} className="border-slate-200">
+                    <TableCell className="font-medium text-slate-900">{resource.role}</TableCell>
                     <TableCell className="text-center">
-                      <Badge className="bg-indigo-500/20 text-indigo-300 hover:bg-indigo-500/30">
+                      <Badge className="bg-indigo-100 text-indigo-700 hover:bg-indigo-200">
                         {resource.fte}
                       </Badge>
                     </TableCell>
                     <TableCell>
-                      <Badge variant="outline" className="border-slate-600 text-slate-300">
+                      <Badge variant="outline" className="border-slate-300 text-slate-700">
                         {resource.timing}
                       </Badge>
                     </TableCell>
-                    <TableCell className="text-slate-400 text-sm">{resource.rationale}</TableCell>
+                    <TableCell className="text-slate-600 text-sm">{resource.rationale}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>

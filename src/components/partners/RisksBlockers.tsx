@@ -41,27 +41,27 @@ const RisksBlockers = () => {
     <section id="risks" className="space-y-6">
       <div className="flex items-center gap-3">
         <div className="h-8 w-1 bg-gradient-to-b from-red-500 to-orange-500 rounded-full" />
-        <h2 className="text-2xl font-bold text-white">Partner Risks & Blockers</h2>
+        <h2 className="text-2xl font-bold text-slate-900">Partner Risks & Blockers</h2>
       </div>
 
       <div className="space-y-4">
         {risks.map((item, idx) => (
-          <Card key={idx} className="bg-slate-800/50 border-slate-700">
+          <Card key={idx} className="bg-white border-slate-200 shadow-sm">
             <CardContent className="pt-6">
               <div className="flex items-start gap-4">
-                <div className="p-2 bg-red-500/20 rounded-lg flex-shrink-0">
-                  <AlertTriangle className="h-5 w-5 text-red-400" />
+                <div className="p-2 bg-red-100 rounded-lg flex-shrink-0">
+                  <AlertTriangle className="h-5 w-5 text-red-600" />
                 </div>
                 <div className="space-y-3 flex-1">
-                  <h4 className="font-semibold text-white">{item.risk}</h4>
+                  <h4 className="font-semibold text-slate-900">{item.risk}</h4>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <p className="text-xs text-red-400 uppercase tracking-wide mb-1">Potential Impact</p>
-                      <p className="text-sm text-slate-300">{item.impact}</p>
+                      <p className="text-xs text-red-600 uppercase tracking-wide mb-1">Potential Impact</p>
+                      <p className="text-sm text-slate-700">{item.impact}</p>
                     </div>
                     <div>
-                      <p className="text-xs text-green-400 uppercase tracking-wide mb-1">Mitigation</p>
-                      <p className="text-sm text-slate-300">{item.mitigation}</p>
+                      <p className="text-xs text-green-600 uppercase tracking-wide mb-1">Mitigation</p>
+                      <p className="text-sm text-slate-700">{item.mitigation}</p>
                     </div>
                   </div>
                 </div>
@@ -71,18 +71,18 @@ const RisksBlockers = () => {
         ))}
       </div>
 
-      <Card className="bg-slate-800/50 border-slate-700">
+      <Card className="bg-slate-50 border-slate-200">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-white text-lg">
-            <Shield className="h-5 w-5 text-blue-400" />
+          <CardTitle className="flex items-center gap-2 text-slate-900 text-lg">
+            <Shield className="h-5 w-5 text-blue-600" />
             Other Risk Checks to Incorporate
           </CardTitle>
         </CardHeader>
         <CardContent>
           <ul className="grid md:grid-cols-2 gap-2">
             {otherChecks.map((check, idx) => (
-              <li key={idx} className="flex items-center gap-2 text-sm text-slate-300">
-                <div className="h-1.5 w-1.5 bg-blue-400 rounded-full" />
+              <li key={idx} className="flex items-center gap-2 text-sm text-slate-700">
+                <div className="h-1.5 w-1.5 bg-blue-500 rounded-full" />
                 {check}
               </li>
             ))}

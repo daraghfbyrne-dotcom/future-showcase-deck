@@ -8,7 +8,8 @@ const PartnerTiering = () => {
       name: "Bronze",
       subtitle: "Entry-Level",
       icon: Award,
-      color: "amber",
+      bgColor: "bg-amber-100",
+      iconColor: "text-amber-700",
       characteristics: "New or niche partners, early-stage relationship, low or no pipeline contribution yet",
       enablement: "Access to sales collateral, basic training",
       benefits: "Deal registration access, listing on SoftCo website",
@@ -17,7 +18,8 @@ const PartnerTiering = () => {
       name: "Silver",
       subtitle: "Developing Contributor",
       icon: Medal,
-      color: "slate",
+      bgColor: "bg-slate-200",
+      iconColor: "text-slate-600",
       characteristics: "Actively engaged, generating qualified leads, attending enablement sessions",
       enablement: "Full sales certification and quarterly enablement refreshers",
       benefits: "Co-marketing (webinars, event slots), limited MDF access, QBR participation",
@@ -26,7 +28,8 @@ const PartnerTiering = () => {
       name: "Gold",
       subtitle: "Strategic Growth Partner",
       icon: Crown,
-      color: "yellow",
+      bgColor: "bg-yellow-100",
+      iconColor: "text-yellow-600",
       characteristics: "Consistent and strategic pipeline contributor, deep product knowledge, joint GTM",
       enablement: "Certified across Sales, Pre-Sales, and Delivery (if applicable), demo access, sandbox environments",
       benefits: "Priority lead routing, co-funded campaign access, roadmap previews, access to beta features, senior sponsor alignment, PAB membership",
@@ -37,10 +40,10 @@ const PartnerTiering = () => {
     <section id="tiering" className="space-y-6">
       <div className="flex items-center gap-3">
         <div className="h-8 w-1 bg-gradient-to-b from-yellow-400 to-amber-600 rounded-full" />
-        <h2 className="text-2xl font-bold text-white">Partner Tiering Framework</h2>
-        <Badge variant="outline" className="border-blue-500/50 text-blue-400">H1 2026</Badge>
+        <h2 className="text-2xl font-bold text-slate-900">Partner Tiering Framework</h2>
+        <Badge variant="outline" className="border-blue-500 text-blue-600">H1 2026</Badge>
       </div>
-      <p className="text-slate-400">
+      <p className="text-slate-600">
         Applied across all partner types (Referral, Co-Sell, OEM-Out, VARs, and Strategic Alliances) 
         to drive alignment, accountability, and motivation through tier-specific benefits.
       </p>
@@ -51,45 +54,33 @@ const PartnerTiering = () => {
           return (
             <Card 
               key={tier.name} 
-              className={`bg-slate-800/50 border-slate-700 ${
-                tier.name === 'Gold' ? 'ring-2 ring-yellow-500/30' : ''
+              className={`bg-white border-slate-200 shadow-sm ${
+                tier.name === 'Gold' ? 'ring-2 ring-yellow-400' : ''
               }`}
             >
               <CardHeader className="pb-2">
                 <div className="flex items-center gap-3">
-                  <div className={`p-2 rounded-lg ${
-                    tier.name === 'Gold' 
-                      ? 'bg-yellow-500/20' 
-                      : tier.name === 'Silver'
-                      ? 'bg-slate-400/20'
-                      : 'bg-amber-700/20'
-                  }`}>
-                    <Icon className={`h-6 w-6 ${
-                      tier.name === 'Gold' 
-                        ? 'text-yellow-400' 
-                        : tier.name === 'Silver'
-                        ? 'text-slate-300'
-                        : 'text-amber-600'
-                    }`} />
+                  <div className={`p-2 rounded-lg ${tier.bgColor}`}>
+                    <Icon className={`h-6 w-6 ${tier.iconColor}`} />
                   </div>
                   <div>
-                    <CardTitle className="text-white">{tier.name}</CardTitle>
-                    <p className="text-sm text-slate-400">{tier.subtitle}</p>
+                    <CardTitle className="text-slate-900">{tier.name}</CardTitle>
+                    <p className="text-sm text-slate-500">{tier.subtitle}</p>
                   </div>
                 </div>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
                   <p className="text-xs text-slate-500 uppercase tracking-wide mb-1">Characteristics</p>
-                  <p className="text-sm text-slate-300">{tier.characteristics}</p>
+                  <p className="text-sm text-slate-700">{tier.characteristics}</p>
                 </div>
                 <div>
                   <p className="text-xs text-slate-500 uppercase tracking-wide mb-1">Enablement</p>
-                  <p className="text-sm text-slate-300">{tier.enablement}</p>
+                  <p className="text-sm text-slate-700">{tier.enablement}</p>
                 </div>
                 <div>
                   <p className="text-xs text-slate-500 uppercase tracking-wide mb-1">Benefits</p>
-                  <p className="text-sm text-green-400">{tier.benefits}</p>
+                  <p className="text-sm text-green-700">{tier.benefits}</p>
                 </div>
               </CardContent>
             </Card>
@@ -97,10 +88,10 @@ const PartnerTiering = () => {
         })}
       </div>
 
-      <Card className="bg-slate-800/50 border-slate-700">
+      <Card className="bg-slate-50 border-slate-200">
         <CardContent className="pt-6">
-          <h4 className="font-semibold text-white mb-2">Progression Criteria</h4>
-          <p className="text-sm text-slate-400">
+          <h4 className="font-semibold text-slate-900 mb-2">Progression Criteria</h4>
+          <p className="text-sm text-slate-600">
             Annual review of contribution, certification, and engagement metrics. Strategic partners 
             who stagnate for more than two quarters may be subject to downgrade or lifecycle review.
           </p>
