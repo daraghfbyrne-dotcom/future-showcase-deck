@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
-import { ArrowLeft, Users, Calendar, AlertTriangle, CheckCircle2, XCircle, Clock, TrendingUp } from "lucide-react";
+import { Users, Calendar, AlertTriangle, CheckCircle2, XCircle, Clock, TrendingUp } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Navigation } from "@/components/Navigation";
 
 const keyDecisions = [
   "Copywriter 1/1, Graphic Designer 1/3",
@@ -155,23 +155,9 @@ const totalEffort = workstreams.reduce((sum, w) => sum + w.effort, 0);
 const CapacityPlan = () => {
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <Link to="/" className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors">
-              <ArrowLeft className="h-5 w-5" />
-              <span>Back to Strategy</span>
-            </Link>
-            <h1 className="text-xl font-bold text-gray-900">Q1 Marketing Team Capacity Plan</h1>
-            <Badge variant="outline" className="border-blue-500 text-blue-600">
-              Q1 2026
-            </Badge>
-          </div>
-        </div>
-      </header>
+      <Navigation />
 
-      <main className="container mx-auto px-4 py-8 space-y-8">
+      <main className="container mx-auto px-4 pt-20 pb-8 space-y-8">
         {/* Hero Section */}
         <section className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 p-8 md:p-12">
           <div className="absolute inset-0 bg-black/20" />
