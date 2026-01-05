@@ -1,10 +1,10 @@
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Cell, LabelList } from 'recharts';
 
 const channelData = [
-  { name: 'Marketing', value: 9608724, percentage: 35.4, color: 'hsl(var(--success))' },
-  { name: 'SDR', value: 7742471, percentage: 28.5, color: 'hsl(var(--primary))' },
-  { name: 'Partnerships', value: 5343464, percentage: 19.7, color: 'hsl(var(--chart-4))' },
-  { name: 'AE Generated', value: 4482483, percentage: 16.5, color: 'hsl(var(--accent))' },
+  { name: 'Marketing', value: 7500000, percentage: 35.5, color: 'hsl(var(--success))' },
+  { name: 'SDR', value: 6000000, percentage: 28.4, color: 'hsl(var(--primary))' },
+  { name: 'Partnerships', value: 4100000, percentage: 19.4, color: 'hsl(var(--chart-4))' },
+  { name: 'AE Generated', value: 3500000, percentage: 16.6, color: 'hsl(var(--accent))' },
 ];
 
 const formatValue = (value: number) => `€${(value / 1000000).toFixed(1)}M`;
