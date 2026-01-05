@@ -1,7 +1,6 @@
 import { TrendingUp, Target, Users, Zap, FileText } from "lucide-react";
 import { Hero } from "@/components/sections/Hero";
 import { Navigation } from "@/components/Navigation";
-import { SectionNav } from "@/components/SectionNav";
 import { WhyStrategy } from "@/components/sections/WhyStrategy";
 import { ProspectMarketConditions } from "@/components/sections/ProspectMarketConditions";
 import { ERPAnalysis } from "@/components/sections/ERPAnalysis";
@@ -14,27 +13,10 @@ import { StrategicPillars } from "@/components/sections/StrategicPillars";
 import { ResearchProgram } from "@/components/sections/ResearchProgram";
 import { PipelineConversion } from "@/components/sections/PipelineConversion";
 
-const sections = [
-  { id: "hero", label: "Overview" },
-  { id: "why", label: "Context" },
-  { id: "market-conditions", label: "Market Conditions" },
-  { id: "analysis", label: "ERP Analysis" },
-  { id: "industry", label: "Industry" },
-  { id: "industry-challenges", label: "Industry Challenges" },
-  { id: "size", label: "Company Size" },
-  { id: "invoice-volume", label: "Invoice Volume" },
-  { id: "competitors", label: "Competitors" },
-  { id: "strategy", label: "Strategic Pillars" },
-  { id: "pipeline-conversion", label: "Pipeline Conversion" },
-  { id: "events-strategy", label: "Events Strategy" },
-  { id: "research", label: "Research" },
-];
-
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
-      <SectionNav sections={sections} />
       
       <main>
         <Hero />
