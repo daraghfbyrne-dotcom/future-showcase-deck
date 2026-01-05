@@ -69,9 +69,9 @@ const Objectives2026 = () => {
       title: "Pipeline Growth & Demand Generation",
       icon: BarChart3,
       color: "bg-green-500",
-      description: "Build an AI performance-led marketing engine that delivers €11.4m of qualified pipeline (€8.5m marketing, €2.9m partnerships), reduces CAC and CPL, and employs robust automation and analytics.",
+      description: "Build an AI performance-led marketing engine that delivers €11.6m of qualified pipeline (€7.5m marketing, €4.1m partnerships), reduces CAC and CPL, and employs robust automation and analytics.",
       initiatives: [
-        { id: "pipeline-1", title: "Pipeline Generation", description: "Deliver €9.61m in qualified pipeline sourced via marketing & €5.34m via partnerships with improved sales lead-to-opportunity & opportunity-to-win conversion." },
+        { id: "pipeline-1", title: "Pipeline Generation", description: "Deliver €7.5m in qualified pipeline sourced via marketing & €4.1m via partnerships with improved sales lead-to-opportunity & opportunity-to-win conversion." },
         { id: "pipeline-2", title: "Cost & Efficiency Optimisation", description: "Conduct quarterly reviews with Finance to optimise cost and efficiency." },
         { id: "pipeline-3", title: "Integrated Demand Generation", description: "Execute integrated demand generation programme including digital, field events, and implement nurture flows." }
       ],
@@ -90,7 +90,7 @@ const Objectives2026 = () => {
       initiatives: [
         { id: "partnerships-1", title: "Partner Recruitment & Onboarding", description: "Launch a tiered referral/reseller programme; recruit and onboard new strategic partners." },
         { id: "partnerships-2", title: "Partner Marketing & Lead Generation", description: "Develop co-marketing programmes (joint campaigns, content, events)." },
-        { id: "partnerships-3", title: "Governance & Joint Planning", description: "Conduct quarterly business reviews (QBRs) and annual joint business plans with partners; monitor performance through clear KPIs and incentives; ensure partners contribute at least 17% of pipeline (€2.9m) & new ARR." }
+        { id: "partnerships-3", title: "Governance & Joint Planning", description: "Conduct quarterly business reviews (QBRs) and annual joint business plans with partners; monitor performance through clear KPIs and incentives; ensure partners contribute €4.1m in pipeline." }
       ],
       dependencies: {
         department: "Operations, Product",
@@ -101,13 +101,95 @@ const Objectives2026 = () => {
   ];
 
   const kpis = [
-    { id: "kpi-1", metric: "Total Qualified Pipeline", target: "€11.4m from marketing & Partnerships" },
-    { id: "kpi-2", metric: "Lead to Qualified Conversion", target: "32%" },
-    { id: "kpi-3", metric: "Brand & Traffic Growth", target: "Branded search share ≥15%, organic traffic ≥15%; CAC & CPL reduced by ≥5%" },
-    { id: "kpi-4", metric: "Analyst Inclusion", target: "1 additional analyst report; improved positioning in all existing reports; 6 customer success stories" },
+    { id: "kpi-1", metric: "Total Qualified Pipeline", target: "€11.5m from marketing & Partnerships" },
+    { id: "kpi-2", metric: "Lead to Qualified Conversion", target: "32% conversion from Sales Lead to Qualified" },
+    { id: "kpi-3", metric: "Brand & Traffic Growth", target: "Branded search share ≥15%, organic traffic ≥15%; CPL reduced by ≥5%" },
+    { id: "kpi-4", metric: "Analyst Inclusion", target: "1 additional analyst report; improved positioning in all existing reports; 6 customer success stories published" },
     { id: "kpi-5", metric: "Partner Recruitment", target: "3 new partners recruited and onboarded; partner-generated pipeline ≥17% of total" },
     { id: "kpi-6", metric: "Net Revenue Retention", target: ">120%" },
-    { id: "kpi-7", metric: "Pipeline Conversion to Won", target: "Improvement from 10% to 14% (dependency Sales)" }
+    { id: "kpi-7", metric: "Pipeline Conversion to Won", target: "Improvement from 14% to 18% (dependency Sales)" }
+  ];
+
+  const okrs = [
+    {
+      id: "okr-gtm",
+      objective: "Deliver a focused, high-impact GTM that drives revenue growth and protects the customer base",
+      alignedGoal: "GTM & Alignment",
+      color: "bg-blue-500",
+      keyResults: [
+        { type: "Lagging", result: "Increase Sales Lead → Qualified conversion rate to 32% by Q4 2026" },
+        { type: "Leading", result: "Deliver 4 product GTM playbooks & sales enablement kits, achieving ≥80% usage by Sales" },
+        { type: "Leading", result: "Deliver Account Management pipeline contribution from marketing (aligned with Sales AM forecast)" },
+        { type: "Leading", result: "Run two successful Customer Advisory Boards (CABs) with ≥70% satisfaction rates" }
+      ]
+    },
+    {
+      id: "okr-brand",
+      objective: "Launch and embed SoftCo's refreshed brand to increase visibility and market perception",
+      alignedGoal: "Brand & Positioning",
+      color: "bg-purple-500",
+      keyResults: [
+        { type: "Lagging", result: "Increase branded search share by ≥15% and organic traffic by ≥15% YoY" },
+        { type: "Leading", result: "Launch full brand refresh by end of Q1 2026 and ensure 100% migration across digital channels and sales collateral" },
+        { type: "Leading", result: "Publish 6 customer success stories, including quantified customer impact metrics" }
+      ]
+    },
+    {
+      id: "okr-pipeline",
+      objective: "Build an AI-led demand generation engine that delivers predictable pipeline",
+      alignedGoal: "Pipeline Growth & Demand",
+      color: "bg-green-500",
+      keyResults: [
+        { type: "Lagging", result: "Generate €7.5M in qualified marketing-sourced pipeline at required conversion rates" },
+        { type: "Leading", result: "Reduce CPL by ≥5%" },
+        { type: "Leading", result: "Deploy 4 automated nurture flows and a real-time performance dashboard by end Q2 2026" },
+        { type: "Leading", result: "Improve SL → Opportunity conversion to 32% (target aligned with Sales)" }
+      ]
+    },
+    {
+      id: "okr-customer",
+      objective: "Strengthen customer advocacy and expansion performance",
+      alignedGoal: "Customer Protection & Expansion",
+      color: "bg-teal-500",
+      keyResults: [
+        { type: "Lagging", result: "Support achievement of NRR >120% by generating expansion pipeline (joint with Sales)" },
+        { type: "Lagging", result: "Complete 2 CABs by year end" },
+        { type: "Leading", result: "Execute 3 cross-sell/upsell campaigns with ≥10% conversion to qualified opportunities" }
+      ]
+    },
+    {
+      id: "okr-partnerships",
+      objective: "Build a scalable partner ecosystem that contributes predictable pipeline",
+      alignedGoal: "Partnerships & Ecosystem",
+      color: "bg-orange-500",
+      keyResults: [
+        { type: "Lagging", result: "Deliver €4.1M partner-sourced pipeline (≥19% of total pipeline including Tungsten)" },
+        { type: "Leading", result: "Recruit and onboard ≥3 new strategic referral partners by Q3 2026" }
+      ]
+    },
+    {
+      id: "okr-partners-enable",
+      objective: "Enable partners to market, sell, and co-deliver with SoftCo",
+      alignedGoal: "Partner Recruitment & Enablement",
+      color: "bg-amber-500",
+      keyResults: [
+        { type: "Leading", result: "Launch Partner Portal (training, deal reg, co-marketing assets) by end of Q2 2026" },
+        { type: "Leading", result: "Execute 4 co-marketing initiatives (webinars, case studies, events)" },
+        { type: "Leading", result: "Increase partners contributing closed-won ARR to ≥14% incl TA" }
+      ]
+    },
+    {
+      id: "okr-ar",
+      objective: "Strengthen SoftCo's reputation as the AP automation leader",
+      alignedGoal: "Brand, Positioning & Analyst Relations",
+      color: "bg-indigo-500",
+      keyResults: [
+        { type: "Lagging", result: "Secure inclusion in one additional major analyst report and improve positioning in all existing reports" },
+        { type: "Leading", result: "Conduct ≥6 analyst briefings supported by evidence packs and customer proof points" },
+        { type: "Leading", result: "Publish 6 high-quality thought leadership assets (whitepapers, reports, op-eds)" },
+        { type: "Leading", result: "Build a measurable PR strategy" }
+      ]
+    }
   ];
 
   const additionalDependencies = [
@@ -383,6 +465,46 @@ const Objectives2026 = () => {
             </div>
           </CardContent>
         </Card>
+
+        {/* 2026 OKRs */}
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-2">
+            <Target className="h-6 w-6 text-primary" />
+            2026 OKRs (Objectives & Key Results)
+          </h2>
+          <div className="grid gap-4 md:grid-cols-2">
+            {okrs.map((okr) => (
+              <Card key={okr.id} className="border-l-4" style={{ borderLeftColor: `var(--${okr.color.replace('bg-', '')})` }}>
+                <CardHeader className="pb-3">
+                  <div className="flex items-start gap-3">
+                    <div className={`p-2 rounded-lg ${okr.color}`}>
+                      <Target className="h-4 w-4 text-white" />
+                    </div>
+                    <div>
+                      <CardTitle className="text-base font-semibold leading-tight">{okr.objective}</CardTitle>
+                      <Badge variant="outline" className="mt-2 text-xs">{okr.alignedGoal}</Badge>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <div className="space-y-2">
+                    {okr.keyResults.map((kr, idx) => (
+                      <div key={idx} className="flex items-start gap-2 text-sm">
+                        <Badge 
+                          variant={kr.type === "Lagging" ? "default" : "secondary"} 
+                          className={`text-xs flex-shrink-0 ${kr.type === "Lagging" ? "bg-blue-600" : "bg-slate-500"}`}
+                        >
+                          {kr.type}
+                        </Badge>
+                        <span className="text-muted-foreground">{kr.result}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
 
         {/* Additional Dependencies */}
         <Card className="mb-8">
