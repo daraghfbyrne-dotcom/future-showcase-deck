@@ -39,7 +39,7 @@ const EventsStrategy = () => {
                 <Euro className="w-8 h-8 text-success" />
               </div>
               <p className="text-lg text-muted-foreground mb-2">Total Pipeline Value from Events</p>
-              <p className="text-5xl md:text-6xl font-bold text-success">€3.48m <span className="text-2xl font-semibold text-success/80">(+38% yoy)</span></p>
+              <p className="text-5xl md:text-6xl font-bold text-success">€2.71m <span className="text-2xl font-semibold text-success/80">(+38% yoy)</span></p>
             </div>
           </Card>
 
