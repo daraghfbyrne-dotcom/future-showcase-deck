@@ -18,6 +18,7 @@ export const Navigation = () => {
 
   const mainPages = [
     { path: "/", label: "2026 Strategy" },
+    { path: "/events-strategy", label: "Events Strategy" },
     { path: "/analyst-strategy", label: "Analyst Strategy" },
     { path: "/partners-strategy", label: "Partners Strategy" },
     { path: "/objectives-2026", label: "2026 Objectives" },

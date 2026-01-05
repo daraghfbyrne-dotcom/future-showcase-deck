@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import EventsStrategy from "./pages/EventsStrategy";
 import AnalystStrategy from "./pages/AnalystStrategy";
 import PartnersStrategy from "./pages/PartnersStrategy";
 import CapacityPlan from "./pages/CapacityPlan";
@@ -20,6 +21,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/events-strategy" element={<EventsStrategy />} />
           <Route path="/analyst-strategy" element={<AnalystStrategy />} />
           <Route path="/partners-strategy" element={<PartnersStrategy />} />
           <Route path="/capacity-plan" element={<CapacityPlan />} />
