@@ -1,6 +1,143 @@
 import { Navigation } from "@/components/Navigation";
 import { Card } from "@/components/ui/card";
 import { ChannelContributionChart } from "@/components/charts/ChannelContributionChart";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+const channelMonthlyData = {
+  ppc: {
+    name: "PPC",
+    total: "€195,747",
+    color: "border-blue-500",
+    pipelineValue: [8898, 35590, 8898, 26693, 17795, 0, 17795, 17795, 17795, 26693, 17795, 0],
+    qualified: [0.08, 0.33, 0.08, 0.25, 0.16, 0, 0.16, 0.16, 0.16, 0.25, 0.16, 0],
+    salesLeads: [0.75, 3.00, 0.75, 2.25, 1.50, 0, 1.50, 1.50, 1.50, 2.25, 1.50, 0],
+    totalQualified: 1.81,
+    totalSalesLeads: 16.48,
+  },
+  sdr: {
+    name: "SDR",
+    total: "€6,043,696",
+    color: "border-primary",
+    pipelineValue: [413244, 464900, 516555, 619866, 619866, 671522, 309933, 309933, 671522, 671522, 516555, 258278],
+    qualified: [4.35, 4.89, 5.44, 6.52, 6.52, 7.07, 3.26, 3.26, 7.07, 7.07, 5.44, 2.72],
+    salesLeads: [6.21, 6.99, 7.77, 9.32, 9.32, 10.10, 4.66, 4.66, 10.10, 10.10, 7.77, 3.88],
+    totalQualified: 63.62,
+    totalSalesLeads: 90.88,
+  },
+  aeGenerated: {
+    name: "AE Generated",
+    total: "€3,460,531",
+    color: "border-accent",
+    pipelineValue: [299058, 341781, 256336, 341781, 256336, 256336, 256336, 256336, 341781, 341781, 256336, 256336],
+    qualified: [2.72, 3.11, 2.33, 3.11, 2.33, 2.33, 2.33, 2.33, 3.11, 3.11, 2.33, 2.33],
+    salesLeads: [6.80, 7.77, 5.83, 7.77, 5.83, 5.83, 5.83, 5.83, 7.77, 7.77, 5.83, 5.83],
+    totalQualified: 31.46,
+    totalSalesLeads: 78.65,
+  },
+  webinars: {
+    name: "Webinars",
+    total: "€1,041,935",
+    color: "border-purple-500",
+    pipelineValue: [77180, 77180, 77180, 77180, 77180, 77180, 77180, 77180, 115771, 115771, 115771, 77180],
+    qualified: [0.71, 0.71, 0.71, 0.71, 0.71, 0.71, 0.71, 0.71, 1.07, 1.07, 1.07, 0.71],
+    salesLeads: [2.38, 2.38, 2.38, 2.38, 2.38, 2.38, 2.38, 2.38, 3.57, 3.57, 3.57, 2.38],
+    totalQualified: 9.65,
+    totalSalesLeads: 32.16,
+  },
+  organic: {
+    name: "Organic",
+    total: "€3,131,956",
+    color: "border-green-500",
+    pipelineValue: [251675, 251675, 251675, 279639, 279639, 251675, 251675, 251675, 279639, 279639, 279639, 223711],
+    qualified: [2.33, 2.33, 2.33, 2.59, 2.59, 2.33, 2.33, 2.33, 2.59, 2.59, 2.59, 2.07],
+    salesLeads: [7.77, 7.77, 7.77, 8.63, 8.63, 7.77, 7.77, 7.77, 8.63, 8.63, 8.63, 6.90],
+    totalQualified: 29.00,
+    totalSalesLeads: 96.67,
+  },
+  events: {
+    name: "Events",
+    total: "€2,709,701",
+    color: "border-success",
+    pipelineValue: [0, 75503, 75503, 390096, 75503, 801165, 314594, 151005, 0, 285232, 314594, 226508],
+    qualified: [0, 0.70, 0.70, 3.61, 0.70, 7.42, 2.91, 1.40, 0, 2.64, 2.91, 2.10],
+    salesLeads: [0, 2.69, 2.69, 13.89, 2.69, 28.53, 11.20, 5.38, 0, 10.16, 11.20, 8.07],
+    totalQualified: 25.09,
+    totalSalesLeads: 96.50,
+  },
+  marketingAutomation: {
+    name: "Marketing Automation (email nurture)",
+    total: "€395,449",
+    color: "border-orange-500",
+    pipelineValue: [0, 0, 0, 49431, 0, 49431, 0, 98862, 0, 49431, 148293, 0],
+    qualified: [0, 0, 0, 0.35, 0, 0.35, 0, 0.71, 0, 0.35, 1.06, 0],
+    salesLeads: [0, 0, 0, 1.18, 0, 1.18, 0, 2.35, 0, 1.18, 3.53, 0],
+    totalQualified: 2.82,
+    totalSalesLeads: 9.42,
+  },
+  partnerships: {
+    name: "Partnerships (incl 3.8m TA)",
+    total: "€4,140,986",
+    color: "border-chart-4",
+    pipelineValue: [0, 155355, 345859, 345859, 345859, 388387, 194194, 345859, 582581, 582581, 582581, 271871],
+    qualified: [0, 1.41, 3.14, 3.14, 3.14, 3.53, 1.77, 3.14, 5.30, 5.30, 5.30, 2.47],
+    salesLeads: [0, 4.71, 10.48, 10.48, 10.48, 11.77, 5.88, 10.48, 17.65, 17.65, 17.65, 8.24],
+    totalQualified: 37.65,
+    totalSalesLeads: 125.48,
+  },
+};
+
+const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+const formatCurrency = (value: number) => {
+  if (value === 0) return "-";
+  if (value >= 1000000) return `€${(value / 1000000).toFixed(2)}M`;
+  if (value >= 1000) return `€${(value / 1000).toFixed(0)}K`;
+  return `€${value.toFixed(0)}`;
+};
+
+const ChannelDetailTable = ({ channel }: { channel: typeof channelMonthlyData.sdr }) => (
+  <div className="overflow-x-auto">
+    <table className="w-full text-xs">
+      <thead>
+        <tr className="border-b border-border">
+          <th className="py-2 px-2 text-left font-semibold text-muted-foreground">Metric</th>
+          {months.map((month) => (
+            <th key={month} className="py-2 px-2 text-center font-semibold text-muted-foreground">{month}</th>
+          ))}
+          <th className="py-2 px-2 text-center font-bold text-foreground bg-primary/10">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr className="border-b border-border/50 hover:bg-muted/30">
+          <td className="py-2 px-2 font-medium">Pipeline Value</td>
+          {channel.pipelineValue.map((value, idx) => (
+            <td key={idx} className="py-2 px-2 text-center">{formatCurrency(value)}</td>
+          ))}
+          <td className="py-2 px-2 text-center font-bold bg-primary/10">{channel.total}</td>
+        </tr>
+        <tr className="border-b border-border/50 hover:bg-muted/30">
+          <td className="py-2 px-2 font-medium">Qualified Opps</td>
+          {channel.qualified.map((value, idx) => (
+            <td key={idx} className="py-2 px-2 text-center">{value === 0 ? "-" : value.toFixed(2)}</td>
+          ))}
+          <td className="py-2 px-2 text-center font-bold bg-primary/10">{channel.totalQualified.toFixed(2)}</td>
+        </tr>
+        <tr className="border-b border-border/50 hover:bg-muted/30">
+          <td className="py-2 px-2 font-medium">Sales Leads</td>
+          {channel.salesLeads.map((value, idx) => (
+            <td key={idx} className="py-2 px-2 text-center">{value === 0 ? "-" : value.toFixed(2)}</td>
+          ))}
+          <td className="py-2 px-2 text-center font-bold bg-primary/10">{channel.totalSalesLeads.toFixed(2)}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+);
 
 const PipelineTargets = () => {
   return (
@@ -16,16 +153,17 @@ const PipelineTargets = () => {
                   Targeted Outcomes - <span className="text-primary">Pipeline</span>
                 </h2>
                 
-                <div className="grid md:grid-cols-5 gap-6 mb-10">
-                  <div className="flex flex-col justify-between text-center p-4 bg-card rounded-lg border border-chart-3/30 min-h-[120px]">
+                {/* Centered cards */}
+                <div className="flex justify-center gap-6 mb-10 flex-wrap">
+                  <div className="flex flex-col justify-between text-center p-4 bg-card rounded-lg border border-chart-3/30 min-h-[120px] min-w-[180px]">
                     <div className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">ARR Target</div>
                     <div className="text-3xl font-bold text-chart-3 mt-auto">€3.8M</div>
                   </div>
-                  <div className="flex flex-col justify-between text-center p-4 bg-card rounded-lg border border-success/30 min-h-[120px]">
+                  <div className="flex flex-col justify-between text-center p-4 bg-card rounded-lg border border-success/30 min-h-[120px] min-w-[180px]">
                     <div className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Incremental Pipeline Required</div>
                     <div className="text-3xl font-bold text-success mt-auto">€21.1M</div>
                   </div>
-                  <div className="flex flex-col justify-between text-center p-4 bg-card rounded-lg border border-chart-4/30 min-h-[120px]">
+                  <div className="flex flex-col justify-between text-center p-4 bg-card rounded-lg border border-chart-4/30 min-h-[120px] min-w-[180px]">
                     <div className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Avg Monthly Pipeline Required</div>
                     <div className="text-3xl font-bold text-chart-4 mt-auto">€1.76M</div>
                   </div>
@@ -72,6 +210,44 @@ const PipelineTargets = () => {
                       <span className="text-2xl font-bold text-chart-4">€4.1M</span>
                     </div>
                     <p className="text-sm text-muted-foreground">2025 Pipeline €1.6m. TA €3.8M pipe based on 530k ARR to SoftCo. Risk Xelix partnership winding down. Target onboard 3 new ptrs by end Q1 2026.</p>
+                  </div>
+                </div>
+
+                {/* Monthly Channel Breakdown */}
+                <h3 className="font-display font-bold text-2xl mb-6 text-center mt-10">
+                  Monthly Targets by Channel
+                </h3>
+                <Accordion type="multiple" className="space-y-2">
+                  {Object.values(channelMonthlyData).map((channel) => (
+                    <AccordionItem key={channel.name} value={channel.name} className={`border rounded-lg px-4 ${channel.color}`}>
+                      <AccordionTrigger className="hover:no-underline">
+                        <div className="flex items-center justify-between w-full pr-4">
+                          <span className="font-medium">{channel.name}</span>
+                          <span className="text-sm font-bold text-primary">{channel.total}</span>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent className="pt-2 pb-4">
+                        <ChannelDetailTable channel={channel} />
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+
+                {/* Totals Summary */}
+                <div className="mt-8 p-4 bg-card rounded-lg border border-primary/30">
+                  <div className="grid grid-cols-3 gap-4 text-center">
+                    <div>
+                      <div className="text-sm text-muted-foreground uppercase tracking-wider mb-1">Total Pipeline</div>
+                      <div className="text-2xl font-bold text-primary">€21,120,000</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-muted-foreground uppercase tracking-wider mb-1">Total Qualified Opps</div>
+                      <div className="text-2xl font-bold text-success">201.10</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-muted-foreground uppercase tracking-wider mb-1">Total Sales Leads</div>
+                      <div className="text-2xl font-bold text-accent">546.23</div>
+                    </div>
                   </div>
                 </div>
 
