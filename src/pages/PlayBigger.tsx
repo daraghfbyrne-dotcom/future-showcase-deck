@@ -1,4 +1,5 @@
 import { Navigation } from "@/components/Navigation";
+import { ResearchProgram } from "@/components/sections/ResearchProgram";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -735,6 +736,9 @@ const PlayBigger = () => {
             </div>
           </div>
         </section>
+
+        {/* Research Program Section */}
+        <ResearchProgram />
       </main>
     </div>
   );

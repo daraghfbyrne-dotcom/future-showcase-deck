@@ -10,7 +10,6 @@ import { SizeAnalysis } from "@/components/sections/SizeAnalysis";
 import { InvoiceVolumeAnalysis } from "@/components/sections/InvoiceVolumeAnalysis";
 import { CompetitorAnalysis } from "@/components/sections/CompetitorAnalysis";
 import { StrategicPillars } from "@/components/sections/StrategicPillars";
-import { ResearchProgram } from "@/components/sections/ResearchProgram";
 import { PipelineConversion } from "@/components/sections/PipelineConversion";
 
 const Index = () => {
@@ -110,7 +109,6 @@ const Index = () => {
         <CompetitorAnalysis />
         <StrategicPillars />
         <PipelineConversion />
-        <ResearchProgram />
       </main>
 
       <footer className="border-t border-border py-8">
