@@ -464,20 +464,6 @@ const PlayBigger = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="bg-primary text-primary-foreground py-16 mb-20">
-          <div className="container mx-auto px-6 text-center">
-            <h2 className="text-3xl font-bold mb-4">Ready to See the Category King Play?</h2>
-            <p className="text-lg opacity-90 mb-8 max-w-xl mx-auto">
-              Discover how SoftCo is applying Play Bigger principles to become 
-              the category king of Guaranteed AP Automation.
-            </p>
-            <Button variant="secondary" size="lg" className="gap-2">
-              View the Guarantee Strategy <ArrowRight className="w-4 h-4" />
-            </Button>
-          </div>
-        </section>
-
         {/* SoftCo Category King Strategy */}
         <section className="container mx-auto px-6 mb-20">
           <div className="text-center mb-12">
