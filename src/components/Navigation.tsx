@@ -26,6 +26,7 @@ export const Navigation = () => {
     { path: "/objectives-2026", label: "2026 Objectives" },
     { path: "/capacity-plan", label: "Capacity Plan" },
     { path: "/play-bigger", label: "Play Bigger" },
+    { path: "/brand-refresh", label: "Brand Refresh" },
   ];
 
   return (

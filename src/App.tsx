@@ -12,6 +12,7 @@ import PartnersStrategy from "./pages/PartnersStrategy";
 import CapacityPlan from "./pages/CapacityPlan";
 import Objectives2026 from "./pages/Objectives2026";
 import PlayBigger from "./pages/PlayBigger";
+import BrandRefresh from "./pages/BrandRefresh";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/capacity-plan" element={<CapacityPlan />} />
           <Route path="/objectives-2026" element={<Objectives2026 />} />
           <Route path="/play-bigger" element={<PlayBigger />} />
+          <Route path="/brand-refresh" element={<BrandRefresh />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
