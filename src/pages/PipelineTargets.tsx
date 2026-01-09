@@ -23,7 +23,7 @@ const channelMonthlyData = {
     name: "SDR",
     total: "€6,043,696",
     color: "border-primary",
-    pipelineValue: [413244, 464900, 516555, 619866, 619866, 671522, 309933, 309933, 671522, 671522, 516555, 258278],
+    pipelineValue: [413000, 465000, 517000, 620000, 620000, 672000, 310000, 310000, 672000, 672000, 517000, 258000],
     qualified: [4.35, 4.89, 5.44, 6.52, 6.52, 7.07, 3.26, 3.26, 7.07, 7.07, 5.44, 2.72],
     salesLeads: [6.21, 6.99, 7.77, 9.32, 9.32, 10.10, 4.66, 4.66, 10.10, 10.10, 7.77, 3.88],
     totalQualified: 63.62,
@@ -48,6 +48,16 @@ const channelMonthlyData = {
     salesLeads: [2.38, 2.38, 2.38, 2.38, 2.38, 2.38, 2.38, 2.38, 3.57, 3.57, 3.57, 2.38],
     totalQualified: 9.65,
     totalSalesLeads: 32.16,
+  },
+  marketing: {
+    name: "Marketing",
+    total: "€7,252,435",
+    color: "border-success",
+    pipelineValue: [496000, 558000, 620000, 744000, 744000, 806000, 372000, 372000, 806000, 806000, 620000, 310000],
+    qualified: [5.22, 5.87, 6.53, 7.82, 7.82, 8.48, 3.91, 3.91, 8.48, 8.48, 6.53, 3.26],
+    salesLeads: [7.45, 8.39, 9.32, 11.18, 11.18, 12.12, 5.59, 5.59, 12.12, 12.12, 9.32, 4.66],
+    totalQualified: 76.34,
+    totalSalesLeads: 109.06,
   },
   organic: {
     name: "Organic",
@@ -160,12 +170,13 @@ const PipelineTargets = () => {
                     <div className="text-3xl font-bold text-chart-3 mt-auto">€3.8M</div>
                   </div>
                   <div className="flex flex-col justify-between text-center p-4 bg-card rounded-lg border border-success/30 min-h-[120px] min-w-[180px]">
-                    <div className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Incremental Pipeline Required</div>
-                    <div className="text-3xl font-bold text-success mt-auto">€21.1M</div>
+                    <div className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Incremental Pipeline Required*</div>
+                    <div className="text-3xl font-bold text-success mt-auto">€22M</div>
+                    <div className="text-xs text-muted-foreground mt-1">*(incl. SDR quota)</div>
                   </div>
                   <div className="flex flex-col justify-between text-center p-4 bg-card rounded-lg border border-chart-4/30 min-h-[120px] min-w-[180px]">
                     <div className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Avg Monthly Pipeline Required</div>
-                    <div className="text-3xl font-bold text-chart-4 mt-auto">€1.76M</div>
+                    <div className="text-3xl font-bold text-chart-4 mt-auto">€1.8M</div>
                   </div>
                 </div>
 
@@ -183,7 +194,7 @@ const PipelineTargets = () => {
                   <div className="bg-card rounded-lg p-6 border-l-4 border-primary">
                     <div className="flex items-center justify-between mb-2">
                       <h4 className="font-semibold text-lg">SDR</h4>
-                      <span className="text-2xl font-bold text-primary">€6M</span>
+                      <span className="text-2xl font-bold text-primary">€6.9M</span>
                     </div>
                     <p className="text-sm text-muted-foreground">1 Additional SDR. 6 Opps per month pure outbound = €650k per mth pipeline. Q4 2025 Run Rate €500k pm. Av Deal size €95k.</p>
                   </div>
@@ -237,8 +248,8 @@ const PipelineTargets = () => {
                 <div className="mt-8 p-4 bg-card rounded-lg border border-primary/30">
                   <div className="grid grid-cols-3 gap-4 text-center">
                     <div>
-                      <div className="text-sm text-muted-foreground uppercase tracking-wider mb-1">Total Pipeline</div>
-                      <div className="text-2xl font-bold text-primary">€21,120,000</div>
+                    <div className="text-sm text-muted-foreground uppercase tracking-wider mb-1">Total Pipeline</div>
+                      <div className="text-2xl font-bold text-primary">€21,963,589</div>
                     </div>
                     <div>
                       <div className="text-sm text-muted-foreground uppercase tracking-wider mb-1">Total Qualified Opps</div>
