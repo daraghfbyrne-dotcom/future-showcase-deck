@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { KeyPointsSummary } from "@/components/KeyPointsSummary";
 import {
   Table,
   TableBody,
@@ -92,32 +93,16 @@ const DemandLeadGenStrategy = () => {
           </div>
 
           {/* Key Points Summary */}
-          <Card className="max-w-5xl mx-auto mb-16 bg-gradient-to-r from-primary/5 to-accent/5 border-primary/20">
-            <CardContent className="py-6">
-              <h3 className="font-semibold text-lg mb-4 flex items-center gap-2">
-                <Target className="w-5 h-5 text-primary" />
-                Key Points Summary
-              </h3>
-              <ul className="grid md:grid-cols-2 gap-3 text-sm text-muted-foreground">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                  <span><strong>~155 SQLs</strong> annual target across all marketing-owned channels</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                  <span><strong>Organic demand</strong> is the primary scalable engine (~97 SQLs)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                  <span><strong>Core conversion assets:</strong> ROI Calculator, Interactive Demo, Case Studies</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                  <span><strong>Q1 Foundation</strong> → Q2 Scale → Q3-Q4 Optimize phased approach</span>
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
+          <div className="max-w-5xl mx-auto mb-16">
+            <KeyPointsSummary
+              points={[
+                "~155 SQLs annual target across all marketing-owned channels",
+                "Organic demand is the primary scalable engine (~97 SQLs)",
+                "Core conversion assets: ROI Calculator, Interactive Demo, Case Studies",
+                "Q1 Foundation → Q2 Scale → Q3-Q4 Optimize phased approach"
+              ]}
+            />
+          </div>
 
           {/* SQL Targets Table */}
           <div className="max-w-5xl mx-auto mb-16">

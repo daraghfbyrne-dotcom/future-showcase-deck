@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { format } from "date-fns";
 import { Target, Award, Calendar as CalendarIcon, CheckCircle2, Users, TrendingUp, FileText, Building2, Star, Clock, ChevronDown, ChevronUp, Sparkles } from "lucide-react";
+import { KeyPointsSummary } from "@/components/KeyPointsSummary";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -250,32 +251,16 @@ const AnalystStrategy = () => {
         </section>
 
         {/* Key Points Summary */}
-        <Card className="bg-gradient-to-r from-indigo-50 to-purple-50 border-indigo-200 mb-8">
-          <CardContent className="py-6">
-            <h3 className="font-semibold text-lg mb-4 flex items-center gap-2 text-gray-900">
-              <Sparkles className="w-5 h-5 text-indigo-600" />
-              Key Points Summary
-            </h3>
-            <ul className="grid md:grid-cols-2 gap-3 text-sm text-gray-600">
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-indigo-600 mt-0.5 shrink-0" />
-                <span><strong>Current standing:</strong> Gartner Niche Player, IDC Major Player, Everest Major Contender</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-indigo-600 mt-0.5 shrink-0" />
-                <span><strong>2026 Target:</strong> Inclusion in Forrester Wave & improved positioning across all reports</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-indigo-600 mt-0.5 shrink-0" />
-                <span><strong>5 Target Firms:</strong> Gartner, Forrester, IDC, Everest, Hackett/SpendMatters</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-indigo-600 mt-0.5 shrink-0" />
-                <span><strong>8 Engagement Tactics:</strong> Cross-functional committee, bi-annual briefings, analyst day</span>
-              </li>
-            </ul>
-          </CardContent>
-        </Card>
+        <div className="mb-8">
+          <KeyPointsSummary
+            points={[
+              "Current standing: Gartner Niche Player, IDC Major Player, Everest Major Contender",
+              "2026 Target: Inclusion in Forrester Wave & improved positioning across all reports",
+              "5 Target Firms: Gartner, Forrester, IDC, Everest, Hackett/SpendMatters",
+              "8 Engagement Tactics: Cross-functional committee, bi-annual briefings, analyst day"
+            ]}
+          />
+        </div>
 
         {/* Objectives */}
         <section className="space-y-6">

@@ -2,6 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { Card, CardContent } from "@/components/ui/card";
 import { ChannelContributionChart } from "@/components/charts/ChannelContributionChart";
 import { Target, CheckCircle2 } from "lucide-react";
+import { KeyPointsSummary } from "@/components/KeyPointsSummary";
 import {
   Accordion,
   AccordionContent,
@@ -160,32 +161,16 @@ const PipelineTargets = () => {
           <div className="container mx-auto px-6">
             <div className="max-w-6xl mx-auto">
               {/* Key Points Summary */}
-              <Card className="bg-background/50 border-primary/10 mb-8">
-                <CardContent className="py-5">
-                  <h3 className="font-semibold text-base mb-3 flex items-center gap-2">
-                    <Target className="w-4 h-4 text-primary" />
-                    Key Points Summary
-                  </h3>
-                  <ul className="grid md:grid-cols-2 gap-2 text-sm text-muted-foreground">
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                      <span><strong>€22.3M</strong> incremental pipeline required to hit €3.8M ARR target</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                      <span><strong>SDR</strong> largest channel at €7.3M with 6 opps/month target</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                      <span><strong>Marketing</strong> contributing €7.5M through proven channels</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                      <span><strong>Partnerships</strong> targeting €4.1M including Tungsten Alliance</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
+              <div className="mb-8">
+                <KeyPointsSummary
+                  points={[
+                    "€22.3M incremental pipeline required to hit €3.8M ARR target",
+                    "SDR largest channel at €7.3M with 6 opps/month target",
+                    "Marketing contributing €7.5M through proven channels",
+                    "Partnerships targeting €4.1M including Tungsten Alliance"
+                  ]}
+                />
+              </div>
 
               <Card className="p-8 bg-gradient-to-r from-primary/10 to-accent/10 border-2 border-primary/30">
                 <h2 className="font-display font-bold text-4xl md:text-5xl mb-8 text-center">

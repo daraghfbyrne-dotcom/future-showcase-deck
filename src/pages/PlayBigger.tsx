@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { ResearchProgram } from "@/components/sections/ResearchProgram";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { KeyPointsSummary } from "@/components/KeyPointsSummary";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { 
@@ -301,32 +302,14 @@ const PlayBigger = () => {
           </div>
 
           {/* Key Points Summary */}
-          <Card className="max-w-4xl mx-auto bg-gradient-to-r from-primary/5 to-accent/5 border-primary/20">
-            <CardContent className="py-6">
-              <h3 className="font-semibold text-lg mb-4 flex items-center gap-2">
-                <Target className="w-5 h-5 text-primary" />
-                Key Points Summary
-              </h3>
-              <ul className="grid md:grid-cols-2 gap-3 text-sm text-muted-foreground">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                  <span><strong>76% Rule:</strong> Category kings capture 76% of total market value</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                  <span><strong>Different, Not Better:</strong> Create new categories rather than competing on features</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                  <span><strong>SoftCo Opportunity:</strong> "Guaranteed Touchless AP™" as our category-defining offering</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                  <span><strong>10 Safeguards:</strong> Structured approach to deliver on guarantees with controlled risk</span>
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
+          <KeyPointsSummary
+            points={[
+              "76% Rule: Category kings capture 76% of total market value",
+              "Different, Not Better: Create new categories rather than competing on features",
+              "SoftCo Opportunity: \"Guaranteed Touchless AP™\" as our category-defining offering",
+              "10 Safeguards: Structured approach to deliver on guarantees with controlled risk"
+            ]}
+          />
         </section>
 
         {/* What is Category Design */}

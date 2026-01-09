@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { KeyPointsSummary } from "@/components/KeyPointsSummary";
 import { Badge } from "@/components/ui/badge";
 import {
   Accordion,
@@ -313,32 +314,14 @@ const BrandRefresh = () => {
           </p>
 
           {/* Key Points Summary */}
-          <Card className="bg-background/80 border-primary/20">
-            <CardContent className="py-6">
-              <h3 className="font-semibold text-lg mb-4 flex items-center gap-2">
-                <Target className="w-5 h-5 text-primary" />
-                Key Points Summary
-              </h3>
-              <ul className="grid md:grid-cols-2 gap-3 text-sm text-muted-foreground">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                  <span><strong>7 Phases:</strong> From foundations (Aug '25) to full rollout (Mar '26)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                  <span><strong>Website live:</strong> Week of Feb 24, 2026 after UAT sign-off</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                  <span><strong>8 Asset Categories:</strong> Digital, Marketing, Commercial, Physical, Solution UI & more</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                  <span><strong>150 days effort</strong> with dedicated team + freelance support</span>
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
+          <KeyPointsSummary
+            points={[
+              "7 Phases: From foundations (Aug '25) to full rollout (Mar '26)",
+              "Website live: Week of Feb 24, 2026 after UAT sign-off",
+              "8 Asset Categories: Digital, Marketing, Commercial, Physical, Solution UI & more",
+              "150 days effort with dedicated team + freelance support"
+            ]}
+          />
         </div>
       </section>
 

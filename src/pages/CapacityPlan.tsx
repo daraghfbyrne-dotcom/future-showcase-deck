@@ -1,5 +1,6 @@
 import { Users, Calendar, AlertTriangle, CheckCircle2, XCircle, Clock, TrendingUp, Target } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { KeyPointsSummary } from "@/components/KeyPointsSummary";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Navigation } from "@/components/Navigation";
@@ -189,32 +190,16 @@ const CapacityPlan = () => {
         </section>
 
         {/* Key Points Summary */}
-        <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-200 mb-8">
-          <CardContent className="py-6">
-            <h3 className="font-semibold text-lg mb-4 flex items-center gap-2 text-gray-900">
-              <Target className="w-5 h-5 text-blue-600" />
-              Key Points Summary
-            </h3>
-            <ul className="grid md:grid-cols-2 gap-3 text-sm text-gray-600">
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 shrink-0" />
-                <span><strong>~{totalEffort} days</strong> total effort across 15 workstreams in Q1</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 shrink-0" />
-                <span><strong>Brand refresh</strong> is the non-negotiable Q1 priority (150 days)</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 shrink-0" />
-                <span><strong>4 items deferred</strong> to Q2: MA go-live, Partner Portal, Employer Brand, PPC expansion</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 shrink-0" />
-                <span><strong>New hires:</strong> Partner Manager (Apr), Oisin & Enes (Feb) + freelance support</span>
-              </li>
-            </ul>
-          </CardContent>
-        </Card>
+        <div className="mb-8">
+          <KeyPointsSummary
+            points={[
+              `~${totalEffort} days total effort across 15 workstreams in Q1`,
+              "Brand refresh is the non-negotiable Q1 priority (150 days)",
+              "4 items deferred to Q2: MA go-live, Partner Portal, Employer Brand, PPC expansion",
+              "New hires: Partner Manager (Apr), Oisin & Enes (Feb) + freelance support"
+            ]}
+          />
+        </div>
 
         {/* Key Decisions */}
         <section className="space-y-6">
