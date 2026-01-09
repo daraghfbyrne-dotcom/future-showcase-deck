@@ -1,6 +1,7 @@
-import { TrendingUp, Target, Users, Zap, FileText } from "lucide-react";
+import { TrendingUp, Target, Users, Zap, FileText, CheckCircle2 } from "lucide-react";
 import { Hero } from "@/components/sections/Hero";
 import { Navigation } from "@/components/Navigation";
+import { Card, CardContent } from "@/components/ui/card";
 import { WhyStrategy } from "@/components/sections/WhyStrategy";
 import { ProspectMarketConditions } from "@/components/sections/ProspectMarketConditions";
 import { ERPAnalysis } from "@/components/sections/ERPAnalysis";
@@ -19,6 +20,39 @@ const Index = () => {
       
       <main>
         <Hero />
+        
+        {/* Key Points Summary */}
+        <section className="py-8 px-6">
+          <div className="container mx-auto max-w-5xl">
+            <Card className="bg-gradient-to-r from-primary/5 to-accent/5 border-primary/20">
+              <CardContent className="py-6">
+                <h3 className="font-semibold text-lg mb-4 flex items-center gap-2">
+                  <Target className="w-5 h-5 text-primary" />
+                  Key Points Summary
+                </h3>
+                <ul className="grid md:grid-cols-2 gap-3 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                    <span><strong>Win Rate Shift:</strong> Data reveals material changes in where we win and lose</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                    <span><strong>ERP Sweet Spots:</strong> Oracle Cloud, JD Edwards, and Microsoft show highest win rates</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                    <span><strong>Size Focus:</strong> €50M-€500M revenue companies are our optimal target segment</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                    <span><strong>Strategic Pillars:</strong> Focus on Category Leadership, Pipeline Growth & Partner Ecosystem</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+        
         <WhyStrategy />
         <ProspectMarketConditions />
         

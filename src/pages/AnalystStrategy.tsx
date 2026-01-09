@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { format } from "date-fns";
-import { Target, Award, Calendar as CalendarIcon, CheckCircle2, Users, TrendingUp, FileText, Building2, Star, Clock, ChevronDown, ChevronUp } from "lucide-react";
+import { Target, Award, Calendar as CalendarIcon, CheckCircle2, Users, TrendingUp, FileText, Building2, Star, Clock, ChevronDown, ChevronUp, Sparkles } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -226,7 +226,7 @@ const AnalystStrategy = () => {
 
       <main className="container mx-auto px-4 pt-20 pb-8 space-y-8">
         {/* Hero Section - Why Analysts */}
-        <section className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 p-8 md:p-12">
+        <section className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 p-8 md:p-12 mb-8">
           <div className="absolute inset-0 bg-black/20" />
           <div className="relative z-10">
             <div className="flex items-center gap-3 mb-4">
@@ -248,6 +248,34 @@ const AnalystStrategy = () => {
             <p className="mt-3 text-sm text-white/70">Source: Insight Partners</p>
           </div>
         </section>
+
+        {/* Key Points Summary */}
+        <Card className="bg-gradient-to-r from-indigo-50 to-purple-50 border-indigo-200 mb-8">
+          <CardContent className="py-6">
+            <h3 className="font-semibold text-lg mb-4 flex items-center gap-2 text-gray-900">
+              <Sparkles className="w-5 h-5 text-indigo-600" />
+              Key Points Summary
+            </h3>
+            <ul className="grid md:grid-cols-2 gap-3 text-sm text-gray-600">
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-indigo-600 mt-0.5 shrink-0" />
+                <span><strong>Current standing:</strong> Gartner Niche Player, IDC Major Player, Everest Major Contender</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-indigo-600 mt-0.5 shrink-0" />
+                <span><strong>2026 Target:</strong> Inclusion in Forrester Wave & improved positioning across all reports</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-indigo-600 mt-0.5 shrink-0" />
+                <span><strong>5 Target Firms:</strong> Gartner, Forrester, IDC, Everest, Hackett/SpendMatters</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-indigo-600 mt-0.5 shrink-0" />
+                <span><strong>8 Engagement Tactics:</strong> Cross-functional committee, bi-annual briefings, analyst day</span>
+              </li>
+            </ul>
+          </CardContent>
+        </Card>
 
         {/* Objectives */}
         <section className="space-y-6">

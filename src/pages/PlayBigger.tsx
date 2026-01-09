@@ -284,8 +284,8 @@ const PlayBigger = () => {
       
       <main className="pt-24 pb-16">
         {/* Hero Section - Category Design Framework */}
-        <section className="container mx-auto px-6 mb-20">
-          <div className="max-w-4xl mx-auto text-center mb-12">
+        <section className="container mx-auto px-6 mb-12">
+          <div className="max-w-4xl mx-auto text-center mb-8">
             <Badge variant="outline" className="mb-4 text-primary border-primary">
               Category Design Framework
             </Badge>
@@ -299,6 +299,34 @@ const PlayBigger = () => {
               By Christopher Lochhead, Al Ramadan, Dave Peterson & Kevin Maney
             </p>
           </div>
+
+          {/* Key Points Summary */}
+          <Card className="max-w-4xl mx-auto bg-gradient-to-r from-primary/5 to-accent/5 border-primary/20">
+            <CardContent className="py-6">
+              <h3 className="font-semibold text-lg mb-4 flex items-center gap-2">
+                <Target className="w-5 h-5 text-primary" />
+                Key Points Summary
+              </h3>
+              <ul className="grid md:grid-cols-2 gap-3 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                  <span><strong>76% Rule:</strong> Category kings capture 76% of total market value</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                  <span><strong>Different, Not Better:</strong> Create new categories rather than competing on features</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                  <span><strong>SoftCo Opportunity:</strong> "Guaranteed Touchless AP™" as our category-defining offering</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                  <span><strong>10 Safeguards:</strong> Structured approach to deliver on guarantees with controlled risk</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
         </section>
 
         {/* What is Category Design */}
