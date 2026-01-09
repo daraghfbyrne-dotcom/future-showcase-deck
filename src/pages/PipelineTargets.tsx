@@ -171,12 +171,11 @@ const PipelineTargets = () => {
                   </div>
                   <div className="flex flex-col justify-between text-center p-4 bg-card rounded-lg border border-success/30 min-h-[120px] min-w-[180px]">
                     <div className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Incremental Pipeline Required*</div>
-                    <div className="text-3xl font-bold text-success mt-auto">€22M</div>
-                    <div className="text-xs text-muted-foreground mt-1">*(incl. SDR quota)</div>
+                    <div className="text-3xl font-bold text-success mt-auto">€22.3M <span className="text-xs font-normal text-muted-foreground">*(incl. SDR quota)</span></div>
                   </div>
                   <div className="flex flex-col justify-between text-center p-4 bg-card rounded-lg border border-chart-4/30 min-h-[120px] min-w-[180px]">
                     <div className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Avg Monthly Pipeline Required</div>
-                    <div className="text-3xl font-bold text-chart-4 mt-auto">€1.8M</div>
+                    <div className="text-3xl font-bold text-chart-4 mt-auto">€1.86M</div>
                   </div>
                 </div>
 
@@ -194,7 +193,7 @@ const PipelineTargets = () => {
                   <div className="bg-card rounded-lg p-6 border-l-4 border-primary">
                     <div className="flex items-center justify-between mb-2">
                       <h4 className="font-semibold text-lg">SDR</h4>
-                      <span className="text-2xl font-bold text-primary">€6.9M</span>
+                      <span className="text-2xl font-bold text-primary">€7.3M</span>
                     </div>
                     <p className="text-sm text-muted-foreground">1 Additional SDR. 6 Opps per month pure outbound = €650k per mth pipeline. Q4 2025 Run Rate €500k pm. Av Deal size €95k.</p>
                   </div>
@@ -249,7 +248,7 @@ const PipelineTargets = () => {
                   <div className="grid grid-cols-3 gap-4 text-center">
                     <div>
                     <div className="text-sm text-muted-foreground uppercase tracking-wider mb-1">Total Pipeline</div>
-                      <div className="text-2xl font-bold text-primary">€21,963,589</div>
+                      <div className="text-2xl font-bold text-primary">€22,305,589</div>
                     </div>
                     <div>
                       <div className="text-sm text-muted-foreground uppercase tracking-wider mb-1">Total Qualified Opps</div>
