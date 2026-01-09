@@ -86,7 +86,7 @@ const analystFrameworks = [
     framework: "Combined Matrix",
     status: "Submitted",
     rationale: "New combined matrix. Submission completed.",
-    actions: "In fact-check stage. Publication expected Q4 2025.",
+    actions: "Published Q4 2025.",
     color: "bg-pink-500",
   },
 ];
