@@ -1,4 +1,4 @@
-import { Users, Calendar, Clock, Target, Globe, MapPin, Building2 } from "lucide-react";
+import { Users, Calendar, Clock, Target, Globe, MapPin, Building2, CheckCircle2 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { KeyPointsSummary } from "@/components/KeyPointsSummary";
 import { Badge } from "@/components/ui/badge";
@@ -6,14 +6,14 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Navigation } from "@/components/Navigation";
 
 const cabTimeline = [
-  { date: "Oct 2025", task: "Finalise EU member shortlist & get SLT sign-off", owner: "SLT" },
-  { date: "Oct 2025", task: "Send personalised invitations to EU CAB candidates", owner: "CEO" },
-  { date: "Nov–Dec 2025", task: "Confirm guest speakers & draft agenda for March", owner: "Product & Marketing" },
-  { date: "Jan–Feb 2026", task: "Finalise venue, catering, A/V, travel & materials", owner: "Marketing" },
-  { date: "6 Mar 2026", task: "Host inaugural EU CAB meeting (Dublin)", owner: "All Stakeholders" },
-  { date: "Apr 2026", task: "Post-EU follow-up: minutes, survey, action items", owner: "Marketing & Product" },
-  { date: "Jun 2026", task: "Host inaugural NA CAB meeting (Chicago)", owner: "All Stakeholders" },
-  { date: "Sep 2026", task: "Virtual EU CAB meeting (6 months after in-person)", owner: "Marketing & Product" },
+  { date: "Oct 2025", task: "Finalise EU member shortlist & get SLT sign-off", owner: "SLT", completed: true },
+  { date: "Oct 2025", task: "Send personalised invitations to EU CAB candidates", owner: "CEO", completed: true },
+  { date: "Nov–Dec 2025", task: "Confirm guest speakers & draft agenda for March", owner: "Product & Marketing", completed: true },
+  { date: "Jan–Feb 2026", task: "Finalise venue, catering, A/V, travel & materials", owner: "Marketing", completed: false },
+  { date: "6 Mar 2026", task: "Host inaugural EU CAB meeting (Dublin)", owner: "All Stakeholders", completed: false },
+  { date: "Apr 2026", task: "Post-EU follow-up: minutes, survey, action items", owner: "Marketing & Product", completed: false },
+  { date: "Jun 2026", task: "Host inaugural NA CAB meeting (Chicago)", owner: "All Stakeholders", completed: false },
+  { date: "Sep 2026", task: "Virtual EU CAB meeting (6 months after in-person)", owner: "Marketing & Product", completed: false },
 ];
 
 const cabAgenda = [
@@ -32,12 +32,12 @@ const euCabMembers = [
   { company: "Primark Limited", industry: "Retail", status: "Confirmed" },
   { company: "VP plc (VP Group)", industry: "Industrial Equipment Rental", status: "Confirmed" },
   { company: "Basic-Fit International", industry: "Fitness & Leisure", status: "Confirmed" },
-  { company: "Analog Devices (EMEA)", industry: "Technology/Manufacturing", status: "Current" },
-  { company: "VistaJet Limited", industry: "Aviation (Private Jet Charter)", status: "Current" },
-  { company: "Toolstation Ltd.", industry: "Retail (Home Improvement)", status: "Current" },
-  { company: "University of Cambridge", industry: "Education", status: "Current" },
-  { company: "Logitech (Ireland)", industry: "Manufacturing", status: "Current" },
-  { company: "C&C Group", industry: "Food & Drink", status: "Current" },
+  { company: "Analog Devices (EMEA)", industry: "Technology/Manufacturing", status: "Pending" },
+  { company: "VistaJet Limited", industry: "Aviation (Private Jet Charter)", status: "Pending" },
+  { company: "Toolstation Ltd.", industry: "Retail (Home Improvement)", status: "Confirmed" },
+  { company: "University of Cambridge", industry: "Education", status: "Pending" },
+  { company: "Logitech (Ireland)", industry: "Manufacturing", status: "Confirmed" },
+  { company: "C&C Group", industry: "Food & Drink", status: "Confirmed" },
 ];
 
 const naCabMembers = [
@@ -95,8 +95,7 @@ const CAB = () => {
             points={[
               "Two regional boards: EU (Dublin) and NA (Chicago) with 8–10 members each",
               "Semi-annual cadence: one in-person and one virtual meeting per year",
-              "EU inaugural event: March 6, 2026 coinciding with Ireland vs Wales rugby",
-              "Estimated EU event budget: ~€13,400 including accommodation, venue, dinner, and rugby tickets"
+              "EU inaugural event: March 6, 2026 coinciding with Ireland vs Wales rugby"
             ]}
           />
         </div>
@@ -146,28 +145,13 @@ const CAB = () => {
               <CardDescription>InterContinental Hotel, Dublin — coinciding with Ireland vs Wales Rugby (6 Nations)</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-3">Schedule</h4>
-                  <ul className="space-y-2 text-sm text-gray-700">
-                    <li className="flex items-start gap-2"><Clock className="h-4 w-4 text-gray-400 mt-0.5" /> <span><strong>8:00 AM</strong> — International guests arrive</span></li>
-                    <li className="flex items-start gap-2"><Clock className="h-4 w-4 text-gray-400 mt-0.5" /> <span><strong>9:00 AM – 1:00 PM</strong> — CAB Meeting (Hibernia Room)</span></li>
-                    <li className="flex items-start gap-2"><Clock className="h-4 w-4 text-gray-400 mt-0.5" /> <span><strong>5:00 PM</strong> — Dinner (venue TBD)</span></li>
-                    <li className="flex items-start gap-2"><Clock className="h-4 w-4 text-gray-400 mt-0.5" /> <span><strong>8:10 PM</strong> — 6 Nations Rugby Game</span></li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-3">Estimated Budget</h4>
-                  <ul className="space-y-2 text-sm text-gray-700">
-                    <li className="flex justify-between"><span>Accommodation (10 rooms)</span><span className="font-medium">€3,550</span></li>
-                    <li className="flex justify-between"><span>Meeting Room & F&B</span><span className="font-medium">€2,285</span></li>
-                    <li className="flex justify-between"><span>Dinner (20 guests)</span><span className="font-medium">€3,000–3,500</span></li>
-                    <li className="flex justify-between"><span>Rugby Tickets (20)</span><span className="font-medium">€3,000</span></li>
-                    <li className="flex justify-between"><span>Flights & Transport</span><span className="font-medium">~€1,300</span></li>
-                    <li className="flex justify-between border-t pt-2 mt-2"><span className="font-semibold">Total Estimated</span><span className="font-bold text-indigo-600">~€13,400</span></li>
-                  </ul>
-                </div>
-              </div>
+              <h4 className="font-semibold text-gray-900 mb-3">Schedule</h4>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li className="flex items-start gap-2"><Clock className="h-4 w-4 text-gray-400 mt-0.5" /> <span><strong>8:00 AM</strong> — International guests arrive</span></li>
+                <li className="flex items-start gap-2"><Clock className="h-4 w-4 text-gray-400 mt-0.5" /> <span><strong>9:00 AM – 1:00 PM</strong> — CAB Meeting (Hibernia Room)</span></li>
+                <li className="flex items-start gap-2"><Clock className="h-4 w-4 text-gray-400 mt-0.5" /> <span><strong>5:00 PM</strong> — Dinner (venue TBD)</span></li>
+                <li className="flex items-start gap-2"><Clock className="h-4 w-4 text-gray-400 mt-0.5" /> <span><strong>8:10 PM</strong> — 6 Nations Rugby Game</span></li>
+              </ul>
             </CardContent>
           </Card>
         </section>
@@ -193,10 +177,15 @@ const CAB = () => {
                   </TableHeader>
                   <TableBody>
                     {cabTimeline.map((item, index) => (
-                      <TableRow key={index} className="border-gray-200 hover:bg-gray-50">
-                        <TableCell className="font-medium text-gray-900 whitespace-nowrap">{item.date}</TableCell>
-                        <TableCell className="text-gray-700">{item.task}</TableCell>
-                        <TableCell className="text-gray-600">{item.owner}</TableCell>
+                      <TableRow key={index} className={`border-gray-200 hover:bg-gray-50 ${item.completed ? 'bg-emerald-50' : ''}`}>
+                        <TableCell className="font-medium whitespace-nowrap">
+                          <div className="flex items-center gap-2">
+                            {item.completed && <CheckCircle2 className="h-4 w-4 text-emerald-500" />}
+                            <span className={item.completed ? 'text-emerald-700' : 'text-blue-600'}>{item.date}</span>
+                          </div>
+                        </TableCell>
+                        <TableCell className={item.completed ? 'text-emerald-700' : 'text-gray-700'}>{item.task}</TableCell>
+                        <TableCell className={item.completed ? 'text-emerald-600' : 'text-gray-600'}>{item.owner}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
@@ -269,8 +258,7 @@ const CAB = () => {
                           <TableCell>
                             <Badge className={
                               member.status === "Confirmed" ? "bg-emerald-500 text-white" :
-                              member.status === "Current" ? "bg-blue-500 text-white" :
-                              "bg-gray-400 text-white"
+                              "bg-amber-500 text-white"
                             }>{member.status}</Badge>
                           </TableCell>
                         </TableRow>
