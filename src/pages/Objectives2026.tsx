@@ -6,7 +6,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { ChevronDown, Target, Lightbulb, BarChart3, Users, Calendar as CalendarIcon, CheckCircle2, AlertTriangle, XCircle } from "lucide-react";
+import { ChevronDown, Target, Lightbulb, BarChart3, Users, Calendar as CalendarIcon, CheckCircle2, AlertTriangle, XCircle, Sparkles } from "lucide-react";
 import { useState } from "react";
 import { format } from "date-fns";
 import { Navigation } from "@/components/Navigation";
@@ -238,10 +238,38 @@ const Objectives2026 = () => {
       
       <main className="container mx-auto px-4 pt-20 pb-8">
         {/* Header */}
-        <div className="mb-8">
+        <div className="mb-6">
           <h1 className="text-3xl font-bold text-foreground mb-2">2026 Strategic Objectives</h1>
           <p className="text-muted-foreground text-lg">Marketing Department</p>
         </div>
+
+        {/* Key Points Summary */}
+        <Card className="mb-8 bg-gradient-to-r from-primary/5 to-accent/5 border-primary/20">
+          <CardContent className="py-6">
+            <h3 className="font-semibold text-lg mb-4 flex items-center gap-2">
+              <Sparkles className="w-5 h-5 text-primary" />
+              Key Points Summary
+            </h3>
+            <ul className="grid md:grid-cols-2 gap-3 text-sm text-muted-foreground">
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                <span><strong>4 Strategic Goals:</strong> GTM Alignment, Brand & AR, Pipeline Growth, Partnerships</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                <span><strong>€11.5M pipeline target</strong> from marketing & partnerships combined</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                <span><strong>7 OKRs</strong> with leading & lagging indicators to track progress</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                <span><strong>Key KPIs:</strong> 32% lead conversion, 15% brand growth, NRR &gt;120%</span>
+              </li>
+            </ul>
+          </CardContent>
+        </Card>
 
         {/* Vision Statement */}
         <Card className="mb-8 border-l-4 border-l-primary">

@@ -21,8 +21,10 @@ import {
   FileText,
   Calendar,
   TrendingUp,
-  Zap
+  Zap,
+  CheckCircle2
 } from "lucide-react";
+import { CardContent } from "@/components/ui/card";
 
 const DemandLeadGenStrategy = () => {
   const sqlTargets = [
@@ -79,7 +81,7 @@ const DemandLeadGenStrategy = () => {
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-6">
           {/* Hero Section */}
-          <div className="max-w-4xl mx-auto text-center mb-16">
+          <div className="max-w-4xl mx-auto text-center mb-8">
             <Badge variant="outline" className="mb-4">2026 Strategy</Badge>
             <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
               Demand & Lead Gen <span className="text-primary">Strategy</span>
@@ -88,6 +90,34 @@ const DemandLeadGenStrategy = () => {
               Marketing-owned SQL generation through a connected execution system
             </p>
           </div>
+
+          {/* Key Points Summary */}
+          <Card className="max-w-5xl mx-auto mb-16 bg-gradient-to-r from-primary/5 to-accent/5 border-primary/20">
+            <CardContent className="py-6">
+              <h3 className="font-semibold text-lg mb-4 flex items-center gap-2">
+                <Target className="w-5 h-5 text-primary" />
+                Key Points Summary
+              </h3>
+              <ul className="grid md:grid-cols-2 gap-3 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                  <span><strong>~155 SQLs</strong> annual target across all marketing-owned channels</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                  <span><strong>Organic demand</strong> is the primary scalable engine (~97 SQLs)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                  <span><strong>Core conversion assets:</strong> ROI Calculator, Interactive Demo, Case Studies</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                  <span><strong>Q1 Foundation</strong> → Q2 Scale → Q3-Q4 Optimize phased approach</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
 
           {/* SQL Targets Table */}
           <div className="max-w-5xl mx-auto mb-16">

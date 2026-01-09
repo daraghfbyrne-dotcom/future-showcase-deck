@@ -7,7 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Palette, Globe, FileText, Camera, Megaphone, CheckCircle2, Clock, AlertTriangle, Server, Code, Rocket, Users, Building, Monitor } from "lucide-react";
+import { Palette, Globe, FileText, Camera, Megaphone, CheckCircle2, Clock, AlertTriangle, Server, Code, Rocket, Users, Building, Monitor, Target } from "lucide-react";
 
 const rolloutPhases = [
   {
@@ -302,15 +302,43 @@ const BrandRefresh = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-16 px-6 bg-gradient-to-br from-primary/10 via-background to-accent/10">
+      <section className="pt-24 pb-12 px-6 bg-gradient-to-br from-primary/10 via-background to-accent/10">
         <div className="container mx-auto max-w-6xl">
           <Badge className="mb-4 bg-primary/20 text-primary border-primary/30">Q1 2026 Priority</Badge>
           <h1 className="text-4xl md:text-5xl font-display font-bold mb-4">
             Brand & Website Roll Out
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl">
+          <p className="text-xl text-muted-foreground max-w-2xl mb-8">
             Comprehensive brand evolution to position SoftCo as the category leader in P2P automation and AI-powered finance transformation.
           </p>
+
+          {/* Key Points Summary */}
+          <Card className="bg-background/80 border-primary/20">
+            <CardContent className="py-6">
+              <h3 className="font-semibold text-lg mb-4 flex items-center gap-2">
+                <Target className="w-5 h-5 text-primary" />
+                Key Points Summary
+              </h3>
+              <ul className="grid md:grid-cols-2 gap-3 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                  <span><strong>7 Phases:</strong> From foundations (Aug '25) to full rollout (Mar '26)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                  <span><strong>Website live:</strong> Week of Feb 24, 2026 after UAT sign-off</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                  <span><strong>8 Asset Categories:</strong> Digital, Marketing, Commercial, Physical, Solution UI & more</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                  <span><strong>150 days effort</strong> with dedicated team + freelance support</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
