@@ -302,8 +302,27 @@ const BrandRefresh = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       
+      {/* WIP Callout */}
+      <section className="pt-24 pb-4 px-6">
+        <div className="container mx-auto max-w-6xl">
+          <Card className="border-amber-300 bg-amber-50 dark:bg-amber-950/30 dark:border-amber-700">
+            <CardContent className="py-4">
+              <div className="flex items-center gap-3">
+                <div className="p-2 rounded-full bg-amber-100 dark:bg-amber-900/50">
+                  <AlertTriangle className="w-5 h-5 text-amber-600 dark:text-amber-400" />
+                </div>
+                <div>
+                  <p className="font-semibold text-amber-800 dark:text-amber-300">WIP — To be Updated</p>
+                  <p className="text-sm text-amber-700 dark:text-amber-400">This page is a work in progress and content will be updated.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       {/* Hero Section */}
-      <section className="pt-24 pb-12 px-6 bg-gradient-to-br from-primary/10 via-background to-accent/10">
+      <section className="pt-8 pb-12 px-6 bg-gradient-to-br from-primary/10 via-background to-accent/10">
         <div className="container mx-auto max-w-6xl">
           <Badge className="mb-4 bg-primary/20 text-primary border-primary/30">Q1 2026 Priority</Badge>
           <h1 className="text-4xl md:text-5xl font-display font-bold mb-4">
