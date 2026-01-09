@@ -17,6 +17,7 @@ import gartnerLogo from "@/assets/gartner-logo.png";
 import forresterLogo from "@/assets/forrester-logo.png";
 import idcLogo from "@/assets/idc-logo.png";
 import hackettLogo from "@/assets/hackett-logo.png";
+import hackettGroupLogo from "@/assets/hackett-group-logo.png";
 import everestLogo from "@/assets/everest-logo.png";
 
 const firmLogos: Record<string, string> = {
@@ -25,6 +26,7 @@ const firmLogos: Record<string, string> = {
   "IDC": idcLogo,
   "Hackett": hackettLogo,
   "Hackett / SpendMatters": hackettLogo,
+  "Hackett Group": hackettGroupLogo,
   "Everest": everestLogo,
   "Everest Group": everestLogo,
 };
@@ -37,11 +39,12 @@ const currentRecognitions = [
   { firm: "Everest", recognition: "Major Contender in the 2025 PEAK Matrix for P2P" },
   { firm: "Forrester", recognition: "Referenced in 'Top AI use cases for Accounts Payable (AP) automation'" },
   { firm: "Forrester", recognition: "Featured in AP Landscape Report (October 2025)" },
+  { firm: "Hackett Group", recognition: "Featured in Digital World Class® Matrix Accounts Payable (Q4 2025)" },
 ];
 
 const futureTargets = [
-  { target: "Forrester Wave for AP", timing: "Q4 2025", status: "Targeted" },
-  { target: "Hackett Digital World Class® Matrix Accounts Payable", timing: "Q4 2025", status: "Submitted" },
+  { target: "Forrester Wave for AP", timing: "Q1 2026", status: "Targeted" },
+  { target: "Gartner Magic Quadrant for AP", timing: "Q1 2026", status: "Targeted" },
   { target: "Improve positioning on existing quadrants", timing: "Ongoing", status: "Active" },
 ];
 
