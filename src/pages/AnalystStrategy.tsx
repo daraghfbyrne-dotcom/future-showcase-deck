@@ -123,12 +123,6 @@ const engagementTactics = [
     dependencies: [],
   },
   {
-    id: "analyst-day",
-    title: "Host Annual Analyst Day",
-    description: "Look at potential of hosting an annual analyst day to showcase product roadmap and invite key analysts.",
-    dependencies: ["CEO", "Product", "Engineering", "Sales", "Pre-Sales", "Customer Support"],
-  },
-  {
     id: "thought-leadership",
     title: "Engage for Thought Leadership",
     description: "Engage analysts for trend reports and best practice notes to increase thought leadership.",
