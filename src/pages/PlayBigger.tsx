@@ -284,6 +284,25 @@ const PlayBigger = () => {
       <Navigation />
       
       <main className="pt-24 pb-16">
+        {/* WIP Callout */}
+        <section className="container mx-auto px-6 mb-6">
+          <div className="max-w-4xl mx-auto">
+            <Card className="border-amber-300 bg-amber-50 dark:bg-amber-950/30 dark:border-amber-700">
+              <CardContent className="py-4">
+                <div className="flex items-center gap-3">
+                  <div className="p-2 rounded-full bg-amber-100 dark:bg-amber-900/50">
+                    <AlertTriangle className="w-5 h-5 text-amber-600 dark:text-amber-400" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-amber-800 dark:text-amber-300">Work in Progress</p>
+                    <p className="text-sm text-amber-700 dark:text-amber-400">This project is currently at the exploratory stage. Content and strategies are subject to change.</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
         {/* Hero Section - Category Design Framework */}
         <section className="container mx-auto px-6 mb-12">
           <div className="max-w-4xl mx-auto text-center mb-8">
