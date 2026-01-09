@@ -67,14 +67,19 @@ const deliverables = [
   },
 ];
 
+const projectLeadership = [
+  { name: "Daragh (CMO)", role: "Executive Sponsor" },
+  { name: "John (Marketing Manager)", role: "Project Lead" },
+];
+
 const teamAllocation = [
-  { name: "Paul", role: "Project Lead", days: 10 },
+  { name: "Paul", role: "ESG & Consult", days: 10 },
   { name: "Blendi", role: "Web Development", days: 30 },
-  { name: "Oisin", role: "Copywriting", days: 35 },
+  { name: "Oisin", role: "Content", days: 35 },
   { name: "Enes", role: "Design", days: 20 },
   { name: "John", role: "Digital Marketing", days: 20 },
   { name: "Freelance Designer", role: "Design Support", days: 20 },
-  { name: "Oisin Contractor", role: "Copy Support", days: 15 },
+  { name: "Freelance Copywriter", role: "Copy Support", days: 15 },
 ];
 
 const BrandRefresh = () => {
@@ -214,6 +219,22 @@ const BrandRefresh = () => {
       <section className="py-12 px-6">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-2xl font-display font-semibold mb-6">Team Allocation</h2>
+          
+          {/* Project Leadership */}
+          <div className="grid md:grid-cols-2 gap-4 mb-6">
+            {projectLeadership.map((leader, index) => (
+              <Card key={index} className="bg-gradient-to-r from-primary/10 to-accent/10 border-primary/30">
+                <CardContent className="py-4 flex items-center justify-between">
+                  <div>
+                    <div className="font-semibold text-lg">{leader.name}</div>
+                    <div className="text-sm text-muted-foreground">{leader.role}</div>
+                  </div>
+                  <Badge className="bg-primary/20 text-primary border-primary/30">{leader.role}</Badge>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
           <Card className="bg-card/50">
             <CardContent className="pt-6">
               <div className="overflow-x-auto">
