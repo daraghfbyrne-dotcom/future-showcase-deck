@@ -226,26 +226,34 @@ const DemandLeadGenStrategy = () => {
                     <p className="text-muted-foreground">Primary scalable demand engine</p>
                   </div>
                 </div>
-                <div className="ml-16">
-                  <h4 className="font-medium mb-3">Plan Focus</h4>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      Conversion-first website post brand refresh
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      SEO foundation in Q1; scale from Q2
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      Authority via thought leadership, customer proof, and BOF pages
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      Core conversion assets embedded on high-intent pages: ROI calculator, Interactive demo, Case studies
-                    </li>
-                  </ul>
+                <div className="ml-16 space-y-6">
+                  <div>
+                    <h4 className="font-medium mb-2 flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-primary" />
+                      Personalized, Persona-Driven Landing Pages
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      Build tailored landing experiences for each core persona, aligning messaging, proof points, and CTAs to specific pains, use cases, and buying stages to lift conversion rates.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-medium mb-2 flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-primary" />
+                      Technical SEO Overhaul During Rebuild
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      Execute a full technical SEO refresh focused on fast load times, clean and scalable code, structured data optimized for LLM discovery, WCAG-compliant accessibility, and strengthened internal linking to improve crawlability, rankings, and UX.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-medium mb-2 flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-primary" />
+                      Authority & Trust Building (E-E-A-T)
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      Embed expert commentary from our new copywriter, supported by case studies, customer stories, and measurable proof points across priority pages to reinforce credibility, improve E-E-A-T signals, and drive higher-intent conversions.
+                    </p>
+                  </div>
                 </div>
               </Card>
 
@@ -263,26 +271,34 @@ const DemandLeadGenStrategy = () => {
                     <p className="text-muted-foreground">Mid-funnel qualification and intent escalation</p>
                   </div>
                 </div>
-                <div className="ml-16">
-                  <h4 className="font-medium mb-3">Plan Focus</h4>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      Consistent cadence
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      Pain-led topics aligned to buyer problems
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      Single primary CTA per webinar: ROI calculator or Interactive demo
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      Webinar content reused across PPC, Organic, and Nurture
-                    </li>
-                  </ul>
+                <div className="ml-16 space-y-6">
+                  <div>
+                    <h4 className="font-medium mb-2 flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-accent" />
+                      Strategic Webinar Themes
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      Deliver a mix of thought leadership, technology deep dives, and AP best practices, alongside partner-led webinars with Interpath, PwC, and Tungsten to add external credibility, expand reach, and attract higher-quality audiences.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-medium mb-2 flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-accent" />
+                      New Webinar Platform: Contrast
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      Launch webinars on Contrast to automatically generate high-impact social video shorts, extending reach, fueling always-on social distribution, and increasing post-event engagement.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-medium mb-2 flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-accent" />
+                      Personalized, Automated Follow-Up
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      Deploy persona-based, automated post-webinar follow-ups with tailored content, clips, and CTAs to accelerate nurturing, re-engagement, and pipeline influence.
+                    </p>
+                  </div>
                 </div>
               </Card>
 
@@ -294,28 +310,76 @@ const DemandLeadGenStrategy = () => {
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-1">
-                      <h3 className="font-semibold text-xl">3. PPC (High-Intent Only)</h3>
+                      <h3 className="font-semibold text-xl">3. PPC (Full-Funnel)</h3>
                       <Badge variant="secondary">~16 SQLs</Badge>
                     </div>
-                    <p className="text-muted-foreground">Capture existing demand</p>
+                    <p className="text-muted-foreground">Scale the proven full-funnel PPC framework</p>
                   </div>
                 </div>
-                <div className="ml-16">
-                  <h4 className="font-medium mb-3">Plan Focus</h4>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      LinkedIn as primary channel
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      Promotion of: Webinars, Case studies, ROI calculator, Interactive demo
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      Tight cost controls and clear stop/scale rules
-                    </li>
-                  </ul>
+                <div className="ml-16 space-y-6">
+                  <div>
+                    <h4 className="font-medium mb-2 flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-warning" />
+                      Scale the Proven Full-Funnel PPC Framework
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      Expand the TOF / MOF / BOF structure established in Q4, building on early performance gains, including the first webinar-sourced leads, to drive consistent pipeline impact.
+                    </p>
+                  </div>
+                  
+                  <div className="grid md:grid-cols-3 gap-4">
+                    <div className="bg-muted/30 rounded-lg p-4 border">
+                      <h5 className="font-medium text-sm mb-2">Top-of-Funnel</h5>
+                      <p className="text-xs text-muted-foreground mb-2">Brand Awareness at Scale</p>
+                      <p className="text-xs text-muted-foreground">
+                        Run quarterly, themed awareness campaigns targeting 35,000+ finance leaders across the US & UK, using video-first formats to maximize reach and recall.
+                      </p>
+                      <Badge variant="outline" className="mt-2 text-xs">KPIs: CPM, Reach</Badge>
+                    </div>
+                    <div className="bg-muted/30 rounded-lg p-4 border">
+                      <h5 className="font-medium text-sm mb-2">Mid-Funnel</h5>
+                      <p className="text-xs text-muted-foreground mb-2">Webinar & Event Activation</p>
+                      <p className="text-xs text-muted-foreground">
+                        Promote webinars, conferences, and high-value mid-funnel assets to segmented finance audiences, optimized to deliver high-quality registrations at efficient costs.
+                      </p>
+                      <Badge variant="outline" className="mt-2 text-xs">KPIs: CPM, CPL</Badge>
+                    </div>
+                    <div className="bg-muted/30 rounded-lg p-4 border">
+                      <h5 className="font-medium text-sm mb-2">Bottom-of-Funnel</h5>
+                      <p className="text-xs text-muted-foreground mb-2">Conversion & Retargeting</p>
+                      <p className="text-xs text-muted-foreground">
+                        Capture demand from high-intent visitors, engaged audiences, and open opportunities, with a focus on demo requests and SQL-ready leads.
+                      </p>
+                      <Badge variant="outline" className="mt-2 text-xs">KPI: Cost per Lead</Badge>
+                    </div>
+                  </div>
+
+                  <div className="border-t pt-4">
+                    <h4 className="font-medium mb-3">Always-On Visibility Across Warm Audiences</h4>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      Maintain continuous presence via Google Display, Discovery, and YouTube to re-engage past visitors, reinforce brand authority, and efficiently fuel mid-funnel webinar demand.
+                    </p>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <h5 className="font-medium text-sm mb-2 flex items-center gap-2">
+                          <Target className="w-4 h-4 text-warning" />
+                          Retargeting Campaigns (Primary Focus)
+                        </h5>
+                        <p className="text-xs text-muted-foreground">
+                          Serve tailored creative to past website visitors and high-intent segments to strengthen recall and guide prospects back into demo and content journeys.
+                        </p>
+                      </div>
+                      <div>
+                        <h5 className="font-medium text-sm mb-2 flex items-center gap-2">
+                          <Play className="w-4 h-4 text-warning" />
+                          Webinar Promotion via Discovery & YouTube In-Feed
+                        </h5>
+                        <p className="text-xs text-muted-foreground">
+                          Amplify webinars and key mid-funnel assets across high-engagement Google surfaces, reaching audiences already familiar with SoftCo's brand and solutions.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </Card>
 
