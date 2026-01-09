@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Card, CardContent } from "@/components/ui/card";
 import { Calendar, Sparkles, Euro, TrendingUp, Users, MapPin, Database, Mail, Phone, FileText, ChevronRight, Lightbulb, Target, CheckCircle2 } from "lucide-react";
+import { KeyPointsSummary } from "@/components/KeyPointsSummary";
 import oracleLogo from "@/assets/oracle-logo.png";
 import jdeLogo from "@/assets/jde-logo.png";
 
@@ -33,32 +34,16 @@ const EventsStrategy = () => {
           </div>
 
           {/* Key Points Summary */}
-          <Card className="mb-10 bg-gradient-to-r from-success/5 to-accent/5 border-success/20">
-            <CardContent className="py-6">
-              <h3 className="font-semibold text-lg mb-4 flex items-center gap-2">
-                <Target className="w-5 h-5 text-success" />
-                Key Points Summary
-              </h3>
-              <ul className="grid md:grid-cols-2 gap-3 text-sm text-muted-foreground">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-success mt-0.5 shrink-0" />
-                  <span><strong>€2.71M pipeline</strong> from events (+38% YoY growth)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-success mt-0.5 shrink-0" />
-                  <span><strong>12 Executive Dinners</strong> across NA & Europe (3 per quarter)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-success mt-0.5 shrink-0" />
-                  <span><strong>6 Major Conferences:</strong> SSOW, Gartner Finance Xpo, Deloitte SSC</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-success mt-0.5 shrink-0" />
-                  <span><strong>ERP Events:</strong> Exploring Oracle, Infor & JD Edwards conferences</span>
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
+          <div className="mb-10">
+            <KeyPointsSummary
+              points={[
+                "€2.71M pipeline from events (+38% YoY growth)",
+                "12 Executive Dinners across NA & Europe (3 per quarter)",
+                "6 Major Conferences: SSOW, Gartner Finance Xpo, Deloitte SSC",
+                "ERP Events: Exploring Oracle, Infor & JD Edwards conferences"
+              ]}
+            />
+          </div>
 
           {/* Total Pipeline Value - CENTERED */}
           <Card className="p-8 mb-10 bg-gradient-to-r from-success/20 via-success/15 to-success/20 border-2 border-success/50 shadow-2xl">

@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { KeyPointsSummary } from "@/components/KeyPointsSummary";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
@@ -244,32 +245,16 @@ const Objectives2026 = () => {
         </div>
 
         {/* Key Points Summary */}
-        <Card className="mb-8 bg-gradient-to-r from-primary/5 to-accent/5 border-primary/20">
-          <CardContent className="py-6">
-            <h3 className="font-semibold text-lg mb-4 flex items-center gap-2">
-              <Sparkles className="w-5 h-5 text-primary" />
-              Key Points Summary
-            </h3>
-            <ul className="grid md:grid-cols-2 gap-3 text-sm text-muted-foreground">
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                <span><strong>4 Strategic Goals:</strong> GTM Alignment, Brand & AR, Pipeline Growth, Partnerships</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                <span><strong>€11.5M pipeline target</strong> from marketing & partnerships combined</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                <span><strong>7 OKRs</strong> with leading & lagging indicators to track progress</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                <span><strong>Key KPIs:</strong> 32% lead conversion, 15% brand growth, NRR &gt;120%</span>
-              </li>
-            </ul>
-          </CardContent>
-        </Card>
+        <div className="mb-8">
+          <KeyPointsSummary
+            points={[
+              "4 Strategic Goals: GTM Alignment, Brand & AR, Pipeline Growth, Partnerships",
+              "€11.5M pipeline target from marketing & partnerships combined",
+              "7 OKRs with leading & lagging indicators to track progress",
+              "Key KPIs: 32% lead conversion, 15% brand growth, NRR >120%"
+            ]}
+          />
+        </div>
 
         {/* Vision Statement */}
         <Card className="mb-8 border-l-4 border-l-primary">
