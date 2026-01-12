@@ -1,9 +1,16 @@
+import { useState } from "react";
 import { Users, Calendar, Clock, Target, Globe, MapPin, Building2, CheckCircle2 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { KeyPointsSummary } from "@/components/KeyPointsSummary";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Navigation } from "@/components/Navigation";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const cabTimeline = [
   { date: "Oct 2025", task: "Finalise EU member shortlist & get SLT sign-off", owner: "SLT", completed: true },
@@ -27,7 +34,7 @@ const cabAgenda = [
   { time: "15 mins", item: "Next Steps & Close", owner: "CMO" },
 ];
 
-const euCabMembers = [
+const initialEuCabMembers = [
   { company: "Grafton Merchanting ROI Ltd.", industry: "Building Materials & Retail Trade", status: "Pending" },
   { company: "Primark Limited", industry: "Retail", status: "Confirmed" },
   { company: "VP plc (VP Group)", industry: "Industrial Equipment Rental", status: "Confirmed" },
@@ -40,20 +47,51 @@ const euCabMembers = [
   { company: "C&C Group", industry: "Food & Drink", status: "Confirmed" },
 ];
 
-const naCabMembers = [
-  { company: "MFCP", industry: "Distribution", contact: "CFO" },
-  { company: "Snap-On Incorporated", industry: "Manufacturing (Automotive Tools)", contact: "VP Treasury" },
-  { company: "LGG Industrial Inc.", industry: "Industrial Supply & Machinery", contact: "CFO" },
-  { company: "Hydro-Gear", industry: "Manufacturing (Hydraulic Components)", contact: "CFO" },
-  { company: "NorthStar Energy", industry: "Energy (Fuel Distribution)", contact: "Controller" },
-  { company: "Bulk Barn Foods Ltd.", industry: "Retail (Specialty Food)", contact: "CFO" },
-  { company: "Parrish & Heimbecker", industry: "Agribusiness", contact: "VP Finance & IT" },
-  { company: "Shorr Packaging Corp.", industry: "Packaging & Logistics", contact: "CFO" },
-  { company: "Patagonia", industry: "Retail", contact: "Director Accounting Ops" },
-  { company: "Cambria", industry: "Manufacturing", contact: "SVP, Controller" },
+const initialNaCabMembers = [
+  { company: "MFCP", industry: "Distribution", contact: "CFO", status: "Pending" },
+  { company: "Snap-On Incorporated", industry: "Manufacturing (Automotive Tools)", contact: "VP Treasury", status: "Pending" },
+  { company: "LGG Industrial Inc.", industry: "Industrial Supply & Machinery", contact: "CFO", status: "Pending" },
+  { company: "Hydro-Gear", industry: "Manufacturing (Hydraulic Components)", contact: "CFO", status: "Pending" },
+  { company: "NorthStar Energy", industry: "Energy (Fuel Distribution)", contact: "Controller", status: "Pending" },
+  { company: "Bulk Barn Foods Ltd.", industry: "Retail (Specialty Food)", contact: "CFO", status: "Pending" },
+  { company: "Parrish & Heimbecker", industry: "Agribusiness", contact: "VP Finance & IT", status: "Pending" },
+  { company: "Shorr Packaging Corp.", industry: "Packaging & Logistics", contact: "CFO", status: "Pending" },
+  { company: "Patagonia", industry: "Retail", contact: "Director Accounting Ops", status: "Pending" },
+  { company: "Cambria", industry: "Manufacturing", contact: "SVP, Controller", status: "Pending" },
+];
+
+type StatusType = "Confirmed" | "Pending" | "Declined";
+
+const statusOptions: { value: StatusType; label: string; color: string }[] = [
+  { value: "Confirmed", label: "Confirmed", color: "bg-emerald-500 hover:bg-emerald-600" },
+  { value: "Pending", label: "Pending", color: "bg-amber-500 hover:bg-amber-600" },
+  { value: "Declined", label: "Declined", color: "bg-red-500 hover:bg-red-600" },
 ];
 
 const CAB = () => {
+  const [euCabMembers, setEuCabMembers] = useState(initialEuCabMembers);
+  const [naCabMembers, setNaCabMembers] = useState(initialNaCabMembers);
+
+  const updateEuMemberStatus = (index: number, newStatus: StatusType) => {
+    setEuCabMembers(prev => prev.map((member, i) => 
+      i === index ? { ...member, status: newStatus } : member
+    ));
+  };
+
+  const updateNaMemberStatus = (index: number, newStatus: StatusType) => {
+    setNaCabMembers(prev => prev.map((member, i) => 
+      i === index ? { ...member, status: newStatus } : member
+    ));
+  };
+
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case "Confirmed": return "bg-emerald-500 hover:bg-emerald-600";
+      case "Pending": return "bg-amber-500 hover:bg-amber-600";
+      case "Declined": return "bg-red-500 hover:bg-red-600";
+      default: return "bg-gray-500 hover:bg-gray-600";
+    }
+  };
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
@@ -256,10 +294,24 @@ const CAB = () => {
                           <TableCell className="font-medium text-gray-900 text-sm">{member.company}</TableCell>
                           <TableCell className="text-gray-600 text-sm">{member.industry}</TableCell>
                           <TableCell>
-                            <Badge className={
-                              member.status === "Confirmed" ? "bg-emerald-500 text-white" :
-                              "bg-amber-500 text-white"
-                            }>{member.status}</Badge>
+                            <DropdownMenu>
+                              <DropdownMenuTrigger asChild>
+                                <Badge className={`${getStatusColor(member.status)} text-white cursor-pointer transition-colors`}>
+                                  {member.status}
+                                </Badge>
+                              </DropdownMenuTrigger>
+                              <DropdownMenuContent className="bg-white border border-gray-200 shadow-lg z-50">
+                                {statusOptions.map((option) => (
+                                  <DropdownMenuItem
+                                    key={option.value}
+                                    onClick={() => updateEuMemberStatus(index, option.value)}
+                                    className="cursor-pointer hover:bg-gray-100"
+                                  >
+                                    <Badge className={`${option.color} text-white`}>{option.label}</Badge>
+                                  </DropdownMenuItem>
+                                ))}
+                              </DropdownMenuContent>
+                            </DropdownMenu>
                           </TableCell>
                         </TableRow>
                       ))}
@@ -285,6 +337,7 @@ const CAB = () => {
                         <TableHead className="text-gray-700 font-semibold">Company</TableHead>
                         <TableHead className="text-gray-700 font-semibold">Industry</TableHead>
                         <TableHead className="text-gray-700 font-semibold">Contact</TableHead>
+                        <TableHead className="text-gray-700 font-semibold">Status</TableHead>
                       </TableRow>
                     </TableHeader>
                     <TableBody>
@@ -293,6 +346,26 @@ const CAB = () => {
                           <TableCell className="font-medium text-gray-900 text-sm">{member.company}</TableCell>
                           <TableCell className="text-gray-600 text-sm">{member.industry}</TableCell>
                           <TableCell className="text-gray-600 text-sm">{member.contact}</TableCell>
+                          <TableCell>
+                            <DropdownMenu>
+                              <DropdownMenuTrigger asChild>
+                                <Badge className={`${getStatusColor(member.status)} text-white cursor-pointer transition-colors`}>
+                                  {member.status}
+                                </Badge>
+                              </DropdownMenuTrigger>
+                              <DropdownMenuContent className="bg-white border border-gray-200 shadow-lg z-50">
+                                {statusOptions.map((option) => (
+                                  <DropdownMenuItem
+                                    key={option.value}
+                                    onClick={() => updateNaMemberStatus(index, option.value)}
+                                    className="cursor-pointer hover:bg-gray-100"
+                                  >
+                                    <Badge className={`${option.color} text-white`}>{option.label}</Badge>
+                                  </DropdownMenuItem>
+                                ))}
+                              </DropdownMenuContent>
+                            </DropdownMenu>
+                          </TableCell>
                         </TableRow>
                       ))}
                     </TableBody>
