@@ -296,16 +296,18 @@ const CAB = () => {
                           <TableCell>
                             <DropdownMenu>
                               <DropdownMenuTrigger asChild>
-                                <Badge className={`${getStatusColor(member.status)} text-white cursor-pointer transition-colors`}>
-                                  {member.status}
-                                </Badge>
+                                <button type="button" className="focus:outline-none">
+                                  <Badge className={`${getStatusColor(member.status)} text-white cursor-pointer transition-colors`}>
+                                    {member.status}
+                                  </Badge>
+                                </button>
                               </DropdownMenuTrigger>
-                              <DropdownMenuContent className="bg-white border border-gray-200 shadow-lg z-50">
+                              <DropdownMenuContent align="start" className="bg-white border border-gray-200 shadow-lg z-[100]">
                                 {statusOptions.map((option) => (
                                   <DropdownMenuItem
                                     key={option.value}
                                     onClick={() => updateEuMemberStatus(index, option.value)}
-                                    className="cursor-pointer hover:bg-gray-100"
+                                    className="cursor-pointer hover:bg-gray-100 focus:bg-gray-100"
                                   >
                                     <Badge className={`${option.color} text-white`}>{option.label}</Badge>
                                   </DropdownMenuItem>
@@ -349,16 +351,18 @@ const CAB = () => {
                           <TableCell>
                             <DropdownMenu>
                               <DropdownMenuTrigger asChild>
-                                <Badge className={`${getStatusColor(member.status)} text-white cursor-pointer transition-colors`}>
-                                  {member.status}
-                                </Badge>
+                                <button type="button" className="focus:outline-none">
+                                  <Badge className={`${getStatusColor(member.status)} text-white cursor-pointer transition-colors`}>
+                                    {member.status}
+                                  </Badge>
+                                </button>
                               </DropdownMenuTrigger>
-                              <DropdownMenuContent className="bg-white border border-gray-200 shadow-lg z-50">
+                              <DropdownMenuContent align="start" className="bg-white border border-gray-200 shadow-lg z-[100]">
                                 {statusOptions.map((option) => (
                                   <DropdownMenuItem
                                     key={option.value}
                                     onClick={() => updateNaMemberStatus(index, option.value)}
-                                    className="cursor-pointer hover:bg-gray-100"
+                                    className="cursor-pointer hover:bg-gray-100 focus:bg-gray-100"
                                   >
                                     <Badge className={`${option.color} text-white`}>{option.label}</Badge>
                                   </DropdownMenuItem>
