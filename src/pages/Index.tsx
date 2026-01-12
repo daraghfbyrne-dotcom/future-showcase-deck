@@ -29,7 +29,7 @@ const Index = () => {
               points={[
                 "Win Rate Shift: Data reveals material changes in where we win and lose",
                 "ERP Sweet Spots: Oracle Cloud, JD Edwards, and Microsoft show highest win rates",
-                "Size Focus: €50M-€500M revenue companies are our optimal target segment",
+                "Size Focus: €250M-€1BN revenue companies are our optimal target segment",
                 "Strategic Pillars: Focus on Category Leadership, Pipeline Growth & Partner Ecosystem"
               ]}
             />
