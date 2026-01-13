@@ -632,6 +632,15 @@ const DemandLeadGenStrategy = () => {
                     </TableRow>
 
                     <TableRow>
+                      <TableCell className="font-medium">New York Executive Dinner</TableCell>
+                      <TableCell className="text-center text-muted-foreground">—</TableCell>
+                      <TableCell className="text-center text-muted-foreground">—</TableCell>
+                      <TableCell className="text-center">
+                        <div className="bg-accent/10 rounded px-2 py-1 text-xs font-medium">12th</div>
+                      </TableCell>
+                    </TableRow>
+
+                    <TableRow>
                       <TableCell className="font-medium">SSOW Orlando</TableCell>
                       <TableCell className="text-center text-muted-foreground">—</TableCell>
                       <TableCell className="text-center text-muted-foreground">—</TableCell>
