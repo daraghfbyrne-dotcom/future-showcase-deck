@@ -486,241 +486,237 @@ const DemandLeadGenStrategy = () => {
           </div>
 
           {/* Q1 Campaign Calendar */}
-          <div className="max-w-5xl mx-auto">
-            <Card className="p-8">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
-                  <Calendar className="w-5 h-5 text-accent" />
+          <div className="w-full max-w-7xl mx-auto">
+            <Card className="p-6">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center">
+                    <Calendar className="w-4 h-4 text-accent" />
+                  </div>
+                  <div>
+                    <h2 className="font-display text-xl font-bold">Q1 2026 Campaign Calendar</h2>
+                  </div>
                 </div>
-                <div>
-                  <h2 className="font-display text-2xl font-bold">Q1 2026 Campaign Calendar</h2>
-                  <p className="text-sm text-muted-foreground">Marketing & SDR campaigns by month</p>
+                <div className="flex flex-wrap gap-1.5">
+                  <Badge className="bg-primary/10 text-primary border-primary/20 text-xs py-0">E-Invoicing</Badge>
+                  <Badge className="bg-accent/10 text-accent border-accent/20 text-xs py-0">Compliance & Audit</Badge>
+                  <Badge className="bg-success/10 text-success border-success/20 text-xs py-0">Automation & Time Savings</Badge>
                 </div>
-              </div>
-
-              {/* Campaign Themes */}
-              <div className="flex flex-wrap gap-2 mb-6">
-                <Badge className="bg-primary/10 text-primary border-primary/20">E-Invoicing</Badge>
-                <Badge className="bg-accent/10 text-accent border-accent/20">Compliance & Audit</Badge>
-                <Badge className="bg-success/10 text-success border-success/20">Automation & Time Savings</Badge>
               </div>
 
               {/* Timeline Table */}
               <div className="overflow-x-auto">
-                <Table>
+                <Table className="text-sm">
                   <TableHeader>
                     <TableRow className="bg-muted/50">
-                      <TableHead className="font-semibold w-[200px]">Activity</TableHead>
-                      <TableHead className="font-semibold text-center">January</TableHead>
-                      <TableHead className="font-semibold text-center">February</TableHead>
-                      <TableHead className="font-semibold text-center">March</TableHead>
+                      <TableHead className="font-semibold text-xs py-2 w-[220px]">Activity</TableHead>
+                      <TableHead className="font-semibold text-xs text-center py-2">January</TableHead>
+                      <TableHead className="font-semibold text-xs text-center py-2">February</TableHead>
+                      <TableHead className="font-semibold text-xs text-center py-2">March</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {/* Marketing Section Header */}
                     <TableRow className="bg-primary/5">
-                      <TableCell colSpan={4} className="font-semibold text-primary">
+                      <TableCell colSpan={4} className="font-bold text-xs text-primary py-1.5">
                         Marketing (Paid & Organic Social + Google Display)
                       </TableCell>
                     </TableRow>
                     
                     <TableRow>
-                      <TableCell className="font-medium">eInvoicing Content</TableCell>
-                      <TableCell className="text-center">
-                        <div className="bg-primary/10 rounded px-2 py-1 text-xs">Webinar, Blogs & Whitepaper</div>
-                        <div className="text-xs text-muted-foreground mt-1">From 2nd week</div>
+                      <TableCell className="text-xs py-1.5">eInvoicing Content</TableCell>
+                      <TableCell className="text-center py-1.5">
+                        <span className="bg-primary/10 rounded px-1.5 py-0.5 text-xs">Blogs & Whitepaper (2nd wk)</span>
                       </TableCell>
-                      <TableCell className="text-center">
-                        <div className="bg-primary/10 rounded px-2 py-1 text-xs">Ongoing</div>
+                      <TableCell className="text-center py-1.5">
+                        <span className="bg-primary/10 rounded px-1.5 py-0.5 text-xs">Ongoing</span>
                       </TableCell>
-                      <TableCell className="text-center">
-                        <div className="bg-primary/10 rounded px-2 py-1 text-xs">Through End Q1</div>
-                      </TableCell>
-                    </TableRow>
-
-                    <TableRow>
-                      <TableCell className="font-medium">Compliance & Audit</TableCell>
-                      <TableCell className="text-center">
-                        <div className="bg-accent/10 rounded px-2 py-1 text-xs">Campaign Launch</div>
-                      </TableCell>
-                      <TableCell className="text-center">
-                        <div className="bg-accent/10 rounded px-2 py-1 text-xs">Ongoing</div>
-                      </TableCell>
-                      <TableCell className="text-center">
-                        <div className="bg-accent/10 rounded px-2 py-1 text-xs">Ongoing</div>
+                      <TableCell className="text-center py-1.5">
+                        <span className="bg-primary/10 rounded px-1.5 py-0.5 text-xs">Through End</span>
                       </TableCell>
                     </TableRow>
 
                     <TableRow>
-                      <TableCell className="font-medium">Automation & Time Savings</TableCell>
-                      <TableCell className="text-center">
-                        <div className="bg-success/10 rounded px-2 py-1 text-xs">Campaign Launch</div>
+                      <TableCell className="text-xs py-1.5">Compliance & Audit</TableCell>
+                      <TableCell className="text-center py-1.5">
+                        <span className="bg-accent/10 rounded px-1.5 py-0.5 text-xs">Launch</span>
                       </TableCell>
-                      <TableCell className="text-center">
-                        <div className="bg-success/10 rounded px-2 py-1 text-xs">Ongoing</div>
+                      <TableCell className="text-center py-1.5">
+                        <span className="bg-accent/10 rounded px-1.5 py-0.5 text-xs">Ongoing</span>
                       </TableCell>
-                      <TableCell className="text-center">
-                        <div className="bg-success/10 rounded px-2 py-1 text-xs">Ongoing</div>
+                      <TableCell className="text-center py-1.5">
+                        <span className="bg-accent/10 rounded px-1.5 py-0.5 text-xs">Ongoing</span>
                       </TableCell>
                     </TableRow>
 
                     <TableRow>
-                      <TableCell className="font-medium">SourceForge Marketplace</TableCell>
-                      <TableCell className="text-center">
-                        <div className="text-xs text-muted-foreground">2nd last week</div>
+                      <TableCell className="text-xs py-1.5">Automation & Time Savings</TableCell>
+                      <TableCell className="text-center py-1.5">
+                        <span className="bg-success/10 rounded px-1.5 py-0.5 text-xs">Launch</span>
                       </TableCell>
-                      <TableCell className="text-center">
-                        <div className="bg-muted rounded px-2 py-1 text-xs">Active</div>
+                      <TableCell className="text-center py-1.5">
+                        <span className="bg-success/10 rounded px-1.5 py-0.5 text-xs">Ongoing</span>
                       </TableCell>
-                      <TableCell className="text-center">
-                        <div className="bg-muted rounded px-2 py-1 text-xs">Through End</div>
+                      <TableCell className="text-center py-1.5">
+                        <span className="bg-success/10 rounded px-1.5 py-0.5 text-xs">Ongoing</span>
+                      </TableCell>
+                    </TableRow>
+
+                    <TableRow>
+                      <TableCell className="text-xs py-1.5">SourceForge Marketplace</TableCell>
+                      <TableCell className="text-center py-1.5">
+                        <span className="text-xs text-muted-foreground">2nd last wk</span>
+                      </TableCell>
+                      <TableCell className="text-center py-1.5">
+                        <span className="bg-muted rounded px-1.5 py-0.5 text-xs">Active</span>
+                      </TableCell>
+                      <TableCell className="text-center py-1.5">
+                        <span className="bg-muted rounded px-1.5 py-0.5 text-xs">Through End</span>
                       </TableCell>
                     </TableRow>
 
                     {/* Webinars Section Header */}
                     <TableRow className="bg-warning/5">
-                      <TableCell colSpan={4} className="font-semibold text-warning">
+                      <TableCell colSpan={4} className="font-bold text-xs text-warning py-1.5">
                         Webinars
                       </TableCell>
                     </TableRow>
 
                     <TableRow>
-                      <TableCell className="font-medium">Webinar</TableCell>
-                      <TableCell className="text-center">
-                        <div className="bg-warning/10 rounded px-2 py-1 text-xs font-medium">21st</div>
+                      <TableCell className="text-xs py-1.5">Webinar</TableCell>
+                      <TableCell className="text-center py-1.5">
+                        <span className="bg-warning/10 rounded px-1.5 py-0.5 text-xs font-medium">21st</span>
                       </TableCell>
-                      <TableCell className="text-center text-muted-foreground">—</TableCell>
-                      <TableCell className="text-center">
-                        <div className="bg-warning/10 rounded px-2 py-1 text-xs font-medium">19th</div>
+                      <TableCell className="text-center text-muted-foreground py-1.5">—</TableCell>
+                      <TableCell className="text-center py-1.5">
+                        <span className="bg-warning/10 rounded px-1.5 py-0.5 text-xs font-medium">19th</span>
                       </TableCell>
                     </TableRow>
 
                     <TableRow>
-                      <TableCell className="font-medium">eInvoicing Webinar with PwC</TableCell>
-                      <TableCell className="text-center text-muted-foreground">—</TableCell>
-                      <TableCell className="text-center">
-                        <div className="bg-warning/10 rounded px-2 py-1 text-xs font-medium">26th</div>
-                        <div className="text-xs text-muted-foreground mt-1">Customers & Prospects</div>
+                      <TableCell className="text-xs py-1.5">eInvoicing Webinar with PwC</TableCell>
+                      <TableCell className="text-center text-muted-foreground py-1.5">—</TableCell>
+                      <TableCell className="text-center py-1.5">
+                        <span className="bg-warning/10 rounded px-1.5 py-0.5 text-xs font-medium">26th (Cust & Pros)</span>
                       </TableCell>
-                      <TableCell className="text-center text-muted-foreground">—</TableCell>
+                      <TableCell className="text-center text-muted-foreground py-1.5">—</TableCell>
                     </TableRow>
 
                     {/* Events Section Header */}
                     <TableRow className="bg-accent/5">
-                      <TableCell colSpan={4} className="font-semibold text-accent">
+                      <TableCell colSpan={4} className="font-bold text-xs text-accent py-1.5">
                         Executive Dinners & Conferences
                       </TableCell>
                     </TableRow>
 
                     <TableRow>
-                      <TableCell className="font-medium">Dublin Executive Dinner</TableCell>
-                      <TableCell className="text-center">
-                        <div className="bg-accent/10 rounded px-2 py-1 text-xs font-medium">29th</div>
-                        <div className="text-xs text-muted-foreground mt-1">10 Prospects</div>
+                      <TableCell className="text-xs py-1.5">Dublin Executive Dinner</TableCell>
+                      <TableCell className="text-center py-1.5">
+                        <span className="bg-accent/10 rounded px-1.5 py-0.5 text-xs font-medium">29th (10 Prospects)</span>
                       </TableCell>
-                      <TableCell className="text-center text-muted-foreground">—</TableCell>
-                      <TableCell className="text-center text-muted-foreground">—</TableCell>
+                      <TableCell className="text-center text-muted-foreground py-1.5">—</TableCell>
+                      <TableCell className="text-center text-muted-foreground py-1.5">—</TableCell>
                     </TableRow>
 
                     <TableRow>
-                      <TableCell className="font-medium">London Executive Dinner</TableCell>
-                      <TableCell className="text-center text-muted-foreground">—</TableCell>
-                      <TableCell className="text-center">
-                        <div className="bg-accent/10 rounded px-2 py-1 text-xs font-medium">25th</div>
+                      <TableCell className="text-xs py-1.5">London Executive Dinner</TableCell>
+                      <TableCell className="text-center text-muted-foreground py-1.5">—</TableCell>
+                      <TableCell className="text-center py-1.5">
+                        <span className="bg-accent/10 rounded px-1.5 py-0.5 text-xs font-medium">25th</span>
                       </TableCell>
-                      <TableCell className="text-center text-muted-foreground">—</TableCell>
+                      <TableCell className="text-center text-muted-foreground py-1.5">—</TableCell>
                     </TableRow>
 
                     <TableRow>
-                      <TableCell className="font-medium">New York Executive Dinner</TableCell>
-                      <TableCell className="text-center text-muted-foreground">—</TableCell>
-                      <TableCell className="text-center text-muted-foreground">—</TableCell>
-                      <TableCell className="text-center">
-                        <div className="bg-accent/10 rounded px-2 py-1 text-xs font-medium">12th</div>
-                      </TableCell>
-                    </TableRow>
-
-                    <TableRow>
-                      <TableCell className="font-medium">SSOW Orlando</TableCell>
-                      <TableCell className="text-center text-muted-foreground">—</TableCell>
-                      <TableCell className="text-center text-muted-foreground">—</TableCell>
-                      <TableCell className="text-center">
-                        <div className="bg-success/10 rounded px-2 py-1 text-xs font-medium">17th - 19th</div>
+                      <TableCell className="text-xs py-1.5">New York Executive Dinner</TableCell>
+                      <TableCell className="text-center text-muted-foreground py-1.5">—</TableCell>
+                      <TableCell className="text-center text-muted-foreground py-1.5">—</TableCell>
+                      <TableCell className="text-center py-1.5">
+                        <span className="bg-accent/10 rounded px-1.5 py-0.5 text-xs font-medium">12th</span>
                       </TableCell>
                     </TableRow>
 
                     <TableRow>
-                      <TableCell className="font-medium">Lumenia HeadtoHead Birmingham</TableCell>
-                      <TableCell className="text-center text-muted-foreground">—</TableCell>
-                      <TableCell className="text-center text-muted-foreground">—</TableCell>
-                      <TableCell className="text-center">
-                        <div className="bg-success/10 rounded px-2 py-1 text-xs font-medium">24th - 25th</div>
+                      <TableCell className="text-xs py-1.5">SSOW Orlando</TableCell>
+                      <TableCell className="text-center text-muted-foreground py-1.5">—</TableCell>
+                      <TableCell className="text-center text-muted-foreground py-1.5">—</TableCell>
+                      <TableCell className="text-center py-1.5">
+                        <span className="bg-success/10 rounded px-1.5 py-0.5 text-xs font-medium">17th - 19th</span>
+                      </TableCell>
+                    </TableRow>
+
+                    <TableRow>
+                      <TableCell className="text-xs py-1.5">Lumenia HeadtoHead Birmingham</TableCell>
+                      <TableCell className="text-center text-muted-foreground py-1.5">—</TableCell>
+                      <TableCell className="text-center text-muted-foreground py-1.5">—</TableCell>
+                      <TableCell className="text-center py-1.5">
+                        <span className="bg-success/10 rounded px-1.5 py-0.5 text-xs font-medium">24th - 25th</span>
                       </TableCell>
                     </TableRow>
 
                     {/* SDR Section Header */}
                     <TableRow className="bg-muted/50">
-                      <TableCell colSpan={4} className="font-semibold">
+                      <TableCell colSpan={4} className="font-bold text-xs py-1.5">
                         SDR Campaigns
                       </TableCell>
                     </TableRow>
 
                     <TableRow>
-                      <TableCell className="font-medium">E-Invoicing Outreach</TableCell>
-                      <TableCell className="text-center">
-                        <div className="bg-primary/10 rounded px-2 py-1 text-xs">Active</div>
+                      <TableCell className="text-xs py-1.5">E-Invoicing Outreach</TableCell>
+                      <TableCell className="text-center py-1.5">
+                        <span className="bg-primary/10 rounded px-1.5 py-0.5 text-xs">Active</span>
                       </TableCell>
-                      <TableCell className="text-center">
-                        <div className="bg-primary/10 rounded px-2 py-1 text-xs">Active</div>
+                      <TableCell className="text-center py-1.5">
+                        <span className="bg-primary/10 rounded px-1.5 py-0.5 text-xs">Active</span>
                       </TableCell>
-                      <TableCell className="text-center">
-                        <div className="bg-primary/10 rounded px-2 py-1 text-xs">Active</div>
-                      </TableCell>
-                    </TableRow>
-
-                    <TableRow>
-                      <TableCell className="font-medium">Compliance & Audit Outreach</TableCell>
-                      <TableCell className="text-center">
-                        <div className="bg-accent/10 rounded px-2 py-1 text-xs">Active</div>
-                      </TableCell>
-                      <TableCell className="text-center">
-                        <div className="bg-accent/10 rounded px-2 py-1 text-xs">Active</div>
-                      </TableCell>
-                      <TableCell className="text-center">
-                        <div className="bg-accent/10 rounded px-2 py-1 text-xs">Active</div>
+                      <TableCell className="text-center py-1.5">
+                        <span className="bg-primary/10 rounded px-1.5 py-0.5 text-xs">Active</span>
                       </TableCell>
                     </TableRow>
 
                     <TableRow>
-                      <TableCell className="font-medium">Automation & Time Savings Outreach</TableCell>
-                      <TableCell className="text-center">
-                        <div className="bg-success/10 rounded px-2 py-1 text-xs">Active</div>
+                      <TableCell className="text-xs py-1.5">Compliance & Audit Outreach</TableCell>
+                      <TableCell className="text-center py-1.5">
+                        <span className="bg-accent/10 rounded px-1.5 py-0.5 text-xs">Active</span>
                       </TableCell>
-                      <TableCell className="text-center">
-                        <div className="bg-success/10 rounded px-2 py-1 text-xs">Active</div>
+                      <TableCell className="text-center py-1.5">
+                        <span className="bg-accent/10 rounded px-1.5 py-0.5 text-xs">Active</span>
                       </TableCell>
-                      <TableCell className="text-center">
-                        <div className="bg-success/10 rounded px-2 py-1 text-xs">Active</div>
+                      <TableCell className="text-center py-1.5">
+                        <span className="bg-accent/10 rounded px-1.5 py-0.5 text-xs">Active</span>
+                      </TableCell>
+                    </TableRow>
+
+                    <TableRow>
+                      <TableCell className="text-xs py-1.5">Automation & Time Savings Outreach</TableCell>
+                      <TableCell className="text-center py-1.5">
+                        <span className="bg-success/10 rounded px-1.5 py-0.5 text-xs">Active</span>
+                      </TableCell>
+                      <TableCell className="text-center py-1.5">
+                        <span className="bg-success/10 rounded px-1.5 py-0.5 text-xs">Active</span>
+                      </TableCell>
+                      <TableCell className="text-center py-1.5">
+                        <span className="bg-success/10 rounded px-1.5 py-0.5 text-xs">Active</span>
                       </TableCell>
                     </TableRow>
 
                     {/* AE Section Header */}
                     <TableRow className="bg-muted/50">
-                      <TableCell colSpan={4} className="font-semibold">
+                      <TableCell colSpan={4} className="font-bold text-xs py-1.5">
                         AE Outreach
                       </TableCell>
                     </TableRow>
 
                     <TableRow>
-                      <TableCell className="font-medium">Target Account Outreach</TableCell>
-                      <TableCell className="text-center">
-                        <div className="bg-muted rounded px-2 py-1 text-xs">From 2nd week</div>
+                      <TableCell className="text-xs py-1.5">Target Account Outreach</TableCell>
+                      <TableCell className="text-center py-1.5">
+                        <span className="bg-muted rounded px-1.5 py-0.5 text-xs">From 2nd wk</span>
                       </TableCell>
-                      <TableCell className="text-center">
-                        <div className="bg-muted rounded px-2 py-1 text-xs">Ongoing</div>
+                      <TableCell className="text-center py-1.5">
+                        <span className="bg-muted rounded px-1.5 py-0.5 text-xs">Ongoing</span>
                       </TableCell>
-                      <TableCell className="text-center">
-                        <div className="bg-muted rounded px-2 py-1 text-xs">Through End</div>
+                      <TableCell className="text-center py-1.5">
+                        <span className="bg-muted rounded px-1.5 py-0.5 text-xs">Through End</span>
                       </TableCell>
                     </TableRow>
                   </TableBody>
