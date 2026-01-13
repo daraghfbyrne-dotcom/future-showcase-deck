@@ -217,7 +217,7 @@ const PipelineTargets = () => {
                       <h4 className="font-semibold text-lg">AE Generated</h4>
                       <span className="text-2xl font-bold text-accent">€3.5M</span>
                     </div>
-                    <p className="text-sm text-muted-foreground">Hiring 2 additional Reps. Assume churn. Target to average 6 qualified opps per month from 5 sales reps = €650k per month pipeline. Oct/Nov run rate €500k per mth</p>
+                    <p className="text-sm text-muted-foreground">Target = average 1 Sales Lead per rep per month & 2 qualified opps to deliver €290k per month pipeline.</p>
                   </div>
 
                   <div className="bg-card rounded-lg p-6 border-l-4 border-success">
