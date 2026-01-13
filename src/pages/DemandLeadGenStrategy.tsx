@@ -455,7 +455,7 @@ const DemandLeadGenStrategy = () => {
           </div>
 
           {/* Pacing & Phasing */}
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-5xl mx-auto mb-16">
             <Card className="p-8">
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
@@ -481,6 +481,148 @@ const DemandLeadGenStrategy = () => {
                     )}
                   </div>
                 ))}
+              </div>
+            </Card>
+          </div>
+
+          {/* Q1 Campaign Calendar */}
+          <div className="max-w-5xl mx-auto">
+            <Card className="p-8">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                  <Calendar className="w-5 h-5 text-accent" />
+                </div>
+                <div>
+                  <h2 className="font-display text-2xl font-bold">Q1 2026 Campaign Calendar</h2>
+                  <p className="text-sm text-muted-foreground">Active campaigns running through Q1</p>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                {/* Content Campaigns */}
+                <div>
+                  <h3 className="font-semibold text-lg mb-4 flex items-center gap-2">
+                    <FileText className="w-5 h-5 text-primary" />
+                    Content Campaigns
+                  </h3>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="bg-primary/5 rounded-lg p-4 border border-primary/20">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="font-medium">eInvoicing Webinar, Blogs & Whitepaper</span>
+                        <Badge variant="outline" className="text-xs">Ongoing</Badge>
+                      </div>
+                      <p className="text-sm text-muted-foreground">2nd week January → End Q1</p>
+                    </div>
+                    <div className="bg-success/5 rounded-lg p-4 border border-success/20">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="font-medium">SourceForge Marketplace</span>
+                        <Badge variant="outline" className="text-xs">Ongoing</Badge>
+                      </div>
+                      <p className="text-sm text-muted-foreground">2nd last week January → End March</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Executive Dinners */}
+                <div>
+                  <h3 className="font-semibold text-lg mb-4 flex items-center gap-2">
+                    <Target className="w-5 h-5 text-accent" />
+                    Executive Dinners
+                  </h3>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="bg-accent/5 rounded-lg p-4 border border-accent/20">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="font-medium">Dublin Executive Dinner</span>
+                        <Badge className="bg-accent/20 text-accent border-0">10 Prospects</Badge>
+                      </div>
+                      <p className="text-sm text-muted-foreground">January 29th</p>
+                    </div>
+                    <div className="bg-accent/5 rounded-lg p-4 border border-accent/20">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="font-medium">London Executive Dinner (UK)</span>
+                        <Badge className="bg-accent/20 text-accent border-0">Executive</Badge>
+                      </div>
+                      <p className="text-sm text-muted-foreground">February 25th</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Webinars */}
+                <div>
+                  <h3 className="font-semibold text-lg mb-4 flex items-center gap-2">
+                    <Video className="w-5 h-5 text-warning" />
+                    Webinars
+                  </h3>
+                  <div className="grid md:grid-cols-3 gap-4">
+                    <div className="bg-warning/5 rounded-lg p-4 border border-warning/20">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="font-medium">January Webinar</span>
+                      </div>
+                      <p className="text-sm text-muted-foreground">January 21st</p>
+                    </div>
+                    <div className="bg-warning/5 rounded-lg p-4 border border-warning/20">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="font-medium">eInvoicing Webinar with PwC</span>
+                        <Badge variant="outline" className="text-xs">Customers & Prospects</Badge>
+                      </div>
+                      <p className="text-sm text-muted-foreground">February 26th</p>
+                    </div>
+                    <div className="bg-warning/5 rounded-lg p-4 border border-warning/20">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="font-medium">March Webinar</span>
+                      </div>
+                      <p className="text-sm text-muted-foreground">March 19th</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Conferences & Events */}
+                <div>
+                  <h3 className="font-semibold text-lg mb-4 flex items-center gap-2">
+                    <Globe className="w-5 h-5 text-success" />
+                    Conferences & Events
+                  </h3>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="bg-success/5 rounded-lg p-4 border border-success/20">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="font-medium">SSOW Orlando</span>
+                        <Badge className="bg-success/20 text-success border-0">Conference</Badge>
+                      </div>
+                      <p className="text-sm text-muted-foreground">March 17th - 19th</p>
+                    </div>
+                    <div className="bg-success/5 rounded-lg p-4 border border-success/20">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="font-medium">Lumenia HeadtoHead Birmingham</span>
+                        <Badge className="bg-success/20 text-success border-0">Conference</Badge>
+                      </div>
+                      <p className="text-sm text-muted-foreground">March 24th - 25th</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Sales Campaigns */}
+                <div>
+                  <h3 className="font-semibold text-lg mb-4 flex items-center gap-2">
+                    <Target className="w-5 h-5 text-primary" />
+                    Sales Campaigns
+                  </h3>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="bg-muted/50 rounded-lg p-4 border border-dashed">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="font-medium text-muted-foreground">SDR Campaigns</span>
+                        <Badge variant="outline" className="text-xs">TBD</Badge>
+                      </div>
+                      <p className="text-sm text-muted-foreground italic">Space reserved for SDR campaign details</p>
+                    </div>
+                    <div className="bg-primary/5 rounded-lg p-4 border border-primary/20">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="font-medium">AE Target Account Outreach</span>
+                        <Badge variant="outline" className="text-xs">Ongoing</Badge>
+                      </div>
+                      <p className="text-sm text-muted-foreground">2nd week January → End March</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </Card>
           </div>
