@@ -189,7 +189,7 @@ const PipelineTargets = () => {
                   </div>
                   <div className="flex flex-col justify-between text-center p-4 bg-card rounded-lg border border-chart-4/30 min-h-[120px] min-w-[180px]">
                     <div className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Avg Monthly Pipeline Required</div>
-                    <div className="text-3xl font-bold text-chart-4 mt-auto">€1.86M</div>
+                    <div className="text-3xl font-bold text-chart-4 mt-auto">€1.75M</div>
                   </div>
                 </div>
 
