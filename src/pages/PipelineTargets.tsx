@@ -164,8 +164,8 @@ const PipelineTargets = () => {
               <div className="mb-8">
                 <KeyPointsSummary
                   points={[
-                    "€22.3M incremental pipeline required to hit €3.8M ARR target",
-                    "SDR largest channel at €7.3M with 6 opps/month target",
+                    "€21.1M incremental pipeline required to hit €3.8M ARR target",
+                    "SDR largest channel at €6.1M with 5 opps/month target",
                     "Marketing contributing €7.5M through proven channels",
                     "Partnerships targeting €4.1M including Tungsten Alliance"
                   ]}
