@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
+import { downloadMarkdown } from "@/utils/exportContent";
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -58,6 +59,15 @@ export const Navigation = () => {
                 </Button>
               </Link>
             ))}
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={downloadMarkdown}
+              className="ml-2 gap-2"
+            >
+              <Download className="h-4 w-4" />
+              Export
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -87,6 +97,14 @@ export const Navigation = () => {
                   </Button>
                 </Link>
               ))}
+              <Button
+                variant="outline"
+                onClick={downloadMarkdown}
+                className="w-full justify-start gap-2"
+              >
+                <Download className="h-4 w-4" />
+                Export All Content
+              </Button>
             </div>
           </div>
         )}
