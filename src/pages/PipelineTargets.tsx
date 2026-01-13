@@ -207,9 +207,9 @@ const PipelineTargets = () => {
                   <div className="bg-card rounded-lg p-6 border-l-4 border-primary">
                     <div className="flex items-center justify-between mb-2">
                       <h4 className="font-semibold text-lg">SDR</h4>
-                      <span className="text-2xl font-bold text-primary">€7.3M</span>
+                      <span className="text-2xl font-bold text-primary">€6.1M</span>
                     </div>
-                    <p className="text-sm text-muted-foreground">1 Additional SDR. 6 Opps per month pure outbound = €650k per mth pipeline. Q4 2025 Run Rate €500k pm. Av Deal size €95k.</p>
+                    <p className="text-sm text-muted-foreground">2 Additional SDRs. 5 Opps per month pure outbound = €510k per mth pipeline. Nov/Dec 2025 Run Rate €500k pm. Av Deal size €95k.</p>
                   </div>
 
                   <div className="bg-card rounded-lg p-6 border-l-4 border-accent">
