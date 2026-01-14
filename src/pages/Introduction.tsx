@@ -125,20 +125,17 @@ const Introduction = () => {
                   className="group"
                 >
                   <Card className="h-full border-border hover:border-primary/50 hover:shadow-lg transition-all hover-scale bg-card/80 backdrop-blur-sm">
-                    <CardContent className="p-4">
-                      <div className="flex items-start gap-3">
-                        <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors flex-shrink-0">
+                    <CardContent className="p-4 h-full">
+                      <div className="flex flex-col h-full">
+                        <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors mb-3">
                           <Icon className="w-4 h-4 text-primary" />
                         </div>
-                        <div className="flex-1 min-w-0">
-                          <h3 className="font-semibold text-sm leading-tight group-hover:text-primary transition-colors">
-                            {item.title}
-                          </h3>
-                          <p className="text-xs text-muted-foreground mt-0.5 leading-tight">
-                            {item.description}
-                          </p>
-                        </div>
-                        <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-0.5 transition-all flex-shrink-0 mt-0.5" />
+                        <h3 className="font-semibold text-sm leading-tight group-hover:text-primary transition-colors mb-1">
+                          {item.title}
+                        </h3>
+                        <p className="text-xs text-muted-foreground leading-tight flex-1">
+                          {item.description}
+                        </p>
                       </div>
                     </CardContent>
                   </Card>
