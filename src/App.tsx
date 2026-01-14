@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Introduction from "./pages/Introduction";
 import Index from "./pages/Index";
 import PipelineTargets from "./pages/PipelineTargets";
 import DemandLeadGenStrategy from "./pages/DemandLeadGenStrategy";
@@ -25,7 +26,8 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
+          <Route path="/" element={<Introduction />} />
+          <Route path="/strategy" element={<Index />} />
           <Route path="/pipeline-targets" element={<PipelineTargets />} />
           <Route path="/demand-lead-gen" element={<DemandLeadGenStrategy />} />
           <Route path="/events-strategy" element={<EventsStrategy />} />

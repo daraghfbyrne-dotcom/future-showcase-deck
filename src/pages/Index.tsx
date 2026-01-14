@@ -1,6 +1,5 @@
 import { TrendingUp, Target, Users, Zap, FileText, CheckCircle2 } from "lucide-react";
 import { Hero } from "@/components/sections/Hero";
-import { CoverPage } from "@/components/sections/CoverPage";
 import { Navigation } from "@/components/Navigation";
 import { Card, CardContent } from "@/components/ui/card";
 import { KeyPointsSummary } from "@/components/KeyPointsSummary";
@@ -21,7 +20,6 @@ const Index = () => {
       <Navigation />
       
       <main>
-        <CoverPage />
         <Hero />
         {/* Key Points Summary */}
         <section className="py-8 px-6">
