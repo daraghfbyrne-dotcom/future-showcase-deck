@@ -404,71 +404,28 @@ export const PipelineConversion = () => {
                           </div>
                         </AccordionTrigger>
                         <AccordionContent className="pt-4 pb-6">
-                          <div className="grid gap-6 md:grid-cols-2">
-                            {/* Sales Actions */}
-                            <div>
-                              <h4 className="font-semibold text-sm text-primary mb-3 flex items-center gap-2">
-                                <span className="w-2 h-2 rounded-full bg-primary"></span>
-                                Sales Actions
-                              </h4>
-                              <div className="space-y-3">
-                                {stage.actions
-                                  .filter((a) => a.category === "sales")
-                                  .map((action) => (
-                                    <div key={action.id} className="flex items-start gap-3">
-                                      <Checkbox
-                                        id={action.id}
-                                        checked={checkedItems[action.id] || false}
-                                        onCheckedChange={(checked) =>
-                                          handleCheckChange(action.id, checked as boolean)
-                                        }
-                                      />
-                                      <label
-                                        htmlFor={action.id}
-                                        className={`text-sm cursor-pointer leading-tight ${
-                                          checkedItems[action.id]
-                                            ? "text-muted-foreground line-through"
-                                            : ""
-                                        }`}
-                                      >
-                                        {action.text}
-                                      </label>
-                                    </div>
-                                  ))}
+                          <div className="grid gap-3 sm:grid-cols-2">
+                            {stage.actions.map((action) => (
+                              <div key={action.id} className="flex items-start gap-3">
+                                <Checkbox
+                                  id={action.id}
+                                  checked={checkedItems[action.id] || false}
+                                  onCheckedChange={(checked) =>
+                                    handleCheckChange(action.id, checked as boolean)
+                                  }
+                                />
+                                <label
+                                  htmlFor={action.id}
+                                  className={`text-sm cursor-pointer leading-tight ${
+                                    checkedItems[action.id]
+                                      ? "text-muted-foreground line-through"
+                                      : ""
+                                  }`}
+                                >
+                                  {action.text}
+                                </label>
                               </div>
-                            </div>
-                            {/* Marketing Actions */}
-                            <div>
-                              <h4 className="font-semibold text-sm text-emerald-600 mb-3 flex items-center gap-2">
-                                <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
-                                Marketing Actions
-                              </h4>
-                              <div className="space-y-3">
-                                {stage.actions
-                                  .filter((a) => a.category === "marketing")
-                                  .map((action) => (
-                                    <div key={action.id} className="flex items-start gap-3">
-                                      <Checkbox
-                                        id={action.id}
-                                        checked={checkedItems[action.id] || false}
-                                        onCheckedChange={(checked) =>
-                                          handleCheckChange(action.id, checked as boolean)
-                                        }
-                                      />
-                                      <label
-                                        htmlFor={action.id}
-                                        className={`text-sm cursor-pointer leading-tight ${
-                                          checkedItems[action.id]
-                                            ? "text-muted-foreground line-through"
-                                            : ""
-                                        }`}
-                                      >
-                                        {action.text}
-                                      </label>
-                                    </div>
-                                  ))}
-                              </div>
-                            </div>
+                            ))}
                           </div>
                         </AccordionContent>
                       </AccordionItem>
