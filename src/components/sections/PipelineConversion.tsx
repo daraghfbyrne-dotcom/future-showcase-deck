@@ -127,6 +127,7 @@ const pipelineData: StageData[] = [
       { id: "5-6-s2", text: "ROI Calculator - High level", category: "sales" },
       { id: "5-6-s3", text: "ROI Calculator - Detailed analysis", category: "sales" },
       { id: "5-6-s4", text: "Face To Face Engagement", category: "sales" },
+      { id: "5-6-s5", text: "Executive Bridge", category: "sales" },
       { id: "5-6-m1", text: "Pre-canned webinars (ROI, Implementation)", category: "marketing" },
       { id: "5-6-m2", text: "Success Stories", category: "marketing" },
       { id: "5-6-m3", text: "Videos", category: "marketing" },
