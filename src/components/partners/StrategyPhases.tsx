@@ -1,42 +1,68 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle2, Users, Package, Store } from "lucide-react";
+import { CheckCircle2, Users, Package, Store, LucideIcon } from "lucide-react";
+import { usePartnerStrategySection } from "@/hooks/usePartnerStrategyContent";
+
+interface Phase {
+  number: number;
+  title: string;
+  timing: string;
+  description: string;
+  iconType?: string;
+  status: "active" | "upcoming" | "future";
+}
+
+interface StrategyPhasesContent {
+  phases?: Phase[];
+}
+
+const iconMap: Record<string, LucideIcon> = {
+  CheckCircle2,
+  Users,
+  Package,
+  Store,
+};
+
+const defaultPhases: Phase[] = [
+  {
+    number: 1,
+    title: "Maximize Existing Partnerships",
+    timing: "H2 2025",
+    description: "Unlock value from current partnerships (PwC, Tungsten, Interpath) through structured enablement, QBRs, and performance tracking.",
+    iconType: "CheckCircle2",
+    status: "active",
+  },
+  {
+    number: 2,
+    title: "Build Referral & Co-sell Partners",
+    timing: "H2 2025 – 2026",
+    description: "Onboard 2-3 high-potential referral partners with 15-20% Year 1 SaaS referral fees. Low-risk, high-impact warm pipeline generation.",
+    iconType: "Users",
+    status: "upcoming",
+  },
+  {
+    number: 3,
+    title: "Explore OEM Opportunities",
+    timing: "H2 2025",
+    description: "License SoftCo's AI-led invoice matching, coding, and routing services to complementary software vendors at the API level.",
+    iconType: "Package",
+    status: "upcoming",
+  },
+  {
+    number: 4,
+    title: "Expand to VARs",
+    timing: "H2 2026",
+    description: "Once internal enablement infrastructure is in place, onboard 1 VAR in late 2026 / early 2027, focusing on quality and alignment.",
+    iconType: "Store",
+    status: "future",
+  },
+];
 
 const StrategyPhases = () => {
-  const phases = [
-    {
-      number: 1,
-      title: "Maximize Existing Partnerships",
-      timing: "H2 2025",
-      description: "Unlock value from current partnerships (PwC, Tungsten, Interpath) through structured enablement, QBRs, and performance tracking.",
-      icon: CheckCircle2,
-      status: "active",
-    },
-    {
-      number: 2,
-      title: "Build Referral & Co-sell Partners",
-      timing: "H2 2025 – 2026",
-      description: "Onboard 2-3 high-potential referral partners with 15-20% Year 1 SaaS referral fees. Low-risk, high-impact warm pipeline generation.",
-      icon: Users,
-      status: "upcoming",
-    },
-    {
-      number: 3,
-      title: "Explore OEM Opportunities",
-      timing: "H2 2025",
-      description: "License SoftCo's AI-led invoice matching, coding, and routing services to complementary software vendors at the API level.",
-      icon: Package,
-      status: "upcoming",
-    },
-    {
-      number: 4,
-      title: "Expand to VARs",
-      timing: "H2 2026",
-      description: "Once internal enablement infrastructure is in place, onboard 1 VAR in late 2026 / early 2027, focusing on quality and alignment.",
-      icon: Store,
-      status: "future",
-    },
-  ];
+  const { data: section } = usePartnerStrategySection("strategy_phases");
+  
+  const content = section?.content as StrategyPhasesContent | undefined;
+  const phases = (content?.phases && content.phases.length > 0) ? content.phases : defaultPhases;
 
   return (
     <section id="strategy-phases" className="space-y-6">
@@ -47,7 +73,7 @@ const StrategyPhases = () => {
 
       <div className="grid md:grid-cols-2 gap-4">
         {phases.map((phase) => {
-          const Icon = phase.icon;
+          const Icon = iconMap[phase.iconType || "CheckCircle2"] || CheckCircle2;
           return (
             <Card 
               key={phase.number} 

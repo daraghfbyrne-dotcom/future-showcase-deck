@@ -1,15 +1,44 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Users, Target, TrendingUp, AlertTriangle } from "lucide-react";
+import { usePartnerStrategySection } from "@/hooks/usePartnerStrategyContent";
 
-const PartnerHero = () => {
-  const keyPrinciples = [
+interface OverviewContent {
+  headline?: string;
+  description?: string;
+  disclaimer?: string;
+  vcpTargets?: {
+    arrFromPartners?: string;
+    partnerImplementationDays?: string;
+  };
+  keyPrinciples?: string[];
+}
+
+const defaultContent: OverviewContent = {
+  headline: "SoftCo Partner Strategy",
+  description: "Building a scalable partner ecosystem to drive >30% of new ARR by 2029",
+  disclaimer: "This Partnership Document (19/12/25) assumes a standard partnership with Tungsten Automation delivering similar levels of pipeline. This document will be updated when the outcome of Tungsten negotiations are completed.",
+  vcpTargets: {
+    arrFromPartners: ">30%",
+    partnerImplementationDays: ">80%",
+  },
+  keyPrinciples: [
     "Start with low-lift, high-impact models (referral, co-sell)",
     "Lay the groundwork for more complex models (VARs, SIs)",
     "Validate other models – eg OEM-out",
     "Deliver scalable enablement, feedback, and governance",
     "Continually evaluate and iterate",
-  ];
+  ],
+};
+
+const PartnerHero = () => {
+  const { data: section, isLoading } = usePartnerStrategySection("overview");
+  
+  const content: OverviewContent = section?.content 
+    ? { ...defaultContent, ...(section.content as OverviewContent) }
+    : defaultContent;
+
+  const keyPrinciples = content.keyPrinciples || defaultContent.keyPrinciples || [];
 
   return (
     <section id="partner-overview" className="space-y-8">
@@ -18,11 +47,16 @@ const PartnerHero = () => {
           2025-2026 Strategy
         </Badge>
         <h1 className="text-4xl md:text-5xl font-bold text-slate-900">
-          SoftCo Partner Strategy
+          {content.headline}
         </h1>
         <p className="text-slate-600 max-w-3xl mx-auto text-lg">
-          Building a scalable partner ecosystem to drive &gt;30% of new ARR by 2029
+          {content.description}
         </p>
+        {section?.last_synced_at && (
+          <p className="text-xs text-slate-400">
+            Last synced: {new Date(section.last_synced_at).toLocaleDateString()}
+          </p>
+        )}
       </div>
 
       {/* Disclaimer */}
@@ -31,9 +65,7 @@ const PartnerHero = () => {
           <div className="flex items-start gap-3">
             <AlertTriangle className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
             <p className="text-amber-800 text-sm">
-              This Partnership Document (19/12/25) assumes a standard partnership with Tungsten Automation 
-              delivering similar levels of pipeline. This document will be updated when the outcome of 
-              Tungsten negotiations are completed.
+              {content.disclaimer}
             </p>
           </div>
         </CardContent>
@@ -52,11 +84,15 @@ const PartnerHero = () => {
             <div className="space-y-3">
               <div className="flex items-center justify-between p-3 bg-white rounded-lg border border-slate-200">
                 <span className="text-slate-700">ARR from Partners</span>
-                <span className="text-2xl font-bold text-blue-600">&gt;30%</span>
+                <span className="text-2xl font-bold text-blue-600">
+                  {content.vcpTargets?.arrFromPartners || ">30%"}
+                </span>
               </div>
               <div className="flex items-center justify-between p-3 bg-white rounded-lg border border-slate-200">
                 <span className="text-slate-700">Partner Implementation Days</span>
-                <span className="text-2xl font-bold text-green-600">&gt;80%</span>
+                <span className="text-2xl font-bold text-green-600">
+                  {content.vcpTargets?.partnerImplementationDays || ">80%"}
+                </span>
               </div>
             </div>
           </CardContent>

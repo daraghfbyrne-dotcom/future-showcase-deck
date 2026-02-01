@@ -1,16 +1,40 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { TrendingUp } from "lucide-react";
+import { usePartnerStrategySection } from "@/hooks/usePartnerStrategyContent";
+
+interface ARRDataRow {
+  year: number;
+  contribution: string;
+  arrTotal: string;
+  arrPartners: string;
+  conversion: string;
+  pipeline: string;
+  actual?: boolean;
+}
+
+interface ARRContent {
+  title?: string;
+  subtitle?: string;
+  timeline?: ARRDataRow[];
+}
+
+const defaultTimeline: ARRDataRow[] = [
+  { year: 2024, contribution: "14%", arrTotal: "€3.12m", arrPartners: "€0.43m", conversion: "20%", pipeline: "€2.20m", actual: true },
+  { year: 2025, contribution: "15%", arrTotal: "€4.2m", arrPartners: "€0.63m", conversion: "25%", pipeline: "€2.52m", actual: false },
+  { year: 2026, contribution: "17%", arrTotal: "€4.5m", arrPartners: "€0.77m", conversion: "26%", pipeline: "€2.94m", actual: false },
+  { year: 2027, contribution: "25%", arrTotal: "€4.7m", arrPartners: "€1.18m", conversion: "27%", pipeline: "€4.35m", actual: false },
+  { year: 2028, contribution: "27%", arrTotal: "€5.0m", arrPartners: "€1.35m", conversion: "28%", pipeline: "€4.82m", actual: false },
+  { year: 2029, contribution: "30%", arrTotal: "€5.3m", arrPartners: "€1.59m", conversion: "30%", pipeline: "€5.30m", actual: false },
+];
 
 const ARRContribution = () => {
-  const arrData = [
-    { year: 2024, contribution: "14%", arrTotal: "€3.12m", arrPartners: "€0.43m", conversion: "20%", pipeline: "€2.20m", actual: true },
-    { year: 2025, contribution: "15%", arrTotal: "€4.2m", arrPartners: "€0.63m", conversion: "25%", pipeline: "€2.52m", actual: false },
-    { year: 2026, contribution: "17%", arrTotal: "€4.5m", arrPartners: "€0.77m", conversion: "26%", pipeline: "€2.94m", actual: false },
-    { year: 2027, contribution: "25%", arrTotal: "€4.7m", arrPartners: "€1.18m", conversion: "27%", pipeline: "€4.35m", actual: false },
-    { year: 2028, contribution: "27%", arrTotal: "€5.0m", arrPartners: "€1.35m", conversion: "28%", pipeline: "€4.82m", actual: false },
-    { year: 2029, contribution: "30%", arrTotal: "€5.3m", arrPartners: "€1.59m", conversion: "30%", pipeline: "€5.30m", actual: false },
-  ];
+  const { data: section } = usePartnerStrategySection("arr_contribution");
+  
+  const content = section?.content as ARRContent | undefined;
+  const arrData = (content?.timeline && content.timeline.length > 0) ? content.timeline : defaultTimeline;
+  const title = content?.title || "Partner Contribution to Pipeline & ARR";
+  const subtitle = content?.subtitle || "Building to 30% ARR contribution by 2029 as Closed Won ratio improves to 30%";
 
   return (
     <section id="arr-contribution" className="space-y-6">
@@ -23,10 +47,10 @@ const ARRContribution = () => {
         <CardHeader className="border-b border-slate-200 bg-slate-50">
           <CardTitle className="flex items-center gap-2 text-slate-900">
             <TrendingUp className="h-5 w-5 text-green-600" />
-            Partner Contribution to Pipeline & ARR
+            {title}
           </CardTitle>
           <p className="text-sm text-slate-600">
-            Building to 30% ARR contribution by 2029 as Closed Won ratio improves to 30%
+            {subtitle}
           </p>
         </CardHeader>
         <CardContent className="pt-0">
