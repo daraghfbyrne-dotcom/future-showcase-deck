@@ -1,1 +1,4 @@
 project_id = "bglzselayvzzkbkffyll"
+
+[functions.sync-partner-strategy]
+verify_jwt = false
