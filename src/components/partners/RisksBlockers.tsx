@@ -1,41 +1,59 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AlertTriangle, Shield } from "lucide-react";
+import { usePartnerStrategySection } from "@/hooks/usePartnerStrategyContent";
+
+interface Risk {
+  risk: string;
+  impact: string;
+  mitigation: string;
+}
+
+interface RisksContent {
+  risks?: Risk[];
+  otherChecks?: string[];
+}
+
+const defaultRisks: Risk[] = [
+  {
+    risk: "Tungsten Partnership Loss",
+    impact: "Loss of a major partnership could leave a significant gap in expected influenced pipeline and ARR for the year.",
+    mitigation: "Diversify partner ecosystem & don't be over reliant on TA. Build a healthy pipeline of potential partners to replace if needed. Secure quick wins from existing partners (PwC, Xelix) while pursuing new ones.",
+  },
+  {
+    risk: "Partners Don't Generate Expected Pipeline",
+    impact: "Underperformance would slow ARR growth and make it harder to hit the >30% ARR contribution goal by 2029.",
+    mitigation: "Rigorously qualify new partners for ICP fit and market reach. Use clear QBRs, joint business plans, and scorecards to monitor and address underperformance. Replace low performers quickly.",
+  },
+  {
+    risk: "Channel Conflict with Direct Sales",
+    impact: "Risk of internal friction, disputes over deals, or lost sales if partners and direct sales teams compete for the same accounts.",
+    mitigation: "Have clear rules of engagement and deal registration in the partner portal. Develop incentive structures that encourage sales teams to co-sell with partners. Ensure there is escalation procedure in place.",
+  },
+  {
+    risk: "Quality Issues in Partner-led Deals",
+    impact: "Poor delivery or misrepresentation could damage SoftCo's reputation and result in unhappy customers.",
+    mitigation: "Enforce a structured certification program for partners (sales & technical). Start new partners with referral/co-sell & only allow delivery once certified. Co-deliver or closely shadow early partner-led implementations.",
+  },
+  {
+    risk: "Delays in Enablement Rollout",
+    impact: "Slow rollout of partner portal, training, or onboarding could delay the impact and scaling of the partner channel.",
+    mitigation: "Hiring is key. Prioritise Ops input for certification framework. Pilot enablement with a small group before rolling out at scale. Track CSAT on partner projects to catch issues early.",
+  },
+];
+
+const defaultOtherChecks: string[] = [
+  "Financial stability, reputation, compliance checks",
+  "Exit strategy for winding down underperforming partnerships",
+  "IP protection safeguards for sharing technical information",
+  "Compliance framework to ensure partners meet regulatory requirements",
+];
 
 const RisksBlockers = () => {
-  const risks = [
-    {
-      risk: "Tungsten Partnership Loss",
-      impact: "Loss of a major partnership could leave a significant gap in expected influenced pipeline and ARR for the year.",
-      mitigation: "Diversify partner ecosystem & don't be over reliant on TA. Build a healthy pipeline of potential partners to replace if needed. Secure quick wins from existing partners (PwC, Xelix) while pursuing new ones.",
-    },
-    {
-      risk: "Partners Don't Generate Expected Pipeline",
-      impact: "Underperformance would slow ARR growth and make it harder to hit the >30% ARR contribution goal by 2029.",
-      mitigation: "Rigorously qualify new partners for ICP fit and market reach. Use clear QBRs, joint business plans, and scorecards to monitor and address underperformance. Replace low performers quickly.",
-    },
-    {
-      risk: "Channel Conflict with Direct Sales",
-      impact: "Risk of internal friction, disputes over deals, or lost sales if partners and direct sales teams compete for the same accounts.",
-      mitigation: "Have clear rules of engagement and deal registration in the partner portal. Develop incentive structures that encourage sales teams to co-sell with partners. Ensure there is escalation procedure in place.",
-    },
-    {
-      risk: "Quality Issues in Partner-led Deals",
-      impact: "Poor delivery or misrepresentation could damage SoftCo's reputation and result in unhappy customers.",
-      mitigation: "Enforce a structured certification program for partners (sales & technical). Start new partners with referral/co-sell & only allow delivery once certified. Co-deliver or closely shadow early partner-led implementations.",
-    },
-    {
-      risk: "Delays in Enablement Rollout",
-      impact: "Slow rollout of partner portal, training, or onboarding could delay the impact and scaling of the partner channel.",
-      mitigation: "Hiring is key. Prioritise Ops input for certification framework. Pilot enablement with a small group before rolling out at scale. Track CSAT on partner projects to catch issues early.",
-    },
-  ];
-
-  const otherChecks = [
-    "Financial stability, reputation, compliance checks",
-    "Exit strategy for winding down underperforming partnerships",
-    "IP protection safeguards for sharing technical information",
-    "Compliance framework to ensure partners meet regulatory requirements",
-  ];
+  const { data: section } = usePartnerStrategySection("risks");
+  
+  const content = section?.content as RisksContent | undefined;
+  const risks = (content?.risks && content.risks.length > 0) ? content.risks : defaultRisks;
+  const otherChecks = (content?.otherChecks && content.otherChecks.length > 0) ? content.otherChecks : defaultOtherChecks;
 
   return (
     <section id="risks" className="space-y-6">

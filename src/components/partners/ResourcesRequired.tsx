@@ -2,43 +2,68 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { Users2, ArrowRight } from "lucide-react";
+import { usePartnerStrategySection } from "@/hooks/usePartnerStrategyContent";
+
+interface Resource {
+  role: string;
+  fte: number;
+  timing: string;
+  rationale: string;
+}
+
+interface ResourcesContent {
+  originalPlan?: Resource[];
+  updatedPlan?: Resource[];
+  updateDate?: string;
+}
+
+const defaultOriginalPlan: Resource[] = [
+  {
+    role: "Partner Managers",
+    fte: 2,
+    timing: "H1 2026",
+    rationale: "Day-to-day relationship management for referrals, co-sell and early VAR/SI partners. Manages deal registration, MDF budgeting/tracking, reporting systems.",
+  },
+  {
+    role: "Partner Enablement Manager",
+    fte: 1,
+    timing: "H2 2025",
+    rationale: "Develops training curricula, certification, and partner portal content.",
+  },
+  {
+    role: "Content Executive",
+    fte: 0.5,
+    timing: "H2 2025",
+    rationale: "Builds on-demand modules, partner-facing sales material (being hired in Kosovo & in budget).",
+  },
+];
+
+const defaultUpdatedPlan: Resource[] = [
+  {
+    role: "Partner Manager",
+    fte: 1,
+    timing: "H1 2026",
+    rationale: "Day-to-day relationship management focusing on Tungsten Automation primarily. Manages deal registration, MDF budgeting/tracking, reporting systems.",
+  },
+  {
+    role: "Content Manager",
+    fte: 0.1,
+    timing: "H1 2026",
+    rationale: "Builds on-demand modules, partner-facing sales material.",
+  },
+];
 
 const ResourcesRequired = () => {
-  const originalPlan = [
-    {
-      role: "Partner Managers",
-      fte: 2,
-      timing: "H1 2026",
-      rationale: "Day-to-day relationship management for referrals, co-sell and early VAR/SI partners. Manages deal registration, MDF budgeting/tracking, reporting systems.",
-    },
-    {
-      role: "Partner Enablement Manager",
-      fte: 1,
-      timing: "H2 2025",
-      rationale: "Develops training curricula, certification, and partner portal content.",
-    },
-    {
-      role: "Content Executive",
-      fte: 0.5,
-      timing: "H2 2025",
-      rationale: "Builds on-demand modules, partner-facing sales material (being hired in Kosovo & in budget).",
-    },
-  ];
+  const { data: section } = usePartnerStrategySection("resources");
+  
+  const content = section?.content as ResourcesContent | undefined;
+  const originalPlan = (content?.originalPlan && content.originalPlan.length > 0) ? content.originalPlan : defaultOriginalPlan;
+  const updatedPlan = (content?.updatedPlan && content.updatedPlan.length > 0) ? content.updatedPlan : defaultUpdatedPlan;
+  const updateDate = content?.updateDate || "January 2026";
 
-  const updatedPlan = [
-    {
-      role: "Partner Manager",
-      fte: 1,
-      timing: "H1 2026",
-      rationale: "Day-to-day relationship management focusing on Tungsten Automation primarily. Manages deal registration, MDF budgeting/tracking, reporting systems.",
-    },
-    {
-      role: "Content Manager",
-      fte: 0.1,
-      timing: "H1 2026",
-      rationale: "Builds on-demand modules, partner-facing sales material.",
-    },
-  ];
+  const originalTotal = originalPlan.reduce((sum, r) => sum + r.fte, 0);
+  const updatedTotal = updatedPlan.reduce((sum, r) => sum + r.fte, 0);
+  const fteChange = updatedTotal - originalTotal;
 
   return (
     <section id="resources" className="space-y-6">
@@ -46,7 +71,7 @@ const ResourcesRequired = () => {
         <div className="h-8 w-1 bg-gradient-to-b from-indigo-500 to-violet-500 rounded-full" />
         <h2 className="text-2xl font-bold text-slate-900">Incremental Resources Required</h2>
         <Badge className="bg-amber-500 text-white hover:bg-amber-600">Updated</Badge>
-        <Badge variant="outline" className="border-slate-400 text-slate-600">January 2026</Badge>
+        <Badge variant="outline" className="border-slate-400 text-slate-600">{updateDate}</Badge>
       </div>
 
       <div className="grid lg:grid-cols-2 gap-6">
@@ -92,7 +117,7 @@ const ResourcesRequired = () => {
             </div>
             <div className="mt-4 pt-4 border-t border-slate-200">
               <p className="text-sm text-slate-500">
-                <span className="font-semibold">Total FTE:</span> 3.5
+                <span className="font-semibold">Total FTE:</span> {originalTotal}
               </p>
             </div>
           </CardContent>
@@ -104,7 +129,7 @@ const ResourcesRequired = () => {
             <CardTitle className="flex items-center gap-2 text-slate-900">
               <Users2 className="h-5 w-5 text-emerald-600" />
               Updated Plan
-              <Badge className="bg-emerald-500 text-white ml-auto">January 2026</Badge>
+              <Badge className="bg-emerald-500 text-white ml-auto">{updateDate}</Badge>
             </CardTitle>
           </CardHeader>
           <CardContent className="pt-0">
@@ -140,7 +165,7 @@ const ResourcesRequired = () => {
             </div>
             <div className="mt-4 pt-4 border-t border-emerald-200">
               <p className="text-sm text-emerald-700">
-                <span className="font-semibold">Total FTE:</span> 1.1
+                <span className="font-semibold">Total FTE:</span> {updatedTotal}
               </p>
             </div>
           </CardContent>
@@ -153,16 +178,16 @@ const ResourcesRequired = () => {
           <div className="flex items-center justify-center gap-4 text-sm">
             <div className="flex items-center gap-2">
               <span className="font-semibold text-slate-700">Original:</span>
-              <Badge variant="outline" className="border-slate-400 text-slate-600">3.5 FTE</Badge>
+              <Badge variant="outline" className="border-slate-400 text-slate-600">{originalTotal} FTE</Badge>
             </div>
             <ArrowRight className="h-4 w-4 text-slate-400" />
             <div className="flex items-center gap-2">
               <span className="font-semibold text-emerald-700">Updated:</span>
-              <Badge className="bg-emerald-500 text-white">1.1 FTE</Badge>
+              <Badge className="bg-emerald-500 text-white">{updatedTotal} FTE</Badge>
             </div>
             <div className="flex items-center gap-2 ml-4 pl-4 border-l border-slate-300">
               <span className="font-semibold text-slate-700">Change:</span>
-              <Badge className="bg-rose-100 text-rose-700">-2.4 FTE</Badge>
+              <Badge className="bg-rose-100 text-rose-700">{fteChange > 0 ? '+' : ''}{fteChange} FTE</Badge>
             </div>
           </div>
         </CardContent>
