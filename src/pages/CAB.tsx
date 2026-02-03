@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Users, Calendar, Clock, Target, Globe, MapPin, Building2, CheckCircle2 } from "lucide-react";
+import { Users, Calendar, Clock, Target, Globe, MapPin, Building2, CheckCircle2, Filter } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { KeyPointsSummary } from "@/components/KeyPointsSummary";
 import { Badge } from "@/components/ui/badge";
@@ -71,6 +71,16 @@ const statusOptions: { value: StatusType; label: string; color: string }[] = [
 const CAB = () => {
   const [euCabMembers, setEuCabMembers] = useState(initialEuCabMembers);
   const [naCabMembers, setNaCabMembers] = useState(initialNaCabMembers);
+  const [euStatusFilter, setEuStatusFilter] = useState<StatusType | "All">("All");
+  const [naStatusFilter, setNaStatusFilter] = useState<StatusType | "All">("All");
+
+  const filteredEuMembers = euStatusFilter === "All" 
+    ? euCabMembers 
+    : euCabMembers.filter(m => m.status === euStatusFilter);
+
+  const filteredNaMembers = naStatusFilter === "All" 
+    ? naCabMembers 
+    : naCabMembers.filter(m => m.status === naStatusFilter);
 
   const updateEuMemberStatus = (index: number, newStatus: StatusType) => {
     setEuCabMembers(prev => prev.map((member, i) => 
@@ -272,10 +282,31 @@ const CAB = () => {
           <div className="grid lg:grid-cols-2 gap-6">
             <Card className="bg-white border-gray-200">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-lg">
-                  <MapPin className="h-5 w-5 text-green-500" />
-                  European CAB Members
-                </CardTitle>
+                <div className="flex items-center justify-between">
+                  <CardTitle className="flex items-center gap-2 text-lg">
+                    <MapPin className="h-5 w-5 text-green-500" />
+                    European CAB Members
+                  </CardTitle>
+                  <div className="flex items-center gap-2">
+                    <Filter className="h-4 w-4 text-gray-400" />
+                    {(["All", "Confirmed", "Pending", "Declined"] as const).map((status) => (
+                      <button
+                        key={status}
+                        onClick={() => setEuStatusFilter(status)}
+                        className={`px-3 py-1 text-xs rounded-full transition-colors ${
+                          euStatusFilter === status
+                            ? status === "All" ? "bg-gray-800 text-white" 
+                              : status === "Confirmed" ? "bg-emerald-500 text-white"
+                              : status === "Pending" ? "bg-amber-500 text-white"
+                              : "bg-red-500 text-white"
+                            : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                        }`}
+                      >
+                        {status}
+                      </button>
+                    ))}
+                  </div>
+                </div>
                 <CardDescription>Proposed & current members for EU board</CardDescription>
               </CardHeader>
               <CardContent>
@@ -289,7 +320,7 @@ const CAB = () => {
                       </TableRow>
                     </TableHeader>
                     <TableBody>
-                      {euCabMembers.map((member, index) => (
+                      {filteredEuMembers.map((member, index) => (
                         <TableRow key={index} className="border-gray-200 hover:bg-gray-50">
                           <TableCell className="font-medium text-gray-900 text-sm">{member.company}</TableCell>
                           <TableCell className="text-gray-600 text-sm">{member.industry}</TableCell>
@@ -325,10 +356,31 @@ const CAB = () => {
 
             <Card className="bg-white border-gray-200">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-lg">
-                  <Building2 className="h-5 w-5 text-blue-500" />
-                  North America CAB Members
-                </CardTitle>
+                <div className="flex items-center justify-between">
+                  <CardTitle className="flex items-center gap-2 text-lg">
+                    <Building2 className="h-5 w-5 text-blue-500" />
+                    North America CAB Members
+                  </CardTitle>
+                  <div className="flex items-center gap-2">
+                    <Filter className="h-4 w-4 text-gray-400" />
+                    {(["All", "Confirmed", "Pending", "Declined"] as const).map((status) => (
+                      <button
+                        key={status}
+                        onClick={() => setNaStatusFilter(status)}
+                        className={`px-3 py-1 text-xs rounded-full transition-colors ${
+                          naStatusFilter === status
+                            ? status === "All" ? "bg-gray-800 text-white" 
+                              : status === "Confirmed" ? "bg-emerald-500 text-white"
+                              : status === "Pending" ? "bg-amber-500 text-white"
+                              : "bg-red-500 text-white"
+                            : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                        }`}
+                      >
+                        {status}
+                      </button>
+                    ))}
+                  </div>
+                </div>
                 <CardDescription>Suggested members for NA board (mid-2026)</CardDescription>
               </CardHeader>
               <CardContent>
@@ -343,7 +395,7 @@ const CAB = () => {
                       </TableRow>
                     </TableHeader>
                     <TableBody>
-                      {naCabMembers.map((member, index) => (
+                      {filteredNaMembers.map((member, index) => (
                         <TableRow key={index} className="border-gray-200 hover:bg-gray-50">
                           <TableCell className="font-medium text-gray-900 text-sm">{member.company}</TableCell>
                           <TableCell className="text-gray-600 text-sm">{member.industry}</TableCell>
