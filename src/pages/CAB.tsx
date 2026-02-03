@@ -35,16 +35,16 @@ const cabAgenda = [
 ];
 
 const initialEuCabMembers = [
-  { company: "Grafton Merchanting ROI Ltd.", industry: "Building Materials & Retail Trade", status: "Pending" },
-  { company: "Primark Limited", industry: "Retail", status: "Confirmed" },
-  { company: "VP plc (VP Group)", industry: "Industrial Equipment Rental", status: "Confirmed" },
-  { company: "Basic-Fit International", industry: "Fitness & Leisure", status: "Confirmed" },
-  { company: "Analog Devices (EMEA)", industry: "Technology/Manufacturing", status: "Pending" },
-  { company: "VistaJet Limited", industry: "Aviation (Private Jet Charter)", status: "Pending" },
-  { company: "Toolstation Ltd.", industry: "Retail (Home Improvement)", status: "Confirmed" },
-  { company: "University of Cambridge", industry: "Education", status: "Pending" },
-  { company: "Logitech (Ireland)", industry: "Manufacturing", status: "Confirmed" },
-  { company: "C&C Group", industry: "Food & Drink", status: "Confirmed" },
+  { company: "Grafton Merchanting ROI Ltd.", industry: "Building Materials & Retail Trade", contact: "Colm Scannell", status: "Pending" },
+  { company: "Primark Limited", industry: "Retail", contact: "Peter Rogan", status: "Confirmed" },
+  { company: "VP plc (VP Group)", industry: "Industrial Equipment Rental", contact: "Serena Geers", status: "Confirmed" },
+  { company: "Basic-Fit International", industry: "Fitness & Leisure", contact: "Adriaan Bos", status: "Confirmed" },
+  { company: "Analog Devices (EMEA)", industry: "Technology/Manufacturing", contact: "Mary Lucey", status: "Pending" },
+  { company: "VistaJet Limited", industry: "Aviation (Private Jet Charter)", contact: "Paul Douglas", status: "Pending" },
+  { company: "Toolstation Ltd.", industry: "Retail (Home Improvement)", contact: "Andrew Venner", status: "Confirmed" },
+  { company: "University of Cambridge", industry: "Education", contact: "Chris Patten", status: "Pending" },
+  { company: "Logitech (Ireland)", industry: "Manufacturing", contact: "Aisling Connolly", status: "Confirmed" },
+  { company: "C&C Group", industry: "Food & Drink", contact: "Jimmy McHugh", status: "Confirmed" },
 ];
 
 const initialNaCabMembers = [
@@ -315,6 +315,7 @@ const CAB = () => {
                     <TableHeader>
                       <TableRow className="border-gray-200">
                         <TableHead className="text-gray-700 font-semibold">Company</TableHead>
+                        <TableHead className="text-gray-700 font-semibold">Contact</TableHead>
                         <TableHead className="text-gray-700 font-semibold">Industry</TableHead>
                         <TableHead className="text-gray-700 font-semibold">Status</TableHead>
                       </TableRow>
@@ -323,6 +324,7 @@ const CAB = () => {
                       {filteredEuMembers.map((member, index) => (
                         <TableRow key={index} className="border-gray-200 hover:bg-gray-50">
                           <TableCell className="font-medium text-gray-900 text-sm">{member.company}</TableCell>
+                          <TableCell className="text-gray-600 text-sm">{member.contact}</TableCell>
                           <TableCell className="text-gray-600 text-sm">{member.industry}</TableCell>
                           <TableCell>
                             <DropdownMenu>
