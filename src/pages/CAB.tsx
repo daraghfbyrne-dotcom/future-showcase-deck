@@ -35,15 +35,15 @@ const cabAgenda = [
 ];
 
 const initialEuCabMembers = [
-  { company: "Grafton Merchanting ROI Ltd.", industry: "Building Materials & Retail Trade", contact: "Colm Scannell", status: "Pending" },
+  { company: "Grafton Merchanting ROI Ltd.", industry: "Building Materials & Retail Trade", contact: "Colm Scannell", status: "Confirmed" },
   { company: "Primark Limited", industry: "Retail", contact: "Peter Rogan", status: "Confirmed" },
   { company: "VP plc (VP Group)", industry: "Industrial Equipment Rental", contact: "Serena Geers", status: "Confirmed" },
-  { company: "Basic-Fit International", industry: "Fitness & Leisure", contact: "Adriaan Bos", status: "Confirmed" },
+  { company: "Basic-Fit International", industry: "Fitness & Leisure", contact: "Adriaan Boss", status: "Confirmed" },
   { company: "Analog Devices (EMEA)", industry: "Technology/Manufacturing", contact: "Mary Lucey", status: "Pending" },
-  { company: "VistaJet Limited", industry: "Aviation (Private Jet Charter)", contact: "Paul Douglas", status: "Pending" },
+  { company: "VistaJet Limited", industry: "Aviation (Private Jet Charter)", contact: "Paul Douglas", status: "Confirmed" },
   { company: "Toolstation Ltd.", industry: "Retail (Home Improvement)", contact: "Andrew Venner", status: "Confirmed" },
-  { company: "University of Cambridge", industry: "Education", contact: "Chris Patten", status: "Pending" },
-  { company: "Logitech (Ireland)", industry: "Manufacturing", contact: "Aisling Connolly", status: "Confirmed" },
+  { company: "University of Cambridge", industry: "Education", contact: "Chris Patten", status: "Confirmed" },
+  { company: "Logitech (Ireland)", industry: "Manufacturing", contact: "Aisling Connelly", status: "Confirmed" },
   { company: "C&C Group", industry: "Food & Drink", contact: "Jimmy McHugh", status: "Confirmed" },
 ];
 
