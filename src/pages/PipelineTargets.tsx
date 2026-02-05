@@ -51,16 +51,6 @@ const channelMonthlyData = {
     totalQualified: 9.65,
     totalSalesLeads: 32.16,
   },
-  marketing: {
-    name: "Marketing",
-    total: "€7,252,435",
-    color: "border-success",
-    pipelineValue: [496000, 558000, 620000, 744000, 744000, 806000, 372000, 372000, 806000, 806000, 620000, 310000],
-    qualified: [5.22, 5.87, 6.53, 7.82, 7.82, 8.48, 3.91, 3.91, 8.48, 8.48, 6.53, 3.26],
-    salesLeads: [7.45, 8.39, 9.32, 11.18, 11.18, 12.12, 5.59, 5.59, 12.12, 12.12, 9.32, 4.66],
-    totalQualified: 76.34,
-    totalSalesLeads: 109.06,
-  },
   organic: {
     name: "Organic",
     total: "€3,131,956",
