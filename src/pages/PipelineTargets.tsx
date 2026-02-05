@@ -252,7 +252,7 @@ const PipelineTargets = () => {
                   <div className="grid grid-cols-3 gap-4 text-center">
                     <div>
                     <div className="text-sm text-muted-foreground uppercase tracking-wider mb-1">Total Pipeline</div>
-                      <div className="text-2xl font-bold text-primary">€22,305,589</div>
+                      <div className="text-2xl font-bold text-primary">€21,120,000</div>
                     </div>
                     <div>
                       <div className="text-sm text-muted-foreground uppercase tracking-wider mb-1">Total Qualified Opps</div>
