@@ -24,14 +24,12 @@ const cabTimeline = [
 ];
 
 const cabAgenda = [
-  { time: "30 mins", item: "Welcome & Executive Context", owner: "CEO" },
-  { time: "15 mins", item: "Charter & Expectations", owner: "CMO" },
-  { time: "30 mins", item: "Member Introductions", owner: "All Members" },
-  { time: "30 mins", item: "Market & Industry Trends", owner: "Guest Speaker" },
-  { time: "45 mins", item: "SoftCo Strategic Direction & Roadmap", owner: "Product" },
-  { time: "45 mins", item: "Breakout Discussions (by industry/size)", owner: "Facilitators" },
-  { time: "10 mins", item: "Customer Success Spotlight", owner: "Head of CS" },
-  { time: "15 mins", item: "Next Steps & Close", owner: "CMO" },
+  { time: "12:00 PM", item: "Welcome and executive context: why we're launching the CAB and what we want to achieve", owner: "CEO" },
+  { time: "", item: "CAB charter and expectations, including cadence and how feedback will be tracked and actioned", owner: "CMO" },
+  { time: "", item: "Member introductions", owner: "All Members" },
+  { time: "", item: "Trends & challenges: a discussion grounded in the survey feedback you will have already shared", owner: "Facilitated" },
+  { time: "", item: "SoftCo roadmap: our vision and key themes", owner: "Product" },
+  { time: "3:30 PM", item: "Next steps and close", owner: "CMO" },
 ];
 
 const initialEuCabMembers = [
@@ -39,12 +37,13 @@ const initialEuCabMembers = [
   { company: "Primark Limited", industry: "Retail", contact: "Peter Rogan", status: "Confirmed" },
   { company: "VP plc (VP Group)", industry: "Industrial Equipment Rental", contact: "Serena Geers", status: "Confirmed" },
   { company: "Basic-Fit International", industry: "Fitness & Leisure", contact: "Adriaan Boss", status: "Confirmed" },
-  { company: "Analog Devices (EMEA)", industry: "Technology/Manufacturing", contact: "Mary Lucey", status: "Pending" },
+  { company: "Analog Devices (EMEA)", industry: "Technology/Manufacturing", contact: "Mary Lucey", status: "Declined" },
   { company: "VistaJet Limited", industry: "Aviation (Private Jet Charter)", contact: "Paul Douglas", status: "Confirmed" },
-  { company: "Toolstation Ltd.", industry: "Retail (Home Improvement)", contact: "Andrew Venner", status: "Confirmed" },
+  { company: "Toolstation Ltd.", industry: "Retail (Home Improvement)", contact: "Andrew Venner", status: "Declined" },
   { company: "University of Cambridge", industry: "Education", contact: "Chris Patten", status: "Confirmed" },
   { company: "Logitech (Ireland)", industry: "Manufacturing", contact: "Aisling Connelly", status: "Confirmed" },
   { company: "C&C Group", industry: "Food & Drink", contact: "Jimmy McHugh", status: "Confirmed" },
+  { company: "APAM SSE Group Services", industry: "Energy/Utilities", contact: "Sarah Turner", status: "Confirmed" },
 ];
 
 const initialNaCabMembers = [
@@ -190,16 +189,64 @@ const CAB = () => {
                 <MapPin className="h-5 w-5 text-green-500" />
                 EU CAB Inaugural Event — March 6, 2026
               </CardTitle>
-              <CardDescription>InterContinental Hotel, Dublin — coinciding with Ireland vs Wales Rugby (6 Nations)</CardDescription>
+              <CardDescription>The Marker Hotel, Dublin — coinciding with Ireland vs Wales Rugby (Six Nations)</CardDescription>
             </CardHeader>
-            <CardContent>
-              <h4 className="font-semibold text-gray-900 mb-3">Schedule</h4>
-              <ul className="space-y-2 text-sm text-gray-700">
-                <li className="flex items-start gap-2"><Clock className="h-4 w-4 text-gray-400 mt-0.5" /> <span><strong>8:00 AM</strong> — International guests arrive</span></li>
-                <li className="flex items-start gap-2"><Clock className="h-4 w-4 text-gray-400 mt-0.5" /> <span><strong>9:00 AM – 1:00 PM</strong> — CAB Meeting (Hibernia Room)</span></li>
-                <li className="flex items-start gap-2"><Clock className="h-4 w-4 text-gray-400 mt-0.5" /> <span><strong>5:00 PM</strong> — Dinner (venue TBD)</span></li>
-                <li className="flex items-start gap-2"><Clock className="h-4 w-4 text-gray-400 mt-0.5" /> <span><strong>8:10 PM</strong> — 6 Nations Rugby Game</span></li>
-              </ul>
+            <CardContent className="space-y-6">
+              <div>
+                <h4 className="font-semibold text-gray-900 mb-3">Schedule</h4>
+                <ul className="space-y-2 text-sm text-gray-700">
+                  <li className="flex items-start gap-2"><Clock className="h-4 w-4 text-gray-400 mt-0.5" /> <span><strong>12:00 PM – 3:30 PM</strong> — CAB Meeting</span></li>
+                  <li className="flex items-start gap-2"><Clock className="h-4 w-4 text-gray-400 mt-0.5" /> <span><strong>~5:30 PM (TBC)</strong> — Dinner at The Marker Hotel</span></li>
+                  <li className="flex items-start gap-2"><Clock className="h-4 w-4 text-gray-400 mt-0.5" /> <span><strong>Evening</strong> — Ireland vs Wales, Six Nations Rugby at Aviva Stadium</span></li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-gray-900 mb-3">Pre-Meeting Survey</h4>
+                <p className="text-sm text-gray-700 mb-3">
+                  Ahead of the session, a short survey (~10 mins) will be circulated to all members. Results will be aggregated and shared before the CAB so everyone has visibility of the key themes in advance.
+                </p>
+                <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4 space-y-4 text-sm text-gray-700">
+                  <p className="font-semibold text-indigo-800">CAB Survey — Ver 2: Pre-Meeting Insight Survey</p>
+                  <p className="text-xs text-gray-500 italic">Purpose: To ensure the CAB session is focused and high value. Common themes will be grouped and areas raised by multiple members prioritised so we go deep on the most important issues.</p>
+                  
+                  <div>
+                    <p className="font-semibold text-gray-800 mb-1">Section 1: Context & Priorities</p>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600">
+                      <li>Your role and organisation</li>
+                      <li>Top 2–3 priorities for the next 24 months</li>
+                      <li>Any major business changes underway or planned</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <p className="font-semibold text-gray-800 mb-1">Section 2: Key Challenges & Direction</p>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600">
+                      <li>2–3 most significant challenges facing your finance function today</li>
+                      <li>Direction of finance operating model (Cost efficiency, Automation & productivity, AI enablement, Risk & control, Growth enablement, ERP/platform transformation, Centralisation/shared services)</li>
+                      <li>Greatest expected increase in finance technology investment over next 3 years</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <p className="font-semibold text-gray-800 mb-1">Section 3: Future of Finance Leadership</p>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600">
+                      <li>How the role of CFO / finance leader is evolving over the next 3–5 years</li>
+                      <li>Biggest potential disruption to your finance operating model in the next 5 years</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <p className="font-semibold text-gray-800 mb-1">Section 4: AI & Data Confidence</p>
+                    <ul className="list-disc list-inside space-y-1 text-gray-600">
+                      <li>Current or planned AI usage within finance</li>
+                      <li>AI maturity level (Exploring → Embedded in core processes)</li>
+                      <li>Confidence in AI handling sensitive financial data</li>
+                      <li>Where SoftCo should focus investment for greatest strategic value over 2–3 years</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </CardContent>
           </Card>
         </section>
@@ -265,7 +312,7 @@ const CAB = () => {
                   <TableBody>
                     {cabAgenda.map((item, index) => (
                       <TableRow key={index} className="border-gray-200 hover:bg-gray-50">
-                        <TableCell className="font-medium text-gray-900">{item.time}</TableCell>
+                        <TableCell className="font-medium text-gray-900 whitespace-nowrap">{item.time}</TableCell>
                         <TableCell className="text-gray-700">{item.item}</TableCell>
                         <TableCell className="text-gray-600">{item.owner}</TableCell>
                       </TableRow>
