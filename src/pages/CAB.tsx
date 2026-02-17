@@ -120,18 +120,18 @@ const CAB = () => {
               Establishing strategic Customer Advisory Boards in Europe and North America to gather insights, strengthen relationships, and drive product direction.
             </p>
             <div className="mt-6 flex flex-wrap gap-4">
-              <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-6 py-3">
+              <a href="#eu-cab" className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 cursor-pointer hover:bg-white/40 hover:scale-105 transition-all duration-200 border border-white/30 hover:border-white/60 shadow-lg hover:shadow-xl">
                 <MapPin className="h-5 w-5 text-white" />
                 <span className="text-white font-medium">
                   EU Launch: <span className="text-yellow-300 font-bold">March 6, 2026</span>
                 </span>
-              </div>
-              <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-6 py-3">
+              </a>
+              <a href="#na-cab" className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 cursor-pointer hover:bg-white/40 hover:scale-105 transition-all duration-200 border border-white/30 hover:border-white/60 shadow-lg hover:shadow-xl">
                 <Building2 className="h-5 w-5 text-white" />
                 <span className="text-white font-medium">
                   NA Launch: <span className="text-yellow-300 font-bold">Mid-2026</span>
                 </span>
-              </div>
+              </a>
             </div>
           </div>
         </section>
@@ -182,7 +182,7 @@ const CAB = () => {
         </section>
 
         {/* ===== EU CAB SECTION ===== */}
-        <section className="space-y-6">
+        <section id="eu-cab" className="space-y-6 scroll-mt-24">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-indigo-100 rounded-lg">
               <MapPin className="h-6 w-6 text-indigo-600" />
@@ -520,7 +520,7 @@ const CAB = () => {
         </section>
 
         {/* ===== NORTH AMERICA CAB SECTION ===== */}
-        <section className="space-y-6">
+        <section id="na-cab" className="space-y-6 scroll-mt-24">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-blue-100 rounded-lg">
               <Building2 className="h-6 w-6 text-blue-600" />
