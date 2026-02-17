@@ -24,12 +24,12 @@ const cabTimeline = [
 ];
 
 const cabAgenda = [
-  { time: "12:00 PM", item: "Welcome and executive context: why we're launching the CAB and what we want to achieve", owner: "CEO" },
-  { time: "", item: "CAB charter and expectations, including cadence and how feedback will be tracked and actioned", owner: "CMO" },
-  { time: "", item: "Member introductions", owner: "All Members" },
-  { time: "", item: "Trends & challenges: a discussion grounded in the survey feedback you will have already shared", owner: "Facilitated" },
-  { time: "", item: "SoftCo roadmap: our vision and key themes", owner: "Product" },
-  { time: "3:30 PM", item: "Next steps and close", owner: "CMO" },
+  { time: "12:00 PM", item: "Welcome and executive context: why we're launching the CAB and what we want to achieve" },
+  { time: "", item: "CAB charter and expectations, including cadence and how feedback will be tracked and actioned" },
+  { time: "", item: "Member introductions" },
+  { time: "", item: "Trends & challenges: a discussion grounded in the survey feedback you will have already shared" },
+  { time: "", item: "SoftCo roadmap: our vision and key themes" },
+  { time: "3:30 PM", item: "Next steps and close" },
 ];
 
 const initialEuCabMembers = [
@@ -299,7 +299,6 @@ const CAB = () => {
                       <TableRow className="border-gray-200">
                         <TableHead className="text-gray-700 font-semibold w-36">Time</TableHead>
                         <TableHead className="text-gray-700 font-semibold">Session</TableHead>
-                        <TableHead className="text-gray-700 font-semibold w-28">Owner</TableHead>
                         <TableHead className="text-gray-700 font-semibold w-32">Format</TableHead>
                       </TableRow>
                     </TableHeader>
@@ -314,7 +313,6 @@ const CAB = () => {
                             <li>Relationship foundation for open dialogue</li>
                           </ul>
                         </TableCell>
-                        <TableCell className="text-gray-600 text-sm">CEO & CMO</TableCell>
                         <TableCell className="text-gray-600 text-sm">Working lunch with pre-assigned seating</TableCell>
                       </TableRow>
                       <TableRow className="border-gray-200 hover:bg-gray-50">
@@ -329,7 +327,6 @@ const CAB = () => {
                             <li>SoftCo's 18–24 month ambition</li>
                           </ul>
                         </TableCell>
-                        <TableCell className="text-gray-600 text-sm">CEO</TableCell>
                         <TableCell className="text-gray-600 text-sm">Executive address</TableCell>
                       </TableRow>
                       <TableRow className="border-gray-200 hover:bg-gray-50">
@@ -344,7 +341,6 @@ const CAB = () => {
                             <li>What members can expect after today</li>
                           </ul>
                         </TableCell>
-                        <TableCell className="text-gray-600 text-sm">CMO</TableCell>
                         <TableCell className="text-gray-600 text-sm">Interactive discussion</TableCell>
                       </TableRow>
                       <TableRow className="border-gray-200 hover:bg-gray-50">
@@ -359,7 +355,6 @@ const CAB = () => {
                             <li>Identify cross-industry patterns & priority areas</li>
                           </ul>
                         </TableCell>
-                        <TableCell className="text-gray-600 text-sm">CEO (facilitator)</TableCell>
                         <TableCell className="text-gray-600 text-sm">Structured roundtable</TableCell>
                       </TableRow>
                       <TableRow className="border-gray-200 hover:bg-gray-50">
@@ -373,7 +368,6 @@ const CAB = () => {
                             <li>Expose trade-off tensions</li>
                           </ul>
                         </TableCell>
-                        <TableCell className="text-gray-600 text-sm">Chief Product Officer</TableCell>
                         <TableCell className="text-gray-600 text-sm">Strategic presentation + live prioritisation</TableCell>
                       </TableRow>
                       <TableRow className="border-gray-200 hover:bg-gray-50">
@@ -388,7 +382,6 @@ const CAB = () => {
                             <li>Agreed next milestones & accountability established</li>
                           </ul>
                         </TableCell>
-                        <TableCell className="text-gray-600 text-sm">CMO / CEO</TableCell>
                         <TableCell className="text-gray-600 text-sm">Wrap-up</TableCell>
                       </TableRow>
                     </TableBody>
