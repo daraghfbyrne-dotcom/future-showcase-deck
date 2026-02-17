@@ -181,77 +181,431 @@ const CAB = () => {
           </Card>
         </section>
 
-        {/* EU CAB Event Details */}
+        {/* ===== EU CAB SECTION ===== */}
         <section className="space-y-6">
+          <div className="flex items-center gap-3">
+            <div className="p-2 bg-indigo-100 rounded-lg">
+              <MapPin className="h-6 w-6 text-indigo-600" />
+            </div>
+            <h2 className="text-2xl font-bold text-gray-900">EU Customer Advisory Board</h2>
+          </div>
+
+          {/* 1. EU CAB Members */}
+          <Card className="bg-white border-gray-200">
+            <CardHeader>
+              <div className="flex items-center justify-between flex-wrap gap-2">
+                <CardTitle className="flex items-center gap-2 text-lg">
+                  <Users className="h-5 w-5 text-green-500" />
+                  EU CAB Members
+                </CardTitle>
+                <div className="flex items-center gap-2">
+                  <Filter className="h-4 w-4 text-gray-400" />
+                  {(["All", "Confirmed", "Pending", "Declined"] as const).map((status) => (
+                    <button
+                      key={status}
+                      onClick={() => setEuStatusFilter(status)}
+                      className={`px-3 py-1 text-xs rounded-full transition-colors ${
+                        euStatusFilter === status
+                          ? status === "All" ? "bg-gray-800 text-white" 
+                            : status === "Confirmed" ? "bg-emerald-500 text-white"
+                            : status === "Pending" ? "bg-amber-500 text-white"
+                            : "bg-red-500 text-white"
+                          : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                      }`}
+                    >
+                      {status}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <CardDescription>Proposed & current members for the EU board</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="overflow-x-auto">
+                <Table>
+                  <TableHeader>
+                    <TableRow className="border-gray-200">
+                      <TableHead className="text-gray-700 font-semibold">Company</TableHead>
+                      <TableHead className="text-gray-700 font-semibold">Contact</TableHead>
+                      <TableHead className="text-gray-700 font-semibold">Industry</TableHead>
+                      <TableHead className="text-gray-700 font-semibold">Status</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {filteredEuMembers.map((member, index) => (
+                      <TableRow key={index} className="border-gray-200 hover:bg-gray-50">
+                        <TableCell className="font-medium text-gray-900 text-sm">{member.company}</TableCell>
+                        <TableCell className="text-gray-600 text-sm">{member.contact}</TableCell>
+                        <TableCell className="text-gray-600 text-sm">{member.industry}</TableCell>
+                        <TableCell>
+                          <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                              <button type="button" className="focus:outline-none">
+                                <Badge className={`${getStatusColor(member.status)} text-white cursor-pointer transition-colors`}>
+                                  {member.status}
+                                </Badge>
+                              </button>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent align="start" className="bg-white border border-gray-200 shadow-lg z-[100]">
+                              {statusOptions.map((option) => (
+                                <DropdownMenuItem
+                                  key={option.value}
+                                  onClick={() => updateEuMemberStatus(index, option.value)}
+                                  className="cursor-pointer hover:bg-gray-100 focus:bg-gray-100"
+                                >
+                                  <Badge className={`${option.color} text-white`}>{option.label}</Badge>
+                                </DropdownMenuItem>
+                              ))}
+                            </DropdownMenuContent>
+                          </DropdownMenu>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* 2. EU CAB Event Details & Detailed Agenda */}
           <Card className="bg-white border-gray-200">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-lg">
-                <MapPin className="h-5 w-5 text-green-500" />
+                <Calendar className="h-5 w-5 text-green-500" />
                 EU CAB Inaugural Event — March 6, 2026
               </CardTitle>
               <CardDescription>The Marker Hotel, Dublin — coinciding with Ireland vs Wales Rugby (Six Nations)</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
+              {/* Schedule overview */}
               <div>
-                <h4 className="font-semibold text-gray-900 mb-3">Schedule</h4>
+                <h4 className="font-semibold text-gray-900 mb-3">Day Overview</h4>
                 <ul className="space-y-2 text-sm text-gray-700">
-                  <li className="flex items-start gap-2"><Clock className="h-4 w-4 text-gray-400 mt-0.5" /> <span><strong>12:00 PM – 3:30 PM</strong> — CAB Meeting</span></li>
-                  <li className="flex items-start gap-2"><Clock className="h-4 w-4 text-gray-400 mt-0.5" /> <span><strong>~5:30 PM (TBC)</strong> — Dinner at The Marker Hotel</span></li>
+                  <li className="flex items-start gap-2"><Clock className="h-4 w-4 text-gray-400 mt-0.5" /> <span><strong>12:00 – 15:30</strong> — CAB Meeting (3.5 hours)</span></li>
+                  <li className="flex items-start gap-2"><Clock className="h-4 w-4 text-gray-400 mt-0.5" /> <span><strong>~17:30 (TBC)</strong> — Dinner at The Marker Hotel</span></li>
                   <li className="flex items-start gap-2"><Clock className="h-4 w-4 text-gray-400 mt-0.5" /> <span><strong>Evening</strong> — Ireland vs Wales, Six Nations Rugby at Aviva Stadium</span></li>
                 </ul>
+                <p className="text-xs text-gray-500 mt-2 italic">
+                  Audience: 8–10 Enterprise Senior Decision Makers &nbsp;|&nbsp; Format Principle: 60% customer voice / 40% SoftCo
+                </p>
               </div>
 
+              {/* Detailed Agenda */}
               <div>
-                <h4 className="font-semibold text-gray-900 mb-3">Pre-Meeting Survey</h4>
-                <p className="text-sm text-gray-700 mb-3">
-                  Ahead of the session, a short survey (~10 mins) will be circulated to all members. Results will be aggregated and shared before the CAB so everyone has visibility of the key themes in advance.
-                </p>
-                <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4 space-y-4 text-sm text-gray-700">
-                  <p className="font-semibold text-indigo-800">CAB Survey — Ver 2: Pre-Meeting Insight Survey</p>
-                  <p className="text-xs text-gray-500 italic">Purpose: To ensure the CAB session is focused and high value. Common themes will be grouped and areas raised by multiple members prioritised so we go deep on the most important issues.</p>
-                  
-                  <div>
-                    <p className="font-semibold text-gray-800 mb-1">Section 1: Context & Priorities</p>
-                    <ul className="list-disc list-inside space-y-1 text-gray-600">
-                      <li>Your role and organisation</li>
-                      <li>Top 2–3 priorities for the next 24 months</li>
-                      <li>Any major business changes underway or planned</li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <p className="font-semibold text-gray-800 mb-1">Section 2: Key Challenges & Direction</p>
-                    <ul className="list-disc list-inside space-y-1 text-gray-600">
-                      <li>2–3 most significant challenges facing your finance function today</li>
-                      <li>Direction of finance operating model (Cost efficiency, Automation & productivity, AI enablement, Risk & control, Growth enablement, ERP/platform transformation, Centralisation/shared services)</li>
-                      <li>Greatest expected increase in finance technology investment over next 3 years</li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <p className="font-semibold text-gray-800 mb-1">Section 3: Future of Finance Leadership</p>
-                    <ul className="list-disc list-inside space-y-1 text-gray-600">
-                      <li>How the role of CFO / finance leader is evolving over the next 3–5 years</li>
-                      <li>Biggest potential disruption to your finance operating model in the next 5 years</li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <p className="font-semibold text-gray-800 mb-1">Section 4: AI & Data Confidence</p>
-                    <ul className="list-disc list-inside space-y-1 text-gray-600">
-                      <li>Current or planned AI usage within finance</li>
-                      <li>AI maturity level (Exploring → Embedded in core processes)</li>
-                      <li>Confidence in AI handling sensitive financial data</li>
-                      <li>Where SoftCo should focus investment for greatest strategic value over 2–3 years</li>
-                    </ul>
-                  </div>
+                <h4 className="font-semibold text-gray-900 mb-3">Detailed Running Order</h4>
+                <div className="overflow-x-auto">
+                  <Table>
+                    <TableHeader>
+                      <TableRow className="border-gray-200">
+                        <TableHead className="text-gray-700 font-semibold w-36">Time</TableHead>
+                        <TableHead className="text-gray-700 font-semibold">Session</TableHead>
+                        <TableHead className="text-gray-700 font-semibold w-28">Owner</TableHead>
+                        <TableHead className="text-gray-700 font-semibold w-32">Format</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      <TableRow className="border-gray-200 hover:bg-gray-50">
+                        <TableCell className="font-medium text-gray-900 whitespace-nowrap text-sm">12:00–12:30</TableCell>
+                        <TableCell className="text-sm">
+                          <p className="font-semibold text-gray-900">Arrival, Lunch & Informal Networking</p>
+                          <ul className="text-gray-600 text-xs mt-1 list-disc list-inside space-y-0.5">
+                            <li>Establish peer rapport before formal session</li>
+                            <li>Reduce "presentation mode" dynamic</li>
+                            <li>Relationship foundation for open dialogue</li>
+                          </ul>
+                        </TableCell>
+                        <TableCell className="text-gray-600 text-sm">CEO & CMO</TableCell>
+                        <TableCell className="text-gray-600 text-sm">Working lunch with pre-assigned seating</TableCell>
+                      </TableRow>
+                      <TableRow className="border-gray-200 hover:bg-gray-50">
+                        <TableCell className="font-medium text-gray-900 whitespace-nowrap text-sm">12:30–12:50</TableCell>
+                        <TableCell className="text-sm">
+                          <p className="font-semibold text-gray-900">Welcome & Executive Context</p>
+                          <ul className="text-gray-600 text-xs mt-1 list-disc list-inside space-y-0.5">
+                            <li>Clarify why SoftCo is launching the CAB now</li>
+                            <li>Reinforce strategic partnership positioning</li>
+                            <li>Define where customer influence is genuinely required</li>
+                            <li>2–3 macro shifts / high-level feedback from survey</li>
+                            <li>SoftCo's 18–24 month ambition</li>
+                          </ul>
+                        </TableCell>
+                        <TableCell className="text-gray-600 text-sm">CEO</TableCell>
+                        <TableCell className="text-gray-600 text-sm">Executive address</TableCell>
+                      </TableRow>
+                      <TableRow className="border-gray-200 hover:bg-gray-50">
+                        <TableCell className="font-medium text-gray-900 whitespace-nowrap text-sm">12:50–13:00</TableCell>
+                        <TableCell className="text-sm">
+                          <p className="font-semibold text-gray-900">CAB Charter & Operating Model</p>
+                          <ul className="text-gray-600 text-xs mt-1 list-disc list-inside space-y-0.5">
+                            <li>Semi-annual cadence (1 in-person, 1 virtual)</li>
+                            <li>2-year term</li>
+                            <li>Confidentiality (Chatham House Rule)</li>
+                            <li>How feedback is logged, scored, prioritised, and reported back</li>
+                            <li>What members can expect after today</li>
+                          </ul>
+                        </TableCell>
+                        <TableCell className="text-gray-600 text-sm">CMO</TableCell>
+                        <TableCell className="text-gray-600 text-sm">Interactive discussion</TableCell>
+                      </TableRow>
+                      <TableRow className="border-gray-200 hover:bg-gray-50">
+                        <TableCell className="font-medium text-gray-900 whitespace-nowrap text-sm">13:00–14:30</TableCell>
+                        <TableCell className="text-sm">
+                          <p className="font-semibold text-gray-900">Member Roundtable — Trends & Challenges</p>
+                          <ul className="text-gray-600 text-xs mt-1 list-disc list-inside space-y-0.5">
+                            <li>Structured discussion on agreed themes from survey</li>
+                            <li>Each member: ~10 minutes (1.5 hours total)</li>
+                            <li>Which trends are overhyped? Which represent board-level pressure?</li>
+                            <li>Where are budgets being allocated?</li>
+                            <li>Identify cross-industry patterns & priority areas</li>
+                          </ul>
+                        </TableCell>
+                        <TableCell className="text-gray-600 text-sm">CEO (facilitator)</TableCell>
+                        <TableCell className="text-gray-600 text-sm">Structured roundtable</TableCell>
+                      </TableRow>
+                      <TableRow className="border-gray-200 hover:bg-gray-50">
+                        <TableCell className="font-medium text-gray-900 whitespace-nowrap text-sm">14:30–15:00</TableCell>
+                        <TableCell className="text-sm">
+                          <p className="font-semibold text-gray-900">SoftCo Vision & Roadmap Themes</p>
+                          <ul className="text-gray-600 text-xs mt-1 list-disc list-inside space-y-0.5">
+                            <li>Future vision for finance automation</li>
+                            <li>4–5 roadmap themes (not features)</li>
+                            <li>Validate direction & identify misalignment early</li>
+                            <li>Expose trade-off tensions</li>
+                          </ul>
+                        </TableCell>
+                        <TableCell className="text-gray-600 text-sm">Chief Product Officer</TableCell>
+                        <TableCell className="text-gray-600 text-sm">Strategic presentation + live prioritisation</TableCell>
+                      </TableRow>
+                      <TableRow className="border-gray-200 hover:bg-gray-50">
+                        <TableCell className="font-medium text-gray-900 whitespace-nowrap text-sm">15:00–15:30</TableCell>
+                        <TableCell className="text-sm">
+                          <p className="font-semibold text-gray-900">Next Steps, Commitments & Close</p>
+                          <ul className="text-gray-600 text-xs mt-1 list-disc list-inside space-y-0.5">
+                            <li>Summary of top 5 priorities heard</li>
+                            <li>Timeline for CAB Impact Report (within 30 days)</li>
+                            <li>Next virtual session date</li>
+                            <li>Interim pulse survey schedule</li>
+                            <li>Agreed next milestones & accountability established</li>
+                          </ul>
+                        </TableCell>
+                        <TableCell className="text-gray-600 text-sm">CMO / CEO</TableCell>
+                        <TableCell className="text-gray-600 text-sm">Wrap-up</TableCell>
+                      </TableRow>
+                    </TableBody>
+                  </Table>
                 </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* 3. Pre-CAB Survey (full detail) */}
+          <Card className="bg-white border-gray-200">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-lg">
+                <Target className="h-5 w-5 text-purple-500" />
+                Pre-Meeting Insight Survey
+              </CardTitle>
+              <CardDescription>
+                Ahead of the session, a short survey (~10 mins) will be circulated to all members. Results will be aggregated and shared before the CAB so everyone has visibility of the key themes in advance.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-5 text-sm text-gray-700 space-y-5">
+                <div>
+                  <p className="font-bold text-indigo-800 mb-1">Purpose</p>
+                  <p className="text-gray-600">To ensure our CAB session is focused and high value, we ask you to complete this short survey (approx. 10 minutes). We will group common themes and prioritise areas raised by multiple members so that we go deep on the most important issues.</p>
+                </div>
+
+                {/* Section 1 */}
+                <div>
+                  <p className="font-bold text-gray-900 mb-2 border-b border-indigo-200 pb-1">Section 1: Context & Priorities</p>
+                  <p className="font-semibold text-gray-800 mt-2 mb-1">1. Your Current Priorities</p>
+                  <ul className="list-disc list-inside text-gray-600 space-y-1">
+                    <li>Your role and organisation</li>
+                    <li>Your top 2–3 priorities for the next 24 months</li>
+                    <li>Any major business changes underway or planned</li>
+                  </ul>
+                </div>
+
+                {/* Section 2 */}
+                <div>
+                  <p className="font-bold text-gray-900 mb-2 border-b border-indigo-200 pb-1">Section 2: Key Challenges & Direction</p>
+                  <p className="font-semibold text-gray-800 mt-2 mb-1">2. Core Challenges</p>
+                  <p className="text-gray-600 mb-2">What are the 2–3 most significant challenges facing your finance function today? (Please focus on areas you are comfortable discussing in a peer forum.)</p>
+
+                  <p className="font-semibold text-gray-800 mt-3 mb-1">3. Direction of Your Finance Operating Model</p>
+                  <p className="text-gray-600 mb-1">Over the next 2–3 years, is your finance function primarily focused on:</p>
+                  <ul className="text-gray-600 space-y-1 ml-4">
+                    <li>☐ Cost efficiency</li>
+                    <li>☐ Automation & productivity</li>
+                    <li>☐ AI enablement</li>
+                    <li>☐ Risk & control</li>
+                    <li>☐ Growth enablement</li>
+                    <li>☐ ERP or platform transformation</li>
+                    <li>☐ Centralisation / shared services</li>
+                  </ul>
+                  <p className="text-gray-600 mt-2 italic">What is driving this direction?</p>
+
+                  <p className="font-semibold text-gray-800 mt-3 mb-1">4. Technology Investment</p>
+                  <p className="text-gray-600">Where do you expect the greatest increase in finance technology investment over the next 3 years? (Open response)</p>
+                </div>
+
+                {/* Section 3 */}
+                <div>
+                  <p className="font-bold text-gray-900 mb-2 border-b border-indigo-200 pb-1">Section 3: The Future of Finance Leadership</p>
+                  <p className="font-semibold text-gray-800 mt-2 mb-1">5. Evolution of the CFO Role</p>
+                  <p className="text-gray-600 mb-2">How do you see the role of the CFO / finance leader evolving over the next 3–5 years?</p>
+
+                  <p className="font-semibold text-gray-800 mt-3 mb-1">6. Biggest Potential Disruption</p>
+                  <p className="text-gray-600">What could most disrupt your finance operating model in the next five years?</p>
+                </div>
+
+                {/* Section 4 */}
+                <div>
+                  <p className="font-bold text-gray-900 mb-2 border-b border-indigo-200 pb-1">Section 4: AI & Data Confidence</p>
+                  <p className="font-semibold text-gray-800 mt-2 mb-1">7. AI in Finance</p>
+                  <p className="text-gray-600 mb-2">Where are you currently using, or planning to use, AI within finance?</p>
+
+                  <p className="font-semibold text-gray-800 mt-3 mb-1">8. AI Maturity (Multiple Choice)</p>
+                  <p className="text-gray-600 mb-1">How would you describe your organisation's approach to AI?</p>
+                  <ul className="text-gray-600 space-y-1 ml-4">
+                    <li>☐ Exploring only</li>
+                    <li>☐ Piloting in limited areas</li>
+                    <li>☐ Scaling use cases</li>
+                    <li>☐ AI embedded in multiple core processes</li>
+                    <li>☐ Not currently a focus</li>
+                  </ul>
+
+                  <p className="font-semibold text-gray-800 mt-3 mb-1">9. Confidence in AI Handling Financial Data</p>
+                  <p className="text-gray-600 mb-1">Which statement best reflects your organisation's position regarding AI and sensitive financial data?</p>
+                  <ul className="text-gray-600 space-y-1 ml-4">
+                    <li>☐ We would only use AI capabilities embedded within trusted enterprise software platforms</li>
+                    <li>☐ We would consider internally developed AI solutions under strict governance</li>
+                    <li>☐ We are open to secure external AI platforms if properly controlled</li>
+                    <li>☐ We are not yet comfortable using AI with core financial data</li>
+                    <li>☐ Still evaluating</li>
+                  </ul>
+                  <p className="text-gray-600 mt-2 italic">Please elaborate on what would need to be true for you to be fully comfortable.</p>
+
+                  <p className="font-semibold text-gray-800 mt-3 mb-1">10. Where Should SoftCo Focus?</p>
+                  <p className="text-gray-600">Looking ahead 2–3 years, where should SoftCo invest to create the greatest strategic value for your organisation?</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* 4. SoftCo Attendees */}
+          <Card className="bg-white border-gray-200">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-lg">
+                <Users className="h-5 w-5 text-indigo-500" />
+                SoftCo Attendees
+              </CardTitle>
+              <CardDescription>SoftCo team attending the EU CAB inaugural session and evening event</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                {["Anton", "Ann-Marie", "Daragh", "Kana", "Peter", "Robyn"].map((name) => (
+                  <div key={name} className="flex items-center gap-2 bg-indigo-50 rounded-lg px-4 py-2.5">
+                    <CheckCircle2 className="h-4 w-4 text-indigo-500" />
+                    <span className="text-sm font-medium text-gray-800">{name}</span>
+                  </div>
+                ))}
+              </div>
+              <p className="text-xs text-gray-500 mt-3 italic">
+                Killian and others will join for the dinner and rugby in the evening.
+              </p>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* ===== NORTH AMERICA CAB SECTION ===== */}
+        <section className="space-y-6">
+          <div className="flex items-center gap-3">
+            <div className="p-2 bg-blue-100 rounded-lg">
+              <Building2 className="h-6 w-6 text-blue-600" />
+            </div>
+            <h2 className="text-2xl font-bold text-gray-900">North America Customer Advisory Board</h2>
+          </div>
+
+          <Card className="bg-white border-gray-200">
+            <CardHeader>
+              <div className="flex items-center justify-between flex-wrap gap-2">
+                <CardTitle className="flex items-center gap-2 text-lg">
+                  <Users className="h-5 w-5 text-blue-500" />
+                  NA CAB Members
+                </CardTitle>
+                <div className="flex items-center gap-2">
+                  <Filter className="h-4 w-4 text-gray-400" />
+                  {(["All", "Confirmed", "Pending", "Declined"] as const).map((status) => (
+                    <button
+                      key={status}
+                      onClick={() => setNaStatusFilter(status)}
+                      className={`px-3 py-1 text-xs rounded-full transition-colors ${
+                        naStatusFilter === status
+                          ? status === "All" ? "bg-gray-800 text-white" 
+                            : status === "Confirmed" ? "bg-emerald-500 text-white"
+                            : status === "Pending" ? "bg-amber-500 text-white"
+                            : "bg-red-500 text-white"
+                          : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                      }`}
+                    >
+                      {status}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <CardDescription>Suggested members for NA board — launching mid-2026 in Chicago</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="overflow-x-auto">
+                <Table>
+                  <TableHeader>
+                    <TableRow className="border-gray-200">
+                      <TableHead className="text-gray-700 font-semibold">Company</TableHead>
+                      <TableHead className="text-gray-700 font-semibold">Industry</TableHead>
+                      <TableHead className="text-gray-700 font-semibold">Contact</TableHead>
+                      <TableHead className="text-gray-700 font-semibold">Status</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {filteredNaMembers.map((member, index) => (
+                      <TableRow key={index} className="border-gray-200 hover:bg-gray-50">
+                        <TableCell className="font-medium text-gray-900 text-sm">{member.company}</TableCell>
+                        <TableCell className="text-gray-600 text-sm">{member.industry}</TableCell>
+                        <TableCell className="text-gray-600 text-sm">{member.contact}</TableCell>
+                        <TableCell>
+                          <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                              <button type="button" className="focus:outline-none">
+                                <Badge className={`${getStatusColor(member.status)} text-white cursor-pointer transition-colors`}>
+                                  {member.status}
+                                </Badge>
+                              </button>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent align="start" className="bg-white border border-gray-200 shadow-lg z-[100]">
+                              {statusOptions.map((option) => (
+                                <DropdownMenuItem
+                                  key={option.value}
+                                  onClick={() => updateNaMemberStatus(index, option.value)}
+                                  className="cursor-pointer hover:bg-gray-100 focus:bg-gray-100"
+                                >
+                                  <Badge className={`${option.color} text-white`}>{option.label}</Badge>
+                                </DropdownMenuItem>
+                              ))}
+                            </DropdownMenuContent>
+                          </DropdownMenu>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
               </div>
             </CardContent>
           </Card>
         </section>
 
-        {/* CAB Timeline */}
+        {/* ===== CAB IMPLEMENTATION TIMELINE ===== */}
         <section className="space-y-6">
           <Card className="bg-white border-gray-200">
             <CardHeader>
@@ -288,197 +642,6 @@ const CAB = () => {
               </div>
             </CardContent>
           </Card>
-        </section>
-
-        {/* CAB Agenda */}
-        <section className="space-y-6">
-          <Card className="bg-white border-gray-200">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-lg">
-                <Target className="h-5 w-5 text-purple-500" />
-                Proposed In-Person Meeting Agenda
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="overflow-x-auto">
-                <Table>
-                  <TableHeader>
-                    <TableRow className="border-gray-200">
-                      <TableHead className="text-gray-700 font-semibold w-24">Duration</TableHead>
-                      <TableHead className="text-gray-700 font-semibold">Agenda Item</TableHead>
-                      <TableHead className="text-gray-700 font-semibold">Owner</TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    {cabAgenda.map((item, index) => (
-                      <TableRow key={index} className="border-gray-200 hover:bg-gray-50">
-                        <TableCell className="font-medium text-gray-900 whitespace-nowrap">{item.time}</TableCell>
-                        <TableCell className="text-gray-700">{item.item}</TableCell>
-                        <TableCell className="text-gray-600">{item.owner}</TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* EU & NA Members */}
-        <section className="space-y-6">
-          <div className="grid lg:grid-cols-2 gap-6">
-            <Card className="bg-white border-gray-200">
-              <CardHeader>
-                <div className="flex items-center justify-between">
-                  <CardTitle className="flex items-center gap-2 text-lg">
-                    <MapPin className="h-5 w-5 text-green-500" />
-                    European CAB Members
-                  </CardTitle>
-                  <div className="flex items-center gap-2">
-                    <Filter className="h-4 w-4 text-gray-400" />
-                    {(["All", "Confirmed", "Pending", "Declined"] as const).map((status) => (
-                      <button
-                        key={status}
-                        onClick={() => setEuStatusFilter(status)}
-                        className={`px-3 py-1 text-xs rounded-full transition-colors ${
-                          euStatusFilter === status
-                            ? status === "All" ? "bg-gray-800 text-white" 
-                              : status === "Confirmed" ? "bg-emerald-500 text-white"
-                              : status === "Pending" ? "bg-amber-500 text-white"
-                              : "bg-red-500 text-white"
-                            : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                        }`}
-                      >
-                        {status}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-                <CardDescription>Proposed & current members for EU board</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="overflow-x-auto">
-                  <Table>
-                    <TableHeader>
-                      <TableRow className="border-gray-200">
-                        <TableHead className="text-gray-700 font-semibold">Company</TableHead>
-                        <TableHead className="text-gray-700 font-semibold">Contact</TableHead>
-                        <TableHead className="text-gray-700 font-semibold">Industry</TableHead>
-                        <TableHead className="text-gray-700 font-semibold">Status</TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      {filteredEuMembers.map((member, index) => (
-                        <TableRow key={index} className="border-gray-200 hover:bg-gray-50">
-                          <TableCell className="font-medium text-gray-900 text-sm">{member.company}</TableCell>
-                          <TableCell className="text-gray-600 text-sm">{member.contact}</TableCell>
-                          <TableCell className="text-gray-600 text-sm">{member.industry}</TableCell>
-                          <TableCell>
-                            <DropdownMenu>
-                              <DropdownMenuTrigger asChild>
-                                <button type="button" className="focus:outline-none">
-                                  <Badge className={`${getStatusColor(member.status)} text-white cursor-pointer transition-colors`}>
-                                    {member.status}
-                                  </Badge>
-                                </button>
-                              </DropdownMenuTrigger>
-                              <DropdownMenuContent align="start" className="bg-white border border-gray-200 shadow-lg z-[100]">
-                                {statusOptions.map((option) => (
-                                  <DropdownMenuItem
-                                    key={option.value}
-                                    onClick={() => updateEuMemberStatus(index, option.value)}
-                                    className="cursor-pointer hover:bg-gray-100 focus:bg-gray-100"
-                                  >
-                                    <Badge className={`${option.color} text-white`}>{option.label}</Badge>
-                                  </DropdownMenuItem>
-                                ))}
-                              </DropdownMenuContent>
-                            </DropdownMenu>
-                          </TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white border-gray-200">
-              <CardHeader>
-                <div className="flex items-center justify-between">
-                  <CardTitle className="flex items-center gap-2 text-lg">
-                    <Building2 className="h-5 w-5 text-blue-500" />
-                    North America CAB Members
-                  </CardTitle>
-                  <div className="flex items-center gap-2">
-                    <Filter className="h-4 w-4 text-gray-400" />
-                    {(["All", "Confirmed", "Pending", "Declined"] as const).map((status) => (
-                      <button
-                        key={status}
-                        onClick={() => setNaStatusFilter(status)}
-                        className={`px-3 py-1 text-xs rounded-full transition-colors ${
-                          naStatusFilter === status
-                            ? status === "All" ? "bg-gray-800 text-white" 
-                              : status === "Confirmed" ? "bg-emerald-500 text-white"
-                              : status === "Pending" ? "bg-amber-500 text-white"
-                              : "bg-red-500 text-white"
-                            : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                        }`}
-                      >
-                        {status}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-                <CardDescription>Suggested members for NA board (mid-2026)</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="overflow-x-auto">
-                  <Table>
-                    <TableHeader>
-                      <TableRow className="border-gray-200">
-                        <TableHead className="text-gray-700 font-semibold">Company</TableHead>
-                        <TableHead className="text-gray-700 font-semibold">Industry</TableHead>
-                        <TableHead className="text-gray-700 font-semibold">Contact</TableHead>
-                        <TableHead className="text-gray-700 font-semibold">Status</TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      {filteredNaMembers.map((member, index) => (
-                        <TableRow key={index} className="border-gray-200 hover:bg-gray-50">
-                          <TableCell className="font-medium text-gray-900 text-sm">{member.company}</TableCell>
-                          <TableCell className="text-gray-600 text-sm">{member.industry}</TableCell>
-                          <TableCell className="text-gray-600 text-sm">{member.contact}</TableCell>
-                          <TableCell>
-                            <DropdownMenu>
-                              <DropdownMenuTrigger asChild>
-                                <button type="button" className="focus:outline-none">
-                                  <Badge className={`${getStatusColor(member.status)} text-white cursor-pointer transition-colors`}>
-                                    {member.status}
-                                  </Badge>
-                                </button>
-                              </DropdownMenuTrigger>
-                              <DropdownMenuContent align="start" className="bg-white border border-gray-200 shadow-lg z-[100]">
-                                {statusOptions.map((option) => (
-                                  <DropdownMenuItem
-                                    key={option.value}
-                                    onClick={() => updateNaMemberStatus(index, option.value)}
-                                    className="cursor-pointer hover:bg-gray-100 focus:bg-gray-100"
-                                  >
-                                    <Badge className={`${option.color} text-white`}>{option.label}</Badge>
-                                  </DropdownMenuItem>
-                                ))}
-                              </DropdownMenuContent>
-                            </DropdownMenu>
-                          </TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
         </section>
       </main>
 
