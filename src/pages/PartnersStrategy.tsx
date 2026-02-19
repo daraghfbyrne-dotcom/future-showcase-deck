@@ -4,13 +4,6 @@ import PartnerHero from "@/components/partners/PartnerHero";
 import PartnershipTypes from "@/components/partners/PartnershipTypes";
 import ARRContribution from "@/components/partners/ARRContribution";
 import StrategyPhases from "@/components/partners/StrategyPhases";
-import FourPillars from "@/components/partners/FourPillars";
-import IncentivesTable from "@/components/partners/IncentivesTable";
-import PartnerTiering from "@/components/partners/PartnerTiering";
-import KPIsByPartnerType from "@/components/partners/KPIsByPartnerType";
-import ResourcesRequired from "@/components/partners/ResourcesRequired";
-import RisksBlockers from "@/components/partners/RisksBlockers";
-import PartnerStatusUpdates from "@/components/partners/PartnerStatusUpdates";
 import Conclusion from "@/components/partners/Conclusion";
 import UpdatedPartnershipStrategy from "@/components/partners/UpdatedPartnershipStrategy";
 
@@ -19,13 +12,6 @@ const sections = [
   { id: "partnership-types", label: "Partnership Types" },
   { id: "arr-contribution", label: "ARR Timeline" },
   { id: "strategy-phases", label: "Strategy Phases" },
-  { id: "four-pillars", label: "Four Pillars" },
-  { id: "incentives", label: "Incentives" },
-  { id: "tiering", label: "Tiering" },
-  { id: "kpis", label: "KPIs" },
-  { id: "resources", label: "Resources" },
-  { id: "risks", label: "Risks" },
-  { id: "partner-status", label: "Status Updates" },
   { id: "conclusion", label: "Conclusion" },
   { id: "updated-strategy", label: "Updated Strategy (Feb '26)" },
 ];
@@ -41,13 +27,6 @@ const PartnersStrategy = () => {
         <PartnershipTypes />
         <ARRContribution />
         <StrategyPhases />
-        <FourPillars />
-        <IncentivesTable />
-        <PartnerTiering />
-        <KPIsByPartnerType />
-        <ResourcesRequired />
-        <RisksBlockers />
-        <PartnerStatusUpdates />
         <Conclusion />
         <UpdatedPartnershipStrategy />
       </main>
