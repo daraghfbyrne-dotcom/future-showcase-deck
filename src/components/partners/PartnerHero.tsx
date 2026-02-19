@@ -43,20 +43,15 @@ const PartnerHero = () => {
   return (
     <section id="partner-overview" className="space-y-8">
       <div className="text-center space-y-4">
-        <Badge variant="outline" className="border-amber-500 text-amber-600">
-          2025-2026 Strategy
-        </Badge>
         <h1 className="text-4xl md:text-5xl font-bold text-slate-900">
           {content.headline}
         </h1>
         <p className="text-slate-600 max-w-3xl mx-auto text-lg">
           {content.description}
         </p>
-        {section?.last_synced_at && (
-          <p className="text-xs text-slate-400">
-            Last synced: {new Date(section.last_synced_at).toLocaleDateString()}
-          </p>
-        )}
+        <p className="text-xs text-slate-400">
+            Last synced: 15/02/2026
+        </p>
       </div>
 
 
