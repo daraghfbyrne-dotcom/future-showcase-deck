@@ -10,36 +10,6 @@ import {
 const UpdatedPartnershipStrategy = () => {
   return (
     <section id="updated-strategy" className="space-y-10">
-      {/* Section Header */}
-      <div className="flex items-center gap-3">
-        <div className="h-8 w-1 bg-gradient-to-b from-primary to-accent rounded-full" />
-        <div>
-          <h2 className="text-2xl font-bold text-slate-900">UPDATED PARTNERSHIP STRATEGY</h2>
-          <p className="text-sm text-muted-foreground">18th February 2026</p>
-        </div>
-        <Badge variant="outline" className="ml-auto border-primary/40 text-primary bg-primary/5">
-          <RefreshCw className="w-3 h-3 mr-1" /> Updated
-        </Badge>
-      </div>
-
-      {/* 1. Executive Summary */}
-      <Card className="border-primary/20 shadow-sm">
-        <CardContent className="pt-6">
-          <div className="flex items-start gap-4">
-            <div className="p-3 bg-primary/10 rounded-lg flex-shrink-0">
-              <Target className="h-6 w-6 text-primary" />
-            </div>
-            <div>
-              <h3 className="font-bold text-lg text-slate-900 mb-2">1. Executive Summary</h3>
-              <p className="text-slate-700 leading-relaxed">
-                This strategy rebuilds SoftCo's partnership model for 2026–2029. The objective is to create a 
-                predictable, scalable partner-led pipeline engine that delivers <span className="font-semibold text-primary">≥30% of new ARR via partners by 2029</span>, 
-                in alignment with VCP.
-              </p>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
 
       {/* 2. Key Principles */}
       <Card className="shadow-sm">
