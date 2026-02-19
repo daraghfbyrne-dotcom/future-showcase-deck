@@ -12,6 +12,7 @@ import ResourcesRequired from "@/components/partners/ResourcesRequired";
 import RisksBlockers from "@/components/partners/RisksBlockers";
 import PartnerStatusUpdates from "@/components/partners/PartnerStatusUpdates";
 import Conclusion from "@/components/partners/Conclusion";
+import UpdatedPartnershipStrategy from "@/components/partners/UpdatedPartnershipStrategy";
 
 const sections = [
   { id: "partner-overview", label: "Overview" },
@@ -26,6 +27,7 @@ const sections = [
   { id: "risks", label: "Risks" },
   { id: "partner-status", label: "Status Updates" },
   { id: "conclusion", label: "Conclusion" },
+  { id: "updated-strategy", label: "Updated Strategy (Feb '26)" },
 ];
 
 const PartnersStrategy = () => {
@@ -47,6 +49,7 @@ const PartnersStrategy = () => {
         <RisksBlockers />
         <PartnerStatusUpdates />
         <Conclusion />
+        <UpdatedPartnershipStrategy />
       </main>
 
       <footer className="border-t border-slate-200 mt-12 py-6">
