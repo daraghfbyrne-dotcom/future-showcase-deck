@@ -59,17 +59,6 @@ const PartnerHero = () => {
         )}
       </div>
 
-      {/* Disclaimer */}
-      <Card className="bg-amber-50 border-amber-200">
-        <CardContent className="pt-6">
-          <div className="flex items-start gap-3">
-            <AlertTriangle className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
-            <p className="text-amber-800 text-sm">
-              {content.disclaimer}
-            </p>
-          </div>
-        </CardContent>
-      </Card>
 
       {/* VCP Targets */}
       <div className="grid md:grid-cols-2 gap-6">
