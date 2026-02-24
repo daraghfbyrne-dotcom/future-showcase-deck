@@ -1,15 +1,10 @@
 import { useState } from "react";
-import { format } from "date-fns";
 import { Target, Award, Calendar as CalendarIcon, CheckCircle2, Users, TrendingUp, FileText, Building2, Star, Clock, Sparkles, Mail, AlertTriangle } from "lucide-react";
 import { KeyPointsSummary } from "@/components/KeyPointsSummary";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { Calendar } from "@/components/ui/calendar";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 import { Navigation } from "@/components/Navigation";
 
 import gartnerLogo from "@/assets/gartner-logo.png";
@@ -118,6 +113,19 @@ const analystFrameworks = [
       { name: "Xavier Olivera", email: "xolivera@spendmatters.com", role: "SpendMatters Analyst" },
     ],
   },
+  {
+    firm: "Ardent Partners",
+    framework: "TBC",
+    status: "Exploring",
+    rationale: "Given exclusion from Forrester & Gartner reports, we are exploring new analyst firms.",
+    actions: "Engage with Ardent Partners to discover reports that will be published in 2026.",
+    color: "bg-teal-500",
+    rfiRelease: "TBC",
+    published: "TBC",
+    contacts: [
+      { name: "TBC", email: "", role: "TBC" },
+    ],
+  },
 ];
 
 // Visual calendar data for the timeline
@@ -202,31 +210,6 @@ const calendarData = [
   { report: "Wave APIA Software", analyst: "Forrester", rfiIssued: "9th February", demo: "", publication: "15th June" },
 ];
 
-const successMetrics = [
-  {
-    category: "Coverage & Positioning",
-    metrics: [
-      { id: "cp-1", text: "Inclusion in Forrester Wave or New Wave" },
-      { id: "cp-2", text: "Movement in Gartner MQ quadrant" },
-      { id: "cp-3", text: "Improved IDC MarketScape score" },
-      { id: "cp-4", text: "Improved Everest Matrix positioning (capabilities and strategy)" },
-    ],
-  },
-  {
-    category: "Engagement Activities",
-    metrics: [
-      { id: "ea-1", text: "At least 2 analyst briefings per firm per year" },
-    ],
-  },
-  {
-    category: "Analyst Citations",
-    metrics: [
-      { id: "ac-1", text: "Increase in positive citations/quotes" },
-      { id: "ac-2", text: "Number of SoftCo mentions in research notes, blogs and webinars" },
-    ],
-  },
-];
-
 type RAGStatus = "not-started" | "in-progress" | "completed" | "blocked";
 
 const ragStatusConfig: Record<RAGStatus, { label: string; color: string; bgColor: string; borderColor: string }> = {
@@ -238,20 +221,15 @@ const ragStatusConfig: Record<RAGStatus, { label: string; color: string; bgColor
 
 const AnalystStrategy = () => {
   const [tacticStatuses, setTacticStatuses] = useState<Record<string, RAGStatus>>({});
-  const [metricStatuses, setMetricStatuses] = useState<Record<string, RAGStatus>>({});
-  const [metricDates, setMetricDates] = useState<Record<string, Date | undefined>>({});
+
+
 
   const updateTacticStatus = (id: string, status: RAGStatus) => {
     setTacticStatuses(prev => ({ ...prev, [id]: status }));
   };
 
-  const updateMetricStatus = (id: string, status: RAGStatus) => {
-    setMetricStatuses(prev => ({ ...prev, [id]: status }));
-  };
 
-  const updateMetricDate = (id: string, date: Date | undefined) => {
-    setMetricDates(prev => ({ ...prev, [id]: date }));
-  };
+
 
   const getStatusCounts = () => {
     const counts = { "not-started": 0, "in-progress": 0, "completed": 0, "blocked": 0 };
@@ -705,102 +683,6 @@ const AnalystStrategy = () => {
           </div>
         </section>
 
-        {/* Success Metrics */}
-        <section className="space-y-6">
-          <div className="flex items-center gap-3">
-            <Target className="h-7 w-7 text-rose-500" />
-            <h2 className="text-2xl font-bold text-gray-900">Success Metrics</h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {successMetrics.map((category, index) => (
-              <Card key={index} className="bg-white border-gray-200">
-                <CardHeader>
-                  <CardTitle className="text-lg text-gray-900">{category.category}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    {category.metrics.map((metric) => {
-                      const status = metricStatuses[metric.id] || "not-started";
-                      const config = ragStatusConfig[status];
-                      const date = metricDates[metric.id];
-                      
-                      return (
-                        <div key={metric.id} className={`p-3 rounded-lg border ${config.bgColor} ${config.borderColor}`}>
-                          <p className="text-sm text-gray-700 mb-3">{metric.text}</p>
-                          <div className="flex flex-col gap-2">
-                            <Select
-                              value={status}
-                              onValueChange={(value: RAGStatus) => updateMetricStatus(metric.id, value)}
-                            >
-                              <SelectTrigger className={`w-full h-8 text-xs ${config.bgColor} ${config.borderColor} ${config.color}`}>
-                                <SelectValue />
-                              </SelectTrigger>
-                              <SelectContent>
-                                <SelectItem value="not-started">
-                                  <div className="flex items-center gap-2">
-                                    <div className="w-2 h-2 rounded-full bg-gray-400" />
-                                    Not Started
-                                  </div>
-                                </SelectItem>
-                                <SelectItem value="in-progress">
-                                  <div className="flex items-center gap-2">
-                                    <div className="w-2 h-2 rounded-full bg-amber-500" />
-                                    In Progress
-                                  </div>
-                                </SelectItem>
-                                <SelectItem value="completed">
-                                  <div className="flex items-center gap-2">
-                                    <div className="w-2 h-2 rounded-full bg-emerald-500" />
-                                    Completed
-                                  </div>
-                                </SelectItem>
-                                <SelectItem value="blocked">
-                                  <div className="flex items-center gap-2">
-                                    <div className="w-2 h-2 rounded-full bg-red-500" />
-                                    Blocked
-                                  </div>
-                                </SelectItem>
-                              </SelectContent>
-                            </Select>
-                            <Popover>
-                              <PopoverTrigger asChild>
-                                <Button
-                                  variant="outline"
-                                  className={cn(
-                                    "w-full h-8 text-xs justify-start text-left font-normal",
-                                    !date && "text-muted-foreground"
-                                  )}
-                                >
-                                  <CalendarIcon className="mr-2 h-3 w-3" />
-                                  {date ? format(date, "PPP") : "Set date"}
-                                </Button>
-                              </PopoverTrigger>
-                              <PopoverContent className="w-auto p-0" align="start">
-                                <Calendar
-                                  mode="single"
-                                  selected={date}
-                                  onSelect={(d) => updateMetricDate(metric.id, d)}
-                                  initialFocus
-                                  className={cn("p-3 pointer-events-auto")}
-                                />
-                              </PopoverContent>
-                            </Popover>
-                            {date && (
-                              <p className="text-xs text-gray-500">
-                                Updated: {format(date, "MMM d, yyyy")}
-                              </p>
-                            )}
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
 
         {/* Calendar & Timelines */}
         <section className="space-y-6">
