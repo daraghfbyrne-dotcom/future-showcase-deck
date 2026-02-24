@@ -42,8 +42,8 @@ const currentRecognitions = [
 ];
 
 const futureTargets = [
-  { target: "Forrester Wave for AP", timing: "Q1 2026", status: "Targeted" },
-  { target: "Gartner Magic Quadrant for AP", timing: "Q1 2026", status: "Targeted" },
+  { target: "Forrester Wave for AP", timing: "Q1 2026", status: "Not Included" },
+  { target: "Gartner Magic Quadrant for AP", timing: "Q1 2026", status: "Not Included" },
   { target: "Improve positioning on existing quadrants", timing: "Ongoing", status: "Active" },
 ];
 
