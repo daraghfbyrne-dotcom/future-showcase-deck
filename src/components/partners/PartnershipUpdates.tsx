@@ -6,6 +6,7 @@ import pwcLogo from "@/assets/pwc-logo.png";
 import interpathLogo from "@/assets/interpath-logo.png";
 import xelixLogo from "@/assets/xelix-logo.png";
 import sageLogo from "@/assets/sage-logo.png";
+import tungstenLogo from "@/assets/tungsten-logo.png";
 
 interface PartnerUpdate {
   name: string;
@@ -20,8 +21,7 @@ interface PartnerUpdate {
 const partners: PartnerUpdate[] = [
   {
     name: "Tungsten Automation",
-    logo: null,
-    logoFallback: "TA",
+    logo: tungstenLogo,
     status: "active",
     statusLabel: "Active",
     update:
