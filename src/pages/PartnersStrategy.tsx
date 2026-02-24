@@ -2,9 +2,11 @@ import { Navigation } from "@/components/Navigation";
 import { SectionNav } from "@/components/SectionNav";
 import PartnerHero from "@/components/partners/PartnerHero";
 import UpdatedPartnershipStrategy from "@/components/partners/UpdatedPartnershipStrategy";
+import PartnershipUpdates from "@/components/partners/PartnershipUpdates";
 
 const sections = [
   { id: "partner-overview", label: "Overview" },
+  { id: "partnership-updates", label: "Updates (Feb '26)" },
   { id: "updated-strategy", label: "Updated Strategy (Feb '26)" },
 ];
 
@@ -16,6 +18,7 @@ const PartnersStrategy = () => {
 
       <main className="container mx-auto px-4 pt-32 pb-8 space-y-16">
         <PartnerHero />
+        <PartnershipUpdates />
         <UpdatedPartnershipStrategy />
       </main>
 
