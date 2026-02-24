@@ -53,7 +53,7 @@ const analystFrameworks = [
     framework: "Magic Quadrant & Critical Capabilities",
     status: "Niche Player",
     rationale: "Gartner evaluates ability to execute and completeness of vision.",
-    actions: "Prepare for 2026 MQ by aligning roadmap to Gartner's criteria. Provide evidence of market traction, AI innovations and strategic vision.",
+    actions: "Book in an analyst engagement and attempt to discover why we were not included.",
     color: "bg-blue-500",
     rfiRelease: "February",
     published: "June/July",
@@ -66,7 +66,7 @@ const analystFrameworks = [
     framework: "Wave & Landscape Report",
     status: "Not Featured",
     rationale: "The Wave process takes ~3 months and begins with inclusion in a landscape report.",
-    actions: "October briefing in advance of wave & landscape completed. Confirmation we are invited to landscape report.",
+    actions: "Book in an analyst engagement and attempt to discover why we were not included.",
     color: "bg-purple-500",
     rfiRelease: "3rd February",
     published: "15th June",
@@ -109,7 +109,7 @@ const analystFrameworks = [
     framework: "Combined Matrix",
     status: "Submitted",
     rationale: "New combined matrix. Submission completed.",
-    actions: "Published Q4 2025.",
+    actions: "Book in an analyst engagement.",
     color: "bg-pink-500",
     rfiRelease: "June",
     published: "November",
@@ -408,6 +408,81 @@ const AnalystStrategy = () => {
           </div>
         </section>
 
+        {/* Visual RFI & Publish Calendar */}
+        <section className="space-y-6">
+          <div className="flex items-center gap-3">
+            <CalendarIcon className="h-7 w-7 text-indigo-500" />
+            <h2 className="text-2xl font-bold text-gray-900">2026 RFI & Publication Calendar</h2>
+          </div>
+
+          <Card className="bg-white border-gray-200 overflow-hidden">
+            <CardContent className="pt-6">
+              <div className="overflow-x-auto">
+                <div className="min-w-[700px]">
+                  {/* Month headers */}
+                  <div className="grid grid-cols-[180px_repeat(12,1fr)] gap-0 mb-2">
+                    <div className="text-sm font-semibold text-gray-500 pr-4">Firm / Report</div>
+                    {months.map((m) => (
+                      <div key={m} className="text-xs font-medium text-gray-400 text-center">{m}</div>
+                    ))}
+                  </div>
+
+                  {/* Event rows */}
+                  <div className="space-y-3">
+                    {calendarEvents.map((event) => (
+                      <div key={event.firm + event.report} className="grid grid-cols-[180px_repeat(12,1fr)] gap-0 items-center">
+                        <div className="pr-4">
+                          <p className="text-sm font-medium text-gray-900 truncate">{event.firm}</p>
+                          <p className="text-xs text-gray-500 truncate">{event.report}</p>
+                        </div>
+                        {months.map((_, monthIdx) => {
+                          const isRfi = monthIdx === event.rfiMonth;
+                          const isPublish = monthIdx === event.publishMonth;
+                          const isBetween = monthIdx > event.rfiMonth && monthIdx < event.publishMonth;
+                          return (
+                            <div key={monthIdx} className="flex items-center justify-center h-10 relative">
+                              {isBetween && (
+                                <div className={`absolute inset-y-3 inset-x-0 ${event.color} opacity-10 rounded-sm`} />
+                              )}
+                              {isRfi && (
+                                <div className="flex flex-col items-center z-10">
+                                  <div className={`w-4 h-4 rounded-full ${event.color} ring-2 ring-white shadow-md`} />
+                                  <span className="text-[9px] text-gray-600 mt-0.5 font-medium whitespace-nowrap">RFI</span>
+                                </div>
+                              )}
+                              {isPublish && (
+                                <div className="flex flex-col items-center z-10">
+                                  <div className={`w-4 h-4 rounded-sm ${event.color} ring-2 ring-white shadow-md`} />
+                                  <span className="text-[9px] text-gray-600 mt-0.5 font-medium whitespace-nowrap">Pub</span>
+                                </div>
+                              )}
+                              {isBetween && (
+                                <div className={`absolute inset-y-[18px] inset-x-0 h-[2px] ${event.color} opacity-30`} />
+                              )}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Legend */}
+                  <div className="flex items-center gap-6 mt-6 pt-4 border-t border-gray-100">
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-full bg-gray-500" />
+                      <span className="text-xs text-gray-500">RFI Release</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-sm bg-gray-500" />
+                      <span className="text-xs text-gray-500">Publication</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
         {/* Key Analyst Firms & Frameworks - Always expanded */}
         <section className="space-y-6">
           <div className="flex items-center gap-3">
@@ -504,81 +579,6 @@ const AnalystStrategy = () => {
               </Card>
             ))}
           </div>
-        </section>
-
-        {/* Visual RFI & Publish Calendar */}
-        <section className="space-y-6">
-          <div className="flex items-center gap-3">
-            <CalendarIcon className="h-7 w-7 text-indigo-500" />
-            <h2 className="text-2xl font-bold text-gray-900">2026 RFI & Publication Calendar</h2>
-          </div>
-
-          <Card className="bg-white border-gray-200 overflow-hidden">
-            <CardContent className="pt-6">
-              <div className="overflow-x-auto">
-                <div className="min-w-[700px]">
-                  {/* Month headers */}
-                  <div className="grid grid-cols-[180px_repeat(12,1fr)] gap-0 mb-2">
-                    <div className="text-sm font-semibold text-gray-500 pr-4">Firm / Report</div>
-                    {months.map((m) => (
-                      <div key={m} className="text-xs font-medium text-gray-400 text-center">{m}</div>
-                    ))}
-                  </div>
-
-                  {/* Event rows */}
-                  <div className="space-y-3">
-                    {calendarEvents.map((event) => (
-                      <div key={event.firm + event.report} className="grid grid-cols-[180px_repeat(12,1fr)] gap-0 items-center">
-                        <div className="pr-4">
-                          <p className="text-sm font-medium text-gray-900 truncate">{event.firm}</p>
-                          <p className="text-xs text-gray-500 truncate">{event.report}</p>
-                        </div>
-                        {months.map((_, monthIdx) => {
-                          const isRfi = monthIdx === event.rfiMonth;
-                          const isPublish = monthIdx === event.publishMonth;
-                          const isBetween = monthIdx > event.rfiMonth && monthIdx < event.publishMonth;
-                          return (
-                            <div key={monthIdx} className="flex items-center justify-center h-10 relative">
-                              {isBetween && (
-                                <div className={`absolute inset-y-3 inset-x-0 ${event.color} opacity-10 rounded-sm`} />
-                              )}
-                              {isRfi && (
-                                <div className="flex flex-col items-center z-10">
-                                  <div className={`w-4 h-4 rounded-full ${event.color} ring-2 ring-white shadow-md`} />
-                                  <span className="text-[9px] text-gray-600 mt-0.5 font-medium whitespace-nowrap">RFI</span>
-                                </div>
-                              )}
-                              {isPublish && (
-                                <div className="flex flex-col items-center z-10">
-                                  <div className={`w-4 h-4 rounded-sm ${event.color} ring-2 ring-white shadow-md`} />
-                                  <span className="text-[9px] text-gray-600 mt-0.5 font-medium whitespace-nowrap">Pub</span>
-                                </div>
-                              )}
-                              {isBetween && (
-                                <div className={`absolute inset-y-[18px] inset-x-0 h-[2px] ${event.color} opacity-30`} />
-                              )}
-                            </div>
-                          );
-                        })}
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Legend */}
-                  <div className="flex items-center gap-6 mt-6 pt-4 border-t border-gray-100">
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded-full bg-gray-500" />
-                      <span className="text-xs text-gray-500">RFI Release</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded-sm bg-gray-500" />
-                      <span className="text-xs text-gray-500">Publication</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
         </section>
 
         {/* Engagement Tactics - RAG Status */}
