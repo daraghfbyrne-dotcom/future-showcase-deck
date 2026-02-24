@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { format } from "date-fns";
-import { Target, Award, Calendar as CalendarIcon, CheckCircle2, Users, TrendingUp, FileText, Building2, Star, Clock, ChevronDown, ChevronUp, Sparkles } from "lucide-react";
+import { Target, Award, Calendar as CalendarIcon, CheckCircle2, Users, TrendingUp, FileText, Building2, Star, Clock, Sparkles, Mail, AlertTriangle } from "lucide-react";
 import { KeyPointsSummary } from "@/components/KeyPointsSummary";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
@@ -56,6 +55,11 @@ const analystFrameworks = [
     rationale: "Gartner evaluates ability to execute and completeness of vision.",
     actions: "Prepare for 2026 MQ by aligning roadmap to Gartner's criteria. Provide evidence of market traction, AI innovations and strategic vision.",
     color: "bg-blue-500",
+    rfiRelease: "February",
+    published: "June/July",
+    contacts: [
+      { name: "Miles Onafowora", email: "Miles.Onafowora@gartner.com", role: "Analyst" },
+    ],
   },
   {
     firm: "Forrester",
@@ -64,6 +68,12 @@ const analystFrameworks = [
     rationale: "The Wave process takes ~3 months and begins with inclusion in a landscape report.",
     actions: "October briefing in advance of wave & landscape completed. Confirmation we are invited to landscape report.",
     color: "bg-purple-500",
+    rfiRelease: "3rd February",
+    published: "15th June",
+    contacts: [
+      { name: "Meng Liu", email: "", role: "Lead Analyst" },
+      { name: "Charlie Paines", email: "cpaines@forrester.com", role: "Analyst" },
+    ],
   },
   {
     firm: "IDC",
@@ -72,6 +82,14 @@ const analystFrameworks = [
     rationale: "IDC scores vendors on capabilities and strategy.",
     actions: "Continue participation; emphasize long term strategy and global go to market alignment. Seek improvements by highlighting AI driven roadmap and enterprise wins.",
     color: "bg-green-500",
+    rfiRelease: "23rd February",
+    customerReferences: "20th February",
+    published: "July",
+    contacts: [
+      { name: "Kevin Permenter", email: "k.permenter@idc.com", role: "Analyst" },
+      { name: "Jordan Steele", email: "jsteele@idc.com", role: "Analyst" },
+      { name: "Brian Amigleo", email: "brian.amigleo@idc.com", role: "Project Coordinator" },
+    ],
   },
   {
     firm: "Everest Group",
@@ -80,6 +98,11 @@ const analystFrameworks = [
     rationale: "Recognized in 2025 evaluation.",
     actions: "Maintain analyst engagements 2X per year for 2026 evaluation.",
     color: "bg-orange-500",
+    rfiRelease: "June",
+    published: "November",
+    contacts: [
+      { name: "Manan Singhal", email: "manan.singhal@everestgrp.com", role: "Analyst" },
+    ],
   },
   {
     firm: "Hackett / SpendMatters",
@@ -88,8 +111,25 @@ const analystFrameworks = [
     rationale: "New combined matrix. Submission completed.",
     actions: "Published Q4 2025.",
     color: "bg-pink-500",
+    rfiRelease: "June",
+    published: "November",
+    contacts: [
+      { name: "Roderick Gaines", email: "roderick.gaines@thehackettgroup.com", role: "Hackett Analyst" },
+      { name: "Xavier Olivera", email: "xolivera@spendmatters.com", role: "SpendMatters Analyst" },
+    ],
   },
 ];
+
+// Visual calendar data for the timeline
+const calendarEvents = [
+  { firm: "Gartner", report: "Magic Quadrant & Critical Capabilities", rfiMonth: 1, publishMonth: 5, rfiLabel: "Feb", publishLabel: "Jun/Jul", color: "bg-blue-500" },
+  { firm: "IDC", report: "MarketScape", rfiMonth: 1, publishMonth: 6, rfiLabel: "23rd Feb", publishLabel: "Jul", color: "bg-green-500" },
+  { firm: "Forrester", report: "Wave APIA Software", rfiMonth: 1, publishMonth: 5, rfiLabel: "3rd Feb", publishLabel: "15th Jun", color: "bg-purple-500" },
+  { firm: "Everest", report: "PEAK Matrix", rfiMonth: 5, publishMonth: 10, rfiLabel: "Jun", publishLabel: "Nov", color: "bg-orange-500" },
+  { firm: "Hackett", report: "Digital World Class Matrix", rfiMonth: 5, publishMonth: 10, rfiLabel: "Jun", publishLabel: "Nov", color: "bg-pink-500" },
+];
+
+const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 const engagementTactics = [
   {
@@ -133,6 +173,19 @@ const engagementTactics = [
     title: "Create Analyst Contact Tracker",
     description: "Create an excel file with each analyst company, our contact, and their email address to ensure consistency.",
     dependencies: [],
+  },
+  {
+    id: "analyst-engagement-weeks",
+    title: "Analyst Engagement Weeks",
+    description: "Dedicated analyst engagement weeks to maximise face-time with key analysts across all firms.",
+    dependencies: [],
+    extraContent: {
+      h1: { label: "H1 2026", dates: "4th – 15th May 2026" },
+      h2: { label: "H2 2026", dates: "5th – 16th October 2026" },
+      timeSlots: ["12:00 – 1:00pm", "2:00 – 3:00pm", "3:00 – 4:00pm"],
+      timezone: "Irish Time (IST/GMT)",
+      note: "We are currently reaching out to analysts to confirm availability for these proposed dates.",
+    },
   },
 ];
 
@@ -187,7 +240,6 @@ const AnalystStrategy = () => {
   const [tacticStatuses, setTacticStatuses] = useState<Record<string, RAGStatus>>({});
   const [metricStatuses, setMetricStatuses] = useState<Record<string, RAGStatus>>({});
   const [metricDates, setMetricDates] = useState<Record<string, Date | undefined>>({});
-  const [expandedFrameworks, setExpandedFrameworks] = useState<string[]>([]);
 
   const updateTacticStatus = (id: string, status: RAGStatus) => {
     setTacticStatuses(prev => ({ ...prev, [id]: status }));
@@ -199,12 +251,6 @@ const AnalystStrategy = () => {
 
   const updateMetricDate = (id: string, date: Date | undefined) => {
     setMetricDates(prev => ({ ...prev, [id]: date }));
-  };
-
-  const toggleFramework = (firm: string) => {
-    setExpandedFrameworks(prev =>
-      prev.includes(firm) ? prev.filter(f => f !== firm) : [...prev, firm]
-    );
   };
 
   const getStatusCounts = () => {
@@ -258,6 +304,21 @@ const AnalystStrategy = () => {
             ]}
           />
         </div>
+
+        {/* Important Note */}
+        <Card className="border-amber-300 bg-amber-50">
+          <CardContent className="pt-6">
+            <div className="flex items-start gap-3">
+              <AlertTriangle className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
+              <div>
+                <h3 className="font-semibold text-amber-800">Important Note</h3>
+                <p className="text-sm text-amber-700 mt-1">
+                  SoftCo has <span className="font-bold">NOT</span> been included in the 2026 Gartner Magic Quadrant, Critical Capabilities or the Forrester Wave report.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
 
         {/* Objectives */}
         <section className="space-y-6">
@@ -347,7 +408,7 @@ const AnalystStrategy = () => {
           </div>
         </section>
 
-        {/* Key Analyst Firms & Frameworks */}
+        {/* Key Analyst Firms & Frameworks - Always expanded */}
         <section className="space-y-6">
           <div className="flex items-center gap-3">
             <FileText className="h-7 w-7 text-purple-500" />
@@ -356,67 +417,168 @@ const AnalystStrategy = () => {
 
           <div className="space-y-4">
             {analystFrameworks.map((framework) => (
-              <Collapsible key={framework.firm} open={expandedFrameworks.includes(framework.firm)}>
-                <Card className="bg-white border-gray-200 overflow-hidden">
-                  <CollapsibleTrigger asChild>
-                    <button
-                      onClick={() => toggleFramework(framework.firm)}
-                      className="w-full text-left"
-                    >
-                      <CardHeader className="cursor-pointer hover:bg-gray-50 transition-colors">
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-4">
-                            {firmLogos[framework.firm] && (
-                              <img src={firmLogos[framework.firm]} alt={framework.firm} className="h-8 w-auto object-contain" />
-                            )}
-                            <div>
-                              <CardTitle className="text-gray-900 flex items-center gap-3">
-                                {framework.firm}
-                                <Badge variant="outline" className="border-gray-300 text-gray-600 font-normal">
-                                  {framework.framework}
-                                </Badge>
-                              </CardTitle>
-                              <div className="flex items-center gap-2 mt-1">
-                                <Badge 
-                                  className={
-                                    framework.status === "Major Player" || framework.status === "Major Contender" ? "bg-emerald-500 text-white" :
-                                    framework.status === "Niche Player" ? "bg-amber-500 text-white" :
-                                    framework.status === "Submitted" ? "bg-blue-500 text-white" :
-                                    "bg-gray-500 text-white"
-                                  }
-                                >
-                                  {framework.status}
-                                </Badge>
-                              </div>
-                            </div>
-                          </div>
-                          {expandedFrameworks.includes(framework.firm) ? (
-                            <ChevronUp className="h-5 w-5 text-gray-500" />
-                          ) : (
-                            <ChevronDown className="h-5 w-5 text-gray-500" />
-                          )}
-                        </div>
-                      </CardHeader>
-                    </button>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent>
-                    <CardContent className="border-t border-gray-200 pt-4">
-                      <div className="grid md:grid-cols-2 gap-6">
-                        <div>
-                          <h4 className="text-sm font-semibold text-gray-500 mb-2">Rationale</h4>
-                          <p className="text-gray-700">{framework.rationale}</p>
-                        </div>
-                        <div>
-                          <h4 className="text-sm font-semibold text-gray-500 mb-2">Actions</h4>
-                          <p className="text-gray-700">{framework.actions}</p>
-                        </div>
+              <Card key={framework.firm} className="bg-white border-gray-200 overflow-hidden">
+                <CardHeader>
+                  <div className="flex items-center gap-4">
+                    {firmLogos[framework.firm] && (
+                      <img src={firmLogos[framework.firm]} alt={framework.firm} className="h-8 w-auto object-contain" />
+                    )}
+                    <div>
+                      <CardTitle className="text-gray-900 flex items-center gap-3">
+                        {framework.firm}
+                        <Badge variant="outline" className="border-gray-300 text-gray-600 font-normal">
+                          {framework.framework}
+                        </Badge>
+                      </CardTitle>
+                      <div className="flex items-center gap-2 mt-1">
+                        <Badge 
+                          className={
+                            framework.status === "Major Player" || framework.status === "Major Contender" ? "bg-emerald-500 text-white" :
+                            framework.status === "Niche Player" ? "bg-amber-500 text-white" :
+                            framework.status === "Submitted" ? "bg-blue-500 text-white" :
+                            "bg-gray-500 text-white"
+                          }
+                        >
+                          {framework.status}
+                        </Badge>
                       </div>
-                    </CardContent>
-                  </CollapsibleContent>
-                </Card>
-              </Collapsible>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent className="border-t border-gray-200 pt-4">
+                  <div className="grid md:grid-cols-2 gap-6 mb-4">
+                    <div>
+                      <h4 className="text-sm font-semibold text-gray-500 mb-2">Rationale</h4>
+                      <p className="text-gray-700">{framework.rationale}</p>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-semibold text-gray-500 mb-2">Actions</h4>
+                      <p className="text-gray-700">{framework.actions}</p>
+                    </div>
+                  </div>
+
+                  {/* Timeline info */}
+                  <div className="grid md:grid-cols-2 gap-6 mb-4 pt-4 border-t border-gray-100">
+                    <div>
+                      <h4 className="text-sm font-semibold text-gray-500 mb-2">
+                        <CalendarIcon className="h-3.5 w-3.5 inline mr-1" />
+                        RFI Release
+                      </h4>
+                      <p className="text-gray-700 font-medium">{framework.rfiRelease}</p>
+                      {(framework as any).customerReferences && (
+                        <p className="text-gray-600 text-sm mt-1">Customer References: {(framework as any).customerReferences}</p>
+                      )}
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-semibold text-gray-500 mb-2">
+                        <FileText className="h-3.5 w-3.5 inline mr-1" />
+                        Published
+                      </h4>
+                      <p className="text-gray-700 font-medium">{framework.published}</p>
+                    </div>
+                  </div>
+
+                  {/* Key Contacts */}
+                  <div className="pt-4 border-t border-gray-100">
+                    <h4 className="text-sm font-semibold text-gray-500 mb-3">
+                      <Mail className="h-3.5 w-3.5 inline mr-1" />
+                      Key Contacts
+                    </h4>
+                    <div className="flex flex-wrap gap-3">
+                      {framework.contacts.map((contact, idx) => (
+                        <div key={idx} className="flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2 border border-gray-200">
+                          <div>
+                            <p className="text-sm font-medium text-gray-900">{contact.name}</p>
+                            <p className="text-xs text-gray-500">{contact.role}</p>
+                            {contact.email && (
+                              <a href={`mailto:${contact.email}`} className="text-xs text-blue-600 hover:underline">
+                                {contact.email}
+                              </a>
+                            )}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
+        </section>
+
+        {/* Visual RFI & Publish Calendar */}
+        <section className="space-y-6">
+          <div className="flex items-center gap-3">
+            <CalendarIcon className="h-7 w-7 text-indigo-500" />
+            <h2 className="text-2xl font-bold text-gray-900">2026 RFI & Publication Calendar</h2>
+          </div>
+
+          <Card className="bg-white border-gray-200 overflow-hidden">
+            <CardContent className="pt-6">
+              <div className="overflow-x-auto">
+                <div className="min-w-[700px]">
+                  {/* Month headers */}
+                  <div className="grid grid-cols-[180px_repeat(12,1fr)] gap-0 mb-2">
+                    <div className="text-sm font-semibold text-gray-500 pr-4">Firm / Report</div>
+                    {months.map((m) => (
+                      <div key={m} className="text-xs font-medium text-gray-400 text-center">{m}</div>
+                    ))}
+                  </div>
+
+                  {/* Event rows */}
+                  <div className="space-y-3">
+                    {calendarEvents.map((event) => (
+                      <div key={event.firm + event.report} className="grid grid-cols-[180px_repeat(12,1fr)] gap-0 items-center">
+                        <div className="pr-4">
+                          <p className="text-sm font-medium text-gray-900 truncate">{event.firm}</p>
+                          <p className="text-xs text-gray-500 truncate">{event.report}</p>
+                        </div>
+                        {months.map((_, monthIdx) => {
+                          const isRfi = monthIdx === event.rfiMonth;
+                          const isPublish = monthIdx === event.publishMonth;
+                          const isBetween = monthIdx > event.rfiMonth && monthIdx < event.publishMonth;
+                          return (
+                            <div key={monthIdx} className="flex items-center justify-center h-10 relative">
+                              {isBetween && (
+                                <div className={`absolute inset-y-3 inset-x-0 ${event.color} opacity-10 rounded-sm`} />
+                              )}
+                              {isRfi && (
+                                <div className="flex flex-col items-center z-10">
+                                  <div className={`w-4 h-4 rounded-full ${event.color} ring-2 ring-white shadow-md`} />
+                                  <span className="text-[9px] text-gray-600 mt-0.5 font-medium whitespace-nowrap">RFI</span>
+                                </div>
+                              )}
+                              {isPublish && (
+                                <div className="flex flex-col items-center z-10">
+                                  <div className={`w-4 h-4 rounded-sm ${event.color} ring-2 ring-white shadow-md`} />
+                                  <span className="text-[9px] text-gray-600 mt-0.5 font-medium whitespace-nowrap">Pub</span>
+                                </div>
+                              )}
+                              {isBetween && (
+                                <div className={`absolute inset-y-[18px] inset-x-0 h-[2px] ${event.color} opacity-30`} />
+                              )}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Legend */}
+                  <div className="flex items-center gap-6 mt-6 pt-4 border-t border-gray-100">
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-full bg-gray-500" />
+                      <span className="text-xs text-gray-500">RFI Release</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-sm bg-gray-500" />
+                      <span className="text-xs text-gray-500">Publication</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </section>
 
         {/* Engagement Tactics - RAG Status */}
@@ -469,6 +631,35 @@ const AnalystStrategy = () => {
                                 {dep}
                               </Badge>
                             ))}
+                          </div>
+                        )}
+                        {/* Extra content for analyst engagement weeks */}
+                        {(tactic as any).extraContent && (
+                          <div className="mt-4 p-4 rounded-lg bg-indigo-50 border border-indigo-200">
+                            <div className="grid sm:grid-cols-2 gap-4 mb-3">
+                              <div>
+                                <p className="text-xs font-semibold text-indigo-600">{(tactic as any).extraContent.h1.label}</p>
+                                <p className="text-sm font-medium text-gray-800">{(tactic as any).extraContent.h1.dates}</p>
+                              </div>
+                              <div>
+                                <p className="text-xs font-semibold text-indigo-600">{(tactic as any).extraContent.h2.label}</p>
+                                <p className="text-sm font-medium text-gray-800">{(tactic as any).extraContent.h2.dates}</p>
+                              </div>
+                            </div>
+                            <div className="mb-3">
+                              <p className="text-xs font-semibold text-gray-500 mb-1">Available Time Slots ({(tactic as any).extraContent.timezone})</p>
+                              <div className="flex flex-wrap gap-2">
+                                {(tactic as any).extraContent.timeSlots.map((slot: string) => (
+                                  <Badge key={slot} variant="outline" className="text-xs border-indigo-300 text-indigo-700 bg-white">
+                                    {slot}
+                                  </Badge>
+                                ))}
+                              </div>
+                            </div>
+                            <p className="text-xs text-amber-700 italic flex items-center gap-1">
+                              <AlertTriangle className="h-3 w-3" />
+                              {(tactic as any).extraContent.note}
+                            </p>
                           </div>
                         )}
                       </div>
