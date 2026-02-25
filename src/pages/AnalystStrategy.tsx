@@ -288,7 +288,8 @@ const AnalystStrategy = () => {
                 <h3 className="font-semibold text-amber-800">Important Note</h3>
                 <p className="text-sm text-amber-700 mt-1">
                   SoftCo has <span className="font-bold">NOT</span> been included in the 2026 Gartner Magic Quadrant, Critical Capabilities or the Forrester Wave report.
-                  Forrester and Gartner have stated that they do not consider SoftCo 'relevant' enough to warrant inclusion. Gartner have stated that relevancy is derived from the number of clients talking about certain companies.
+                   Forrester and Gartner have stated that they do not consider SoftCo 'relevant' enough to warrant inclusion. Gartner have stated that relevancy is derived from the number of clients talking about certain companies.
+                   We are now evaluating new reports such as Spend Matters and Ardent Partners, to improve our market visibility and analyst relations.
                 </p>
               </div>
             </div>
@@ -314,7 +315,7 @@ const AnalystStrategy = () => {
             </CardHeader>
             <CardContent>
               <div className="flex flex-wrap gap-3">
-                {["Gartner", "Forrester", "Hackett (including SpendMatters)", "Everest", "IDC"].map((firm) => (
+                {["Gartner", "Forrester", "Hackett (including SpendMatters)", "Everest", "IDC", "Ardent Partners"].map((firm) => (
                   <Badge key={firm} className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-2 text-sm">
                     {firm}
                   </Badge>
@@ -451,6 +452,13 @@ const AnalystStrategy = () => {
               </div>
             </CardContent>
           </Card>
+
+          <div className="flex items-start gap-3 p-4 bg-emerald-50 border border-emerald-200 rounded-lg">
+            <FileText className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+            <p className="text-sm text-emerald-700">
+              <span className="font-semibold">Note:</span> Hackett acquired Spend Matters in 2025, however they both still run individual reports.
+            </p>
+          </div>
         </section>
 
         {/* Visual RFI & Publish Calendar - Not Included */}
@@ -521,6 +529,13 @@ const AnalystStrategy = () => {
               </div>
             </CardContent>
           </Card>
+
+          <div className="flex items-start gap-3 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+            <FileText className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
+            <p className="text-sm text-blue-700">
+              <span className="font-semibold">Note:</span> We will still take part in the Forrester Landscape Report, and invite both Gartner and Forrester to our Analyst Engagement Weeks.
+            </p>
+          </div>
         </section>
 
         {/* Key Analyst Firms & Frameworks - Always expanded */}
