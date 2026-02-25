@@ -128,13 +128,20 @@ const analystFrameworks = [
   },
 ];
 
-// Visual calendar data for the timeline
-const calendarEvents = [
-  { firm: "Gartner", report: "Magic Quadrant & Critical Capabilities", rfiMonth: 1, publishMonth: 5, rfiLabel: "Feb", publishLabel: "Jun/Jul", color: "bg-blue-500" },
+// Visual calendar data - reports we ARE included in
+const includedCalendarEvents = [
   { firm: "IDC", report: "MarketScape", rfiMonth: 1, publishMonth: 6, rfiLabel: "23rd Feb", publishLabel: "Jul", color: "bg-green-500" },
-  { firm: "Forrester", report: "Wave APIA Software", rfiMonth: 1, publishMonth: 5, rfiLabel: "3rd Feb", publishLabel: "15th Jun", color: "bg-purple-500" },
   { firm: "Everest", report: "PEAK Matrix", rfiMonth: 5, publishMonth: 10, rfiLabel: "Jun", publishLabel: "Nov", color: "bg-orange-500" },
   { firm: "Hackett", report: "Digital World Class Matrix", rfiMonth: 5, publishMonth: 10, rfiLabel: "Jun", publishLabel: "Nov", color: "bg-pink-500" },
+  { firm: "Spend Matters", report: "Digital World Class Matrix", rfiMonth: 7, publishMonth: 9, rfiLabel: "Aug", publishLabel: "Oct", color: "bg-cyan-500" },
+  { firm: "Ardent Partners", report: "2027 AP Automation & Payments Advisor", rfiMonth: 9, publishMonth: 12, rfiLabel: "Oct", publishLabel: "Jan '27", color: "bg-teal-500" },
+];
+
+// Visual calendar data - reports we are NOT included in
+const excludedCalendarEvents = [
+  { firm: "Gartner", report: "Magic Quadrant & Critical Capabilities", rfiMonth: 1, publishMonth: 5, rfiLabel: "Feb", publishLabel: "Jun/Jul", color: "bg-blue-500" },
+  { firm: "Forrester", report: "Wave APIA Software", rfiMonth: 1, publishMonth: 5, rfiLabel: "3rd Feb", publishLabel: "15th Jun", color: "bg-purple-500" },
+  { firm: "Forrester", report: "AP Landscape Report", rfiMonth: 9, publishMonth: 11, rfiLabel: "Oct", publishLabel: "Dec", color: "bg-violet-500" },
 ];
 
 const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -197,18 +204,6 @@ const engagementTactics = [
   },
 ];
 
-const calendarData = [
-  { report: "Magic Quadrant for AP", analyst: "Gartner", rfiIssued: "Jan-26", demo: "", publication: "Tentatively June" },
-  { report: "Critical Capabilities for AP", analyst: "Gartner", rfiIssued: "Jan-26", demo: "", publication: "Tentatively June" },
-  { report: "AP Invoice Automation Landscape", analyst: "Forrester", rfiIssued: "6th October", demo: "13th October", publication: "29th December" },
-  { report: "PEAK Matrix", analyst: "Everest", rfiIssued: "Q2 2026", demo: "", publication: "Q4 2026" },
-  { report: "Spring Solution", analyst: "SpendMatters", rfiIssued: "Mid-late October", demo: "", publication: "March" },
-  { report: "Fall Solution", analyst: "SpendMatters", rfiIssued: "Late April/May", demo: "", publication: "September (23rd)" },
-  { report: "MarketScape", analyst: "IDC", rfiIssued: "TBC", demo: "", publication: "TBC" },
-  { report: "ePayables Technology", analyst: "Ardent Group", rfiIssued: "Late July", demo: "4th-26th September", publication: "November 3rd" },
-  { report: "World Class Matrix", analyst: "Hackett Group", rfiIssued: "20th June", demo: "", publication: "30th September (delayed)" },
-  { report: "Wave APIA Software", analyst: "Forrester", rfiIssued: "9th February", demo: "", publication: "15th June" },
-];
 
 type RAGStatus = "not-started" | "in-progress" | "completed" | "blocked";
 
@@ -275,9 +270,9 @@ const AnalystStrategy = () => {
         <div className="mb-8">
           <KeyPointsSummary
             points={[
-              "Current standing: Gartner Niche Player, IDC Major Player, Everest Major Contender",
-              "2026 Target: Inclusion in Forrester Wave & improved positioning across all reports",
-              "5 Target Firms: Gartner, Forrester, IDC, Everest, Hackett/SpendMatters",
+              "We have not been included in the Gartner Magic Quadrant or Forrester Wave",
+              "We are currently taking part in the IDC MarketScape Report, and the Hackett & Everest reports in Q2/Q3",
+              "6 Analyst Firms: Gartner, Forrester, IDC, Everest, Hackett/SpendMatters, Ardent Partners",
               "8 Engagement Tactics: Cross-functional committee, bi-annual briefings, analyst day"
             ]}
           />
@@ -292,6 +287,7 @@ const AnalystStrategy = () => {
                 <h3 className="font-semibold text-amber-800">Important Note</h3>
                 <p className="text-sm text-amber-700 mt-1">
                   SoftCo has <span className="font-bold">NOT</span> been included in the 2026 Gartner Magic Quadrant, Critical Capabilities or the Forrester Wave report.
+                  Forrester and Gartner have stated that they do not consider SoftCo 'relevant' enough to warrant inclusion. Gartner have stated that relevancy is derived from the number of clients talking about certain companies.
                 </p>
               </div>
             </div>
@@ -386,29 +382,96 @@ const AnalystStrategy = () => {
           </div>
         </section>
 
-        {/* Visual RFI & Publish Calendar */}
+        {/* Visual RFI & Publish Calendar - Included */}
         <section className="space-y-6">
           <div className="flex items-center gap-3">
-            <CalendarIcon className="h-7 w-7 text-indigo-500" />
-            <h2 className="text-2xl font-bold text-gray-900">2026 RFI & Publication Calendar</h2>
+            <CalendarIcon className="h-7 w-7 text-emerald-500" />
+            <h2 className="text-2xl font-bold text-gray-900">Reports We Are Included In</h2>
           </div>
 
-          <Card className="bg-white border-gray-200 overflow-hidden">
+          <Card className="bg-white border-emerald-200 overflow-hidden">
             <CardContent className="pt-6">
               <div className="overflow-x-auto">
                 <div className="min-w-[700px]">
-                  {/* Month headers */}
-                  <div className="grid grid-cols-[180px_repeat(12,1fr)] gap-0 mb-2">
+                  <div className="grid grid-cols-[200px_repeat(13,1fr)] gap-0 mb-2">
+                    <div className="text-sm font-semibold text-gray-500 pr-4">Firm / Report</div>
+                    {[...months, "Jan '27"].map((m) => (
+                      <div key={m} className="text-xs font-medium text-gray-400 text-center">{m}</div>
+                    ))}
+                  </div>
+                  <div className="space-y-3">
+                    {includedCalendarEvents.map((event) => (
+                      <div key={event.firm + event.report} className="grid grid-cols-[200px_repeat(13,1fr)] gap-0 items-center">
+                        <div className="pr-4">
+                          <p className="text-sm font-medium text-gray-900 truncate">{event.firm}</p>
+                          <p className="text-xs text-gray-500 truncate">{event.report}</p>
+                        </div>
+                        {[...months, "Jan '27"].map((_, monthIdx) => {
+                          const isRfi = monthIdx === event.rfiMonth;
+                          const isPublish = monthIdx === event.publishMonth;
+                          const isBetween = monthIdx > event.rfiMonth && monthIdx < event.publishMonth;
+                          return (
+                            <div key={monthIdx} className="flex items-center justify-center h-10 relative">
+                              {isBetween && (
+                                <div className={`absolute inset-y-3 inset-x-0 ${event.color} opacity-10 rounded-sm`} />
+                              )}
+                              {isRfi && (
+                                <div className="flex flex-col items-center z-10">
+                                  <div className={`w-4 h-4 rounded-full ${event.color} ring-2 ring-white shadow-md`} />
+                                  <span className="text-[9px] text-gray-600 mt-0.5 font-medium whitespace-nowrap">RFI</span>
+                                </div>
+                              )}
+                              {isPublish && (
+                                <div className="flex flex-col items-center z-10">
+                                  <div className={`w-4 h-4 rounded-sm ${event.color} ring-2 ring-white shadow-md`} />
+                                  <span className="text-[9px] text-gray-600 mt-0.5 font-medium whitespace-nowrap">Pub</span>
+                                </div>
+                              )}
+                              {isBetween && (
+                                <div className={`absolute inset-y-[18px] inset-x-0 h-[2px] ${event.color} opacity-30`} />
+                              )}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    ))}
+                  </div>
+                  <div className="flex items-center gap-6 mt-6 pt-4 border-t border-gray-100">
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-full bg-gray-500" />
+                      <span className="text-xs text-gray-500">RFI Release</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-sm bg-gray-500" />
+                      <span className="text-xs text-gray-500">Publication</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Visual RFI & Publish Calendar - Not Included */}
+        <section className="space-y-6">
+          <div className="flex items-center gap-3">
+            <CalendarIcon className="h-7 w-7 text-red-400" />
+            <h2 className="text-2xl font-bold text-gray-900">Reports We Are Not Included In</h2>
+          </div>
+
+          <Card className="bg-white border-red-200 overflow-hidden">
+            <CardContent className="pt-6">
+              <div className="overflow-x-auto">
+                <div className="min-w-[700px]">
+                  <div className="grid grid-cols-[200px_repeat(12,1fr)] gap-0 mb-2">
                     <div className="text-sm font-semibold text-gray-500 pr-4">Firm / Report</div>
                     {months.map((m) => (
                       <div key={m} className="text-xs font-medium text-gray-400 text-center">{m}</div>
                     ))}
                   </div>
-
-                  {/* Event rows */}
                   <div className="space-y-3">
-                    {calendarEvents.map((event) => (
-                      <div key={event.firm + event.report} className="grid grid-cols-[180px_repeat(12,1fr)] gap-0 items-center">
+                    {excludedCalendarEvents.map((event) => (
+                      <div key={event.firm + event.report} className="grid grid-cols-[200px_repeat(12,1fr)] gap-0 items-center">
                         <div className="pr-4">
                           <p className="text-sm font-medium text-gray-900 truncate">{event.firm}</p>
                           <p className="text-xs text-gray-500 truncate">{event.report}</p>
@@ -443,8 +506,6 @@ const AnalystStrategy = () => {
                       </div>
                     ))}
                   </div>
-
-                  {/* Legend */}
                   <div className="flex items-center gap-6 mt-6 pt-4 border-t border-gray-100">
                     <div className="flex items-center gap-2">
                       <div className="w-3 h-3 rounded-full bg-gray-500" />
@@ -684,47 +745,6 @@ const AnalystStrategy = () => {
         </section>
 
 
-        {/* Calendar & Timelines */}
-        <section className="space-y-6">
-          <div className="flex items-center gap-3">
-            <CalendarIcon className="h-7 w-7 text-amber-500" />
-            <h2 className="text-2xl font-bold text-gray-900">Calendar & Timelines</h2>
-          </div>
-          <p className="text-sm text-gray-500">
-            Dates are subject to change and are dependent on the analyst organizations. Dates correct as at 16/10/25.
-          </p>
-
-          <Card className="bg-white border-gray-200 overflow-hidden">
-            <div className="overflow-x-auto">
-              <Table>
-                <TableHeader>
-                  <TableRow className="border-gray-200 hover:bg-gray-50">
-                    <TableHead className="text-gray-700 font-semibold">Report Name</TableHead>
-                    <TableHead className="text-gray-700 font-semibold">Analyst</TableHead>
-                    <TableHead className="text-gray-700 font-semibold">RFI Issued</TableHead>
-                    <TableHead className="text-gray-700 font-semibold">Demo</TableHead>
-                    <TableHead className="text-gray-700 font-semibold">Publication</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {calendarData.map((item, index) => (
-                    <TableRow key={index} className="border-gray-200 hover:bg-gray-50">
-                      <TableCell className="font-medium text-gray-900">{item.report}</TableCell>
-                      <TableCell>
-                        <Badge variant="outline" className="border-gray-300 text-gray-600">
-                          {item.analyst}
-                        </Badge>
-                      </TableCell>
-                      <TableCell className="text-gray-700">{item.rfiIssued || "—"}</TableCell>
-                      <TableCell className="text-gray-700">{item.demo || "—"}</TableCell>
-                      <TableCell className="text-gray-700">{item.publication || "—"}</TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </div>
-          </Card>
-        </section>
       </main>
 
       {/* Footer */}
