@@ -39,6 +39,7 @@ const currentRecognitions = [
 const futureTargets = [
   { target: "Forrester Wave for AP", timing: "Q1 2026", status: "Not Included" },
   { target: "Gartner Magic Quadrant for AP", timing: "Q1 2026", status: "Not Included" },
+  { target: "Ardent Partners - AP Automation & Payments Advisor", timing: "Q4 2026 / Q1 2027", status: "Exploring" },
   { target: "Improve positioning on existing quadrants", timing: "Ongoing", status: "Active" },
 ];
 
@@ -134,6 +135,7 @@ const includedCalendarEvents = [
   { firm: "Everest", report: "PEAK Matrix", rfiMonth: 5, publishMonth: 10, rfiLabel: "Jun", publishLabel: "Nov", color: "bg-orange-500" },
   { firm: "Hackett", report: "Digital World Class Matrix", rfiMonth: 5, publishMonth: 10, rfiLabel: "Jun", publishLabel: "Nov", color: "bg-pink-500" },
   { firm: "Spend Matters", report: "Digital World Class Matrix", rfiMonth: 7, publishMonth: 9, rfiLabel: "Aug", publishLabel: "Oct", color: "bg-cyan-500" },
+  { firm: "Forrester", report: "AP Landscape Report", rfiMonth: 7, publishMonth: 9, rfiLabel: "Aug", publishLabel: "Oct", color: "bg-violet-500" },
   { firm: "Ardent Partners", report: "2027 AP Automation & Payments Advisor", rfiMonth: 9, publishMonth: 12, rfiLabel: "Oct", publishLabel: "Jan '27", color: "bg-teal-500" },
 ];
 
@@ -141,7 +143,6 @@ const includedCalendarEvents = [
 const excludedCalendarEvents = [
   { firm: "Gartner", report: "Magic Quadrant & Critical Capabilities", rfiMonth: 1, publishMonth: 5, rfiLabel: "Feb", publishLabel: "Jun/Jul", color: "bg-blue-500" },
   { firm: "Forrester", report: "Wave APIA Software", rfiMonth: 1, publishMonth: 5, rfiLabel: "3rd Feb", publishLabel: "15th Jun", color: "bg-purple-500" },
-  { firm: "Forrester", report: "AP Landscape Report", rfiMonth: 9, publishMonth: 11, rfiLabel: "Oct", publishLabel: "Dec", color: "bg-violet-500" },
 ];
 
 const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
