@@ -110,7 +110,6 @@ const analystFrameworks = [
     rfiRelease: "June",
     published: "November",
     contacts: [
-      { name: "Roderick Gaines", email: "roderick.gaines@thehackettgroup.com", role: "Hackett Analyst" },
       { name: "Xavier Olivera", email: "xolivera@spendmatters.com", role: "SpendMatters Analyst" },
     ],
   },
