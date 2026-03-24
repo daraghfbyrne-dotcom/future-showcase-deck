@@ -1,13 +1,24 @@
 import { Navigation } from "@/components/Navigation";
 import { SectionNav } from "@/components/SectionNav";
 import PartnerHero from "@/components/partners/PartnerHero";
-import UpdatedPartnershipStrategy from "@/components/partners/UpdatedPartnershipStrategy";
-import PartnershipUpdates from "@/components/partners/PartnershipUpdates";
+import BoardUpdateContent from "@/components/partners/BoardUpdateContent";
 
 const sections = [
-  { id: "partner-overview", label: "Overview" },
-  { id: "partnership-updates", label: "Updates (Feb '26)" },
-  { id: "updated-strategy", label: "Updated Strategy (Feb '26)" },
+  { id: "purpose", label: "Purpose" },
+  { id: "executive-summary", label: "Executive Summary" },
+  { id: "partnership-model", label: "Partnership Model" },
+  { id: "pipeline-targets", label: "Pipeline & ARR" },
+  { id: "current-pipeline", label: "Current Pipeline" },
+  { id: "existing-partnerships", label: "Existing Partnerships" },
+  { id: "enablement", label: "Enablement" },
+  { id: "referral-ecosystem", label: "Referral Ecosystem" },
+  { id: "tungsten-scenario", label: "Tungsten Scenario" },
+  { id: "erp-ecosystem", label: "ERP Ecosystem" },
+  { id: "competitive-landscape", label: "Competitive Landscape" },
+  { id: "tiering-framework", label: "Tiering" },
+  { id: "risk-register", label: "Risks" },
+  { id: "execution-roadmap", label: "Roadmap" },
+  { id: "partner-outreach", label: "Outreach" },
 ];
 
 const PartnersStrategy = () => {
@@ -18,13 +29,12 @@ const PartnersStrategy = () => {
 
       <main className="container mx-auto px-4 pt-32 pb-8 space-y-16">
         <PartnerHero />
-        <PartnershipUpdates />
-        <UpdatedPartnershipStrategy />
+        <BoardUpdateContent />
       </main>
 
       <footer className="border-t border-slate-200 mt-12 py-6">
         <div className="container mx-auto px-4 text-center text-slate-500 text-sm">
-          SoftCo Partners Strategy 2025-2026
+          SoftCo Partnership Strategy 2026–2029 | Board Update | Confidential
         </div>
       </footer>
     </div>
