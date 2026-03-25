@@ -44,6 +44,30 @@ export type Database = {
         }
         Relationships: []
       }
+      tungsten_pipeline_actuals: {
+        Row: {
+          id: string
+          metric: string
+          month: string
+          updated_at: string
+          value: string
+        }
+        Insert: {
+          id?: string
+          metric: string
+          month: string
+          updated_at?: string
+          value?: string
+        }
+        Update: {
+          id?: string
+          metric?: string
+          month?: string
+          updated_at?: string
+          value?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

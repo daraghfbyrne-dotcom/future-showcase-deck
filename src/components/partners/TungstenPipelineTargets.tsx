@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Input } from "@/components/ui/input";
 import { Target } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { useQuery } from "@tanstack/react-query";
 
 interface MonthData {
   month: string;
@@ -37,12 +39,59 @@ const formatCurrency = (val: number) =>
 
 const TungstenPipelineTargets = () => {
   const [actuals, setActuals] = useState<Record<string, Record<string, string>>>({});
+  const [saveTimers, setSaveTimers] = useState<Record<string, ReturnType<typeof setTimeout>>>({});
+
+  // Load saved actuals from database
+  const { data: savedActuals } = useQuery({
+    queryKey: ['tungsten-pipeline-actuals'],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from('tungsten_pipeline_actuals')
+        .select('*');
+      if (error) {
+        console.error('Error loading actuals:', error);
+        return [];
+      }
+      return data;
+    },
+    staleTime: 1000 * 60 * 5,
+  });
+
+  // Populate local state from DB on load
+  useEffect(() => {
+    if (savedActuals && savedActuals.length > 0) {
+      const loaded: Record<string, Record<string, string>> = {};
+      for (const row of savedActuals) {
+        if (!loaded[row.month]) loaded[row.month] = {};
+        loaded[row.month][row.metric] = row.value;
+      }
+      setActuals(loaded);
+    }
+  }, [savedActuals]);
+
+  const saveToDb = useCallback(async (month: string, metric: string, value: string) => {
+    const { error } = await supabase
+      .from('tungsten_pipeline_actuals')
+      .upsert(
+        { month, metric, value, updated_at: new Date().toISOString() },
+        { onConflict: 'month,metric' }
+      );
+    if (error) {
+      console.error('Error saving actual:', error);
+    }
+  }, []);
 
   const updateActual = (month: string, metric: string, value: string) => {
     setActuals((prev) => ({
       ...prev,
       [month]: { ...prev[month], [metric]: value },
     }));
+
+    // Debounce save
+    const key = `${month}-${metric}`;
+    if (saveTimers[key]) clearTimeout(saveTimers[key]);
+    const timer = setTimeout(() => saveToDb(month, metric, value), 500);
+    setSaveTimers((prev) => ({ ...prev, [key]: timer }));
   };
 
   return (
