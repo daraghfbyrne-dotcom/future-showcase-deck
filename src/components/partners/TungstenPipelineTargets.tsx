@@ -39,7 +39,7 @@ const formatCurrency = (val: number) =>
 
 const TungstenPipelineTargets = () => {
   const [actuals, setActuals] = useState<Record<string, Record<string, string>>>({});
-  const [saveTimers, setSaveTimers] = useState<Record<string, NodeJS.Timeout>>({});
+  const [saveTimers, setSaveTimers] = useState<Record<string, ReturnType<typeof setTimeout>>>({});
 
   // Load saved actuals from database
   const { data: savedActuals } = useQuery({
