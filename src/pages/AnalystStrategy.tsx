@@ -94,10 +94,17 @@ const analystFrameworks = [
     rationale: "Recognized in 2025 evaluation.",
     actions: "Maintain analyst engagements 2X per year for 2026 evaluation.",
     color: "bg-orange-500",
-    rfiRelease: "June",
-    published: "November",
+    rfiRelease: "18th June",
+    published: "16th November",
     contacts: [
-      { name: "Manan Singhal", email: "manan.singhal@everestgrp.com", role: "Analyst" },
+      { name: "Arushi Diwan", email: "arushi.a.diwan@everestgrp.com", role: "Key Contact" },
+      { name: "Katrina Menzigian", email: "katrina.menzigian@everestgrp.com", role: "Supporting Analyst" },
+      { name: "Patricia Blair", email: "patricia.blair@everestgrp.com", role: "Supporting Analyst" },
+      { name: "Ritika Dhingra", email: "ritika.dhingra@everestgrp.com", role: "Supporting Analyst" },
+      { name: "Anuj Srivastava", email: "anuj.srivastava@everestgrp.com", role: "Supporting Analyst" },
+      { name: "Niketa Sharma", email: "niketa.sharma@everestgrp.com", role: "Supporting Analyst" },
+      { name: "Anil Kapur", email: "anil.kapur@everestgrp.com", role: "Supporting Analyst" },
+      { name: "Anchal Guleria", email: "anchal.guleria@everestgrp.com", role: "Supporting Analyst" },
     ],
   },
   {
@@ -131,7 +138,7 @@ const analystFrameworks = [
 // Visual calendar data - reports we ARE included in
 const includedCalendarEvents = [
   { firm: "IDC", report: "MarketScape", rfiMonth: 1, publishMonth: 6, rfiLabel: "23rd Feb", publishLabel: "Jul", color: "bg-green-500" },
-  { firm: "Everest", report: "PEAK Matrix", rfiMonth: 5, publishMonth: 10, rfiLabel: "Jun", publishLabel: "Nov", color: "bg-orange-500" },
+  { firm: "Everest", report: "PEAK Matrix", rfiMonth: 5, publishMonth: 10, rfiLabel: "18th Jun", publishLabel: "16th Nov", color: "bg-orange-500" },
   { firm: "Hackett", report: "Digital World Class Matrix", rfiMonth: 5, publishMonth: 10, rfiLabel: "Jun", publishLabel: "Nov", color: "bg-pink-500" },
   { firm: "Spend Matters", report: "Digital World Class Matrix", rfiMonth: 7, publishMonth: 9, rfiLabel: "Aug", publishLabel: "Oct", color: "bg-cyan-500" },
   { firm: "Forrester", report: "AP Landscape Report", rfiMonth: 7, publishMonth: 9, rfiLabel: "Aug", publishLabel: "Oct", color: "bg-violet-500" },
