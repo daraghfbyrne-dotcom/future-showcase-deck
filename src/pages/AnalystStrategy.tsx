@@ -138,7 +138,7 @@ const analystFrameworks = [
 // Visual calendar data - reports we ARE included in
 const includedCalendarEvents = [
   { firm: "IDC", report: "MarketScape", rfiMonth: 1, publishMonth: 6, rfiLabel: "23rd Feb", publishLabel: "Jul", color: "bg-green-500" },
-  { firm: "Everest", report: "PEAK Matrix", rfiMonth: 5, publishMonth: 10, rfiLabel: "Jun", publishLabel: "Nov", color: "bg-orange-500" },
+  { firm: "Everest", report: "PEAK Matrix", rfiMonth: 5, publishMonth: 10, rfiLabel: "18th Jun", publishLabel: "16th Nov", color: "bg-orange-500" },
   { firm: "Hackett", report: "Digital World Class Matrix", rfiMonth: 5, publishMonth: 10, rfiLabel: "Jun", publishLabel: "Nov", color: "bg-pink-500" },
   { firm: "Spend Matters", report: "Digital World Class Matrix", rfiMonth: 7, publishMonth: 9, rfiLabel: "Aug", publishLabel: "Oct", color: "bg-cyan-500" },
   { firm: "Forrester", report: "AP Landscape Report", rfiMonth: 7, publishMonth: 9, rfiLabel: "Aug", publishLabel: "Oct", color: "bg-violet-500" },
