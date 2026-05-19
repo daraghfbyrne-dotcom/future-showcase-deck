@@ -12,6 +12,7 @@ import forresterLogo from "@/assets/forrester-logo.png";
 import idcLogo from "@/assets/idc-logo.png";
 import hackettLogo from "@/assets/hackett-logo.png";
 import hackettGroupLogo from "@/assets/hackett-group-logo.png";
+import euromoneyLogo from "@/assets/euromoney-logo.png";
 import everestLogo from "@/assets/everest-logo.png";
 
 const firmLogos: Record<string, string> = {
@@ -21,6 +22,7 @@ const firmLogos: Record<string, string> = {
   "Hackett": hackettLogo,
   "Hackett / SpendMatters": hackettLogo,
   "Hackett Group": hackettGroupLogo,
+  "Euromoney": euromoneyLogo,
   "Everest": everestLogo,
   "Everest Group": everestLogo,
 };
@@ -48,7 +50,7 @@ const futureTargets = [
 const whitepapers2026 = [
   { title: "Forrester Top AI Use Cases for Accounts Payable Automation", firm: "Forrester", status: null },
   { title: "Hackett AI Solution Provider Landscape Report", firm: "Hackett", status: null },
-  { title: "Euromoney Cash Management Survey 2026", firm: null, status: null },
+  { title: "Euromoney Cash Management Survey 2026", firm: "Euromoney", status: null },
   { title: "Forrester eInvoicing Compliance Report", firm: "Forrester", status: "Invited" },
 ];
 
@@ -445,7 +447,13 @@ const AnalystStrategy = () => {
                 <CardContent className="pt-6">
                   <div className="flex items-start gap-3">
                     {wp.firm && firmLogos[wp.firm] && (
-                      <img src={firmLogos[wp.firm]} alt={wp.firm} className="h-6 w-auto object-contain flex-shrink-0 mt-0.5" />
+                      <img
+                        src={firmLogos[wp.firm]}
+                        alt={wp.firm}
+                        className={`w-auto object-contain flex-shrink-0 mt-0.5 ${
+                          wp.firm === "Hackett" || wp.firm === "Euromoney" ? "h-16" : "h-6"
+                        }`}
+                      />
                     )}
                     <div className="flex-1">
                       <p className="text-sm font-medium text-gray-900">{wp.title}</p>
