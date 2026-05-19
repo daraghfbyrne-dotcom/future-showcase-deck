@@ -498,24 +498,31 @@ const AnalystStrategy = () => {
                           const isRfi = monthIdx === event.rfiMonth;
                           const isPublish = monthIdx === event.publishMonth;
                           const isBetween = monthIdx > event.rfiMonth && monthIdx < event.publishMonth;
+                          const isBriefing = (event as any).type === "briefing";
                           return (
                             <div key={monthIdx} className="flex items-center justify-center h-10 relative">
-                              {isBetween && (
+                              {isBetween && !isBriefing && (
                                 <div className={`absolute inset-y-3 inset-x-0 ${event.color} opacity-10 rounded-sm`} />
                               )}
-                              {isRfi && (
+                              {isRfi && isBriefing && (
+                                <div className="flex flex-col items-center z-10">
+                                  <div className={`w-4 h-4 rotate-45 ${event.color} ring-2 ring-white shadow-md`} />
+                                  <span className="text-[9px] text-gray-600 mt-0.5 font-medium whitespace-nowrap">Briefing</span>
+                                </div>
+                              )}
+                              {isRfi && !isBriefing && (
                                 <div className="flex flex-col items-center z-10">
                                   <div className={`w-4 h-4 rounded-full ${event.color} ring-2 ring-white shadow-md`} />
                                   <span className="text-[9px] text-gray-600 mt-0.5 font-medium whitespace-nowrap">RFI</span>
                                 </div>
                               )}
-                              {isPublish && (
+                              {isPublish && !isBriefing && (
                                 <div className="flex flex-col items-center z-10">
                                   <div className={`w-4 h-4 rounded-sm ${event.color} ring-2 ring-white shadow-md`} />
                                   <span className="text-[9px] text-gray-600 mt-0.5 font-medium whitespace-nowrap">Pub</span>
                                 </div>
                               )}
-                              {isBetween && (
+                              {isBetween && !isBriefing && (
                                 <div className={`absolute inset-y-[18px] inset-x-0 h-[2px] ${event.color} opacity-30`} />
                               )}
                             </div>
