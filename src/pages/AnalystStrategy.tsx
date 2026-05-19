@@ -37,11 +37,24 @@ const currentRecognitions = [
 ];
 
 const futureTargets = [
-  { target: "Forrester Wave for AP", timing: "Q1 2026", status: "Not Included" },
-  { target: "Gartner Magic Quadrant for AP", timing: "Q1 2026", status: "Not Included" },
-  { target: "Ardent Partners - AP Automation & Payments Advisor", timing: "Q4 2026 / Q1 2027", status: "Exploring" },
-  { target: "SpendMatters Fall Solution Map", timing: "Q3 2026", status: "Exploring" },
-  { target: "Improve positioning on existing quadrants", timing: "Ongoing", status: "Active" },
+  { target: "IDC MarketScape Report", timing: "Q2 2026", status: "Pending Publication" },
+  { target: "SpendMatters Fall Solution Map 2026", timing: "Q2 2026", status: "In Progress" },
+  { target: "Everest P2P PEAK Matrix 2026", timing: "Q2 2026", status: "Awaiting RFI Release" },
+  { target: "Hackett Digital World Class Matrix", timing: "Q3 2026", status: "Pending" },
+  { target: "Forrester AP Landscape Report", timing: "Q3 2026", status: "Pending" },
+  { target: "Ardent Partners AP Automation and Payments Advisor", timing: "Q4 2026", status: "Exploring" },
+];
+
+const whitepapers2026 = [
+  { title: "Forrester Top AI Use Cases for Accounts Payable Automation", firm: "Forrester", status: null },
+  { title: "Hackett AI Solution Provider Landscape Report", firm: "Hackett", status: null },
+  { title: "Euromoney Cash Management Survey 2026", firm: null, status: null },
+  { title: "Forrester eInvoicing Compliance Report", firm: "Forrester", status: "Invited" },
+];
+
+const upcomingBriefings = [
+  { firm: "Forrester", date: "3rd June" },
+  { firm: "Gartner", date: "29th June" },
 ];
 
 const analystFrameworks = [
@@ -50,12 +63,13 @@ const analystFrameworks = [
     framework: "Magic Quadrant & Critical Capabilities",
     status: "Niche Player",
     rationale: "Gartner evaluates ability to execute and completeness of vision.",
-    actions: "Book in an analyst engagement and attempt to discover why we were not included.",
+      actions: "Vendor Briefing taking place on the 29th June.",
     color: "bg-blue-500",
     rfiRelease: "February",
     published: "June/July",
     contacts: [
       { name: "Miles Onafowora", email: "Miles.Onafowora@gartner.com", role: "Analyst" },
+        { name: "Abigail Swindlehurst", email: "abigail.swindlehurst@gartner.com", role: "Account Manager" },
     ],
   },
   {
@@ -63,13 +77,13 @@ const analystFrameworks = [
     framework: "Wave & Landscape Report",
     status: "Not Featured",
     rationale: "The Wave process takes ~3 months and begins with inclusion in a landscape report.",
-    actions: "Book in an analyst engagement and attempt to discover why we were not included.",
+      actions: "Vendor Briefing 3rd June.",
     color: "bg-purple-500",
     rfiRelease: "3rd February",
     published: "15th June",
     contacts: [
       { name: "Meng Liu", email: "", role: "Lead Analyst" },
-      { name: "Charlie Paines", email: "cpaines@forrester.com", role: "Analyst" },
+        { name: "Ewan Brown", email: "ewbrown@forrester.com", role: "Account Executive" },
     ],
   },
   {
@@ -113,12 +127,13 @@ const analystFrameworks = [
     framework: "Combined Matrix",
     status: "Submitted",
     rationale: "New combined matrix. Submission completed.",
-    actions: "Book in an analyst engagement.",
+    actions: "Currently completing the SpendMatters Fall Solution Map RFI. DWC Matrix expected Q3.",
     color: "bg-pink-500",
     rfiRelease: "June",
     published: "November",
     contacts: [
       { name: "Xavier Olivera", email: "xolivera@spendmatters.com", role: "SpendMatters Analyst" },
+      { name: "Roderick Gaines", email: "roderick.gaines@thehackettgroup.com", role: "Hackett Analyst" },
     ],
   },
   {
@@ -279,9 +294,8 @@ const AnalystStrategy = () => {
           <KeyPointsSummary
             points={[
               "We have not been included in the Gartner Magic Quadrant or Forrester Wave",
-              "We are currently taking part in the IDC MarketScape Report, and the Hackett & Everest reports in Q2/Q3",
-              "6 Analyst Firms: Gartner, Forrester, IDC, Everest, Hackett/SpendMatters, Ardent Partners",
-              "8 Engagement Tactics: Cross-functional committee, bi-annual briefings, analyst day"
+              "We have taken part in the IDC MarketScape Report, the SpendMatters Fall Solution Map is underway, and the Everest PEAK Matrix is due in June",
+              "We have vendor briefings with Gartner & Forrester in June"
             ]}
           />
         </div>
@@ -297,11 +311,35 @@ const AnalystStrategy = () => {
                   SoftCo has <span className="font-bold">NOT</span> been included in the 2026 Gartner Magic Quadrant, Critical Capabilities or the Forrester Wave report.
                    Forrester and Gartner have stated that they do not consider SoftCo 'relevant' enough to warrant inclusion. Gartner have stated that relevancy is derived from the number of clients talking about certain companies.
                    We are now evaluating new reports such as Spend Matters and Ardent Partners, to improve our market visibility and analyst relations.
+                   We have scheduled briefings with Gartner and Forrester which will ideally shed light on our lack of inclusion. We have been included in Forrester's AI Capabilities Report & invited to take part in their E-Invoicing Compliance report.
                 </p>
               </div>
             </div>
           </CardContent>
         </Card>
+
+        {/* Upcoming Vendor Briefings */}
+        <section className="space-y-4">
+          <div className="flex items-center gap-3">
+            <CalendarIcon className="h-6 w-6 text-indigo-500" />
+            <h2 className="text-xl font-bold text-gray-900">Upcoming Vendor Briefings</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-4">
+            {upcomingBriefings.map((b) => (
+              <Card key={b.firm} className="bg-white border-gray-200">
+                <CardContent className="pt-6 flex items-center gap-4">
+                  {firmLogos[b.firm] && (
+                    <img src={firmLogos[b.firm]} alt={b.firm} className="h-8 w-auto object-contain" />
+                  )}
+                  <div>
+                    <p className="font-semibold text-gray-900">{b.firm}</p>
+                    <p className="text-sm text-gray-600 flex items-center gap-1"><Clock className="h-3.5 w-3.5" />{b.date}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
 
         {/* Objectives */}
         <section className="space-y-6">
@@ -375,6 +413,10 @@ const AnalystStrategy = () => {
                         item.status === "In Progress" ? "bg-yellow-500 text-white" :
                         item.status === "Submitted" ? "bg-blue-500 text-white" :
                         item.status === "Active" ? "bg-emerald-500 text-white" :
+                        item.status === "Pending Publication" ? "bg-indigo-500 text-white" :
+                        item.status === "Awaiting RFI Release" ? "bg-orange-500 text-white" :
+                        item.status === "Pending" ? "bg-slate-500 text-white" :
+                        item.status === "Exploring" ? "bg-teal-500 text-white" :
                         "bg-gray-500 text-white"
                       }
                     >
@@ -384,6 +426,33 @@ const AnalystStrategy = () => {
                   <div className="flex items-center gap-2 text-gray-500">
                     <Clock className="h-4 w-4" />
                     <span className="text-sm">{item.timing}</span>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* 2026 Whitepapers */}
+        <section className="space-y-6">
+          <div className="flex items-center gap-3">
+            <FileText className="h-7 w-7 text-fuchsia-500" />
+            <h2 className="text-2xl font-bold text-gray-900">2026 Whitepapers</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-4">
+            {whitepapers2026.map((wp, idx) => (
+              <Card key={idx} className="bg-white border-gray-200">
+                <CardContent className="pt-6">
+                  <div className="flex items-start gap-3">
+                    {wp.firm && firmLogos[wp.firm] && (
+                      <img src={firmLogos[wp.firm]} alt={wp.firm} className="h-6 w-auto object-contain flex-shrink-0 mt-0.5" />
+                    )}
+                    <div className="flex-1">
+                      <p className="text-sm font-medium text-gray-900">{wp.title}</p>
+                      {wp.status && (
+                        <Badge className="mt-2 bg-emerald-500 text-white">{wp.status}</Badge>
+                      )}
+                    </div>
                   </div>
                 </CardContent>
               </Card>
