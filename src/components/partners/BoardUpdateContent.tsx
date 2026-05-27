@@ -44,7 +44,7 @@ const BoardUpdateContent = () => {
               <h3 className="font-bold text-xl text-slate-900">Section 1 — Executive Summary</h3>
             </div>
             <p className="text-slate-700 leading-relaxed mb-4">
-              SoftCo's partnership programme is at an inflection point. The commercial foundations are in place — a structured multi-year agreement with Tungsten Automation, an active referral relationship with Interpath, a time-limited referral arrangement with Xelix (now winding down as they develop a competing AP solution), and a technology alliance with Sage. Our Microsoft relationship remains under assessment following changes to our hosting infrastructure.
+              SoftCo's Partnership programme is at an inflection point. Foundations are in place with a structured, multi-year agreement with Tungsten Automation, active referral partnerships with Interpath and a time sensitive agreement with FlexTecs, and a technology alliance with Sage. Our PwC Partnership has changed significantly, and will now look to focus on creating a partnership with Agiloft, whilst the implementation piece has been put on hold. We continue to explore new partnerships with consultancies, adjacent technologies and ERPs.
             </p>
             <p className="text-sm text-slate-600 mb-4">Three priorities underpin the strategy:</p>
             <div className="space-y-2 mb-4">
@@ -97,7 +97,7 @@ const BoardUpdateContent = () => {
               <TableBody>
                 {[
                   { cat: "Referral & Co-Sell", role: "Influenced / Sourced", ex: "PwC, Interpath, advisory firms, AP consultancies", val: "Warm pipeline; revenue share; reach into new accounts" },
-                  { cat: "Technology Partners", role: "Influence", ex: "Sage, Microsoft", val: "Ecosystem validation; integration-driven usage; joint GTM" },
+                  { cat: "Technology Partners", role: "Influence", ex: "Sage, FlexTecs", val: "Ecosystem validation; integration-driven usage; joint GTM" },
                   { cat: "Reseller / VAR", role: "Sourced / Resold", ex: "AP advisory firms, smaller SIs", val: "Scalable distribution; accelerated regional growth" },
                 ].map((r, i) => (
                   <TableRow key={i}>
@@ -297,7 +297,7 @@ const BoardUpdateContent = () => {
             <h4 className="font-bold text-lg text-slate-900 mb-2">4.2 PwC — Co-Sell & Delivery Partner</h4>
             <Badge variant="outline" className="mb-3 bg-blue-50 text-blue-700 border-blue-200">Co-sell (30% referral fee) and delivery</Badge>
             <p className="text-sm text-slate-700 leading-relaxed mb-2">
-              PwC has been clear from day one that it is not a lead generation engine and that internal awareness builds slowly. Recent internal engagements are generating genuine signals: the Procurement Practice is exploring a joint opportunity with Agiloft (CLM), and the Workday Practice is identifying SoftCo as the preferred AP automation layer.
+              The PwC partnership has been put on hold from an implementation standpoint, as opportunities for PS days have been below expectations, and they are not willing to spend resources until pipeline improves. The partnership still exists, and their Procurement Practice team continues to explore a joint opportunity with Agiloft, while the Workday Practice is identifying SoftCo as the preferred AP automation layer.
             </p>
             <p className="text-xs text-muted-foreground italic">Assessment: Positive directional signals, but PwC moves slowly. QBR cadence in place. Continued nurturing required.</p>
           </CardContent>
@@ -314,13 +314,13 @@ const BoardUpdateContent = () => {
           </CardContent>
         </Card>
 
-        {/* 4.4 Xelix */}
-        <Card className="shadow-sm mb-4 border-l-4 border-l-red-400">
+        {/* 4.4 FlexTecs */}
+        <Card className="shadow-sm mb-4 border-l-4 border-l-teal-500">
           <CardContent className="pt-6">
-            <h4 className="font-bold text-lg text-slate-900 mb-2">4.4 Xelix — Referral Partner (Winding Down)</h4>
-            <Badge variant="outline" className="mb-3 bg-red-50 text-red-700 border-red-200">Winding Down</Badge>
+            <h4 className="font-bold text-lg text-slate-900 mb-2">4.4 FlexTecs — Technology Partner</h4>
+            <Badge variant="outline" className="mb-3 bg-teal-50 text-teal-700 border-teal-200">Newly Signed</Badge>
             <p className="text-sm text-slate-700 leading-relaxed">
-              Has generated €541K in the current pipeline including MTC Trains (€200K, 89% probability) and Armacell (€200K). However, Xelix has confirmed its intention to build a competing APIA solution (anticipated 2027). Priority: close existing pipeline before relationship ends. No further strategic investment warranted. Flextecs being evaluated as replacement.
+              FlexTecs has replaced Xelix as our Mailbox and Statement Reconciliation technology partner, having officially been signed in May 2026. They are keen to immediately start sharing leads, setting up a joint announcement, GtM activities and ways of working. The length of this partnership depends on the development of our own Mailbox solution.
             </p>
           </CardContent>
         </Card>
@@ -351,12 +351,12 @@ const BoardUpdateContent = () => {
             <h4 className="font-bold text-lg text-slate-900 mb-3">4.7 Emerging Candidates</h4>
             <div className="space-y-3">
               <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
-                <p className="font-semibold text-sm text-slate-900">Flextecs</p>
-                <p className="text-sm text-slate-700">Complementary offering (statement rec, audit recovery, mailbox). Following recent PE backing, Flextecs has intensified outreach. Being evaluated as a potential Xelix replacement.</p>
+                <p className="font-semibold text-sm text-slate-900">Bracket</p>
+                <p className="text-sm text-slate-700">FX and Treasury technology partner with overlap in sectors. Lead swapping is underway and they are set to introduce us to an aviation customer in Malta. If lead swapping proves fruitful, the partnership will be formalised.</p>
               </div>
               <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
                 <p className="font-semibold text-sm text-slate-900">Invennt</p>
-                <p className="text-sm text-slate-700">Specialist in construction sector tax advisory. Informal test engagement — five mutual introductions made in February 2026. No traction to date.</p>
+                <p className="text-sm text-slate-700">Invennt were keen on lead swapping and introduced us to a number of clients, which did not lead to any traction. Talks ended when we did not provide significant introductions their way.</p>
               </div>
             </div>
           </CardContent>
@@ -377,7 +377,7 @@ const BoardUpdateContent = () => {
                 { num: 1, title: "Structured Partner Enablement", desc: "Formal education programme covering ICP, product overview, objection handling, and competitive differentiation. Partner Portal (target H1 2026) will be the central hub." },
                 { num: 2, title: "QBRs & Joint Business Planning", desc: "QBRs currently exist only for PwC. Extended to all active partners in 2026, tracking pipeline influenced, deals converted, and conversion rates." },
                 { num: 3, title: "Performance Metrics & Accountability", desc: "Partners measured across: pipeline generation, conversion rates, enablement activity, and customer satisfaction. Underperformers exited without hesitation." },
-                { num: 4, title: "Partner Portal (H1 2026 Target)", desc: "Centralised portal for deal registration, lead sharing, collateral, training tracking, and performance dashboards. A prerequisite for the VAR model." },
+                { num: 4, title: "Partner Portal", desc: "Initially looked at for H1 2026, this has been pushed out as other priorities, such as the website launch, took preference." },
               ].map((p) => (
                 <div key={p.num} className="p-4 bg-slate-50 rounded-lg border border-slate-200">
                   <p className="font-bold text-sm text-primary mb-1">Pillar {p.num} — {p.title}</p>
