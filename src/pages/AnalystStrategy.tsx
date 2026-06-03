@@ -44,6 +44,7 @@ const futureTargets = [
   { target: "Everest P2P PEAK Matrix 2026", timing: "Q2 2026", status: "Awaiting RFI Release" },
   { target: "Hackett Digital World Class Matrix", timing: "Q3 2026", status: "Awaiting RFI Release" },
   { target: "Forrester AP Landscape Report", timing: "Q3 2026", status: "Pending" },
+  { target: "Forrester Navigating the E-Invoicing Compliance Ecosystem Report", timing: "Q2 2026", status: "In Progress" },
   { target: "Ardent Partners AP Automation and Payments Advisor", timing: "Q4 2026", status: "Exploring" },
 ];
 
@@ -79,7 +80,7 @@ const analystFrameworks = [
     framework: "Wave & Landscape Report",
     status: "Not Featured",
     rationale: "The Wave process takes ~3 months and begins with inclusion in a landscape report.",
-      actions: "Vendor Briefing 3rd June.",
+      actions: "Completing the Compliance Ecosystem Reporting.",
     color: "bg-purple-500",
     rfiRelease: "3rd February",
     published: "15th June",
@@ -87,6 +88,11 @@ const analystFrameworks = [
       { name: "Meng Liu", email: "", role: "Lead Analyst" },
         { name: "Ewan Brown", email: "ewbrown@forrester.com", role: "Account Executive" },
     ],
+    demoLink: {
+      label: "June 2026 Demo to Forrester",
+      description: "Transcript of Vendor Briefing (3rd June)",
+      url: "https://softco365.sharepoint.com/:w:/r/sites/salesmarketing/_layouts/15/Doc.aspx?sourcedoc=%7B80F79F98-8417-476A-89D6-9C6B29614732%7D&file=Vendor%20Briefing%203rd%20June%20Transcript.docx&action=default&mobileredirect=true",
+    },
   },
   {
     firm: "IDC",
@@ -702,26 +708,48 @@ const AnalystStrategy = () => {
                   </div>
 
                   {/* Key Contacts */}
-                  <div className="pt-4 border-t border-gray-100">
-                    <h4 className="text-sm font-semibold text-gray-500 mb-3">
-                      <Mail className="h-3.5 w-3.5 inline mr-1" />
-                      Key Contacts
-                    </h4>
-                    <div className="flex flex-wrap gap-3">
-                      {framework.contacts.map((contact, idx) => (
-                        <div key={idx} className="flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2 border border-gray-200">
-                          <div>
-                            <p className="text-sm font-medium text-gray-900">{contact.name}</p>
-                            <p className="text-xs text-gray-500">{contact.role}</p>
-                            {contact.email && (
-                              <a href={`mailto:${contact.email}`} className="text-xs text-blue-600 hover:underline">
-                                {contact.email}
-                              </a>
-                            )}
+                  <div className={`pt-4 border-t border-gray-100 ${(framework as any).demoLink ? "grid md:grid-cols-2 gap-6" : ""}`}>
+                    <div>
+                      <h4 className="text-sm font-semibold text-gray-500 mb-3">
+                        <Mail className="h-3.5 w-3.5 inline mr-1" />
+                        Key Contacts
+                      </h4>
+                      <div className="flex flex-wrap gap-3">
+                        {framework.contacts.map((contact, idx) => (
+                          <div key={idx} className="flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2 border border-gray-200">
+                            <div>
+                              <p className="text-sm font-medium text-gray-900">{contact.name}</p>
+                              <p className="text-xs text-gray-500">{contact.role}</p>
+                              {contact.email && (
+                                <a href={`mailto:${contact.email}`} className="text-xs text-blue-600 hover:underline">
+                                  {contact.email}
+                                </a>
+                              )}
+                            </div>
                           </div>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
+                    {(framework as any).demoLink && (
+                      <div>
+                        <h4 className="text-sm font-semibold text-gray-500 mb-3">
+                          <FileText className="h-3.5 w-3.5 inline mr-1" />
+                          {(framework as any).demoLink.label}
+                        </h4>
+                        <a
+                          href={(framework as any).demoLink.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 bg-purple-50 hover:bg-purple-100 transition rounded-lg px-3 py-2 border border-purple-200"
+                        >
+                          <FileText className="h-4 w-4 text-purple-600" />
+                          <div>
+                            <p className="text-sm font-medium text-purple-900">View Transcript (SharePoint)</p>
+                            <p className="text-xs text-purple-700">{(framework as any).demoLink.description}</p>
+                          </div>
+                        </a>
+                      </div>
+                    )}
                   </div>
                 </CardContent>
               </Card>
