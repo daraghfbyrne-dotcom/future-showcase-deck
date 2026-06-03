@@ -44,6 +44,7 @@ const futureTargets = [
   { target: "Everest P2P PEAK Matrix 2026", timing: "Q2 2026", status: "Awaiting RFI Release" },
   { target: "Hackett Digital World Class Matrix", timing: "Q3 2026", status: "Awaiting RFI Release" },
   { target: "Forrester AP Landscape Report", timing: "Q3 2026", status: "Pending" },
+  { target: "Forrester Navigating the E-Invoicing Compliance Ecosystem Report", timing: "Q2 2026", status: "In Progress" },
   { target: "Ardent Partners AP Automation and Payments Advisor", timing: "Q4 2026", status: "Exploring" },
 ];
 
