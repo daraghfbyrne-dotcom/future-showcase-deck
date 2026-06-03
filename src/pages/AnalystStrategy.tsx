@@ -708,26 +708,48 @@ const AnalystStrategy = () => {
                   </div>
 
                   {/* Key Contacts */}
-                  <div className="pt-4 border-t border-gray-100">
-                    <h4 className="text-sm font-semibold text-gray-500 mb-3">
-                      <Mail className="h-3.5 w-3.5 inline mr-1" />
-                      Key Contacts
-                    </h4>
-                    <div className="flex flex-wrap gap-3">
-                      {framework.contacts.map((contact, idx) => (
-                        <div key={idx} className="flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2 border border-gray-200">
-                          <div>
-                            <p className="text-sm font-medium text-gray-900">{contact.name}</p>
-                            <p className="text-xs text-gray-500">{contact.role}</p>
-                            {contact.email && (
-                              <a href={`mailto:${contact.email}`} className="text-xs text-blue-600 hover:underline">
-                                {contact.email}
-                              </a>
-                            )}
+                  <div className={`pt-4 border-t border-gray-100 ${(framework as any).demoLink ? "grid md:grid-cols-2 gap-6" : ""}`}>
+                    <div>
+                      <h4 className="text-sm font-semibold text-gray-500 mb-3">
+                        <Mail className="h-3.5 w-3.5 inline mr-1" />
+                        Key Contacts
+                      </h4>
+                      <div className="flex flex-wrap gap-3">
+                        {framework.contacts.map((contact, idx) => (
+                          <div key={idx} className="flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2 border border-gray-200">
+                            <div>
+                              <p className="text-sm font-medium text-gray-900">{contact.name}</p>
+                              <p className="text-xs text-gray-500">{contact.role}</p>
+                              {contact.email && (
+                                <a href={`mailto:${contact.email}`} className="text-xs text-blue-600 hover:underline">
+                                  {contact.email}
+                                </a>
+                              )}
+                            </div>
                           </div>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
+                    {(framework as any).demoLink && (
+                      <div>
+                        <h4 className="text-sm font-semibold text-gray-500 mb-3">
+                          <FileText className="h-3.5 w-3.5 inline mr-1" />
+                          {(framework as any).demoLink.label}
+                        </h4>
+                        <a
+                          href={(framework as any).demoLink.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 bg-purple-50 hover:bg-purple-100 transition rounded-lg px-3 py-2 border border-purple-200"
+                        >
+                          <FileText className="h-4 w-4 text-purple-600" />
+                          <div>
+                            <p className="text-sm font-medium text-purple-900">View Transcript (SharePoint)</p>
+                            <p className="text-xs text-purple-700">{(framework as any).demoLink.description}</p>
+                          </div>
+                        </a>
+                      </div>
+                    )}
                   </div>
                 </CardContent>
               </Card>
