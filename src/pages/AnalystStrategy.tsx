@@ -80,7 +80,7 @@ const analystFrameworks = [
     framework: "Wave & Landscape Report",
     status: "Not Featured",
     rationale: "The Wave process takes ~3 months and begins with inclusion in a landscape report.",
-      actions: "Vendor Briefing 3rd June.",
+      actions: "Completing the Compliance Ecosystem Reporting.",
     color: "bg-purple-500",
     rfiRelease: "3rd February",
     published: "15th June",
@@ -88,6 +88,11 @@ const analystFrameworks = [
       { name: "Meng Liu", email: "", role: "Lead Analyst" },
         { name: "Ewan Brown", email: "ewbrown@forrester.com", role: "Account Executive" },
     ],
+    demoLink: {
+      label: "June 2026 Demo to Forrester",
+      description: "Transcript of Vendor Briefing (3rd June)",
+      url: "https://softco365.sharepoint.com/:w:/r/sites/salesmarketing/_layouts/15/Doc.aspx?sourcedoc=%7B80F79F98-8417-476A-89D6-9C6B29614732%7D&file=Vendor%20Briefing%203rd%20June%20Transcript.docx&action=default&mobileredirect=true",
+    },
   },
   {
     firm: "IDC",
