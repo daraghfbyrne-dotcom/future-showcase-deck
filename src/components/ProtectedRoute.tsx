@@ -1,20 +1,12 @@
 import { ReactNode } from "react";
 import { Navigate, useLocation } from "react-router-dom";
-import { useAuth } from "@/hooks/useAuth";
+import { STORAGE_KEY } from "@/pages/Auth";
 
 const ProtectedRoute = ({ children }: { children: ReactNode }) => {
-  const { user, loading } = useAuth();
   const location = useLocation();
+  const granted = typeof window !== "undefined" && localStorage.getItem(STORAGE_KEY) === "true";
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-background">
-        <div className="text-muted-foreground">Loading...</div>
-      </div>
-    );
-  }
-
-  if (!user) {
+  if (!granted) {
     return <Navigate to="/auth" state={{ from: location.pathname }} replace />;
   }
 
