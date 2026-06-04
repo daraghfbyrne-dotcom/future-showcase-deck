@@ -14,7 +14,6 @@ import Objectives2026 from "./pages/Objectives2026";
 import NotFound from "./pages/NotFound";
 import Auth from "./pages/Auth";
 import ProtectedRoute from "./components/ProtectedRoute";
-import { AuthProvider } from "./hooks/useAuth";
 
 const queryClient = new QueryClient();
 
@@ -24,8 +23,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <AuthProvider>
-          <Routes>
+        <Routes>
             <Route path="/auth" element={<Auth />} />
             <Route path="/" element={<ProtectedRoute><Introduction /></ProtectedRoute>} />
             <Route path="/strategy" element={<ProtectedRoute><Index /></ProtectedRoute>} />
@@ -37,8 +35,7 @@ const App = () => (
             <Route path="/objectives-2026" element={<ProtectedRoute><Objectives2026 /></ProtectedRoute>} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
-          </Routes>
-        </AuthProvider>
+        </Routes>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
