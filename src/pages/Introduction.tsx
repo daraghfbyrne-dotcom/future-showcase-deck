@@ -6,9 +6,6 @@ import {
   Users, 
   Briefcase, 
   LineChart,
-  Rocket,
-  Palette,
-  MessageSquare,
   ChevronRight
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -55,30 +52,6 @@ const navigationItems = [
     description: "Key objectives & success metrics",
     icon: Target,
     href: "/objectives-2026"
-  },
-  {
-    title: "Play Bigger",
-    description: "Category leadership framework",
-    icon: Rocket,
-    href: "/play-bigger"
-  },
-  {
-    title: "Brand Refresh",
-    description: "Brand evolution & guidelines",
-    icon: Palette,
-    href: "/brand-refresh"
-  },
-  {
-    title: "Customer Advisory Board",
-    description: "CAB strategy & engagement",
-    icon: MessageSquare,
-    href: "/cab"
-  },
-  {
-    title: "Capacity Plan",
-    description: "Q1 workstreams & resourcing",
-    icon: Briefcase,
-    href: "/capacity-plan"
   }
 ];
 
