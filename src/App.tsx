@@ -16,6 +16,9 @@ import PlayBigger from "./pages/PlayBigger";
 import BrandRefresh from "./pages/BrandRefresh";
 import CAB from "./pages/CAB";
 import NotFound from "./pages/NotFound";
+import Auth from "./pages/Auth";
+import ProtectedRoute from "./components/ProtectedRoute";
+import { AuthProvider } from "./hooks/useAuth";
 
 const queryClient = new QueryClient();
 
@@ -25,22 +28,25 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Introduction />} />
-          <Route path="/strategy" element={<Index />} />
-          <Route path="/pipeline-targets" element={<PipelineTargets />} />
-          <Route path="/demand-lead-gen" element={<DemandLeadGenStrategy />} />
-          <Route path="/events-strategy" element={<EventsStrategy />} />
-          <Route path="/analyst-strategy" element={<AnalystStrategy />} />
-          <Route path="/partners-strategy" element={<PartnersStrategy />} />
-          <Route path="/capacity-plan" element={<CapacityPlan />} />
-          <Route path="/objectives-2026" element={<Objectives2026 />} />
-          <Route path="/play-bigger" element={<PlayBigger />} />
-          <Route path="/brand-refresh" element={<BrandRefresh />} />
-          <Route path="/cab" element={<CAB />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <AuthProvider>
+          <Routes>
+            <Route path="/auth" element={<Auth />} />
+            <Route path="/" element={<ProtectedRoute><Introduction /></ProtectedRoute>} />
+            <Route path="/strategy" element={<ProtectedRoute><Index /></ProtectedRoute>} />
+            <Route path="/pipeline-targets" element={<ProtectedRoute><PipelineTargets /></ProtectedRoute>} />
+            <Route path="/demand-lead-gen" element={<ProtectedRoute><DemandLeadGenStrategy /></ProtectedRoute>} />
+            <Route path="/events-strategy" element={<ProtectedRoute><EventsStrategy /></ProtectedRoute>} />
+            <Route path="/analyst-strategy" element={<ProtectedRoute><AnalystStrategy /></ProtectedRoute>} />
+            <Route path="/partners-strategy" element={<ProtectedRoute><PartnersStrategy /></ProtectedRoute>} />
+            <Route path="/capacity-plan" element={<ProtectedRoute><CapacityPlan /></ProtectedRoute>} />
+            <Route path="/objectives-2026" element={<ProtectedRoute><Objectives2026 /></ProtectedRoute>} />
+            <Route path="/play-bigger" element={<ProtectedRoute><PlayBigger /></ProtectedRoute>} />
+            <Route path="/brand-refresh" element={<ProtectedRoute><BrandRefresh /></ProtectedRoute>} />
+            <Route path="/cab" element={<ProtectedRoute><CAB /></ProtectedRoute>} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </AuthProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
