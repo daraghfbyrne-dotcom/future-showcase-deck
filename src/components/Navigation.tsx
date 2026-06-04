@@ -19,16 +19,12 @@ export const Navigation = () => {
 
   const mainPages = [
     { path: "/", label: "2026 Strategy" },
-    { path: "/play-bigger", label: "Play Bigger" },
     { path: "/pipeline-targets", label: "Pipeline Targets" },
     { path: "/demand-lead-gen", label: "Demand & Lead Gen" },
     { path: "/events-strategy", label: "Events Strategy" },
     { path: "/analyst-strategy", label: "Analyst Strategy" },
     { path: "/partners-strategy", label: "Partners Strategy" },
     { path: "/objectives-2026", label: "2026 Objectives" },
-    { path: "/capacity-plan", label: "Capacity Plan" },
-    { path: "/brand-refresh", label: "Brand Refresh" },
-    { path: "/cab", label: "CAB" },
   ];
 
   return (
