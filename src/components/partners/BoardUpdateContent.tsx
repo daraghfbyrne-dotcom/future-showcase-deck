@@ -197,6 +197,9 @@ const BoardUpdateContent = () => {
             <p className="text-sm text-slate-700 leading-relaxed">
               Tungsten has the potential to become SoftCo's most commercially significant partner — but this will require strict governance, sustained pressure on both sides to convert opportunities, and SoftCo demonstrating consistently that we can win the deals Tungsten passes to us.
             </p>
+            <p className="text-sm text-slate-700 leading-relaxed font-semibold">
+              To date, the Tungsten partnership has been performing below original expectations.
+            </p>
             <div className="grid md:grid-cols-2 gap-4">
               <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
                 <p className="font-semibold text-sm text-slate-900 mb-2">Contracted ARR Targets (Tungsten-Sourced)</p>
@@ -245,11 +248,6 @@ const BoardUpdateContent = () => {
             </p>
           </CardContent>
         </Card>
-
-        {/* Tungsten Pipeline Targets */}
-        <div className="mb-4">
-          <TungstenPipelineTargets />
-        </div>
 
         {/* 4.2 PwC */}
         <Card className="shadow-sm mb-4 border-l-4 border-l-blue-500">
