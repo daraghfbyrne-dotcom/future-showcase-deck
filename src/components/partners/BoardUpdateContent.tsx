@@ -86,7 +86,7 @@ const BoardUpdateContent = () => {
           <CardContent className="pt-6">
             <div className="flex items-center gap-3 mb-4">
               <div className="h-8 w-1 bg-gradient-to-b from-green-500 to-emerald-500 rounded-full" />
-              <h3 className="font-bold text-xl text-slate-900">Section 3 — Pipeline & ARR Targets</h3>
+              <h3 className="font-bold text-xl text-slate-900">Section 2 — Pipeline & ARR Targets</h3>
             </div>
             <Table>
               <TableHeader>
@@ -134,7 +134,7 @@ const BoardUpdateContent = () => {
                 <BarChart3 className="h-5 w-5 text-blue-600" />
               </div>
               <div>
-                <h3 className="font-bold text-lg text-slate-900">Current Partner Pipeline (as at February 2026)</h3>
+                <h3 className="font-bold text-lg text-slate-900">Section 3 — Current Partner Pipeline (as at February 2026)</h3>
                 <p className="text-sm text-muted-foreground">Active partner-attributed deals — upside if converted</p>
               </div>
             </div>
@@ -335,7 +335,7 @@ const BoardUpdateContent = () => {
           <CardContent className="pt-6">
             <div className="flex items-center gap-3 mb-4">
               <div className="h-8 w-1 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full" />
-              <h3 className="font-bold text-xl text-slate-900">Section 8 — ERP Ecosystem Partnerships — Early Exploration</h3>
+              <h3 className="font-bold text-xl text-slate-900">Section 5 — ERP Ecosystem Partnerships — Early Exploration</h3>
             </div>
             <p className="text-sm text-slate-600 mb-4">
               SoftCo is beginning to explore opportunities within specific ERP ecosystems where AP automation demand is strong.
@@ -357,6 +357,11 @@ const BoardUpdateContent = () => {
                 </div>
               ))}
             </div>
+            <div className="mt-4 p-3 bg-blue-50 rounded-lg border border-blue-200">
+              <p className="text-sm text-blue-800">
+                <span className="font-semibold">Note:</span> Oracle Partner Network begins at a $500 investment. We have reached out and are chasing Infor and Epicor.
+              </p>
+            </div>
           </CardContent>
         </Card>
       </section>
@@ -367,7 +372,7 @@ const BoardUpdateContent = () => {
           <CardContent className="pt-6">
             <div className="flex items-center gap-3 mb-4">
               <div className="h-8 w-1 bg-gradient-to-b from-red-500 to-orange-500 rounded-full" />
-              <h3 className="font-bold text-xl text-slate-900">Section 9 — Competitive Partner Landscape</h3>
+              <h3 className="font-bold text-xl text-slate-900">Section 6 — Competitive Partner Landscape</h3>
             </div>
             <div className="overflow-x-auto">
               <Table>
@@ -414,58 +419,13 @@ const BoardUpdateContent = () => {
         </Card>
       </section>
 
-      {/* Section 10 — Tiering Framework */}
-      <section id="tiering-framework">
-        <Card className="shadow-sm">
-          <CardContent className="pt-6">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="h-8 w-1 bg-gradient-to-b from-amber-500 to-yellow-500 rounded-full" />
-              <h3 className="font-bold text-xl text-slate-900">Section 10 — Partner Tiering Framework</h3>
-              <Badge variant="outline" className="text-xs">PROPOSED</Badge>
-            </div>
-            <div className="grid md:grid-cols-3 gap-4 mb-3">
-              {[
-                { tier: "🥉 Bronze", profile: "New or niche; early-stage; minimal pipeline", benefits: "Deal registration; website listing", color: "bg-amber-50 border-amber-200" },
-                { tier: "🥈 Silver", profile: "Actively engaged; generating qualified leads", benefits: "Co-marketing; limited MDF; QBR participation", color: "bg-slate-100 border-slate-300" },
-                { tier: "🥇 Gold", profile: "Consistent pipeline contributor; deep product knowledge", benefits: "Priority lead routing; co-funded campaigns; roadmap previews; beta access", color: "bg-yellow-50 border-yellow-300" },
-              ].map((t, i) => (
-                <div key={i} className={`p-4 rounded-lg border text-center ${t.color}`}>
-                  <p className="text-xl font-bold mb-2">{t.tier}</p>
-                  <p className="text-sm text-slate-700 mb-2">{t.profile}</p>
-                  <p className="text-xs text-muted-foreground">{t.benefits}</p>
-                </div>
-              ))}
-            </div>
-            <p className="text-xs text-muted-foreground italic">Progression reviewed annually. Partners stagnating for more than two consecutive quarters subject to performance review.</p>
-          </CardContent>
-        </Card>
-      </section>
-
-      {/* Section 11 — Resourcing */}
-      <section id="resourcing">
-        <Card className="shadow-sm">
-          <CardContent className="pt-6">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="h-8 w-1 bg-gradient-to-b from-slate-500 to-slate-700 rounded-full" />
-              <h3 className="font-bold text-xl text-slate-900">Section 11 — Resourcing</h3>
-            </div>
-            <p className="text-sm text-slate-700 leading-relaxed">
-              The partnership function currently sits with the CMO at 10–15% of their capacity, supported by 0.5 of a junior executive. This is sufficient to manage existing partner relationships and execute the 2026 referral recruitment plan at current scale. It is <span className="font-semibold">not</span> sufficient to support a full VAR or SI model, or manage 8+ active partners simultaneously.
-            </p>
-            <p className="text-sm text-slate-600 mt-2">
-              A resourcing proposal will be brought to the board ahead of the 2027 planning cycle. In the interim, AI tooling will be used to maximise the current team's output.
-            </p>
-          </CardContent>
-        </Card>
-      </section>
-
-      {/* Section 12 — Risk Register */}
+      {/* Section 7 — Risk Register */}
       <section id="risk-register">
         <Card className="shadow-sm">
           <CardContent className="pt-6">
             <div className="flex items-center gap-3 mb-4">
               <div className="h-8 w-1 bg-gradient-to-b from-red-500 to-red-700 rounded-full" />
-              <h3 className="font-bold text-xl text-slate-900">Section 12 — Risk Register</h3>
+              <h3 className="font-bold text-xl text-slate-900">Section 7 — Risk Register</h3>
             </div>
             <div className="space-y-3">
               {[
@@ -499,7 +459,7 @@ const BoardUpdateContent = () => {
           <CardContent className="pt-6">
             <div className="flex items-center gap-3 mb-4">
               <div className="h-8 w-1 bg-gradient-to-b from-primary to-accent rounded-full" />
-              <h3 className="font-bold text-xl text-slate-900">Section 13 — Execution Roadmap</h3>
+              <h3 className="font-bold text-xl text-slate-900">Section 8 — Execution Roadmap</h3>
             </div>
             <div className="grid md:grid-cols-3 gap-4">
               {[
@@ -558,11 +518,16 @@ const BoardUpdateContent = () => {
           <CardContent className="pt-6">
             <div className="flex items-center gap-3 mb-4">
               <div className="h-8 w-1 bg-gradient-to-b from-teal-500 to-cyan-500 rounded-full" />
-              <h3 className="font-bold text-xl text-slate-900">Section 14 — Active Partner Outreach — Current Campaign</h3>
+              <h3 className="font-bold text-xl text-slate-900">Section 9 — Active Partner Outreach — Current Campaign</h3>
             </div>
             <p className="text-sm text-slate-600 mb-4">
               SoftCo is running a structured outreach campaign targeting potential partners across two tracks.
             </p>
+            <div className="mb-4 p-3 bg-amber-50 rounded-lg border border-amber-200">
+              <p className="text-sm text-amber-900">
+                To date, the most success for conversations and engagement has come from adjacent technology partners, such as AR & Statement Reconciliation. We believe the strongest way to get leads is through an advisory firm, but progress on conversations with these firms is slow.
+              </p>
+            </div>
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <h4 className="font-semibold text-sm text-slate-900 mb-3 flex items-center gap-2">
