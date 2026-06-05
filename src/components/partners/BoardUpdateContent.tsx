@@ -299,16 +299,6 @@ const BoardUpdateContent = () => {
           </CardContent>
         </Card>
 
-        {/* 4.6 Microsoft */}
-        <Card className="shadow-sm mb-4 border-l-4 border-l-cyan-500">
-          <CardContent className="pt-6">
-            <h4 className="font-bold text-lg text-slate-900 mb-2">4.6 Microsoft</h4>
-            <p className="text-sm text-slate-700 leading-relaxed">
-              Pre-built F&O connector in place. A co-sell arrangement explored in 2024 via Azure migration did not yield referrals. SoftCo's return to AWS has put co-sell eligibility in doubt. Engineering and commercial leads to jointly evaluate co-sell eligibility, Azure spend implications, and realistic pipeline upside before any commitment.
-            </p>
-          </CardContent>
-        </Card>
-
         {/* 4.7 Emerging */}
         <Card className="shadow-sm mb-4">
           <CardContent className="pt-6">
@@ -321,6 +311,18 @@ const BoardUpdateContent = () => {
               <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
                 <p className="font-semibold text-sm text-slate-900">Invennt</p>
                 <p className="text-sm text-slate-700">Invennt were keen on lead swapping and introduced us to a number of clients, which did not lead to any traction. Talks ended when we did not provide significant introductions their way.</p>
+              </div>
+              <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                <p className="font-semibold text-sm text-slate-900">Integrative Systems</p>
+                <p className="text-sm text-slate-700">A technology advisory in the US who are actively exploring the AI field, having just hired a new AI expert. We met them in Chicago and are circling back in July when their expert is up to speed.</p>
+              </div>
+              <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                <p className="font-semibold text-sm text-slate-900">Quebit</p>
+                <p className="text-sm text-slate-700">NetSuite implementation partner that we met at the Gartner CFO Conference. Exploratory calls underway.</p>
+              </div>
+              <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                <p className="font-semibold text-sm text-slate-900">Agiloft</p>
+                <p className="text-sm text-slate-700">Working with PwC to discuss a three-way CLM platform; discussions are ongoing following demos.</p>
               </div>
             </div>
           </CardContent>
