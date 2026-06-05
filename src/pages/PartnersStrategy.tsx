@@ -6,13 +6,9 @@ import BoardUpdateContent from "@/components/partners/BoardUpdateContent";
 const sections = [
   { id: "purpose", label: "Purpose" },
   { id: "executive-summary", label: "Executive Summary" },
-  { id: "partnership-model", label: "Partnership Model" },
   { id: "pipeline-targets", label: "Pipeline & ARR" },
   { id: "current-pipeline", label: "Current Pipeline" },
   { id: "existing-partnerships", label: "Existing Partnerships" },
-  { id: "enablement", label: "Enablement" },
-  { id: "referral-ecosystem", label: "Referral Ecosystem" },
-  { id: "tungsten-scenario", label: "Tungsten Scenario" },
   { id: "erp-ecosystem", label: "ERP Ecosystem" },
   { id: "competitive-landscape", label: "Competitive Landscape" },
   { id: "tiering-framework", label: "Tiering" },
