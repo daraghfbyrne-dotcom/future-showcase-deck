@@ -53,54 +53,6 @@ const PartnerHero = () => {
             Last synced: 15/02/2026
         </p>
       </div>
-
-
-      {/* VCP Targets */}
-      <div className="grid md:grid-cols-2 gap-6">
-        <Card className="bg-slate-50 border-slate-200">
-          <CardContent className="pt-6">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="p-2 bg-blue-100 rounded-lg">
-                <Target className="h-5 w-5 text-blue-600" />
-              </div>
-              <h3 className="text-lg font-semibold text-slate-900">Five-Year VCP Target</h3>
-            </div>
-            <div className="space-y-3">
-              <div className="flex items-center justify-between p-3 bg-white rounded-lg border border-slate-200">
-                <span className="text-slate-700">ARR from Partners</span>
-                <span className="text-2xl font-bold text-blue-600">
-                  {content.vcpTargets?.arrFromPartners || ">30%"}
-                </span>
-              </div>
-              <div className="flex items-center justify-between p-3 bg-white rounded-lg border border-slate-200">
-                <span className="text-slate-700">Partner Implementation Days</span>
-                <span className="text-2xl font-bold text-green-600">
-                  {content.vcpTargets?.partnerImplementationDays || ">80%"}
-                </span>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card className="bg-slate-50 border-slate-200">
-          <CardContent className="pt-6">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="p-2 bg-purple-100 rounded-lg">
-                <Users className="h-5 w-5 text-purple-600" />
-              </div>
-              <h3 className="text-lg font-semibold text-slate-900">Key Principles</h3>
-            </div>
-            <ul className="space-y-2">
-              {keyPrinciples.map((principle, index) => (
-                <li key={index} className="flex items-start gap-2 text-sm text-slate-700">
-                  <TrendingUp className="h-4 w-4 text-purple-600 flex-shrink-0 mt-0.5" />
-                  {principle}
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-        </Card>
-      </div>
     </section>
   );
 };
