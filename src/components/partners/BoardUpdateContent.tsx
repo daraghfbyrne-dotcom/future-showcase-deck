@@ -257,6 +257,9 @@ const BoardUpdateContent = () => {
             <p className="text-sm text-slate-700 leading-relaxed mb-2">
               The PwC partnership has been put on hold from an implementation standpoint, as opportunities for PS days have been below expectations, and they are not willing to spend resources until pipeline improves. The partnership still exists, and their Procurement Practice team continues to explore a joint opportunity with Agiloft, while the Workday Practice is identifying SoftCo as the preferred AP automation layer.
             </p>
+            <p className="text-sm text-slate-900 font-bold leading-relaxed mb-2">
+              We have no pipeline expectations from PwC.
+            </p>
             <p className="text-xs text-muted-foreground italic">Assessment: Positive directional signals, but PwC moves slowly. QBR cadence in place. Continued nurturing required.</p>
           </CardContent>
         </Card>
@@ -268,6 +271,9 @@ const BoardUpdateContent = () => {
             <Badge variant="outline" className="mb-3 bg-purple-50 text-purple-700 border-purple-200">Tier 1 Alliance Partner</Badge>
             <p className="text-sm text-slate-700 leading-relaxed">
               In 2025, Interpath elevated SoftCo to Tier 1 Alliance Partner status. The relationship has already yielded the Vibrant Foods win. Two new deals in pipeline (FGS Global, QIMA) at Sales Lead stage. Like PwC, Interpath requires ongoing relationship investment. QBR to be formalised.
+            </p>
+            <p className="text-sm text-slate-700 leading-relaxed mt-2">
+              We have a very good working relationship with Interpath and are working with their Value Creation team, particularly around Private Equity firms.
             </p>
           </CardContent>
         </Card>
