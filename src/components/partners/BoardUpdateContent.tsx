@@ -151,6 +151,7 @@ const BoardUpdateContent = () => {
               <TableBody>
                 {[
                   { deal: "Flynn Construction — AP Automation", partner: "PwC", amount: "€252,000", stage: "5-In-Context Demo", close: "Mar 2026" },
+                  { deal: "UK Deal (Under NDA)", partner: "Tungsten", amount: "€300,000+", stage: "Awaiting Briefing", close: "2026" },
                   { deal: "MTC Trains — AP Automation", partner: "Xelix", amount: "€200,000", stage: "8-Prov. Approval (89%)", close: "Apr 2027" },
                   { deal: "Armacell — P2P", partner: "Xelix", amount: "€200,000", stage: "3-Qualified", close: "Aug 2026" },
                   { deal: "Unifeeder — AP Automation", partner: "Xelix", amount: "€141,000", stage: "7-Negotiation", close: "Mar 2026" },
@@ -171,13 +172,8 @@ const BoardUpdateContent = () => {
               </TableBody>
             </Table>
             <div className="mt-3 flex items-center gap-6">
-              <Badge className="bg-primary/10 text-primary border-primary/20">Total (valued): ~€1.11M</Badge>
-              <Badge variant="secondary">Weighted: ~€583K</Badge>
-            </div>
-            <div className="mt-3 p-3 bg-amber-50 rounded-lg border border-amber-200">
-              <p className="text-sm text-amber-800">
-                <span className="font-semibold">Xelix Pipeline Priority:</span> The three Xelix deals (€541K combined) must be actively managed to close before the Xelix relationship winds down. MTC Trains is at Provisional Approval (89% probability).
-              </p>
+              <Badge className="bg-primary/10 text-primary border-primary/20">Total (valued): ~€1.41M</Badge>
+              <Badge variant="secondary">Weighted: ~€613K</Badge>
             </div>
           </CardContent>
         </Card>
