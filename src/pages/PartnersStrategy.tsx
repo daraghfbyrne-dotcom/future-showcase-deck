@@ -11,7 +11,6 @@ const sections = [
   { id: "existing-partnerships", label: "Existing Partnerships" },
   { id: "erp-ecosystem", label: "ERP Ecosystem" },
   { id: "competitive-landscape", label: "Competitive Landscape" },
-  { id: "tiering-framework", label: "Tiering" },
   { id: "risk-register", label: "Risks" },
   { id: "execution-roadmap", label: "Roadmap" },
   { id: "partner-outreach", label: "Outreach" },
