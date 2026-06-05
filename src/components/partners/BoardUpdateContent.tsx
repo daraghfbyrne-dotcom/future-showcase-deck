@@ -80,45 +80,6 @@ const BoardUpdateContent = () => {
         </Card>
       </section>
 
-      {/* Partnership Model Overview */}
-      <section id="partnership-model">
-        <Card className="shadow-sm">
-          <CardContent className="pt-6">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="h-8 w-1 bg-gradient-to-b from-blue-500 to-cyan-500 rounded-full" />
-              <h3 className="font-bold text-xl text-slate-900">Section 2 — Partnership Model Overview</h3>
-            </div>
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Category</TableHead>
-                  <TableHead>Pipeline Role</TableHead>
-                  <TableHead>Examples</TableHead>
-                  <TableHead>Value Delivered</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {[
-                  { cat: "Referral & Co-Sell", role: "Influenced / Sourced", ex: "PwC, Interpath, advisory firms, AP consultancies", val: "Warm pipeline; revenue share; reach into new accounts" },
-                  { cat: "Technology Partners", role: "Influence", ex: "Sage, FlexTecs", val: "Ecosystem validation; integration-driven usage; joint GTM" },
-                  { cat: "Reseller / VAR", role: "Sourced / Resold", ex: "AP advisory firms, smaller SIs", val: "Scalable distribution; accelerated regional growth" },
-                ].map((r, i) => (
-                  <TableRow key={i}>
-                    <TableCell className="font-semibold text-slate-900">{r.cat}</TableCell>
-                    <TableCell>{r.role}</TableCell>
-                    <TableCell className="text-slate-600">{r.ex}</TableCell>
-                    <TableCell className="text-slate-600">{r.val}</TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-            <p className="text-xs text-muted-foreground mt-3 italic">
-              Note: Delivery (implementation) partnerships are addressed separately and are out of scope for ARR targets in this document.
-            </p>
-          </CardContent>
-        </Card>
-      </section>
-
       {/* Pipeline & ARR Targets */}
       <section id="pipeline-targets">
         <Card className="shadow-sm">
