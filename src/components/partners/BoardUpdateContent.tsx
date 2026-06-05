@@ -23,12 +23,15 @@ const BoardUpdateContent = () => {
               <h3 className="font-bold text-lg text-slate-900">Purpose of This Document</h3>
             </div>
             <p className="text-slate-700 leading-relaxed">
-              This document provides the board with a complete picture of SoftCo's partnership programme as it stands today — what is working, what is in progress, and the strategic direction for 2026–2029. It is presented for board awareness and to inform discussion. No formal approvals are being sought at this meeting.
+              This document provides the board with a complete picture of SoftCo's partnership programme as it stands today — what is working, what is in progress, and the strategic direction for 2026–2029.
             </p>
             <div className="mt-4 p-4 bg-primary/5 rounded-lg border border-primary/10">
-              <p className="font-semibold text-sm text-slate-900 mb-1">Strategic Objective</p>
+              <p className="font-semibold text-sm text-slate-900 mb-1">Original Strategic Objective</p>
               <p className="text-sm text-slate-700">
                 Scale partner-sourced and partner-influenced ARR from a nascent channel to <span className="font-bold text-primary">&gt;30% of new ARR by 2029</span>, while enabling partners to deliver &gt;80% of implementation days — creating a capital-efficient, diversified growth engine alongside SoftCo's direct sales motion.
+              </p>
+              <p className="text-sm text-slate-700 mt-2">
+                Given PwC have paused implementation, focus remains on driving ARR from partners.
               </p>
             </div>
           </CardContent>
