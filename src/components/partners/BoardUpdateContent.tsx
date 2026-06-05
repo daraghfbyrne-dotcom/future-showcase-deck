@@ -23,12 +23,15 @@ const BoardUpdateContent = () => {
               <h3 className="font-bold text-lg text-slate-900">Purpose of This Document</h3>
             </div>
             <p className="text-slate-700 leading-relaxed">
-              This document provides the board with a complete picture of SoftCo's partnership programme as it stands today — what is working, what is in progress, and the strategic direction for 2026–2029. It is presented for board awareness and to inform discussion. No formal approvals are being sought at this meeting.
+              This document provides the board with a complete picture of SoftCo's partnership programme as it stands today — what is working, what is in progress, and the strategic direction for 2026–2029.
             </p>
             <div className="mt-4 p-4 bg-primary/5 rounded-lg border border-primary/10">
-              <p className="font-semibold text-sm text-slate-900 mb-1">Strategic Objective</p>
+              <p className="font-semibold text-sm text-slate-900 mb-1">Original Strategic Objective</p>
               <p className="text-sm text-slate-700">
                 Scale partner-sourced and partner-influenced ARR from a nascent channel to <span className="font-bold text-primary">&gt;30% of new ARR by 2029</span>, while enabling partners to deliver &gt;80% of implementation days — creating a capital-efficient, diversified growth engine alongside SoftCo's direct sales motion.
+              </p>
+              <p className="text-sm text-slate-700 mt-2">
+                Given PwC have paused implementation, focus remains on driving ARR from partners.
               </p>
             </div>
           </CardContent>
@@ -73,45 +76,6 @@ const BoardUpdateContent = () => {
                 </li>
               ))}
             </ul>
-          </CardContent>
-        </Card>
-      </section>
-
-      {/* Partnership Model Overview */}
-      <section id="partnership-model">
-        <Card className="shadow-sm">
-          <CardContent className="pt-6">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="h-8 w-1 bg-gradient-to-b from-blue-500 to-cyan-500 rounded-full" />
-              <h3 className="font-bold text-xl text-slate-900">Section 2 — Partnership Model Overview</h3>
-            </div>
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Category</TableHead>
-                  <TableHead>Pipeline Role</TableHead>
-                  <TableHead>Examples</TableHead>
-                  <TableHead>Value Delivered</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {[
-                  { cat: "Referral & Co-Sell", role: "Influenced / Sourced", ex: "PwC, Interpath, advisory firms, AP consultancies", val: "Warm pipeline; revenue share; reach into new accounts" },
-                  { cat: "Technology Partners", role: "Influence", ex: "Sage, FlexTecs", val: "Ecosystem validation; integration-driven usage; joint GTM" },
-                  { cat: "Reseller / VAR", role: "Sourced / Resold", ex: "AP advisory firms, smaller SIs", val: "Scalable distribution; accelerated regional growth" },
-                ].map((r, i) => (
-                  <TableRow key={i}>
-                    <TableCell className="font-semibold text-slate-900">{r.cat}</TableCell>
-                    <TableCell>{r.role}</TableCell>
-                    <TableCell className="text-slate-600">{r.ex}</TableCell>
-                    <TableCell className="text-slate-600">{r.val}</TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-            <p className="text-xs text-muted-foreground mt-3 italic">
-              Note: Delivery (implementation) partnerships are addressed separately and are out of scope for ARR targets in this document.
-            </p>
           </CardContent>
         </Card>
       </section>
@@ -187,6 +151,7 @@ const BoardUpdateContent = () => {
               <TableBody>
                 {[
                   { deal: "Flynn Construction — AP Automation", partner: "PwC", amount: "€252,000", stage: "5-In-Context Demo", close: "Mar 2026" },
+                  { deal: "UK Deal (Under NDA)", partner: "Tungsten", amount: "€300,000+", stage: "Awaiting Briefing", close: "2026" },
                   { deal: "MTC Trains — AP Automation", partner: "Xelix", amount: "€200,000", stage: "8-Prov. Approval (89%)", close: "Apr 2027" },
                   { deal: "Armacell — P2P", partner: "Xelix", amount: "€200,000", stage: "3-Qualified", close: "Aug 2026" },
                   { deal: "Unifeeder — AP Automation", partner: "Xelix", amount: "€141,000", stage: "7-Negotiation", close: "Mar 2026" },
@@ -207,13 +172,8 @@ const BoardUpdateContent = () => {
               </TableBody>
             </Table>
             <div className="mt-3 flex items-center gap-6">
-              <Badge className="bg-primary/10 text-primary border-primary/20">Total (valued): ~€1.11M</Badge>
-              <Badge variant="secondary">Weighted: ~€583K</Badge>
-            </div>
-            <div className="mt-3 p-3 bg-amber-50 rounded-lg border border-amber-200">
-              <p className="text-sm text-amber-800">
-                <span className="font-semibold">Xelix Pipeline Priority:</span> The three Xelix deals (€541K combined) must be actively managed to close before the Xelix relationship winds down. MTC Trains is at Provisional Approval (89% probability).
-              </p>
+              <Badge className="bg-primary/10 text-primary border-primary/20">Total (valued): ~€1.41M</Badge>
+              <Badge variant="secondary">Weighted: ~€613K</Badge>
             </div>
           </CardContent>
         </Card>
@@ -236,6 +196,9 @@ const BoardUpdateContent = () => {
             </div>
             <p className="text-sm text-slate-700 leading-relaxed">
               Tungsten has the potential to become SoftCo's most commercially significant partner — but this will require strict governance, sustained pressure on both sides to convert opportunities, and SoftCo demonstrating consistently that we can win the deals Tungsten passes to us.
+            </p>
+            <p className="text-sm text-slate-700 leading-relaxed font-semibold">
+              To date, the Tungsten partnership has been performing below original expectations.
             </p>
             <div className="grid md:grid-cols-2 gap-4">
               <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
@@ -286,11 +249,6 @@ const BoardUpdateContent = () => {
           </CardContent>
         </Card>
 
-        {/* Tungsten Pipeline Targets */}
-        <div className="mb-4">
-          <TungstenPipelineTargets />
-        </div>
-
         {/* 4.2 PwC */}
         <Card className="shadow-sm mb-4 border-l-4 border-l-blue-500">
           <CardContent className="pt-6">
@@ -298,6 +256,9 @@ const BoardUpdateContent = () => {
             <Badge variant="outline" className="mb-3 bg-blue-50 text-blue-700 border-blue-200">Co-sell (30% referral fee) and delivery</Badge>
             <p className="text-sm text-slate-700 leading-relaxed mb-2">
               The PwC partnership has been put on hold from an implementation standpoint, as opportunities for PS days have been below expectations, and they are not willing to spend resources until pipeline improves. The partnership still exists, and their Procurement Practice team continues to explore a joint opportunity with Agiloft, while the Workday Practice is identifying SoftCo as the preferred AP automation layer.
+            </p>
+            <p className="text-sm text-slate-900 font-bold leading-relaxed mb-2">
+              We have no pipeline expectations from PwC.
             </p>
             <p className="text-xs text-muted-foreground italic">Assessment: Positive directional signals, but PwC moves slowly. QBR cadence in place. Continued nurturing required.</p>
           </CardContent>
@@ -310,6 +271,9 @@ const BoardUpdateContent = () => {
             <Badge variant="outline" className="mb-3 bg-purple-50 text-purple-700 border-purple-200">Tier 1 Alliance Partner</Badge>
             <p className="text-sm text-slate-700 leading-relaxed">
               In 2025, Interpath elevated SoftCo to Tier 1 Alliance Partner status. The relationship has already yielded the Vibrant Foods win. Two new deals in pipeline (FGS Global, QIMA) at Sales Lead stage. Like PwC, Interpath requires ongoing relationship investment. QBR to be formalised.
+            </p>
+            <p className="text-sm text-slate-700 leading-relaxed mt-2">
+              We have a very good working relationship with Interpath and are working with their Value Creation team, particularly around Private Equity firms.
             </p>
           </CardContent>
         </Card>
@@ -335,16 +299,6 @@ const BoardUpdateContent = () => {
           </CardContent>
         </Card>
 
-        {/* 4.6 Microsoft */}
-        <Card className="shadow-sm mb-4 border-l-4 border-l-cyan-500">
-          <CardContent className="pt-6">
-            <h4 className="font-bold text-lg text-slate-900 mb-2">4.6 Microsoft</h4>
-            <p className="text-sm text-slate-700 leading-relaxed">
-              Pre-built F&O connector in place. A co-sell arrangement explored in 2024 via Azure migration did not yield referrals. SoftCo's return to AWS has put co-sell eligibility in doubt. Engineering and commercial leads to jointly evaluate co-sell eligibility, Azure spend implications, and realistic pipeline upside before any commitment.
-            </p>
-          </CardContent>
-        </Card>
-
         {/* 4.7 Emerging */}
         <Card className="shadow-sm mb-4">
           <CardContent className="pt-6">
@@ -358,124 +312,18 @@ const BoardUpdateContent = () => {
                 <p className="font-semibold text-sm text-slate-900">Invennt</p>
                 <p className="text-sm text-slate-700">Invennt were keen on lead swapping and introduced us to a number of clients, which did not lead to any traction. Talks ended when we did not provide significant introductions their way.</p>
               </div>
-            </div>
-          </CardContent>
-        </Card>
-      </section>
-
-      {/* Section 5 — Enablement & Governance */}
-      <section id="enablement">
-        <Card className="shadow-sm">
-          <CardContent className="pt-6">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="h-8 w-1 bg-gradient-to-b from-cyan-500 to-blue-500 rounded-full" />
-              <h3 className="font-bold text-xl text-slate-900">Section 5 — Enablement & Governance Infrastructure</h3>
-            </div>
-            <p className="text-slate-600 mb-4">Four pillars underpin the operating model, applying across all partner types:</p>
-            <div className="grid md:grid-cols-2 gap-4">
-              {[
-                { num: 1, title: "Structured Partner Enablement", desc: "Formal education programme covering ICP, product overview, objection handling, and competitive differentiation. Partner Portal (target H1 2026) will be the central hub." },
-                { num: 2, title: "QBRs & Joint Business Planning", desc: "QBRs currently exist only for PwC. Extended to all active partners in 2026, tracking pipeline influenced, deals converted, and conversion rates." },
-                { num: 3, title: "Performance Metrics & Accountability", desc: "Partners measured across: pipeline generation, conversion rates, enablement activity, and customer satisfaction. Underperformers exited without hesitation." },
-                { num: 4, title: "Partner Portal", desc: "Initially looked at for H1 2026, this has been pushed out as other priorities, such as the website launch, took preference." },
-              ].map((p) => (
-                <div key={p.num} className="p-4 bg-slate-50 rounded-lg border border-slate-200">
-                  <p className="font-bold text-sm text-primary mb-1">Pillar {p.num} — {p.title}</p>
-                  <p className="text-sm text-slate-700">{p.desc}</p>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-      </section>
-
-      {/* Section 6 — Referral Ecosystem */}
-      <section id="referral-ecosystem">
-        <Card className="shadow-sm">
-          <CardContent className="pt-6">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="h-8 w-1 bg-gradient-to-b from-green-500 to-teal-500 rounded-full" />
-              <h3 className="font-bold text-xl text-slate-900">Section 6 — Building the Referral Ecosystem (2026 Priority)</h3>
-            </div>
-            <div className="grid md:grid-cols-2 gap-4 mb-4">
-              <div className="p-4 bg-green-50 rounded-lg border border-green-200">
-                <p className="font-semibold text-sm text-green-800">2026 Recruitment Target</p>
-                <p className="text-sm text-green-700">Onboard 2 high-potential new referral partners by end of H1 2026</p>
+              <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                <p className="font-semibold text-sm text-slate-900">Integrative Systems</p>
+                <p className="text-sm text-slate-700">A technology advisory in the US who are actively exploring the AI field, having just hired a new AI expert. We met them in Chicago and are circling back in July when their expert is up to speed.</p>
               </div>
-              <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
-                <p className="font-semibold text-sm text-blue-800">Commercial Model</p>
-                <p className="text-sm text-blue-700">Referral fees of 15–20% of Year 1 SaaS ACV, payable on closed-won deals</p>
+              <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                <p className="font-semibold text-sm text-slate-900">Quebit</p>
+                <p className="text-sm text-slate-700">NetSuite implementation partner that we met at the Gartner CFO Conference. Exploratory calls underway.</p>
               </div>
-            </div>
-            <p className="font-semibold text-sm text-slate-900 mb-2">Target partner profiles:</p>
-            <ul className="space-y-1 mb-4">
-              {[
-                "ERP consultants and implementation partners with AP/finance transformation practices",
-                "Complementary technology vendors (AP-adjacent: OCR, spend analytics, statement rec)",
-                "Procurement and AP advisory boutiques with CFO/Controller-level access in €200M–€2B revenue bands",
-                "Finance transformation consultancies operating in Ireland, UK, Netherlands, US, and Canada",
-              ].map((item, i) => (
-                <li key={i} className="text-sm text-slate-700 flex items-start gap-2">
-                  <div className="h-1.5 w-1.5 bg-green-500 rounded-full mt-1.5 shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <div className="p-3 bg-amber-50 rounded-lg border border-amber-200">
-              <p className="text-sm text-amber-800">
-                <span className="font-semibold">Important Guardrail:</span> SoftCo will not pursue any partner that already has a formal referral or co-sell arrangement with a direct competitor.
-              </p>
-            </div>
-          </CardContent>
-        </Card>
-      </section>
-
-      {/* Section 7 — Tungsten Scenario Analysis */}
-      <section id="tungsten-scenario">
-        <Card className="shadow-sm">
-          <CardContent className="pt-6">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="h-8 w-1 bg-gradient-to-b from-amber-500 to-red-500 rounded-full" />
-              <h3 className="font-bold text-xl text-slate-900">Section 7 — Tungsten Scenario Analysis — 50% Delivery</h3>
-            </div>
-            <p className="text-sm text-slate-600 mb-4">Tungsten represents SoftCo's single largest contracted partner ARR commitment and carries inherent concentration risk.</p>
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Year</TableHead>
-                  <TableHead>Contracted ARR</TableHead>
-                  <TableHead>50% Scenario</TableHead>
-                  <TableHead>SoftCo ARR Shortfall (approx.)</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {[
-                  { year: "Year 1", contracted: "€115,000", half: "€57,500", shortfall: "~€345,000" },
-                  { year: "Year 2", contracted: "€230,000", half: "€115,000", shortfall: "~€690,000" },
-                  { year: "Year 3", contracted: "€322,000", half: "€161,000", shortfall: "~€966,000" },
-                ].map((r, i) => (
-                  <TableRow key={i}>
-                    <TableCell className="font-semibold">{r.year}</TableCell>
-                    <TableCell>{r.contracted}</TableCell>
-                    <TableCell className="text-amber-600">{r.half}</TableCell>
-                    <TableCell className="text-red-600 font-semibold">{r.shortfall}</TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-            <p className="text-sm text-red-700 font-semibold mt-3">Cumulative 3-Year: ~€2.0M ARR shortfall</p>
-            <div className="mt-3 space-y-1">
-              <p className="font-semibold text-sm text-slate-900">Mitigations in place:</p>
-              {[
-                "Performance-linked MDF: Tungsten reimburses MDF if targets are missed or Total Agility Success Rate drops below 90%.",
-                "Non-compete protections: Tungsten cannot pursue SoftCo customers independently.",
-                "Quarterly governance: QBRs and KPI dashboards will identify underperformance early.",
-              ].map((m, i) => (
-                <p key={i} className="text-sm text-slate-700 flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />
-                  {m}
-                </p>
-              ))}
+              <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                <p className="font-semibold text-sm text-slate-900">Agiloft</p>
+                <p className="text-sm text-slate-700">Working with PwC to discuss a three-way CLM platform; discussions are ongoing following demos.</p>
+              </div>
             </div>
           </CardContent>
         </Card>
