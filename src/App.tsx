@@ -12,9 +12,6 @@ import AnalystStrategy from "./pages/AnalystStrategy";
 import PartnersStrategy from "./pages/PartnersStrategy";
 import Objectives2026 from "./pages/Objectives2026";
 import NotFound from "./pages/NotFound";
-import Auth from "./pages/Auth";
-import ProtectedRoute from "./components/ProtectedRoute";
-
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -24,15 +21,14 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-            <Route path="/auth" element={<Auth />} />
-            <Route path="/" element={<ProtectedRoute><Introduction /></ProtectedRoute>} />
-            <Route path="/strategy" element={<ProtectedRoute><Index /></ProtectedRoute>} />
-            <Route path="/pipeline-targets" element={<ProtectedRoute><PipelineTargets /></ProtectedRoute>} />
-            <Route path="/demand-lead-gen" element={<ProtectedRoute><DemandLeadGenStrategy /></ProtectedRoute>} />
-            <Route path="/events-strategy" element={<ProtectedRoute><EventsStrategy /></ProtectedRoute>} />
-            <Route path="/analyst-strategy" element={<ProtectedRoute><AnalystStrategy /></ProtectedRoute>} />
-            <Route path="/partners-strategy" element={<ProtectedRoute><PartnersStrategy /></ProtectedRoute>} />
-            <Route path="/objectives-2026" element={<ProtectedRoute><Objectives2026 /></ProtectedRoute>} />
+            <Route path="/" element={<Introduction />} />
+            <Route path="/strategy" element={<Index />} />
+            <Route path="/pipeline-targets" element={<PipelineTargets />} />
+            <Route path="/demand-lead-gen" element={<DemandLeadGenStrategy />} />
+            <Route path="/events-strategy" element={<EventsStrategy />} />
+            <Route path="/analyst-strategy" element={<AnalystStrategy />} />
+            <Route path="/partners-strategy" element={<PartnersStrategy />} />
+            <Route path="/objectives-2026" element={<Objectives2026 />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
         </Routes>
