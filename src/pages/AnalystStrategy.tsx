@@ -166,7 +166,7 @@ const includedCalendarEvents = [
   { firm: "Spend Matters", report: "Fall Solution Map", rfiMonth: 4, publishMonth: 8, rfiLabel: "May", publishLabel: "Sep", color: "bg-cyan-500" },
   { firm: "Forrester", report: "AP Landscape Report", rfiMonth: 7, publishMonth: 9, rfiLabel: "Aug", publishLabel: "Oct", color: "bg-violet-500" },
   { firm: "Ardent Partners", report: "2027 AP Automation & Payments Advisor", rfiMonth: 9, publishMonth: 12, rfiLabel: "Oct", publishLabel: "Jan '27", color: "bg-teal-500" },
-  { firm: "Forrester", report: "Briefing for the 3rd of June", rfiMonth: 5, publishMonth: 5, rfiLabel: "3rd Jun", publishLabel: "3rd Jun", color: "bg-purple-500", type: "briefing" },
+  
   { firm: "Gartner", report: "Briefing for the 10th August", rfiMonth: 7, publishMonth: 7, rfiLabel: "10th Aug", publishLabel: "10th Aug", color: "bg-blue-500", type: "briefing" },
 ];
 
