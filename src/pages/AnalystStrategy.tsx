@@ -56,8 +56,7 @@ const whitepapers2026 = [
 ];
 
 const upcomingBriefings = [
-  { firm: "Forrester", date: "3rd June" },
-  { firm: "Gartner", date: "29th June" },
+  { firm: "Gartner", date: "10th August" },
 ];
 
 const analystFrameworks = [
@@ -66,7 +65,7 @@ const analystFrameworks = [
     framework: "Magic Quadrant & Critical Capabilities",
     status: "Niche Player",
     rationale: "Gartner evaluates ability to execute and completeness of vision.",
-      actions: "Vendor Briefing taking place on the 29th June.",
+      actions: "Vendor briefing taking place on 10th August.",
     color: "bg-blue-500",
     rfiRelease: "February",
     published: "June/July",
@@ -80,7 +79,7 @@ const analystFrameworks = [
     framework: "Wave & Landscape Report",
     status: "Not Featured",
     rationale: "The Wave process takes ~3 months and begins with inclusion in a landscape report.",
-      actions: "Completing the Compliance Ecosystem Reporting.",
+      actions: "Evaluating joining their AI programme, waiting for publication of eInvoicing Compliance Ecosystem report.",
     color: "bg-purple-500",
     rfiRelease: "3rd February",
     published: "15th June",
@@ -99,7 +98,7 @@ const analystFrameworks = [
     framework: "MarketScape",
     status: "Major Player",
     rationale: "IDC scores vendors on capabilities and strategy.",
-    actions: "Continue participation; emphasize long term strategy and global go to market alignment. Seek improvements by highlighting AI driven roadmap and enterprise wins.",
+    actions: "Returning feedback on initial scores, provisionally placed as a leader in the 2026 AP MarketScape report.",
     color: "bg-green-500",
     rfiRelease: "23rd February",
     customerReferences: "20th February",
@@ -115,9 +114,9 @@ const analystFrameworks = [
     framework: "PEAK Matrix",
     status: "Major Contender",
     rationale: "Recognized in 2025 evaluation.",
-    actions: "Maintain analyst engagements 2X per year for 2026 evaluation.",
+    actions: "Waiting for the 2026 P2P PEAK Matrix RFI to be released.",
     color: "bg-orange-500",
-    rfiRelease: "18th June",
+    rfiRelease: "Mid July",
     published: "16th November",
     contacts: [
       { name: "Arushi Diwan", email: "arushi.a.diwan@everestgrp.com", role: "Key Contact" },
@@ -135,7 +134,7 @@ const analystFrameworks = [
     framework: "Combined Matrix",
     status: "Submitted",
     rationale: "New combined matrix. Submission completed.",
-    actions: "Currently completing the SpendMatters Fall Solution Map RFI. DWC Matrix expected Q3.",
+    actions: "Recently completed the Fall SolutionMap RFI, waiting to schedule a demo.",
     color: "bg-pink-500",
     rfiRelease: "June",
     published: "November",
@@ -168,7 +167,7 @@ const includedCalendarEvents = [
   { firm: "Forrester", report: "AP Landscape Report", rfiMonth: 7, publishMonth: 9, rfiLabel: "Aug", publishLabel: "Oct", color: "bg-violet-500" },
   { firm: "Ardent Partners", report: "2027 AP Automation & Payments Advisor", rfiMonth: 9, publishMonth: 12, rfiLabel: "Oct", publishLabel: "Jan '27", color: "bg-teal-500" },
   { firm: "Forrester", report: "Briefing for the 3rd of June", rfiMonth: 5, publishMonth: 5, rfiLabel: "3rd Jun", publishLabel: "3rd Jun", color: "bg-purple-500", type: "briefing" },
-  { firm: "Gartner", report: "Briefing for the 29th June", rfiMonth: 5, publishMonth: 5, rfiLabel: "29th Jun", publishLabel: "29th Jun", color: "bg-blue-500", type: "briefing" },
+  { firm: "Gartner", report: "Briefing for the 10th August", rfiMonth: 7, publishMonth: 7, rfiLabel: "10th Aug", publishLabel: "10th Aug", color: "bg-blue-500", type: "briefing" },
 ];
 
 // Visual calendar data - reports we are NOT included in
@@ -305,7 +304,7 @@ const AnalystStrategy = () => {
             points={[
               "We have not been included in the Gartner Magic Quadrant or Forrester Wave",
               "We have taken part in the IDC MarketScape Report, the SpendMatters Fall Solution Map is underway, and the Everest PEAK Matrix is due in June",
-              "We have vendor briefings with Gartner & Forrester in June"
+              "We have vendor briefing with Gartner on 10th August"
             ]}
           />
         </div>
