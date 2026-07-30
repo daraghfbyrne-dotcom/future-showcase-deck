@@ -303,7 +303,7 @@ const AnalystStrategy = () => {
           <KeyPointsSummary
             points={[
               "We have not been included in the Gartner Magic Quadrant or Forrester Wave",
-              "We have taken part in the IDC MarketScape Report, the SpendMatters Fall Solution Map is underway, and the Everest PEAK Matrix is due in June",
+              "We have taken part in the IDC MarketScape Report, the SpendMatters Fall Solution Map is underway, and the Everest PEAK Matrix RFI has just been released at the end of July",
               "We have vendor briefing with Gartner on 10th August"
             ]}
           />
