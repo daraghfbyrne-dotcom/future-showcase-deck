@@ -114,10 +114,10 @@ const analystFrameworks = [
     framework: "PEAK Matrix",
     status: "Major Contender",
     rationale: "Recognized in 2025 evaluation.",
-    actions: "Waiting for the 2026 P2P PEAK Matrix RFI to be released.",
+    actions: "Completing the 2026 RFI.",
     color: "bg-orange-500",
-    rfiRelease: "Mid July",
-    published: "16th November",
+    rfiRelease: "30th July",
+    published: "December",
     contacts: [
       { name: "Arushi Diwan", email: "arushi.a.diwan@everestgrp.com", role: "Key Contact" },
       { name: "Katrina Menzigian", email: "katrina.menzigian@everestgrp.com", role: "Supporting Analyst" },
@@ -160,10 +160,10 @@ const analystFrameworks = [
 
 // Visual calendar data - reports we ARE included in
 const includedCalendarEvents = [
-  { firm: "IDC", report: "MarketScape", rfiMonth: 1, publishMonth: 6, rfiLabel: "23rd Feb", publishLabel: "Jul", color: "bg-green-500" },
-  { firm: "Everest", report: "PEAK Matrix", rfiMonth: 5, publishMonth: 10, rfiLabel: "18th Jun", publishLabel: "16th Nov", color: "bg-orange-500" },
+  { firm: "IDC", report: "MarketScape", rfiMonth: 1, publishMonth: 8, rfiLabel: "23rd Feb", publishLabel: "Sep", color: "bg-green-500" },
+  { firm: "Everest", report: "PEAK Matrix", rfiMonth: 6, publishMonth: 11, rfiLabel: "Jul", publishLabel: "Dec", color: "bg-orange-500" },
   { firm: "Hackett", report: "Digital World Class Matrix", rfiMonth: 5, publishMonth: 10, rfiLabel: "Jun", publishLabel: "Nov", color: "bg-pink-500" },
-  { firm: "Spend Matters", report: "Fall Solution Map", rfiMonth: 4, publishMonth: 8, rfiLabel: "May", publishLabel: "Sep", color: "bg-cyan-500" },
+  { firm: "Spend Matters", report: "Fall Solution Map", rfiMonth: 5, publishMonth: 8, rfiLabel: "Jun", publishLabel: "Sep", color: "bg-cyan-500" },
   { firm: "Forrester", report: "AP Landscape Report", rfiMonth: 7, publishMonth: 9, rfiLabel: "Aug", publishLabel: "Oct", color: "bg-violet-500" },
   { firm: "Ardent Partners", report: "2027 AP Automation & Payments Advisor", rfiMonth: 9, publishMonth: 12, rfiLabel: "Oct", publishLabel: "Jan '27", color: "bg-teal-500" },
   
